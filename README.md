@@ -1,7 +1,7 @@
-# 📡Collect-IPTV
+# 📡Collect-iTV
 利用DeepSeek和ChatGPT生成的IPTV节目源收集程序，Github服务器测试可用性和延迟性，m3u每4小时自动更新,代码优化中😊！
 ## 📺️TV station list
-https://zilong7728.github.io/Collect-IPTV/
+https://iTCoffe.github.io/Collect-iTV
 ## ⏱️Last Run Time
 <!-- Last Run Time --> 2025-05-15 20:22:06 CST
 ## 🔗Generated File Link
