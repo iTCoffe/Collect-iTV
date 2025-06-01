@@ -3,7 +3,7 @@
 ## 📺️TV station list
 https://iTCoffe.github.io/Collect-iTV
 ## ⏱️Last Run Time
-<!-- Last Run Time --> 2025-06-01 12:27:05 CST
+<!-- Last Run Time --> 2025-06-01 16:12:33 CST
 ## 🔗Generated File Link
 <!-- Generated File Link --> [View Generated File](https://raw.githubusercontent.com/iTCoffe/Collect-iTV/refs/heads/main/best_sorted.m3u)
 
