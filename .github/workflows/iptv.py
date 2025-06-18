@@ -286,7 +286,6 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
 if __name__ == "__main__":
     # IPTV 文件 URL（您可以添加自己的文件 URL 列表）
     file_urls = [
-        "https://tv.iill.top/m3u/Gather",
         "https://tzdr.com/iptv.txt",
         "https://live.kilvn.com/iptv.m3u",
         "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
