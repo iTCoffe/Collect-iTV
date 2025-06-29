@@ -289,6 +289,7 @@ if __name__ == "__main__":
         "https://raw.githubusercontent.com/kilvn/iptv/master/iptv.m3u",
         "https://raw.githubusercontent.com/kakaxi-1/IPTV/main/ipv4.1.txt",
         "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u",
+        "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv6.txt",
         "https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u",
         "https://raw.githubusercontent.com/big-mouth-cn/tv/main/iptv-ok.m3u",
         "https://raw.githubusercontent.com/TianmuTNT/iptv/main/iptv.m3u"
