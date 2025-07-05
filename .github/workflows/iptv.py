@@ -192,6 +192,16 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     other_channels = []
     keywords = get_dynamic_keywords()
 
+    # 创建一个所有省份关键字的集合
+    all_province_keywords = set()
+    for province, channels in province_channels.items():
+        for channel_name in channels:
+            # 将频道名拆分为所有可能的连续两个字符的组合
+            # 例如："北京" -> {"北京"}, "北京卫视" -> {"北京", "京卫", "卫视"}
+            for i in range(len(channel_name) - 1):
+                keyword = channel_name[i:i+2]
+                all_province_keywords.add(keyword)
+
     for channel, url in valid_urls:
         if contains_date(channel) or contains_date(url):
             continue  # 过滤掉包含日期格式的频道
@@ -218,28 +228,55 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 "group_title": "📡卫视频道"
             })
         else:
-            # 检查是否是省份频道
-            found_province = False
-            for province, channels in province_channels.items():
-                for province_channel in channels:
-                    if province_channel in channel:  # 匹配省份频道名称
-                        province_channels_list[province].append({
-                            "channel": channel,
-                            "url": url,
-                            "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
-                            "group_title": f"{province}"
-                        })
-                        found_province = True
+            # 检查频道名是否包含任意两个连续的省份关键字
+            found_keyword = None
+            found_province = None
+            for keyword in all_province_keywords:
+                if keyword in channel:
+                    found_keyword = keyword
+                    # 查找这个关键字对应的省份
+                    for province, channels in province_channels.items():
+                        for channel_name in channels:
+                            if found_keyword in channel_name:
+                                found_province = province
+                                break
+                        if found_province:
+                            break
+                    if found_province:
                         break
-                if found_province:
-                    break
-            if not found_province:
-                other_channels.append({
+            
+            # 如果找到了匹配的省份关键字
+            if found_province:
+                province_channels_list[found_province].append({
                     "channel": channel,
                     "url": url,
                     "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
-                    "group_title": "🏛其他频道"
+                    "group_title": f"{found_province}"
                 })
+            else:
+                # 尝试精确匹配：完整频道名称匹配
+                found_province_exact = False
+                for province, channels in province_channels.items():
+                    for province_channel in channels:
+                        if province_channel in channel:  # 匹配省份频道名称
+                            province_channels_list[province].append({
+                                "channel": channel,
+                                "url": url,
+                                "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                                "group_title": f"{province}"
+                            })
+                            found_province_exact = True
+                            break
+                    if found_province_exact:
+                        break
+                
+                if not found_province_exact:
+                    other_channels.append({
+                        "channel": channel,
+                        "url": url,
+                        "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                        "group_title": "🏛其他频道"
+                    })
 
     # 排序：省份频道、卫视频道、其他频道
     for province in province_channels_list:
