@@ -11,7 +11,11 @@ def get_dynamic_keywords():
     """
     动态生成需要过滤的关键词（今天的日期、明天的日期以及固定关键词）
     """
-    fixed_keywords = ["免费提供"]
+    # 获取今天和明天的日期
+    today = datetime.now().strftime("%Y-%m-%d")
+    tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+    
+    fixed_keywords = ["免费提供", today, tomorrow]
     return fixed_keywords
 
 def contains_date(text):
@@ -132,7 +136,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件（不过滤任何源）"""
+    """生成排序后的 M3U 文件，过滤掉含时间名字的源"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -140,6 +144,9 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     
     # 构建三连字索引
     trigram_to_province = defaultdict(set)
+
+    # 获取动态关键词，用于过滤含时间名字的源
+    filter_keywords = get_dynamic_keywords()
 
     # 遍历所有省份的所有频道，构建三连字索引
     for province, channels in province_channels.items():
@@ -151,8 +158,12 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     trigram = channel_name[i:i+3]
                     trigram_to_province[trigram].add(province)
 
-    # 处理所有有效的URL
+    # 处理所有有效的URL，过滤含时间名字的源
     for channel, url in valid_urls:
+        # 过滤包含日期或关键词的源
+        if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
+            continue  # 跳过含时间名字的源
+        
         # 创建去除横杠的频道名用于logo
         logo_channel = channel.replace('-', '')
         
@@ -214,7 +225,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     "channel": channel,
                     "url": url,
                     "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
-                    "group_title": "🏮其他频道"
+                    "group_title": "🏛其他频道"
                 })
 
     # 排序：省份频道列表按照省份名称排序
@@ -289,6 +300,7 @@ if __name__ == "__main__":
 
     # 省份频道文件列表
     province_channel_files = [
+        ".github/workflows/IPTV/💰央视付费频道.txt",
         ".github/workflows/IPTV/📡卫视频道.txt",
         ".github/workflows/IPTV/☘️重庆频道.txt",
         ".github/workflows/IPTV/☘️四川频道.txt",
