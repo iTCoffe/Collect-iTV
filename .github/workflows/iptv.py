@@ -344,7 +344,7 @@ if __name__ == "__main__":
         ".github/workflows/IPTV/☘️浙江频道.txt",
         ".github/workflows/IPTV/☘️北京频道.txt",
         ".github/workflows/IPTV/🎥咪咕视频.txt",
-        ".github/workflows/IPTV/🎬电影频道.txt",
+        ".github/workflows/IPTV/🎬影视剧频道.txt",
         ".github/workflows/IPTV/🎮游戏频道.txt",
         ".github/workflows/IPTV/🎵音乐频道.txt",
         ".github/workflows/IPTV/🏀体育频道.txt",
