@@ -323,7 +323,7 @@ if __name__ == "__main__":
         ".github/workflows/IPTV/☘️江苏频道.txt",
         ".github/workflows/IPTV/☘️江西频道.txt",
         ".github/workflows/IPTV/☘️辽宁频道.txt",
-        ".github/workflows/IPTV/☘️内蒙频道.txt",
+        ".github/workflows/IPTV/☘️内蒙古频道.txt",
         ".github/workflows/IPTV/☘️宁夏频道.txt",
         ".github/workflows/IPTV/☘️青海频道.txt",
         ".github/workflows/IPTV/☘️山东频道.txt",
