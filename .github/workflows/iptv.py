@@ -104,60 +104,15 @@ def extract_urls_from_m3u(content):
     return urls
 
 
-# 测试 IPTV 链接的可用性和速度
-async def test_stream(url):
-    """测试 IPTV 链接的可用性和速度"""
-    async with aiohttp.ClientSession(cookie_jar=None) as session:  # 禁用 cookie 处理
-        start_time = time.time()
-        try:
-            # IPv6地址包含方括号，需要进行特殊处理
-            if '[' in url and ']' in url:
-                # 提取IPv6部分并转义方括号
-                ipv6_part = re.search(r'\[(.*?)\]', url).group(0)
-                parsed_url = url.replace(ipv6_part, ipv6_part.replace('[', '%5B').replace(']', '%5D'))
-                async with session.get(parsed_url, timeout=CONFIG["timeout"]) as response:
-                    if response.status == 200:
-                        elapsed_time = time.time() - start_time
-                        return True, elapsed_time
-                    else:
-                        return False, None
-            else:
-                async with session.get(url, timeout=CONFIG["timeout"]) as response:
-                    if response.status == 200:
-                        elapsed_time = time.time() - start_time
-                        return True, elapsed_time
-                    else:
-                        return False, None
-        except asyncio.TimeoutError:
-            return False, None
-        except Exception as e:
-            # 如果是解码错误，尝试重新提交请求但不解码
-            if 'Invalid URL' in str(e) and '[' in url and ']' in url:
-                try:
-                    ipv6_part = re.search(r'\[(.*?)\]', url).group(0)
-                    parsed_url = url.replace(ipv6_part, ipv6_part.replace('[', '%5B').replace(']', '%5D'))
-                    async with session.get(parsed_url, timeout=CONFIG["timeout"]) as response:
-                        if response.status == 200:
-                            elapsed_time = time.time() - start_time
-                            return True, elapsed_time
-                        else:
-                            return False, None
-                except:
-                    return False, None
-            return False, None
-
-
-# 测试多个 IPTV 链接
+# 测试多个 IPTV 链接的可用性和速度（可选）
 async def test_multiple_streams(urls):
-    """测试多个 IPTV 链接"""
-    tasks = [test_stream(url) for _, url in urls]
-    results = await asyncio.gather(*tasks)
-    return results
+    """测试多个 IPTV 链接（可选）"""
+    return [(True, 0.0)] * len(urls)  # 总是返回所有链接都有效
 
 
 # 读取文件并提取 URL（支持 M3U 或 TXT 格式）
 async def read_and_test_file(file_path, is_m3u=False):
-    """读取文件并提取 URL 进行测试"""
+    """读取文件并提取所有 URL（不过滤）"""
     try:
         # 获取文件内容
         async with aiohttp.ClientSession(cookie_jar=None) as session:  # 禁用 cookie 处理
@@ -170,14 +125,8 @@ async def read_and_test_file(file_path, is_m3u=False):
         else:
             entries = extract_urls_from_txt(content)
 
-        # 测试 URL 的可用性
-        valid_urls = []
-        results = await test_multiple_streams(entries)
-        for (is_valid, _), (channel, url) in zip(results, entries):
-            if is_valid:
-                valid_urls.append((channel, url))
-
-        return valid_urls
+        # 直接返回所有 URL（不过滤）
+        return entries
 
     except Exception as e:
         return []
@@ -185,12 +134,11 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件"""
+    """生成排序后的 M3U 文件（不过滤任何源）"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
     other_channels = []
-    keywords = get_dynamic_keywords()
 
     # 创建一个所有省份关键字的集合
     all_province_keywords = set()
@@ -203,9 +151,6 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 all_province_keywords.add(keyword)
 
     for channel, url in valid_urls:
-        if contains_date(channel) or contains_date(url):
-            continue  # 过滤掉包含日期格式的频道
-        
         # 创建去除横杠的频道名用于logo
         logo_channel = channel.replace('-', '')
         
@@ -369,6 +314,7 @@ if __name__ == "__main__":
 
     # 省份频道文件列表
     province_channel_files = [
+        ".github/workflows/IPTV/💰央视付费频道.txt",
         ".github/workflows/IPTV/☘️重庆频道.txt",
         ".github/workflows/IPTV/☘️四川频道.txt",
         ".github/workflows/IPTV/☘️云南频道.txt",
