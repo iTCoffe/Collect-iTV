@@ -138,24 +138,20 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     satellite_channels = []
     other_channels = []
     
-    # 分别构建三连字和双连字的索引
+    # 构建三连字索引
     trigram_to_province = defaultdict(set)
-    bigram_to_province = defaultdict(set)
 
+    # 遍历所有省份的所有频道，构建三连字索引
     for province, channels in province_channels.items():
         for channel_name in channels:
-            # 添加原始词序的三连字（优先级更高）
+            # 添加原始词序的三连字
             if len(channel_name) >= 3:
+                # 为频道名创建所有可能的三连字组合
                 for i in range(len(channel_name) - 2):
                     trigram = channel_name[i:i+3]
                     trigram_to_province[trigram].add(province)
-            
-            # 添加原始词序的双连字
-            if len(channel_name) >= 2:
-                for i in range(len(channel_name) - 1):
-                    bigram = channel_name[i:i+2]
-                    bigram_to_province[bigram].add(province)
 
+    # 处理所有有效的URL
     for channel, url in valid_urls:
         # 创建去除横杠的频道名用于logo
         logo_channel = channel.replace('-', '')
@@ -166,6 +162,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
         # 根据频道名判断属于哪个分组
         found_province = None
         
+        # 1. 首先检查是否是CCTV频道
         if normalized_channel in cctv_channels:
             cctv_channels_list.append({
                 "channel": channel,
@@ -173,6 +170,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
                 "group_title": "📺央视频道"
             })
+        # 2. 检查是否是卫视频道
         elif "卫视" in channel:  # 卫视频道
             satellite_channels.append({
                 "channel": channel,
@@ -180,38 +178,30 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
                 "group_title": "📡卫视频道"
             })
+        # 3. 处理地方台频道
         else:
             # 尝试三连字匹配（按原始词序）
             for i in range(len(channel) - 2):
                 trigram = channel[i:i+3]
                 if trigram in trigram_to_province:
-                    # 获取匹配的省份
-                    provinces = trigram_to_province[trigram]
-                    found_province = next(iter(provinces), None)  # 取第一个匹配的省份
+                    # 获取匹配的省份（取第一个匹配项）
+                    found_province = next(iter(trigram_to_province[trigram]), None)
                     if found_province:
                         break
             
-            # 三连字未命中时尝试双连字匹配（按原始词序）
-            if not found_province:
-                for i in range(len(channel) - 1):
-                    bigram = channel[i:i+2]
-                    if bigram in bigram_to_province:
-                        provinces = bigram_to_province[bigram]
-                        found_province = next(iter(provinces), None)  # 取第一个匹配的省份
-                        if found_province:
-                            break
-            
-            # 如果三连字和双连字都未命中，尝试完整频道名匹配
+            # 如果三连字未命中，尝试完整频道名匹配
             if not found_province:
                 # 遍历所有省份的所有频道名称进行精确匹配
                 for province, channels in province_channels.items():
                     for channel_name in channels:
-                        if channel_name in channel:  # 完整频道名称出现在待匹配频道字符串中
+                        # 检查频道名称是否完整包含在频道字符串中
+                        if channel_name in channel:  
                             found_province = province
                             break
                     if found_province:
                         break
             
+            # 根据匹配结果分类频道
             if found_province:
                 province_channels_list[found_province].append({
                     "channel": channel,
@@ -224,13 +214,14 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     "channel": channel,
                     "url": url,
                     "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
-                    "group_title": "🏛其他频道"
+                    "group_title": "🏮其他频道"
                 })
 
-    # 排序：省份频道、卫视频道、其他频道
+    # 排序：省份频道列表按照省份名称排序
     for province in province_channels_list:
         province_channels_list[province].sort(key=lambda x: x["channel"])
 
+    # 卫视频道和其他频道也排序
     satellite_channels.sort(key=lambda x: x["channel"])
     other_channels.sort(key=lambda x: x["channel"])
 
@@ -240,7 +231,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     province_channels_list[province]] + \
                    other_channels
 
-    # 写入 M3U 文件（只在第一行添加指定属性）
+    # 写入 M3U 文件
     with open(filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
@@ -329,7 +320,14 @@ if __name__ == "__main__":
         ".github/workflows/IPTV/☘️新疆频道.txt",
         ".github/workflows/IPTV/☘️云南频道.txt",
         ".github/workflows/IPTV/☘️浙江频道.txt",
-        ".github/workflows/IPTV/☘️北京频道.txt"
+        ".github/workflows/IPTV/☘️北京频道.txt",
+        ".github/workflows/IPTV/🎥咪咕视频.txt",
+        ".github/workflows/IPTV/🎬电影频道.txt",
+        ".github/workflows/IPTV/🎮游戏频道.txt",
+        ".github/workflows/IPTV/🎵音乐频道.txt",
+        ".github/workflows/IPTV/🏀体育频道.txt",
+        ".github/workflows/IPTV/🏛经典剧场.txt",
+        ".github/workflows/IPTV/🪁动漫频道.txt"
     ]
 
     # 执行主函数
