@@ -314,7 +314,7 @@ if __name__ == "__main__":
 
     # 省份频道文件列表
     province_channel_files = [
-        ".github/workflows/IPTV/💰央视付费频道.txt",
+        ".github/workflows/IPTV/📡卫视频道.txt",
         ".github/workflows/IPTV/☘️重庆频道.txt",
         ".github/workflows/IPTV/☘️四川频道.txt",
         ".github/workflows/IPTV/☘️云南频道.txt",
@@ -342,7 +342,6 @@ if __name__ == "__main__":
         ".github/workflows/IPTV/☘️陕西频道.txt",
         ".github/workflows/IPTV/☘️上海频道.txt",
         ".github/workflows/IPTV/☘️天津频道.txt",
-        ".github/workflows/IPTV/📡卫视频道.txt",
         ".github/workflows/IPTV/☘️新疆频道.txt",
         ".github/workflows/IPTV/☘️云南频道.txt",
         ".github/workflows/IPTV/☘️浙江频道.txt",
