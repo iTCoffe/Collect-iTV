@@ -1,0 +1,56 @@
+name: IPTV Update
+
+on:
+  workflow_dispatch:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '0 2,8,14,20 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+
+    - name: 更新
+      run: |
+        # 下载基础源文件
+        wget -q https://raw.githubusercontent.com/mytv-android/iptv-api/master/output/result.m3u -O Base.m3u
+
+        # 提取央视源并去重
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+
+        # 提取非央视源并去重
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+
+        # 整合源并去重（新增统一logo地址替换）
+        {
+          echo '#EXTM3U x-tvg-url="https://112114.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+          cat CCTV.m3u
+          cat CNTV.m3u
+        } | sed -E 's|tvg-logo="[^"]*"|tvg-logo="https://itv.shrimp.cloudns.biz/logo/\{channel\}.png"|g' | awk '!seen[$0]++' > IPTV.m3u
+
+        # 更新README
+        echo "Auto Update IPTV in ${{ steps.date.outputs.date }}" > README.md
+
+    - name: Clean
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git checkout --orphan latest_branch
+        git add -A
+        git commit -am "${{ steps.date.outputs.date }}"
+        git branch -D main
+        git branch -m main
+
+    - name: Push
+      run: git push -f origin main
