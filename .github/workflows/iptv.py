@@ -249,8 +249,10 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
         
         # 写入频道信息
         for channel_info in all_channels:
+            # 生成去除-符号的tvg-name
+            tvg_name = channel_info['channel'].replace('-', '')
             f.write(
-                f"#EXTINF:-1 tvg-name=\"{channel_info['channel']}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
+                f"#EXTINF:-1 tvg-name=\"{tvg_name}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
             f.write(f"{channel_info['url']}\n")
 
 
