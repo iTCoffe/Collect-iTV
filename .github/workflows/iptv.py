@@ -110,16 +110,40 @@ async def test_stream(url):
     async with aiohttp.ClientSession(cookie_jar=None) as session:  # 禁用 cookie 处理
         start_time = time.time()
         try:
-            async with session.get(url, timeout=CONFIG["timeout"]) as response:
-                if response.status == 200:
-                    # 计算响应时间
-                    elapsed_time = time.time() - start_time
-                    return True, elapsed_time
-                else:
-                    return False, None
+            # IPv6地址包含方括号，需要进行特殊处理
+            if '[' in url and ']' in url:
+                # 提取IPv6部分并转义方括号
+                ipv6_part = re.search(r'\[(.*?)\]', url).group(0)
+                parsed_url = url.replace(ipv6_part, ipv6_part.replace('[', '%5B').replace(']', '%5D'))
+                async with session.get(parsed_url, timeout=CONFIG["timeout"]) as response:
+                    if response.status == 200:
+                        elapsed_time = time.time() - start_time
+                        return True, elapsed_time
+                    else:
+                        return False, None
+            else:
+                async with session.get(url, timeout=CONFIG["timeout"]) as response:
+                    if response.status == 200:
+                        elapsed_time = time.time() - start_time
+                        return True, elapsed_time
+                    else:
+                        return False, None
         except asyncio.TimeoutError:
             return False, None
         except Exception as e:
+            # 如果是解码错误，尝试重新提交请求但不解码
+            if 'Invalid URL' in str(e) and '[' in url and ']' in url:
+                try:
+                    ipv6_part = re.search(r'\[(.*?)\]', url).group(0)
+                    parsed_url = url.replace(ipv6_part, ipv6_part.replace('[', '%5B').replace(']', '%5D'))
+                    async with session.get(parsed_url, timeout=CONFIG["timeout"]) as response:
+                        if response.status == 200:
+                            elapsed_time = time.time() - start_time
+                            return True, elapsed_time
+                        else:
+                            return False, None
+                except:
+                    return False, None
             return False, None
 
 
@@ -160,7 +184,6 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 
 # 生成排序后的 M3U 文件
-
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     """生成排序后的 M3U 文件"""
     cctv_channels_list = []
@@ -243,7 +266,6 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             f.write(f"{channel_info['url']}\n")
 
 
-
 # 加载省份频道列表
 def load_province_channels(files):
     """加载多个省份的频道列表"""
@@ -275,14 +297,23 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
 
     all_valid_urls = []
 
+    semaphore = asyncio.Semaphore(CONFIG["max_parallel"])
+
+    async def limited_task(task):
+        async with semaphore:
+            return await task
+
+    tasks = []
     for file_url in file_urls:
         if file_url.endswith(('.m3u', '.m3u8')):
-            valid_urls = await read_and_test_file(file_url, is_m3u=True)
+            tasks.append(limited_task(read_and_test_file(file_url, is_m3u=True)))
         elif file_url.endswith('.txt'):
-            valid_urls = await read_and_test_file(file_url, is_m3u=False)
+            tasks.append(limited_task(read_and_test_file(file_url, is_m3u=False)))
         else:
-            valid_urls = []
+            continue
 
+    results = await asyncio.gather(*tasks)
+    for valid_urls in results:
         all_valid_urls.extend(valid_urls)
 
     # 生成排序后的 M3U 文件
