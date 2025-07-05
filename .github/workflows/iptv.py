@@ -136,7 +136,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，过滤掉含时间名字的源"""
+    """生成排序后的 M3U 文件，使用改进的三连字匹配"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -191,26 +191,34 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             })
         # 3. 处理地方台频道
         else:
-            # 尝试三连字匹配（按原始词序）
-            for i in range(len(channel) - 2):
-                trigram = channel[i:i+3]
-                if trigram in trigram_to_province:
-                    # 获取匹配的省份（取第一个匹配项）
-                    found_province = next(iter(trigram_to_province[trigram]), None)
-                    if found_province:
-                        break
+            # 优化中文三连字匹配
+            province_scores = defaultdict(int)
             
-            # 如果三连字未命中，尝试完整频道名匹配
-            if not found_province:
-                # 遍历所有省份的所有频道名称进行精确匹配
-                for province, channels in province_channels.items():
-                    for channel_name in channels:
-                        # 检查频道名称是否完整包含在频道字符串中
-                        if channel_name in channel:  
-                            found_province = province
-                            break
-                    if found_province:
+            # 1. 精确匹配：检查频道名称是否完整包含在频道字符串中
+            for province, channels in province_channels.items():
+                for channel_name in channels:
+                    if channel_name in channel:
+                        found_province = province
                         break
+                if found_province:
+                    break
+            
+            # 2. 三连字匹配（仅当精确匹配失败）
+            if not found_province and len(channel) >= 3:
+                # 为频道创建所有可能的三连字组合
+                for i in range(len(channel) - 2):
+                    trigram = channel[i:i+3]
+                    # 查找匹配的省份
+                    if trigram in trigram_to_province:
+                        for province in trigram_to_province[trigram]:
+                            province_scores[province] += 1
+                
+                # 找到分数最高的省份
+                if province_scores:
+                    max_score = max(province_scores.values())
+                    best_provinces = [p for p, s in province_scores.items() if s == max_score]
+                    # 如果有多个分数相同的省份，选择名称最短的（更具体）
+                    found_province = min(best_provinces, key=len) if best_provinces else None
             
             # 根据匹配结果分类频道
             if found_province:
