@@ -1441,6 +1441,8 @@ http://qcfile.qcrmt.com/nmip-media/channellive/channel100933/playlist.m3u8
 http://zbbf2.ahbztv.com/live/418.m3u8
 #EXTINF:-1 tvg-name="亳州新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/亳州新闻.png" group-title="☘️安徽频道",亳州新闻
 http://zbbf2.ahbztv.com/live/416.m3u8?zanhd
+#EXTINF:-1 tvg-name="广西新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/广西新闻.png" group-title="☘️安徽频道",广西新闻
+https://mobilelive.gxtv.cn/live/gx_live1007/playlist.m3u8
 #EXTINF:-1 tvg-name="滁州公共" tvg-logo="https://itv.shrimp.cloudns.biz/logo/滁州公共.png" group-title="☘️安徽频道",滁州公共
 http://live.cztv.cc:85/live/ggpd.m3u8?zanhd#http://live.cztv.cc:85/live/ggpd.m3u8
 #EXTINF:-1 tvg-name="滁州市广播电视台 新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/滁州市广播电视台 新闻综合.png" group-title="☘️安徽频道",滁州市广播电视台 新闻综合
@@ -1643,8 +1645,6 @@ http://z.b.bkpcp.top/m.php?id=lygxwzh
 http://zjtv-wshls.homecdn.com/live/2aa16.m3u8
 #EXTINF:-1 tvg-name="镇江新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/镇江新闻综合.png" group-title="☘️江苏频道",镇江新闻综合
 http://zjtv-wshls.homecdn.com/live/2aa50.m3u8
-#EXTINF:-1 tvg-name="广西新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/广西新闻.png" group-title="☘️江西频道",广西新闻
-https://mobilelive.gxtv.cn/live/gx_live1007/playlist.m3u8
 #EXTINF:-1 tvg-name="任丘综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/任丘综合.png" group-title="☘️河北频道",任丘综合
 https://jwcdnqx.hebyun.com.cn/live/rqtv1/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="兴隆综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/兴隆综合.png" group-title="☘️河北频道",兴隆综合
@@ -2067,6 +2067,8 @@ http://play-sh13.quklive.com/live/1703570877483349.m3u8?auth_key=2028414694-5152
 http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
 #EXTINF:-1 tvg-name="龙游生活娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/龙游生活娱乐.png" group-title="☘️浙江频道",龙游生活娱乐
 https://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
+#EXTINF:-1 tvg-name="叶县" tvg-logo="https://itv.shrimp.cloudns.biz/logo/叶县.png" group-title="☘️海南频道",叶县
+http://tvpull.dxhmt.cn:9081/tv/10422-1.m3u8#
 #EXTINF:-1 tvg-name="海南公共" tvg-logo="https://itv.shrimp.cloudns.biz/logo/海南公共.png" group-title="☘️海南频道",海南公共
 http://[2409:8087:5e00:24::1e]:6060/000000001000/460000100000000057/1.m3u8
 #EXTINF:-1 tvg-name="海南少儿" tvg-logo="https://itv.shrimp.cloudns.biz/logo/海南少儿.png" group-title="☘️海南频道",海南少儿
@@ -2273,6 +2275,12 @@ https://cdn9.163189.xyz/smt1.1.php
 http://dsj.motem.top:8880/bptv/10000100000000050000000003887497.m3u8
 #EXTINF:-1 tvg-name="淘剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘剧场.png" group-title="🎬电影频道",淘剧场
 http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226553/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EQaJ92NID2SpQlY6_VJVogg%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNOuQYJeiYEeFWTkFfE86Vq-%2CEND
+#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🎬电影频道",淘电影
+http://dsj.motem.top:8880/bptv/10000100000000050000000003887498.m3u8
+#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🎬电影频道",淘电影
+http://yc.myds.me:35455/bptv/10000100000000050000000003887498.m3u8
+#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🎬电影频道",淘电影
+http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226552/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EXOsrWMA-UCdUl1hQSR9EKw%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNNg3bzRax0E9tLmO9xgXVx8%2CEND
 #EXTINF:-1 tvg-name="经典电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/经典电影.png" group-title="🎬电影频道",经典电影
 https://lunbo.freetv.top/yy/1450556636
 #EXTINF:-1 tvg-name="靖天戏剧" tvg-logo="https://itv.shrimp.cloudns.biz/logo/靖天戏剧.png" group-title="🎬电影频道",靖天戏剧
@@ -2309,10 +2317,6 @@ http://gat.bkpcp.top/ymg.php?id=yxfy
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000011000288003/index.m3u8?channel-id=bestzb&Contentid=5000000011000288003&livemode=1&stbId=YanG-1989
 #EXTINF:-1 tvg-name="音乐之声" tvg-logo="https://itv.shrimp.cloudns.biz/logo/音乐之声.png" group-title="🎵音乐频道",音乐之声
 https://radio.0472.org/?id=641
-#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云音乐.png" group-title="🎵音乐频道",风云音乐
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8
-#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云音乐.png" group-title="🎵音乐频道",风云音乐
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8
 #EXTINF:-1 tvg-name="JJ斗地主" tvg-logo="https://itv.shrimp.cloudns.biz/logo/JJ斗地主.png" group-title="🏀体育频道",JJ斗地主
 https://lunbo.freetv.top/douyu/488743
 #EXTINF:-1 tvg-name="JJ斗地主" tvg-logo="https://itv.shrimp.cloudns.biz/logo/JJ斗地主.png" group-title="🏀体育频道",JJ斗地主
@@ -2491,6 +2495,80 @@ http://tv.666150.xyz/huya.php?id=26355861
 https://lunbo.freetv.top/yy/1354658049
 #EXTINF:-1 tvg-name="鹿鼎记" tvg-logo="https://itv.shrimp.cloudns.biz/logo/鹿鼎记.png" group-title="🏛经典剧场",鹿鼎记
 https://live.metshop.top/yy/28265277
+#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://itv.shrimp.cloudns.biz/logo/世界地理.png" group-title="💰央视付费频道",世界地理
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8
+#EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://itv.shrimp.cloudns.biz/logo/兵器科技.png" group-title="💰央视付费频道",兵器科技
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8
+#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/央视台球.png" group-title="💰央视付费频道",央视台球
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8
+#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://itv.shrimp.cloudns.biz/logo/女性时尚.png" group-title="💰央视付费频道",女性时尚
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8
+#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/怀旧剧场.png" group-title="💰央视付费频道",怀旧剧场
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8
+#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://itv.shrimp.cloudns.biz/logo/文化精品.png" group-title="💰央视付费频道",文化精品
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8
+#EXTINF:-1 tvg-name="电视指南" tvg-logo="https://itv.shrimp.cloudns.biz/logo/电视指南.png" group-title="💰央视付费频道",电视指南
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8
+#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/第一剧场.png" group-title="💰央视付费频道",第一剧场
+https://live.tvfix.org/live/cmc/index.m3u8
+#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/第一剧场.png" group-title="💰央视付费频道",第一剧场
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8
+#EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云剧场.png" group-title="💰央视付费频道",风云剧场
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8
+#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云音乐.png" group-title="💰央视付费频道",风云音乐
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8
+#EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云音乐.png" group-title="💰央视付费频道",风云音乐
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8
+#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://z.b.bkpcp.top/m.php?id=ymkt
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225656/index.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225656/2.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221227007/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EhHDWGhkwx_zJcJUYE9TAaA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://wouu.net:9977/udp/239.93.0.251:5140
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226932/1.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://z.b.bkpcp.top/m.php?id=ymkt
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225656/index.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225656/2.m3u8
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221227007/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EhHDWGhkwx_zJcJUYE9TAaA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://wouu.net:9977/udp/239.93.0.251:5140
+#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="📡卫视频道",优漫卡通
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226932/1.m3u8
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://221.13.233.150:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://221.13.232.222:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://221.13.233.123:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://42.238.234.180:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://219.141.44.245:8188/udp/238.255.2.55:5999
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225653/index.m3u8
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225653/index.m3u8
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225653/2.m3u8
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://wouu.net:9977/udp/239.93.0.108:5140
+#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="📡卫视频道",金鹰卡通
+http://dsj.motem.top:8880/bptv/10000100000000050000000004796942.m3u8
 #EXTINF:-1 tvg-name="24H国漫热播" tvg-logo="https://itv.shrimp.cloudns.biz/logo/24H国漫热播.png" group-title="🪁动漫频道",24H国漫热播
 https://lunbo.freetv.top/yy/1353937086
 #EXTINF:-1 tvg-name="24H国漫热播" tvg-logo="https://itv.shrimp.cloudns.biz/logo/24H国漫热播.png" group-title="🪁动漫频道",24H国漫热播
@@ -2501,34 +2579,6 @@ http://tv.666150.xyz/huya.php?id=11601966
 https://live.metshop.top/huya/11342413
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://itv.shrimp.cloudns.biz/logo/中华小当家.png" group-title="🪁动漫频道",中华小当家
 http://tv.666150.xyz/huya.php?id=11342413
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://z.b.bkpcp.top/m.php?id=ymkt
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225656/index.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225656/2.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221227007/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EhHDWGhkwx_zJcJUYE9TAaA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://wouu.net:9977/udp/239.93.0.251:5140
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226932/1.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://z.b.bkpcp.top/m.php?id=ymkt
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225656/index.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a0b:df::4005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225656/index.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225656/2.m3u8
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://otttv.bj.chinamobile.com/PLTV/88888888/224/3221227007/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EhHDWGhkwx_zJcJUYE9TAaA%7EtP4-l0lmSfjwLWEfK_el1vH_mv-s1zo4AQJwdedaVwG9xkuFTDg8J26cwOrNJzn20BErrHdLhuZ9EzLUCD3PMW-OMx4MGteHV2vLeW6BqoY%2CEND
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://wouu.net:9977/udp/239.93.0.251:5140
-#EXTINF:-1 tvg-name="优漫卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/优漫卡通.png" group-title="🪁动漫频道",优漫卡通
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226932/1.m3u8
 #EXTINF:-1 tvg-name="动漫秀场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/动漫秀场.png" group-title="🪁动漫频道",动漫秀场
 http://[2409:8087:1e03:21::42]:6610/cms001/ch00000090990000001196/index.m3u8
 #EXTINF:-1 tvg-name="动漫秀场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/动漫秀场.png" group-title="🪁动漫频道",动漫秀场
@@ -2571,26 +2621,6 @@ https://www.goodiptv.club/yy/22777075
 https://www.goodiptv.club/yy/24180320
 #EXTINF:-1 tvg-name="蜡笔小新" tvg-logo="https://itv.shrimp.cloudns.biz/logo/蜡笔小新.png" group-title="🪁动漫频道",蜡笔小新
 http://www.douzhicloud.site:35455/bilibili/30837590
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://221.13.233.150:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://221.13.232.222:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://221.13.233.123:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://42.238.234.180:9901/tsfile/live/0136_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://219.141.44.245:8188/udp/238.255.2.55:5999
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225653/index.m3u8
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://[2409:8087:1a0b:df::4008]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225653/index.m3u8
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221225653/2.m3u8
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://wouu.net:9977/udp/239.93.0.108:5140
-#EXTINF:-1 tvg-name="金鹰卡通" tvg-logo="https://itv.shrimp.cloudns.biz/logo/金鹰卡通.png" group-title="🪁动漫频道",金鹰卡通
-http://dsj.motem.top:8880/bptv/10000100000000050000000004796942.m3u8
 #EXTINF:-1 tvg-name="青春动漫" tvg-logo="https://itv.shrimp.cloudns.biz/logo/青春动漫.png" group-title="🪁动漫频道",青春动漫
 http://wouu.net:9977/udp/239.93.0.146:5140
 #EXTINF:-1 tvg-name="青春动漫" tvg-logo="https://itv.shrimp.cloudns.biz/logo/青春动漫.png" group-title="🪁动漫频道",青春动漫
@@ -2611,41 +2641,9 @@ http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/
 http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225662/index.m3u8
 #EXTINF:-1 tvg-name="黑莓动画" tvg-logo="https://itv.shrimp.cloudns.biz/logo/黑莓动画.png" group-title="🪁动漫频道",黑莓动画
 http://ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225662/index.m3u8
-#EXTINF:-1 tvg-name="2025-07-05 20:37:43" tvg-logo="https://itv.shrimp.cloudns.biz/logo/20250705 20:37:43.png" group-title="🏮其他频道",2025-07-05 20:37:43
-https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/stream05/streamPlaylist.m3u8
-#EXTINF:-1 tvg-name="世界地理" tvg-logo="https://itv.shrimp.cloudns.biz/logo/世界地理.png" group-title="🏮其他频道",世界地理
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8
-#EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://itv.shrimp.cloudns.biz/logo/兵器科技.png" group-title="🏮其他频道",兵器科技
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8
-#EXTINF:-1 tvg-name="叶县" tvg-logo="https://itv.shrimp.cloudns.biz/logo/叶县.png" group-title="🏮其他频道",叶县
-http://tvpull.dxhmt.cn:9081/tv/10422-1.m3u8#
-#EXTINF:-1 tvg-name="央视台球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/央视台球.png" group-title="🏮其他频道",央视台球
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8
-#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://itv.shrimp.cloudns.biz/logo/女性时尚.png" group-title="🏮其他频道",女性时尚
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8
-#EXTINF:-1 tvg-name="广西贺州" tvg-logo="https://itv.shrimp.cloudns.biz/logo/广西贺州.png" group-title="🏮其他频道",广西贺州
+#EXTINF:-1 tvg-name="广西贺州" tvg-logo="https://itv.shrimp.cloudns.biz/logo/广西贺州.png" group-title="🏛其他频道",广西贺州
 http://zhz.gxhzxw.com:2935/live/HZXW-HD/chunklist.m3u8
-#EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/怀旧剧场.png" group-title="🏮其他频道",怀旧剧场
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8
-#EXTINF:-1 tvg-name="文化精品" tvg-logo="https://itv.shrimp.cloudns.biz/logo/文化精品.png" group-title="🏮其他频道",文化精品
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8
-#EXTINF:-1 tvg-name="淘娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘娱乐.png" group-title="🏮其他频道",淘娱乐
+#EXTINF:-1 tvg-name="淘娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘娱乐.png" group-title="🏛其他频道",淘娱乐
 http://dsj.motem.top:8880/bptv/10000100000000050000000003887499.m3u8
-#EXTINF:-1 tvg-name="淘娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘娱乐.png" group-title="🏮其他频道",淘娱乐
+#EXTINF:-1 tvg-name="淘娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘娱乐.png" group-title="🏛其他频道",淘娱乐
 http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226551/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7Ex0efg9fpenP8E8lWJUb5Lg%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNNg3bzRax0E9tLmO9xgXVx8%2CEND
-#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🏮其他频道",淘电影
-http://dsj.motem.top:8880/bptv/10000100000000050000000003887498.m3u8
-#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🏮其他频道",淘电影
-http://yc.myds.me:35455/bptv/10000100000000050000000003887498.m3u8
-#EXTINF:-1 tvg-name="淘电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘电影.png" group-title="🏮其他频道",淘电影
-http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226552/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EXOsrWMA-UCdUl1hQSR9EKw%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNNg3bzRax0E9tLmO9xgXVx8%2CEND
-#EXTINF:-1 tvg-name="电视指南" tvg-logo="https://itv.shrimp.cloudns.biz/logo/电视指南.png" group-title="🏮其他频道",电视指南
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8
-#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/第一剧场.png" group-title="🏮其他频道",第一剧场
-https://live.tvfix.org/live/cmc/index.m3u8
-#EXTINF:-1 tvg-name="第一剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/第一剧场.png" group-title="🏮其他频道",第一剧场
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8
-#EXTINF:-1 tvg-name="风云剧场" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云剧场.png" group-title="🏮其他频道",风云剧场
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8
-#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/高尔夫网球.png" group-title="🏮其他频道",高尔夫网球
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8
