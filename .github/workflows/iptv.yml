@@ -31,11 +31,14 @@ jobs:
       run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
     
 
-    - name: Update README.md with run time and file link
+    - name: Update README.md with run time and file links
       run: |
-        file_link="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref }}/Internet_iTV.m3u"  # 生成的文件是 Internet_iTV.m3u
+        m3u_link="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref }}/Internet_iTV.m3u"
+        txt_link="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref }}/Internet_iTV.txt"
+        
         sed -i "s|<!-- Last Run Time -->.*|<!-- Last Run Time --> ${GET_TIME}|" README.md
-        sed -i "s|<!-- Generated File Link -->.*|<!-- Generated File Link --> [View Generated File](${file_link})|" README.md
+        sed -i "s|<!-- M3U File Link -->.*|<!-- M3U File Link --> [M3U播放列表](${m3u_link})|" README.md
+        sed -i "s|<!-- TXT File Link -->.*|<!-- TXT File Link --> [TXT频道列表](${txt_link})|" README.md
        
 
     - name: Commit changes
@@ -45,6 +48,9 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git remote set-url origin $REPO_URL
-        git add README.md Internet_iTV.m3u
+        
+        # 添加所有生成的文件
+        git add README.md Internet_iTV.m3u Internet_iTV.txt
+        
         git commit -am "自动更新：${GET_TIME}"
         git push origin main
