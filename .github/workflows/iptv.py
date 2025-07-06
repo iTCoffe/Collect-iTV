@@ -148,7 +148,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件和 TXT 文件
 def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_filename, txt_filename):
-    """生成排序后的 M3U 文件和 TXT 文件"""
+    """生成排序后的 M3U 文件和 TXT 文件（TXT 按照分组结构输出）"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -313,13 +313,84 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             
     print(f"🎉 Generated M3U file: {m3u_filename}")
     
-    # 写入 TXT 文件
+    # 写入结构化的 TXT 文件 (按分组结构输出)
     with open(txt_filename, 'w', encoding='utf-8') as f:
+        # 1. 按分组收集频道
+        grouped_channels = defaultdict(list)
         for channel_info in deduped_channels:
-            # 写入 TXT 格式: 频道名称,URL
-            f.write(f"{channel_info['channel']},{channel_info['url']}\n")
-            
-    print(f"🎉 Generated TXT file: {txt_filename}")
+            grouped_channels[channel_info['group_title']].append(channel_info)
+        
+        # 2. 定义分组排序优先级
+        group_order = [
+            "📺央视频道",
+            "📡卫视频道",
+            "💰央视付费频道",
+            "🚃重庆频道",
+            "🚄四川频道",
+            "🚅云南频道",
+            "🚈安徽频道",
+            "🚝福建频道",
+            "🚋甘肃频道",
+            "🚌广东频道",
+            "🚎广西频道",
+            "🚐贵州频道",
+            "🚑海南频道",
+            "🚒河北频道",
+            "🚓河南频道",
+            "🚕黑龙江频道",
+            "🚗湖北频道",
+            "🚙湖南频道",
+            "🚚吉林频道",
+            "🚂江苏频道",
+            "🚛江西频道",
+            "🚜辽宁频道",
+            "🏎️内蒙古频道",
+            "🏍️宁夏频道",
+            "🛵青海频道",
+            "🦽山东频道",
+            "🦼山西频道",
+            "🛺陕西频道",
+            "🚲上海频道",
+            "🛴天津频道",
+            "🛹新疆频道",
+            "🚞浙江频道",
+            "🛩️北京频道",
+            "🏍️港澳台频道",
+            "🎥咪咕视频",
+            "🎬影视剧频道",
+            "🎮游戏频道",
+            "🎵音乐频道",
+            "🏀体育频道",
+            "🏛经典剧场",
+            "🚁直播中国",
+            "🏮历年春晚",
+            "🪁动漫频道",
+            "🧮其他频道"
+        ]
+        
+        # 3. 按优先级输出分组
+        for group in group_order:
+            if group in grouped_channels and grouped_channels[group]:
+                # 添加分组标题
+                f.write(f"\n# {group}\n")
+                
+                # 按频道名称排序并输出
+                channels = sorted(grouped_channels[group], key=lambda x: x['channel'])
+                for channel_info in channels:
+                    f.write(f"{channel_info['channel']},{channel_info['url']}\n")
+        
+        # 4. 处理可能漏掉的分组
+        for group, channels in grouped_channels.items():
+            if group not in group_order and channels:
+                # 添加分组标题
+                f.write(f"\n# {group}\n")
+                
+                # 按频道名称排序并输出
+                channels = sorted(channels, key=lambda x: x['channel'])
+                for channel_info in channels:
+                    f.write(f"{channel_info['channel']},{channel_info['url']}\n")
+                    
+    print(f"🎉 Generated structured TXT file: {txt_filename}")
 
 
 # 主函数：处理多个文件并生成输出文件
