@@ -149,135 +149,188 @@ async def read_and_test_file(file_path, is_m3u=False):
 # 生成排序后的 M3U 文件和 TXT 文件
 def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_filename, txt_filename):
     """生成排序后的 M3U 文件和 TXT 文件（TXT 按照分组结构输出）"""
-    cctv_channels_list = []
-    province_channels_list = defaultdict(list)
-    satellite_channels = []
-    other_channels = []
+    # 分类容器
+    cctv_channels_list = []              # 1. 央视频道
+    cctv_pay_channels_list = []          # 2. 央视付费频道
+    satellite_channels = []              # 3. 卫视频道
+    province_channels_dict = {}          # 4. 地方频道（按省份存储）
+    other_categories_dict = defaultdict(list)  # 5. 其他类别（咪咕、动漫等）
+    other_channels = []                  # 6. 其他频道
     
     # 构建四连字索引（优化匹配准确率）
     quadgram_to_province = defaultdict(set)
-
     # 获取动态关键词，用于过滤含时间名字的源
     filter_keywords = get_dynamic_keywords()
-
-    # 遍历所有省份的所有频道，构建四连字索引
+    
+    # 预定义其他类别关键词映射
+    other_categories = {
+        "🚸少儿频道": ["少儿"],
+        "🎥咪咕视频": ["咪咕"],
+        "🎬影视剧频道": ["影视", "剧场", "影视剧"],
+        "🎮游戏频道": ["游戏"],
+        "🎵音乐频道": ["音乐"],
+        "🏀体育频道": ["体育"],
+        "🏛经典剧场": ["经典剧场"],
+        "🚁直播中国": ["直播中国"],
+        "🪁动漫频道": ["动漫", "卡通"]
+    }
+    
+    # 定义地方省份顺序
+    province_order = [
+        "🚃重庆频道", "🚄四川频道", "🚅云南频道", "🚈安徽频道", "🚝福建频道", 
+        "🚋甘肃频道", "🚌广东频道", "🚎广西频道", "🚐贵州频道", "🚑海南频道", 
+        "🚒河北频道", "🚓河南频道", "🚕黑龙江频道", "🚗湖北频道", "🚙湖南频道", 
+        "🚚吉林频道", "🚂江苏频道", "🚛江西频道", "🚜辽宁频道", "🏎️内蒙古频道", 
+        "🏍️宁夏频道", "🛵青海频道", "🦽山东频道", "🦼山西频道", "🛺陕西频道", 
+        "🚲上海频道", "🛴天津频道", "🛹新疆频道", "🚞浙江频道", "🛩️北京频道", 
+        "🏍️港澳台频道"
+    ]
+    
+    # 构建四连字索引
     for province, channels in province_channels.items():
         for channel_name in channels:
-            # 添加原始词序的四连字
             if len(channel_name) >= 4:
-                # 为频道名创建所有可能的四连字组合
                 for i in range(len(channel_name) - 3):
                     quadgram = channel_name[i:i+4]
                     quadgram_to_province[quadgram].add(province)
-
+    
     # 处理所有有效的URL，过滤含时间名字的源
     for channel, url, orig_logo in valid_urls:
         # 过滤包含日期或关键词的源
         if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
-            continue  # 跳过含时间名字的源
+            continue
         
         # 正规化 CCTV 频道名
         normalized_channel = normalize_cctv_name(channel)
-
-        # 根据频道名判断属于哪个分组
-        found_province = None
         
-        # 1. 首先检查是否是CCTV频道
+        # 1. 检查是否是CCTV频道（包括付费）
         if normalized_channel in cctv_channels:
-            cctv_channels_list.append({
-                "channel": channel,
-                "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
-                "group_title": "📺央视频道"
-            })
-        # 2. 检查是否是卫视频道
-        elif "卫视" in channel:  # 卫视频道
+            if "付费" in channel:
+                cctv_pay_channels_list.append({
+                    "channel": channel,
+                    "url": url,
+                    "logo": orig_logo,
+                    "group_title": "💰央视付费频道"
+                })
+            else:
+                cctv_channels_list.append({
+                    "channel": channel,
+                    "url": url,
+                    "logo": orig_logo,
+                    "group_title": "📺央视频道"
+                })
+            continue
+                
+        # 3. 检查是否是卫视频道
+        if "卫视" in channel:
             satellite_channels.append({
                 "channel": channel,
                 "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
+                "logo": orig_logo,
                 "group_title": "📡卫视频道"
             })
-        # 3. 处理地方台频道
-        else:
-            # 优化中文四连字匹配
-            province_scores = defaultdict(int)
+            continue
             
-            # 1. 精确匹配：检查频道名称是否完整包含在频道字符串中
-            for province, channels in province_channels.items():
-                for channel_name in channels:
-                    if channel_name in channel:
-                        found_province = province
-                        break
-                if found_province:
+        # 5. 检查是否属于其他类别（咪咕、动漫等）
+        matched_category = None
+        for category, keywords in other_categories.items():
+            if any(keyword in channel for keyword in keywords):
+                matched_category = category
+                break
+                
+        if matched_category:
+            other_categories_dict[matched_category].append({
+                "channel": channel,
+                "url": url,
+                "logo": orig_logo,
+                "group_title": matched_category
+            })
+            continue
+            
+        # 4. 处理地方台频道
+        found_province = None
+        
+        # 精确匹配
+        for province, channels in province_channels.items():
+            for channel_name in channels:
+                if channel_name in channel:
+                    found_province = province
                     break
-            
-            # 2. 四连字匹配（使用更长的特征词提高准确性）
-            if not found_province and len(channel) >= 4:
-                # 为频道创建所有可能的四连字组合
-                for i in range(len(channel) - 3):
-                    quadgram = channel[i:i+4]
-                    # 查找匹配的省份
-                    if quadgram in quadgram_to_province:
-                        for province in quadgram_to_province[quadgram]:
-                            # 四连字匹配加更多权重
-                            province_scores[province] += 2
-            
-            # 找到分数最高的省份
+            if found_province:
+                break
+                
+        # 四连字匹配
+        if not found_province and len(channel) >= 4:
+            province_scores = defaultdict(int)
+            for i in range(len(channel) - 3):
+                quadgram = channel[i:i+4]
+                if quadgram in quadgram_to_province:
+                    for province in quadgram_to_province[quadgram]:
+                        province_scores[province] += 2
+                        
             if province_scores:
                 max_score = max(province_scores.values())
                 best_provinces = [p for p, s in province_scores.items() if s == max_score]
-                # 如果有多个分数相同的省份，选择名称最短的（更具体）
                 found_province = min(best_provinces, key=len) if best_provinces else None
-            
-            # 根据匹配结果分类频道
-            if found_province:
-                province_channels_list[found_province].append({
-                    "channel": channel,
-                    "url": url,
-                    "logo": orig_logo,  # 直接使用原始logo
-                    "group_title": f"{found_province}"
-                })
-            else:
-                # 最后的防线：查找包含"台"字的频道
-                if "台" in channel:
-                    province_channels_list["🧮其他频道"].append({
-                        "channel": channel,
-                        "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🧮其他频道"
-                    })
-                else:
-                    other_channels.append({
-                        "channel": channel,
-                        "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🧮其他频道"
-                    })
+        
+        # 匹配成功后加入相应省份
+        if found_province:
+            # 初始化省份列表（如果尚未存在）
+            if found_province not in province_channels_dict:
+                province_channels_dict[found_province] = []
+                
+            province_channels_dict[found_province].append({
+                "channel": channel,
+                "url": url,
+                "logo": orig_logo,
+                "group_title": found_province
+            })
+        else:
+            # 6. 其他频道
+            other_channels.append({
+                "channel": channel,
+                "url": url,
+                "logo": orig_logo,
+                "group_title": "🎯樂玩公社"  # 更改名称
+            })
 
     # --- URL去重逻辑开始 ---
-    # 按分组优先级排序 (CCTV -> 卫视 -> 省份 -> 其他)
+    # 按分组优先级排序 (1.央视 -> 2.央视付费 -> 3.卫视 -> 4.地方频道 -> 5.其他类别 -> 6.其他)
     all_groups = [
         ("📺央视频道", cctv_channels_list),
+        ("💰央视付费频道", cctv_pay_channels_list),
         ("📡卫视频道", satellite_channels)
     ]
     
-    # 添加省份频道（按省份名称排序）
-    for province in sorted(province_channels_list.keys()):
-        if province == "🧮其他频道":
-            continue  # 其他频道单独处理
-        all_groups.append((province, province_channels_list[province]))
+    # 4. 添加地方频道（按预定义省份顺序）
+    for province in province_order:
+        if province in province_channels_dict:
+            all_groups.append((province, province_channels_dict[province]))
     
-    # 添加其他频道
-    all_groups.append(("🧮其他频道", province_channels_list.get("🧮其他频道", [])))
-    all_groups.append(("🧮其他频道", other_channels))
+    # 5. 添加其他类别（按预定义顺序）
+    for category in [
+        "🎥咪咕视频", "🪁动漫频道", "🚸少儿频道", "🎬影视剧频道",
+        "🎮游戏频道", "🎵音乐频道", "🏀体育频道", "🏛经典剧场",
+        "🚁直播中国"
+    ]:
+        if category in other_categories_dict:
+            all_groups.append((category, other_categories_dict[category]))
+    
+    # 6. 添加历年春晚分组到其他频道之前
+    if "🏮历年春晚" in other_categories_dict:
+        all_groups.append(("🏮历年春晚", other_categories_dict["🏮历年春晚"]))
+    
+    # 7. 添加乐玩公社
+    if other_channels:
+        all_groups.append(("🎯樂玩公社", other_channels))
 
     # 使用字典根据URL去重（保留每个URL第一次出现的频道）
     seen_urls = set()
     deduped_channels = []
     
     for group_title, channels in all_groups:
-        if not channels: continue
+        if not channels: 
+            continue
             
         # 排序当前分组内的频道
         channels.sort(key=lambda x: x["channel"])
@@ -301,18 +354,16 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         
         # 写入频道信息
         for channel_info in deduped_channels:
-            # 生成频道ID（去除-符号的频道名）
+            # 生成频道ID
             channel_id = channel_info['channel'].replace('-', '')
             
-            # 处理logo地址：替换为指定域名
+            # 处理logo地址
             logo_url = ""
-            if channel_info['logo']:  # 如果有原始logo信息
-                # 提取文件名部分
+            if channel_info['logo']:
                 logo_filename = channel_info['logo'].split("/")[-1]
-                # 构造新的logo地址
                 logo_url = f"https://itv.shrimp.cloudns.biz/logo/{logo_filename}"
             
-            # 写入EXTINF行，使用新的logo地址
+            # 写入EXTINF行
             f.write(
                 f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{logo_url}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
             
@@ -328,73 +379,43 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         for channel_info in deduped_channels:
             grouped_channels[channel_info['group_title']].append(channel_info)
         
-        # 2. 定义分组排序优先级
+        # 2. 定义新的分组排序优先级
         group_order = [
+            # 1. 央视频道
             "📺央视频道",
-            "📡卫视频道",
+            # 2. 央视付费
             "💰央视付费频道",
-            "🚃重庆频道",
-            "🚄四川频道",
-            "🚅云南频道",
-            "🚈安徽频道",
-            "🚝福建频道",
-            "🚋甘肃频道",
-            "🚌广东频道",
-            "🚎广西频道",
-            "🚐贵州频道",
-            "🚑海南频道",
-            "🚒河北频道",
-            "🚓河南频道",
-            "🚕黑龙江频道",
-            "🚗湖北频道",
-            "🚙湖南频道",
-            "🚚吉林频道",
-            "🚂江苏频道",
-            "🚛江西频道",
-            "🚜辽宁频道",
-            "🏎️内蒙古频道",
-            "🏍️宁夏频道",
-            "🛵青海频道",
-            "🦽山东频道",
-            "🦼山西频道",
-            "🛺陕西频道",
-            "🚲上海频道",
-            "🛴天津频道",
-            "🛹新疆频道",
-            "🚞浙江频道",
-            "🛩️北京频道",
-            "🏍️港澳台频道",
-            "🚸少儿频道",
-            "🎥咪咕视频",
-            "🎬影视剧频道",
-            "🎮游戏频道",
-            "🎵音乐频道",
-            "🏀体育频道",
-            "🏛经典剧场",
-            "🚁直播中国",
+            # 3. 卫视频道
+            "📡卫视频道",
+            # 4. 地方频道
+            *province_order,
+            # 5. 其他类别
+            "🎥咪咕视频", "🪁动漫频道", "🚸少儿频道", "🎬影视剧频道",
+            "🎮游戏频道", "🎵音乐频道", "🏀体育频道", "🏛经典剧场",
+            "🚁直播中国", 
+            # 6. 历年春晚
             "🏮历年春晚",
-            "🪁动漫频道",
-            "🧮其他频道"
+            # 7. 樂玩公社
+            "🎯樂玩公社"
         ]
         
-        # 3. 按优先级输出分组
+        # 3. 按新优先级输出分组
         for group in group_order:
             if group in grouped_channels and grouped_channels[group]:
-                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
                 f.write(f"{group},#genre#\n")
                 
                 # 按频道名称排序并输出
                 channels = sorted(grouped_channels[group], key=lambda x: x['channel'])
                 for channel_info in channels:
                     f.write(f"{channel_info['channel']},{channel_info['url']}\n")
+                
+                # 删除已处理的分组
+                del grouped_channels[group]
         
         # 4. 处理可能漏掉的分组
         for group, channels in grouped_channels.items():
-            if group not in group_order and channels:
-                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
+            if channels:
                 f.write(f"{group},#genre#\n")
-                
-                # 按频道名称排序并输出
                 channels = sorted(channels, key=lambda x: x['channel'])
                 for channel_info in channels:
                     f.write(f"{channel_info['channel']},{channel_info['url']}\n")
