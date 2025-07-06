@@ -30,7 +30,8 @@ def contains_date(text):
 CONFIG = {
     "timeout": 10,  # Timeout in seconds
     "max_parallel": 30,  # Max concurrent requests
-    "output_file": "Internet_iTV.m3u",  # Output file for the sorted M3U
+    "output_m3u": "Internet_iTV.m3u",  # Output file for the sorted M3U
+    "output_txt": "Internet_iTV.txt",  # Output file for the TXT format
     "iptv_directory": "IPTV"  # Directory containing IPTV files
 }
 
@@ -145,9 +146,9 @@ async def read_and_test_file(file_path, is_m3u=False):
         return []
 
 
-# 生成排序后的 M3U 文件
-def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址，按URL去重"""
+# 生成排序后的 M3U 文件和 TXT 文件
+def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_filename, txt_filename):
+    """生成排序后的 M3U 文件和 TXT 文件"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -294,7 +295,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     # --- URL去重逻辑结束 ---
 
     # 写入 M3U 文件
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(m3u_filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
@@ -309,9 +310,19 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             
             # 写入频道URL
             f.write(f"{channel_info['url']}\n")
+            
+    print(f"🎉 Generated M3U file: {m3u_filename}")
+    
+    # 写入 TXT 文件
+    with open(txt_filename, 'w', encoding='utf-8') as f:
+        for channel_info in deduped_channels:
+            # 写入 TXT 格式: 频道名称,URL
+            f.write(f"{channel_info['channel']},{channel_info['url']}\n")
+            
+    print(f"🎉 Generated TXT file: {txt_filename}")
 
 
-# 主函数：处理多个文件并生成 M3U 输出
+# 主函数：处理多个文件并生成输出文件
 async def main(file_urls, cctv_channel_file, province_channel_files):
     """主函数处理多个文件"""
     # 加载 CCTV 频道列表
@@ -341,9 +352,14 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
     for valid_urls in results:
         all_valid_urls.extend(valid_urls)
 
-    # 生成排序后的 M3U 文件
-    generate_sorted_m3u(all_valid_urls, cctv_channels, province_channels, CONFIG["output_file"])
-    print(f"🎉 Generated sorted M3U file: {CONFIG['output_file']}")
+    # 生成输出文件
+    generate_output_files(
+        all_valid_urls, 
+        cctv_channels, 
+        province_channels, 
+        CONFIG["output_m3u"],
+        CONFIG["output_txt"]
+    )
 
 
 if __name__ == "__main__":
