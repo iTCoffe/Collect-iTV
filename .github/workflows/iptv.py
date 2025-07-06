@@ -84,25 +84,36 @@ def extract_urls_from_txt(content):
         line = line.strip()
         if line and ',' in line:  # 格式应该是: <频道名>,<URL>
             parts = line.split(',', 1)
-            urls.append(parts)  # 提取频道名和 URL
+            urls.append((parts[0], parts[1], None))  # 提取频道名、URL和logo (TXT没有logo)
     return urls
 
 
 # 从 M3U 文件中提取 IPTV 链接
 def extract_urls_from_m3u(content):
-    """从 M3U 文件中提取 IPTV 链接"""
+    """从 M3U 文件中提取 IPTV 链接及原始logo"""
     urls = []
     lines = content.splitlines()
-    channel = "Unknown"
+    current_channel = "Unknown"
+    current_logo = None  # 存储当前频道的原始logo
 
     for line in lines:
         line = line.strip()
         if line.startswith("#EXTINF:"):
-            # 从 EXTINF 标签中提取频道名
+            # 解析频道信息
+            current_logo = None  # 重置logo
+            # 尝试提取tvg-logo属性
+            match = re.search(r'tvg-logo="([^"]+)"', line)
+            if match:
+                current_logo = match.group(1)
+                
+            # 提取频道名称（逗号后的部分）
             parts = line.split(',', 1)
-            channel = parts[1] if len(parts) > 1 else "Unknown"
+            current_channel = parts[1] if len(parts) > 1 else "Unknown"
+            
         elif line.startswith(('http://', 'https://')):
-            urls.append((channel, line))  # 存储频道和 URL 的元组
+            # 存储频道名、URL和原始logo（如果存在）
+            urls.append((current_channel, line, current_logo))
+            current_logo = None  # 重置当前logo
     return urls
 
 
@@ -136,7 +147,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，使用改进的三连字匹配"""
+    """生成排序后的 M3U 文件，使用改进的三连字匹配，优先使用原始logo地址"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -159,14 +170,20 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     trigram_to_province[trigram].add(province)
 
     # 处理所有有效的URL，过滤含时间名字的源
-    for channel, url in valid_urls:
+    for channel, url, orig_logo in valid_urls:
         # 过滤包含日期或关键词的源
         if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
             continue  # 跳过含时间名字的源
         
-        # 创建去除横杠的频道名用于logo
+        # 创建去除横杠的频道名用于logo（备用）
         logo_channel = channel.replace('-', '')
         
+        # 使用原始logo（如果存在且有效），否则使用生成的地址
+        if orig_logo and orig_logo.startswith(('http://', 'https://')):
+            final_logo = orig_logo
+        else:
+            final_logo = f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png"
+
         # 正规化 CCTV 频道名
         normalized_channel = normalize_cctv_name(channel)
 
@@ -178,7 +195,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             cctv_channels_list.append({
                 "channel": channel,
                 "url": url,
-                "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                "logo": final_logo,
                 "group_title": "📺央视频道"
             })
         # 2. 检查是否是卫视频道
@@ -186,7 +203,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             satellite_channels.append({
                 "channel": channel,
                 "url": url,
-                "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                "logo": final_logo,
                 "group_title": "📡卫视频道"
             })
         # 3. 处理地方台频道
@@ -225,14 +242,14 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 province_channels_list[found_province].append({
                     "channel": channel,
                     "url": url,
-                    "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                    "logo": final_logo,
                     "group_title": f"{found_province}"
                 })
             else:
                 other_channels.append({
                     "channel": channel,
                     "url": url,
-                    "logo": f"https://itv.shrimp.cloudns.biz/logo/{logo_channel}.png",
+                    "logo": final_logo,
                     "group_title": "🏛其他频道"
                 })
 
