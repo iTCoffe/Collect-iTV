@@ -240,18 +240,18 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             else:
                 # 最后的防线：查找包含"台"字的频道
                 if "台" in channel:
-                    province_channels_list["🏮其他频道"].append({
+                    province_channels_list["🧮其他频道"].append({
                         "channel": channel,
                         "url": url,
                         "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🏮其他频道"
+                        "group_title": "🧮其他频道"
                     })
                 else:
                     other_channels.append({
                         "channel": channel,
                         "url": url,
                         "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🏮其他频道"
+                        "group_title": "🧮其他频道"
                     })
 
     # 排序：省份频道列表按照省份名称排序
@@ -367,6 +367,7 @@ if __name__ == "__main__":
         ".github/workflows/IPTV/☘️云南频道.txt",
         ".github/workflows/IPTV/☘️浙江频道.txt",
         ".github/workflows/IPTV/☘️北京频道.txt",
+        ".github/workflows/IPTV/🏍️港澳台频道.txt",
         ".github/workflows/IPTV/🎥咪咕视频.txt",
         ".github/workflows/IPTV/🎬影视剧频道.txt",
         ".github/workflows/IPTV/🎮游戏频道.txt",
