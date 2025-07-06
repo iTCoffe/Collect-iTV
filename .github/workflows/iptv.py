@@ -271,7 +271,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     # 写入 M3U 文件
     with open(filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
-        f.write("#EXTM3U x-tvg-url=\"https://erw.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
+        f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
         # 写入频道信息
         for channel_info in all_channels:
