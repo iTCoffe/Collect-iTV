@@ -304,9 +304,17 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             # 生成频道ID（去除-符号的频道名）
             channel_id = channel_info['channel'].replace('-', '')
             
-            # 写入EXTINF行，保持原始logo地址
+            # 处理logo地址：替换为指定域名
+            logo_url = ""
+            if channel_info['logo']:  # 如果有原始logo信息
+                # 提取文件名部分
+                logo_filename = channel_info['logo'].split("/")[-1]
+                # 构造新的logo地址
+                logo_url = f"https://itv.shrimp.cloudns.biz/logo/{logo_filename}"
+            
+            # 写入EXTINF行，使用新的logo地址
             f.write(
-                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
+                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{logo_url}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
             
             # 写入频道URL
             f.write(f"{channel_info['url']}\n")
