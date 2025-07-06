@@ -385,19 +385,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 
                 # 按频道名称排序并输出
                 channels = sorted(grouped_channels[group], key=lambda x: x['channel'])
-                
-                # 添加对齐处理
-                # 计算当前分组中最长的频道名称长度
-                max_length = max(len(channel_info['channel']) for channel_info in channels)
-                
                 for channel_info in channels:
-                    channel_name = channel_info['channel']
-                    # 添加空格填充以实现对齐
-                    padded_channel = channel_name.ljust(max_length)
-                    f.write(f"{padded_channel},{channel_info['url']}\n")
-                
-                # 每个分组后添加空行
-                f.write("\n")
+                    f.write(f"{channel_info['channel']},{channel_info['url']}\n")
         
         # 4. 处理可能漏掉的分组
         for group, channels in grouped_channels.items():
@@ -407,19 +396,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 
                 # 按频道名称排序并输出
                 channels = sorted(channels, key=lambda x: x['channel'])
-                
-                # 添加对齐处理
-                # 计算当前分组中最长的频道名称长度
-                max_length = max(len(channel_info['channel']) for channel_info in channels)
-                
                 for channel_info in channels:
-                    channel_name = channel_info['channel']
-                    # 添加空格填充以实现对齐
-                    padded_channel = channel_name.ljust(max_length)
-                    f.write(f"{padded_channel},{channel_info['url']}\n")
-                
-                # 每个分组后添加空行
-                f.write("\n")
+                    f.write(f"{channel_info['channel']},{channel_info['url']}\n")
                     
     print(f"🎉 Generated structured TXT file: {txt_filename}")
 
