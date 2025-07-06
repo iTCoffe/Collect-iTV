@@ -1921,6 +1921,8 @@ http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221
 http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226984/index.m3u8
 #EXTINF:-1 tvg-name="风云音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/风云音乐.png" group-title="💰央视付费频道",风云音乐
 http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8
+#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/高尔夫网球.png" group-title="💰央视付费频道",高尔夫网球
+http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8
 #EXTINF:-1 tvg-name=" ❌乐山大佛全景" tvg-logo="" group-title="🚁直播中国", ❌乐山大佛全景
 https://gcalic.v.myalicdn.com/gc/lsdfgfl_1/index.m3u8
 #EXTINF:-1 tvg-name=" ❌云南丽江古城万古楼遥望玉龙雪山" tvg-logo="" group-title="🚁直播中国", ❌云南丽江古城万古楼遥望玉龙雪山
@@ -2881,6 +2883,8 @@ http://live.zohi.tv:80/video/s10001-fztv-3/index.m3u8
 http://satellitepull.cnr.cn/live/wx32fjxwgb/playlist.m3u8
 #EXTINF:-1 tvg-name=" 福建经济" tvg-logo="https://itv.shrimp.cloudns.biz/logo/福建经济.png" group-title="🚝福建频道", 福建经济
 http://satellitepull.cnr.cn/live/wx32fjdnjjgb/playlist.m3u8
+#EXTINF:-1 tvg-name="CETV3" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CETV3.png" group-title="🚝福建频道",CETV-3
+http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8
 #EXTINF:-1 tvg-name="云霄综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/云霄综合.png" group-title="🚝福建频道",云霄综合
 http://live.zzyxxw.com:85/live/xwzh.m3u8
 #EXTINF:-1 tvg-name="云霄综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/云霄综合.png" group-title="🚝福建频道",云霄综合
@@ -3037,8 +3041,6 @@ http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
 https://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
 #EXTINF:-1 tvg-name=" 龙游生活娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/龙游生活娱乐.png" group-title="🚞浙江频道", 龙游生活娱乐
 https://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
-#EXTINF:-1 tvg-name="CETV3" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CETV3.png" group-title="🚞浙江频道",CETV-3
-http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8
 #EXTINF:-1 tvg-name="上虞文化影院" tvg-logo="https://itv.shrimp.cloudns.biz/logo/上虞文化影院.png" group-title="🚞浙江频道",上虞文化影院
 http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8?zzhed;http://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8zzhed
 #EXTINF:-1 tvg-name="上虞文化影院" tvg-logo="https://itv.shrimp.cloudns.biz/logo/上虞文化影院.png" group-title="🚞浙江频道",上虞文化影院
@@ -3281,8 +3283,6 @@ http://nas.hssvm.com:8888/udp/225.1.1.128:5002
 https://tvpull.smartwq.cn/wqlive/convergencemedia/playlist.m3u8?ztianjd
 #EXTINF:-1 tvg-name=" 津南一套" tvg-logo="https://itv.shrimp.cloudns.biz/logo/津南一套.png" group-title="🛴天津频道", 津南一套
 http://play.jinnantv.top/live/JNTV1.m3u8?ztianjd
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🛵青海频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 西宁新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/西宁新闻综合.png" group-title="🛵青海频道", 西宁新闻综合
 https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8
 #EXTINF:-1 tvg-name=" 西宁生活服务" tvg-logo="https://itv.shrimp.cloudns.biz/logo/西宁生活服务.png" group-title="🛵青海频道", 西宁生活服务
@@ -3325,6 +3325,8 @@ http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
 http://110.153.180.106:55555/out_1/index.m3u8?zxinjd
 #EXTINF:-1 tvg-name="石河子新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/石河子新闻综合.png" group-title="🛹新疆频道",石河子新闻综合
 http://124.88.144.73:1935/live/xwzh/playlist.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🛺陕西频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 乐家购物" tvg-logo="https://itv.shrimp.cloudns.biz/logo/乐家购物.png" group-title="🛺陕西频道", 乐家购物
 http://112.46.105.20:8009/hls/23/index.m3u8
 #EXTINF:-1 tvg-name=" 西安新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/西安新闻.png" group-title="🛺陕西频道", 西安新闻
@@ -3585,5 +3587,3 @@ https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d3
 https://newcntv.qcloudcdn.com/asp/hls/2000/0303000a/3/default/d2454bbb542d4613a9db478dab2addfd/2000.m3u8
 #EXTINF:-1 tvg-name="淘娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/淘娱乐.png" group-title="🧮其他频道",淘娱乐
 http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226551/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7Ex0efg9fpenP8E8lWJUb5Lg%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNNg3bzRax0E9tLmO9xgXVx8%2CEND
-#EXTINF:-1 tvg-name="高尔夫网球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/高尔夫网球.png" group-title="🧮其他频道",高尔夫网球
-http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8
