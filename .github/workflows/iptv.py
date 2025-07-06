@@ -147,7 +147,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址"""
+    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址，按URL去重"""
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -254,19 +254,44 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                         "group_title": "🧮其他频道"
                     })
 
-    # 排序：省份频道列表按照省份名称排序
-    for province in province_channels_list:
-        province_channels_list[province].sort(key=lambda x: x["channel"])
+    # --- URL去重逻辑开始 ---
+    # 按分组优先级排序 (CCTV -> 卫视 -> 省份 -> 其他)
+    all_groups = [
+        ("📺央视频道", cctv_channels_list),
+        ("📡卫视频道", satellite_channels)
+    ]
+    
+    # 添加省份频道（按省份名称排序）
+    for province in sorted(province_channels_list.keys()):
+        if province == "🧮其他频道":
+            continue  # 其他频道单独处理
+        all_groups.append((province, province_channels_list[province]))
+    
+    # 添加其他频道
+    all_groups.append(("🧮其他频道", province_channels_list.get("🧮其他频道", [])))
+    all_groups.append(("🧮其他频道", other_channels))
 
-    # 卫视频道和其他频道也排序
-    satellite_channels.sort(key=lambda x: x["channel"])
-    other_channels.sort(key=lambda x: x["channel"])
-
-    # 合并所有频道：CCTV -> 卫视频道 -> 省份频道 -> 其他
-    all_channels = cctv_channels_list + satellite_channels + \
-                   [channel for province in sorted(province_channels_list) for channel in
-                    province_channels_list[province]] + \
-                   other_channels
+    # 使用字典根据URL去重（保留每个URL第一次出现的频道）
+    seen_urls = set()
+    deduped_channels = []
+    
+    for group_title, channels in all_groups:
+        if not channels: continue
+            
+        # 排序当前分组内的频道
+        channels.sort(key=lambda x: x["channel"])
+        
+        for channel_info in channels:
+            url = channel_info["url"]
+            if url not in seen_urls:
+                seen_urls.add(url)
+                deduped_channels.append({
+                    "channel": channel_info["channel"],
+                    "url": url,
+                    "logo": channel_info["logo"],
+                    "group_title": group_title
+                })
+    # --- URL去重逻辑结束 ---
 
     # 写入 M3U 文件
     with open(filename, 'w', encoding='utf-8') as f:
@@ -274,7 +299,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
         # 写入频道信息
-        for channel_info in all_channels:
+        for channel_info in deduped_channels:
             # 生成频道ID（去除-符号的频道名）
             channel_id = channel_info['channel'].replace('-', '')
             
