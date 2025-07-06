@@ -310,7 +310,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 # 提取文件名部分
                 logo_filename = channel_info['logo'].split("/")[-1]
                 # 构造新的logo地址
-                logo_url = f"https://itv.shrimp.cloudns.biz/logo/{logo_filename}"
+                logo_url = f"https://itv.shrimp.cloudns.biz/{logo_filename}"
             
             # 写入EXTINF行，使用新的logo地址
             f.write(
