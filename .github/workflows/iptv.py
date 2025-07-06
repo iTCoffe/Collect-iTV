@@ -78,13 +78,17 @@ def normalize_cctv_name(channel_name):
 
 # 从 TXT 文件中提取 IPTV 链接
 def extract_urls_from_txt(content):
-    """从 TXT 文件中提取 IPTV 链接"""
+    """从 TXT 文件中提取 IPTV 链接，支持两种格式：
+    1. 频道名,URL (例如: CCTV-1 综合,http://example.com/stream)
+    2. 频道名,URL (例如: CCTV1,http://example.com/stream)"""
     urls = []
     for line in content.splitlines():
         line = line.strip()
-        if line and ',' in line:  # 格式应该是: <频道名>,<URL>
-            parts = line.split(',', 1)
-            urls.append((parts[0], parts[1], None))  # 提取频道名、URL和logo (TXT没有logo)
+        if line and ',' in line:  # 确保行包含逗号
+            # 使用正则表达式正确分割频道名和URL
+            match = re.match(r'^(.+?),(https?://\S+)', line)
+            if match:
+                urls.append((match.group(1), match.group(2), None))  # 提取频道名和URL
     return urls
 
 
