@@ -36,7 +36,7 @@ CONFIG = {
 
 
 # 读取 CCTV 频道列表
-def load_cctv_channels(file_path=".github/workflows/IPTV/CCTV.txt"):
+def load_cctv_channels(file_path=".github/workflows/iTV/CCTV.txt"):
     """从文件加载 CCTV 频道列表"""
     cctv_channels = set()
     try:
@@ -330,52 +330,52 @@ if __name__ == "__main__":
     ]
 
     # CCTV 频道文件（例如 IPTV/CCTV.txt）
-    cctv_channel_file = ".github/workflows/IPTV/CCTV.txt"
+    cctv_channel_file = ".github/workflows/iTV/CCTV.txt"
 
     # 省份频道文件列表
     province_channel_files = [
-        ".github/workflows/IPTV/💰央视付费频道.txt",
-        ".github/workflows/IPTV/📡卫视频道.txt",
-        ".github/workflows/IPTV/🚃重庆频道.txt",
-        ".github/workflows/IPTV/🚄四川频道.txt",
-        ".github/workflows/IPTV/🚅云南频道.txt",
-        ".github/workflows/IPTV/🚈安徽频道.txt",
-        ".github/workflows/IPTV/🚝福建频道.txt",
-        ".github/workflows/IPTV/🚋甘肃频道.txt",
-        ".github/workflows/IPTV/🚌广东频道.txt",
-        ".github/workflows/IPTV/🚎广西频道.txt",
-        ".github/workflows/IPTV/🚐贵州频道.txt",
-        ".github/workflows/IPTV/🚑海南频道.txt",
-        ".github/workflows/IPTV/🚒河北频道.txt",
-        ".github/workflows/IPTV/🚓河南频道.txt",
-        ".github/workflows/IPTV/🚕黑龙江频道.txt",
-        ".github/workflows/IPTV/🚗湖北频道.txt",
-        ".github/workflows/IPTV/🚙湖南频道.txt",
-        ".github/workflows/IPTV/🚚吉林频道.txt",
-        ".github/workflows/IPTV/🚂江苏频道.txt",
-        ".github/workflows/IPTV/🚛江西频道.txt",
-        ".github/workflows/IPTV/🚜辽宁频道.txt",
-        ".github/workflows/IPTV/🏎️内蒙古频道.txt",
-        ".github/workflows/IPTV/🏍️宁夏频道.txt",
-        ".github/workflows/IPTV/🛵青海频道.txt",
-        ".github/workflows/IPTV/🦽山东频道.txt",
-        ".github/workflows/IPTV/🦼山西频道.txt",
-        ".github/workflows/IPTV/🛺陕西频道.txt",
-        ".github/workflows/IPTV/🚲上海频道.txt",
-        ".github/workflows/IPTV/🛴天津频道.txt",
-        ".github/workflows/IPTV/🛹新疆频道.txt",
-        ".github/workflows/IPTV/🚞浙江频道.txt",
-        ".github/workflows/IPTV/🛩️北京频道.txt",
-        ".github/workflows/IPTV/🏍️港澳台频道.txt",
-        ".github/workflows/IPTV/🎥咪咕视频.txt",
-        ".github/workflows/IPTV/🎬影视剧频道.txt",
-        ".github/workflows/IPTV/🎮游戏频道.txt",
-        ".github/workflows/IPTV/🎵音乐频道.txt",
-        ".github/workflows/IPTV/🏀体育频道.txt",
-        ".github/workflows/IPTV/🏛经典剧场.txt",
-        ".github/workflows/IPTV/🚁直播中国.txt",
-        ".github/workflows/IPTV/🏮历年春晚.txt",
-        ".github/workflows/IPTV/🪁动漫频道.txt"
+        ".github/workflows/iTV/💰央视付费频道.txt",
+        ".github/workflows/iTV/📡卫视频道.txt",
+        ".github/workflows/iTV/🚃重庆频道.txt",
+        ".github/workflows/iTV/🚄四川频道.txt",
+        ".github/workflows/iTV/🚅云南频道.txt",
+        ".github/workflows/iTV/🚈安徽频道.txt",
+        ".github/workflows/iTV/🚝福建频道.txt",
+        ".github/workflows/iTV/🚋甘肃频道.txt",
+        ".github/workflows/iTV/🚌广东频道.txt",
+        ".github/workflows/iTV/🚎广西频道.txt",
+        ".github/workflows/iTV/🚐贵州频道.txt",
+        ".github/workflows/iTV/🚑海南频道.txt",
+        ".github/workflows/iTV/🚒河北频道.txt",
+        ".github/workflows/iTV/🚓河南频道.txt",
+        ".github/workflows/iTV/🚕黑龙江频道.txt",
+        ".github/workflows/iTV/🚗湖北频道.txt",
+        ".github/workflows/iTV/🚙湖南频道.txt",
+        ".github/workflows/iTV/🚚吉林频道.txt",
+        ".github/workflows/iTV/🚂江苏频道.txt",
+        ".github/workflows/iTV/🚛江西频道.txt",
+        ".github/workflows/iTV/🚜辽宁频道.txt",
+        ".github/workflows/iTV/🏎️内蒙古频道.txt",
+        ".github/workflows/iTV/🏍️宁夏频道.txt",
+        ".github/workflows/iTV/🛵青海频道.txt",
+        ".github/workflows/iTV/🦽山东频道.txt",
+        ".github/workflows/iTV/🦼山西频道.txt",
+        ".github/workflows/iTV/🛺陕西频道.txt",
+        ".github/workflows/iTV/🚲上海频道.txt",
+        ".github/workflows/iTV/🛴天津频道.txt",
+        ".github/workflows/iTV/🛹新疆频道.txt",
+        ".github/workflows/iTV/🚞浙江频道.txt",
+        ".github/workflows/iTV/🛩️北京频道.txt",
+        ".github/workflows/iTV/🏍️港澳台频道.txt",
+        ".github/workflows/iTV/🎥咪咕视频.txt",
+        ".github/workflows/iTV/🎬影视剧频道.txt",
+        ".github/workflows/iTV/🎮游戏频道.txt",
+        ".github/workflows/iTV/🎵音乐频道.txt",
+        ".github/workflows/iTV/🏀体育频道.txt",
+        ".github/workflows/iTV/🏛经典剧场.txt",
+        ".github/workflows/iTV/🚁直播中国.txt",
+        ".github/workflows/iTV/🏮历年春晚.txt",
+        ".github/workflows/iTV/🪁动漫频道.txt"
     ]
 
     # 执行主函数
