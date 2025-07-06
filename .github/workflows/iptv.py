@@ -371,8 +371,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         # 3. 按优先级输出分组
         for group in group_order:
             if group in grouped_channels and grouped_channels[group]:
-                # 添加分组标题
-                f.write(f"\n# {group}\n")
+                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
+                f.write(f"{group},#genre#\n")
                 
                 # 按频道名称排序并输出
                 channels = sorted(grouped_channels[group], key=lambda x: x['channel'])
@@ -382,8 +382,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         # 4. 处理可能漏掉的分组
         for group, channels in grouped_channels.items():
             if group not in group_order and channels:
-                # 添加分组标题
-                f.write(f"\n# {group}\n")
+                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
+                f.write(f"{group},#genre#\n")
                 
                 # 按频道名称排序并输出
                 channels = sorted(channels, key=lambda x: x['channel'])
