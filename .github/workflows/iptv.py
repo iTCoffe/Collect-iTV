@@ -147,7 +147,35 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址"""
+    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址，并去重"""
+    # 新增：使用字典来去重（基于频道名称和URL）
+    seen_urls = set()  # 用于记录已处理的URL
+    unique_channels = []  # 存储去重后的频道
+    
+    # 获取动态关键词，用于过滤含时间名字的源
+    filter_keywords = get_dynamic_keywords()
+
+    # 第一步：过滤并去重所有频道条目
+    for channel, url, orig_logo in valid_urls:
+        # 跳过空频道名或URL
+        if not channel or not url:
+            continue
+            
+        # 过滤包含日期或关键词的源
+        if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
+            continue  
+        
+        # 检查URL是否已处理过（去重）
+        if url in seen_urls:
+            continue
+            
+        # 加入已处理集合
+        seen_urls.add(url)
+        
+        # 添加到去重后的列表
+        unique_channels.append((channel, url, orig_logo))
+    
+    # 初始化分组列表
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
@@ -155,9 +183,6 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     
     # 构建四连字索引（优化匹配准确率）
     quadgram_to_province = defaultdict(set)
-
-    # 获取动态关键词，用于过滤含时间名字的源
-    filter_keywords = get_dynamic_keywords()
 
     # 遍历所有省份的所有频道，构建四连字索引
     for province, channels in province_channels.items():
@@ -169,12 +194,8 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                     quadgram = channel_name[i:i+4]
                     quadgram_to_province[quadgram].add(province)
 
-    # 处理所有有效的URL，过滤含时间名字的源
-    for channel, url, orig_logo in valid_urls:
-        # 过滤包含日期或关键词的源
-        if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
-            continue  # 跳过含时间名字的源
-        
+    # 第二步：分类处理去重后的频道
+    for channel, url, orig_logo in unique_channels:
         # 正规化 CCTV 频道名
         normalized_channel = normalize_cctv_name(channel)
 
@@ -186,15 +207,15 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             cctv_channels_list.append({
                 "channel": channel,
                 "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
+                "logo": orig_logo,
                 "group_title": "📺央视频道"
             })
         # 2. 检查是否是卫视频道
-        elif "卫视" in channel:  # 卫视频道
+        elif "卫视" in channel:
             satellite_channels.append({
                 "channel": channel,
                 "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
+                "logo": orig_logo,
                 "group_title": "📡卫视频道"
             })
         # 3. 处理地方台频道
@@ -202,7 +223,7 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
             # 优化中文四连字匹配
             province_scores = defaultdict(int)
             
-            # 1. 精确匹配：检查频道名称是否完整包含在频道字符串中
+            # 精确匹配：检查频道名称是否完整包含在频道字符串中
             for province, channels in province_channels.items():
                 for channel_name in channels:
                     if channel_name in channel:
@@ -211,22 +232,18 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 if found_province:
                     break
             
-            # 2. 四连字匹配（使用更长的特征词提高准确性）
+            # 四连字匹配（使用更长的特征词提高准确性）
             if not found_province and len(channel) >= 4:
-                # 为频道创建所有可能的四连字组合
                 for i in range(len(channel) - 3):
                     quadgram = channel[i:i+4]
-                    # 查找匹配的省份
                     if quadgram in quadgram_to_province:
                         for province in quadgram_to_province[quadgram]:
-                            # 四连字匹配加更多权重
                             province_scores[province] += 2
             
             # 找到分数最高的省份
             if province_scores:
                 max_score = max(province_scores.values())
                 best_provinces = [p for p, s in province_scores.items() if s == max_score]
-                # 如果有多个分数相同的省份，选择名称最短的（更具体）
                 found_province = min(best_provinces, key=len) if best_provinces else None
             
             # 根据匹配结果分类频道
@@ -234,57 +251,71 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                 province_channels_list[found_province].append({
                     "channel": channel,
                     "url": url,
-                    "logo": orig_logo,  # 直接使用原始logo
+                    "logo": orig_logo,
                     "group_title": f"{found_province}"
                 })
             else:
-                # 最后的防线：查找包含"台"字的频道
+                # 包含"台"字的频道归入其他频道
                 if "台" in channel:
                     province_channels_list["🧮其他频道"].append({
                         "channel": channel,
                         "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
+                        "logo": orig_logo,
                         "group_title": "🧮其他频道"
                     })
                 else:
                     other_channels.append({
                         "channel": channel,
                         "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
+                        "logo": orig_logo,
                         "group_title": "🧮其他频道"
                     })
 
-    # 排序：省份频道列表按照省份名称排序
+    # 第三步：分组内进一步去重（基于频道名称）
+    def deduplicate_group(group):
+        """分组内去重（基于频道名称）"""
+        seen_channels = set()
+        deduped = []
+        for item in group:
+            # 使用频道名称作为去重依据
+            if item["channel"] not in seen_channels:
+                seen_channels.add(item["channel"])
+                deduped.append(item)
+        return deduped
+
+    # 应用分组内去重
+    cctv_channels_list = deduplicate_group(cctv_channels_list)
+    satellite_channels = deduplicate_group(satellite_channels)
+    other_channels = deduplicate_group(other_channels)
+    
+    for province in list(province_channels_list.keys()):
+        province_channels_list[province] = deduplicate_group(province_channels_list[province])
+
+    # 排序处理
     for province in province_channels_list:
         province_channels_list[province].sort(key=lambda x: x["channel"])
 
-    # 卫视频道和其他频道也排序
     satellite_channels.sort(key=lambda x: x["channel"])
     other_channels.sort(key=lambda x: x["channel"])
 
-    # 合并所有频道：CCTV -> 卫视频道 -> 省份频道 -> 其他
-    all_channels = cctv_channels_list + satellite_channels + \
-                   [channel for province in sorted(province_channels_list) for channel in
-                    province_channels_list[province]] + \
-                   other_channels
+    # 合并所有频道
+    all_channels = (
+        cctv_channels_list +
+        satellite_channels +
+        [channel for province in sorted(province_channels_list) 
+         for channel in province_channels_list[province]] +
+        other_channels
+    )
 
     # 写入 M3U 文件
     with open(filename, 'w', encoding='utf-8') as f:
-        # 添加带有所需属性的标题行
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
-        # 写入频道信息
         for channel_info in all_channels:
-            # 生成频道ID（去除-符号的频道名）
             channel_id = channel_info['channel'].replace('-', '')
-            
-            # 写入EXTINF行，保持原始logo地址
             f.write(
                 f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
-            
-            # 写入频道URL
             f.write(f"{channel_info['url']}\n")
-
 
 # 主函数：处理多个文件并生成 M3U 输出
 async def main(file_urls, cctv_channel_file, province_channel_files):
