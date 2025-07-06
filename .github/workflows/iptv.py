@@ -134,7 +134,7 @@ async def read_and_test_file(file_path, is_m3u=False):
 
         # 提取 URL
         if is_m3u:
-            entries = extract_urls_from_m3u(content)
+            entries = extract_urls_from_m极(con极ent)
         else:
             entries = extract_urls_from_txt(content)
 
@@ -147,8 +147,8 @@ async def read_and_test_file(file_path, is_m3u=False):
 
 # 生成排序后的 M3U 文件
 def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
-    """生成排序后的 M3U 文件，使用改进的四连字匹配，保留原始logo地址，并去重"""
-    # 新增：使用字典来去重（基于频道名称和URL）
+    """生成排序后的 M3U 文件，仅对URL去重，保留相同频道的不同源"""
+    # 使用字典来去重（仅基于URL）
     seen_urls = set()  # 用于记录已处理的URL
     unique_channels = []  # 存储去重后的频道
     
@@ -181,18 +181,12 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
     satellite_channels = []
     other_channels = []
     
-    # 构建四连字索引（优化匹配准确率）
-    quadgram_to_province = defaultdict(set)
-
-    # 遍历所有省份的所有频道，构建四连字索引
+    # 创建频道名到省份的映射表
+    channel_to_province = {}
     for province, channels in province_channels.items():
         for channel_name in channels:
-            # 添加原始词序的四连字
-            if len(channel_name) >= 4:
-                # 为频道名创建所有可能的四连字组合
-                for i in range(len(channel_name) - 3):
-                    quadgram = channel_name[i:i+4]
-                    quadgram_to_province[quadgram].add(province)
+            # 频道名作为key，省份作为value
+            channel_to_province[channel_name] = province
 
     # 第二步：分类处理去重后的频道
     for channel, url, orig_logo in unique_channels:
@@ -214,37 +208,21 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
         elif "卫视" in channel:
             satellite_channels.append({
                 "channel": channel,
-                "url": url,
+                "url极": url,
                 "logo": orig_logo,
                 "group_title": "📡卫视频道"
             })
-        # 3. 处理地方台频道
+        # 3. 处理地方台频道 - 使用精确匹配
         else:
-            # 优化中文四连字匹配
-            province_scores = defaultdict(int)
-            
-            # 精确匹配：检查频道名称是否完整包含在频道字符串中
-            for province, channels in province_channels.items():
-                for channel_name in channels:
-                    if channel_name in channel:
+            # 检查频道是否在省份频道列表中（精确匹配）
+            if channel in channel_to_province:
+                found_province = channel_to_province[channel]
+            else:
+                # 检查是否包含省份频道名称（部分匹配）
+                for known_channel, province in channel_to_province.items():
+                    if known_channel in channel:
                         found_province = province
                         break
-                if found_province:
-                    break
-            
-            # 四连字匹配（使用更长的特征词提高准确性）
-            if not found_province and len(channel) >= 4:
-                for i in range(len(channel) - 3):
-                    quadgram = channel[i:i+4]
-                    if quadgram in quadgram_to_province:
-                        for province in quadgram_to_province[quadgram]:
-                            province_scores[province] += 2
-            
-            # 找到分数最高的省份
-            if province_scores:
-                max_score = max(province_scores.values())
-                best_provinces = [p for p, s in province_scores.items() if s == max_score]
-                found_province = min(best_provinces, key=len) if best_provinces else None
             
             # 根据匹配结果分类频道
             if found_province:
@@ -271,30 +249,13 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
                         "group_title": "🧮其他频道"
                     })
 
-    # 第三步：分组内进一步去重（基于频道名称）
-    def deduplicate_group(group):
-        """分组内去重（基于频道名称）"""
-        seen_channels = set()
-        deduped = []
-        for item in group:
-            # 使用频道名称作为去重依据
-            if item["channel"] not in seen_channels:
-                seen_channels.add(item["channel"])
-                deduped.append(item)
-        return deduped
-
-    # 应用分组内去重
-    cctv_channels_list = deduplicate_group(cctv_channels_list)
-    satellite_channels = deduplicate_group(satellite_channels)
-    other_channels = deduplicate_group(other_channels)
-    
-    for province in list(province_channels_list.keys()):
-        province_channels_list[province] = deduplicate_group(province_channels_list[province])
-
-    # 排序处理
+    # 第三步：分组内排序（不再去重）
     for province in province_channels_list:
+        # 排序但不移除相同频道名称的条目（因为URL不同）
         province_channels_list[province].sort(key=lambda x: x["channel"])
 
+    # 其他分组排序
+    cctv_channels_list.sort(key=lambda x: x["channel"])
     satellite_channels.sort(key=lambda x: x["channel"])
     other_channels.sort(key=lambda x: x["channel"])
 
@@ -312,10 +273,21 @@ def generate_sorted_m3u(valid_urls, cctv_channels, province_channels, filename):
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
         for channel_info in all_channels:
-            channel_id = channel_info['channel'].replace('-', '')
+            # 处理特殊字符，确保频道名称不会干扰M3U格式
+            channel_name = channel_info['channel'].replace(',', '，')  # 替换可能破坏格式的逗号
+            channel_id = channel_name.replace('-', '')
+            
+            # 处理空logo的情况
+            logo_url = channel_info['logo'] if channel_info['logo'] else ""
             f.write(
-                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
+                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{logo_url}\" group-title=\"{channel_info['group_title']}\",{channel_name}\n")
             f.write(f"{channel_info['url']}\n")
+            
+        # 添加文件末尾的备注信息
+        f.write(f"\n# 频道总数: {len(all_channels)}\n")
+        f.write(f"# 唯一URL数: {len(seen_urls)}\n")
+        f.write(f"# 生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"# 源列表: {', '.join([os.path.basename(f) for f in file_urls])}")
 
 # 主函数：处理多个文件并生成 M3U 输出
 async def main(file_urls, cctv_channel_file, province_channel_files):
@@ -350,6 +322,8 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
     # 生成排序后的 M3U 文件
     generate_sorted_m3u(all_valid_urls, cctv_channels, province_channels, CONFIG["output_file"])
     print(f"🎉 Generated sorted M3U file: {CONFIG['output_file']}")
+    print(f"📺 Total channels: {len(all_valid_urls)}")
+    print(f"✅ Unique URLs: {len(set([url for _, url, _ in all_valid_urls]))}")
 
 
 if __name__ == "__main__":
@@ -376,7 +350,7 @@ if __name__ == "__main__":
         ".github/workflows/iTV/🚌广东频道.txt",
         ".github/workflows/iTV/🚎广西频道.txt",
         ".github/workflows/iTV/🚐贵州频道.txt",
-        ".github/workflows/iTV/🚑海南频道.txt",
+        ".github/workflows/i极TV/🚑海南频道.txt",
         ".github/workflows/iTV/🚒河北频道.txt",
         ".github/workflows/iTV/🚓河南频道.txt",
         ".github/workflows/iTV/🚕黑龙江频道.txt",
