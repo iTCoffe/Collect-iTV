@@ -241,18 +241,18 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             else:
                 # 最后的防线：查找包含"台"字的频道
                 if "台" in channel:
-                    province_channels_list["🧮其他频道"].append({
+                    province_channels_list["🧯樂玩公社"].append({
                         "channel": channel,
                         "url": url,
                         "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🧮其他频道"
+                        "group_title": "🧯樂玩公社"
                     })
                 else:
                     other_channels.append({
                         "channel": channel,
                         "url": url,
                         "logo": orig_logo,  # 直接使用原始logo
-                        "group_title": "🧮其他频道"
+                        "group_title": "🧯樂玩公社"
                     })
 
     # --- URL去重逻辑开始 ---
@@ -264,13 +264,13 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     
     # 添加省份频道（按省份名称排序）
     for province in sorted(province_channels_list.keys()):
-        if province == "🧮其他频道":
+        if province == "🧯樂玩公社":
             continue  # 其他频道单独处理
         all_groups.append((province, province_channels_list[province]))
     
     # 添加其他频道
-    all_groups.append(("🧮其他频道", province_channels_list.get("🧮其他频道", [])))
-    all_groups.append(("🧮其他频道", other_channels))
+    all_groups.append(("🧯樂玩公社", province_channels_list.get("🧯樂玩公社", [])))
+    all_groups.append(("🧯樂玩公社", other_channels))
 
     # 使用字典根据URL去重（保留每个URL第一次出现的频道）
     seen_urls = set()
@@ -330,6 +330,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         
         # 2. 定义分组排序优先级
         group_order = [
+            "📛4K·8K频道",
             "📺央视频道",
             "📡卫视频道",
             "💰央视付费频道",
@@ -374,7 +375,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             "🚁直播中国",
             "🏮历年春晚",
             "🪁动漫频道",
-            "🧮其他频道"
+            "🧯樂玩公社"
         ]
         
         # 3. 按优先级输出分组
@@ -455,6 +456,7 @@ if __name__ == "__main__":
 
     # 省份频道文件列表
     province_channel_files = [
+        ".github/workflows/iTV/📛4K·8K频道.txt",
         ".github/workflows/iTV/💰央视付费频道.txt",
         ".github/workflows/iTV/📡卫视频道.txt",
         ".github/workflows/iTV/🚃重庆频道.txt",
