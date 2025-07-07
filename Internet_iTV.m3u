@@ -2527,6 +2527,24 @@ http://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
 https://radio.0472.org/?id=641
 #EXTINF:-1 tvg-name="音乐之声" tvg-logo="https://itv.shrimp.cloudns.biz/logo/音乐之声.png" group-title="🎵音乐频道",音乐之声
 http://live.xmcdn.com/live/1205/64.m3u8
+#EXTINF:-1 tvg-name=" CCTV2" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV2.png" group-title="🏀体育频道", CCTV2
+http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
+#EXTINF:-1 tvg-name=" CCTV3" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV3.png" group-title="🏀体育频道", CCTV3
+http://36.105.100.208:35455/gaoma/cctv3.m3u8
+#EXTINF:-1 tvg-name=" CCTV4" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV4.png" group-title="🏀体育频道", CCTV4
+http://183.11.239.36:808/hls/77/index.m3u8
+#EXTINF:-1 tvg-name=" CCTV5" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5.png" group-title="🏀体育频道", CCTV5
+http://183.11.239.36:808/hls/93/index.m3u8
+#EXTINF:-1 tvg-name=" CCTV5+" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5.png" group-title="🏀体育频道", CCTV5+
+http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
+#EXTINF:-1 tvg-name=" CCTV6" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV6.png" group-title="🏀体育频道", CCTV6
+http://58.57.40.22:9901/tsfile/live/1006_1.m3u8
+#EXTINF:-1 tvg-name=" CCTV7" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV7.png" group-title="🏀体育频道", CCTV7
+http://58.221.214.82:9901/tsfile/live/0007_1.m3u8
+#EXTINF:-1 tvg-name=" CCTV8" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV8.png" group-title="🏀体育频道", CCTV8
+http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
+#EXTINF:-1 tvg-name=" CCTV9" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV9.png" group-title="🏀体育频道", CCTV9
+http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
 #EXTINF:-1 tvg-name=" 广东体育" tvg-logo="https://itv.shrimp.cloudns.biz/logo/广东体育.png" group-title="🏀体育频道", 广东体育
 http://cdn2.163189.xyz/live/gdty/stream.m3u8
 #EXTINF:-1 tvg-name=" 快乐垂钓" tvg-logo="https://itv.shrimp.cloudns.biz/logo/快乐垂钓.png" group-title="🏀体育频道", 快乐垂钓
@@ -2535,10 +2553,40 @@ http://drive.mxmy.net:8888/udp/239.3.1.164:8001
 https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8
 #EXTINF:-1 tvg-name=" 超级体育" tvg-logo="https://itv.shrimp.cloudns.biz/logo/超级体育.png" group-title="🏀体育频道", 超级体育
 http://yc.myds.me:35455/itv/1000000001000009601.m3u8?cdn=ystenlive
+#EXTINF:-1 tvg-name="CCTV10科教" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV10.png" group-title="🏀体育频道",CCTV-10科教
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226937/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV11戏曲" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV11.png" group-title="🏀体育频道",CCTV-11戏曲
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226334/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV12社会与法" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV12社会与法.png" group-title="🏀体育频道",CCTV-12社会与法
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226942/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV13新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV13.png" group-title="🏀体育频道",CCTV-13新闻
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226316/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV14少儿" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV14.png" group-title="🏀体育频道",CCTV-14少儿
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226947/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV15音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV15.png" group-title="🏀体育频道",CCTV-15音乐
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV16奥林匹克" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV16奥林匹克.png" group-title="🏀体育频道",CCTV-16奥林匹克
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221227002/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV17农业农村" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV17农业农村.png" group-title="🏀体育频道",CCTV-17农业农村
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV1综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV1.png" group-title="🏀体育频道",CCTV-1综合
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226895/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV2财经" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV2.png" group-title="🏀体育频道",CCTV-2财经
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226893/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV3综艺" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV3.png" group-title="🏀体育频道",CCTV-3综艺
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226471/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV4中文国际" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV4中文国际.png" group-title="🏀体育频道",CCTV-4中文国际
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226335/1.m3u8?
 #EXTINF:-1 tvg-name="CCTV5+体育赛事" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5赛事.png" group-title="🏀体育频道",CCTV-5+体育赛事
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226894/1.m3u8?
 #EXTINF:-1 tvg-name="CCTV5体育" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5.png" group-title="🏀体育频道",CCTV-5体育
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226469/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV6电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV6.png" group-title="🏀体育频道",CCTV-6电影
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226468/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV8电视剧" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV8.png" group-title="🏀体育频道",CCTV-8电视剧
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226485/1.m3u8?
+#EXTINF:-1 tvg-name="CCTV9纪录" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV9纪录.png" group-title="🏀体育频道",CCTV-9纪录
+http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226944/1.m3u8?
 #EXTINF:-1 tvg-name="JJ斗地主" tvg-logo="https://itv.shrimp.cloudns.biz/logo/JJ斗地主.png" group-title="🏀体育频道",JJ斗地主
 http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8?wsAuth=fd695c444eeee99cc6122ed396c805ba&token=cpn-androidmpro-0-488743-df8b1830ef2e6ce156759645768df95bf77749da61fcc901&logo=0&expire=0&did=d010b07dcb997ada9934081c873542f0&origin=tct&vhost=play2
 #EXTINF:-1 tvg-name="JJ斗地主" tvg-logo="https://itv.shrimp.cloudns.biz/logo/JJ斗地主.png" group-title="🏀体育频道",JJ斗地主
@@ -3119,34 +3167,10 @@ https://txmov2.a.kwimgs.com/bs3/video-hls/5251197255879398624_hlshd15.m3u8
 https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8
 #EXTINF:-1 tvg-name=" 2025年春晚" tvg-logo="https://itv.shrimp.cloudns.biz/logo/2025年春晚.png" group-title="🏮历年春晚", 2025年春晚
 https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8
-#EXTINF:-1 tvg-name=" CCTV2" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV2.png" group-title="💰央视付费频道", CCTV2
-http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
-#EXTINF:-1 tvg-name=" CCTV3" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV3.png" group-title="💰央视付费频道", CCTV3
-http://36.105.100.208:35455/gaoma/cctv3.m3u8
-#EXTINF:-1 tvg-name=" CCTV4" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV4.png" group-title="💰央视付费频道", CCTV4
-http://183.11.239.36:808/hls/77/index.m3u8
-#EXTINF:-1 tvg-name=" CCTV5" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5.png" group-title="💰央视付费频道", CCTV5
-http://183.11.239.36:808/hls/93/index.m3u8
-#EXTINF:-1 tvg-name=" CCTV5+" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV5.png" group-title="💰央视付费频道", CCTV5+
-http://58.57.40.22:9901/tsfile/live/1005_1.m3u8
-#EXTINF:-1 tvg-name=" CCTV6" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV6.png" group-title="💰央视付费频道", CCTV6
-http://58.57.40.22:9901/tsfile/live/1006_1.m3u8
-#EXTINF:-1 tvg-name=" CCTV7" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV7.png" group-title="💰央视付费频道", CCTV7
-http://58.221.214.82:9901/tsfile/live/0007_1.m3u8
-#EXTINF:-1 tvg-name=" CCTV8" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV8.png" group-title="💰央视付费频道", CCTV8
-http://120.238.94.10:9901/tsfile/live/1026_1.m3u8
-#EXTINF:-1 tvg-name=" CCTV9" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV9.png" group-title="💰央视付费频道", CCTV9
-http://58.57.40.22:9901/tsfile/live/1009_1.m3u8
 #EXTINF:-1 tvg-name=" CCTV风云足球" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV风云足球.png" group-title="💰央视付费频道", CCTV风云足球
 https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
-#EXTINF:-1 tvg-name="CCTV6电影" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV6.png" group-title="💰央视付费频道",CCTV-6电影
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226468/1.m3u8?
 #EXTINF:-1 tvg-name="CCTV7国防军事" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV7国防军事.png" group-title="💰央视付费频道",CCTV-7国防军事
 http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226946/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV8电视剧" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV8.png" group-title="💰央视付费频道",CCTV-8电视剧
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226485/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV9纪录" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV9纪录.png" group-title="💰央视付费频道",CCTV-9纪录
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226944/1.m3u8?
 #EXTINF:-1 tvg-name="世界地理" tvg-logo="https://itv.shrimp.cloudns.biz/logo/世界地理.png" group-title="💰央视付费频道",世界地理
 http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8
 #EXTINF:-1 tvg-name="兵器科技" tvg-logo="https://itv.shrimp.cloudns.biz/logo/兵器科技.png" group-title="💰央视付费频道",兵器科技
@@ -3483,6 +3507,8 @@ http://z.b.bkpcp.top/m.php?id=lygxwzh
 http://live.lyg1.com/zhpd/sd/live.m3u8
 #EXTINF:-1 tvg-name="镇江新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/镇江新闻综合.png" group-title="🚂江苏频道",镇江新闻综合
 http://zjtv-wshls.homecdn.com/live/2aa50.m3u8
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🚄四川频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 乐山新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/乐山新闻综合.png" group-title="🚄四川频道", 乐山新闻综合
 http://m3u8file.lstv.org.cn/nmip-media/channellive/channel1/playlist.m3u8
 #EXTINF:-1 tvg-name=" 乐至综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/乐至综合.png" group-title="🚄四川频道", 乐至综合
@@ -3565,6 +3591,8 @@ http://175.155.106.72:89/live1/live1.m3u8?zsicd;http://rmlive.lzxrmtzx.com/live1
 http://luzhi.xuyongrongmei.com:1935/live/_definst_/xyxw/playlist.m3u8?zsicd#rtmp://luzhi.xuyongrongmei.com:1935/live/xyxw?zsicd
 #EXTINF:-1 tvg-name="四川科教" tvg-logo="https://itv.shrimp.cloudns.biz/logo/四川科教.png" group-title="🚄四川频道",四川科教
 http://wouu.net:9977/udp/239.93.42.44:5140
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/新闻综合.png" group-title="🚄四川频道",新闻综合
+http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
 #EXTINF:-1 tvg-name="旺苍新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/旺苍新闻综合.png" group-title="🚄四川频道",旺苍新闻综合
 http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1 tvg-name="松潘新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/松潘新闻综合.png" group-title="🚄四川频道",松潘新闻综合
@@ -3639,8 +3667,6 @@ http://ls.qingting.fm/live/1794199.m3u8
 http://ls.qingting.fm/live/267.m3u8
 #EXTINF:-1 tvg-name=" 固镇新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/固镇新闻.png" group-title="🚈安徽频道", 固镇新闻
 http://www.guzhenm.com:7001/hls/hd-live.m3u8
-#EXTINF:-1 tvg-name=" 新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/新闻综合.png" group-title="🚈安徽频道", 新闻综合
-http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
 #EXTINF:-1 tvg-name=" 涡阳新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/涡阳新闻综合.png" group-title="🚈安徽频道", 涡阳新闻综合
 http://220.180.124.18:888/live/ch0.m3u8
 #EXTINF:-1 tvg-name=" 铜陵新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/铜陵新闻综合.png" group-title="🚈安徽频道", 铜陵新闻综合
@@ -3659,8 +3685,6 @@ http://live.cztv.cc:85/live/ggpd.m3u8?zanhd#http://live.cztv.cc:85/live/ggpd.m3u
 http://live.cztv.cc:85/live/xwpd.m3u8
 #EXTINF:-1 tvg-name="滁州科教" tvg-logo="https://itv.shrimp.cloudns.biz/logo/滁州科教.png" group-title="🚈安徽频道",滁州科教
 http://live.cztv.cc:85/live/sjpd.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🚋甘肃频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 临潭" tvg-logo="https://itv.shrimp.cloudns.biz/logo/临潭.png" group-title="🚋甘肃频道", 临潭
 http://pili-live-hls.hfmt.net/gntv/lttv.m3u8?zgand
 #EXTINF:-1 tvg-name=" 嘉峪关综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/嘉峪关综合.png" group-title="🚋甘肃频道", 嘉峪关综合
@@ -4309,30 +4333,6 @@ http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
 https://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
 #EXTINF:-1 tvg-name=" 龙游生活娱乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/龙游生活娱乐.png" group-title="🚞浙江频道", 龙游生活娱乐
 https://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
-#EXTINF:-1 tvg-name="CCTV10科教" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV10.png" group-title="🚞浙江频道",CCTV-10科教
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226937/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV11戏曲" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV11.png" group-title="🚞浙江频道",CCTV-11戏曲
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226334/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV12社会与法" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV12社会与法.png" group-title="🚞浙江频道",CCTV-12社会与法
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226942/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV13新闻" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV13.png" group-title="🚞浙江频道",CCTV-13新闻
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226316/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV14少儿" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV14.png" group-title="🚞浙江频道",CCTV-14少儿
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226947/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV15音乐" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV15.png" group-title="🚞浙江频道",CCTV-15音乐
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226333/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV16奥林匹克" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV16奥林匹克.png" group-title="🚞浙江频道",CCTV-16奥林匹克
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221227002/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV17农业农村" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV17农业农村.png" group-title="🚞浙江频道",CCTV-17农业农村
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226318/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV1综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV1.png" group-title="🚞浙江频道",CCTV-1综合
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226895/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV2财经" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV2.png" group-title="🚞浙江频道",CCTV-2财经
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226893/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV3综艺" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV3.png" group-title="🚞浙江频道",CCTV-3综艺
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226471/1.m3u8?
-#EXTINF:-1 tvg-name="CCTV4中文国际" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV4中文国际.png" group-title="🚞浙江频道",CCTV-4中文国际
-http://[2409:8087:8:21::18]:6610/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226335/1.m3u8?
 #EXTINF:-1 tvg-name="CETV3" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CETV3.png" group-title="🚞浙江频道",CETV-3
 http://[2409:8087:7004:20:1000::22]:6610/yinhe/2/ch00000090990000001309/index.m3u8
 #EXTINF:-1 tvg-name="上虞文化影院" tvg-logo="https://itv.shrimp.cloudns.biz/logo/上虞文化影院.png" group-title="🚞浙江频道",上虞文化影院
