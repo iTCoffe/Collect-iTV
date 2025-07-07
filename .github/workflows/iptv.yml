@@ -28,18 +28,20 @@ jobs:
       run: python .github/workflows/iptv.py
 
     - name: GetTime
+      id: get-time
       run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
-    
 
-    - name: Update README.md with run time and file links
+    - name: Generate README.md
       run: |
-        m3u_link="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref }}/Internet_iTV.m3u"
-        txt_link="https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref }}/Internet_iTV.txt"
-        
-        sed -i "s|<!-- Last Run Time -->.*|<!-- Last Run Time --> ${GET_TIME}|" README.md
-        sed -i "s|<!-- M3U File Link -->.*|<!-- M3U File Link --> [M3U播放列表](${m3u_link})|" README.md
-        sed -i "s|<!-- TXT File Link -->.*|<!-- TXT File Link --> [TXT频道列表](${txt_link})|" README.md
-       
+        echo -e "# iTV 自动更新\n\n### 更新于 $GET_TIME\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](LITV.m3u)（LITV.M3U）\n- [TXT播放列表](LITV.txt)（LITV.TXT）" > README.md
+
+    - name: Generate additional lists
+      run: |
+        # 复制生成其他格式的播放列表
+        cp Internet_iTV.m3u IPTV.m3u
+        cp Internet_iTV.txt IPTV.txt
+        cp Internet_iTV.m3u LITV.m3u
+        cp Internet_iTV.txt LITV.txt
 
     - name: Commit changes
       env:
@@ -49,8 +51,11 @@ jobs:
         git config --global user.email "actions@github.com"
         git remote set-url origin $REPO_URL
         
-        # 添加所有生成的文件
-        git add README.md Internet_iTV.m3u Internet_iTV.txt
+        # 添加所有文件
+        git add README.md
+        git add Internet_iTV.*
+        git add IPTV.*
+        git add LITV.*
         
-        git commit -am "自动更新：${GET_TIME}"
+        git commit -am "自动更新：$GET_TIME"
         git push origin main
