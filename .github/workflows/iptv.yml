@@ -33,7 +33,7 @@ jobs:
 
     - name: Generate README.md
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](IPTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](IPTV.txt)（Internet_iTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）" > README.md
 
     - name: Commit changes
       env:
