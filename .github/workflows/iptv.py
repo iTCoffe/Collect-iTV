@@ -447,6 +447,7 @@ if __name__ == "__main__":
     # IPTV 文件 URL（您可以添加自己的文件 URL 列表）
     file_urls = [
         "https://raw.githubusercontent.com/mytv-android/iptv-api/master/output/result.m3u",
+        "https://raw.githubusercontent.com/Ethan-Men/8159-TV/master/output/user_result.m3u",
         "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u",
         "https://raw.githubusercontent.com/kilvn/iptv/master/iptv.m3u"
     ]
