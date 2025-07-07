@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://erw.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://112114.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV1.png" group-title="📺央视频道",CCTV-1
 http://1.180.2.93:9901/tsfile/live/1020_1.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://itv.shrimp.cloudns.biz/logo/CCTV1.png" group-title="📺央视频道",CCTV-1
@@ -3879,8 +3879,6 @@ https://jwplay.hebyun.com.cn/live/xttv/1500k/tzwj_video.m3u8
 https://jwplay.hebyun.com.cn:443/live/xtsrmtzs/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="邢台综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/邢台综合.png" group-title="🚒河北频道",邢台综合
 https://jwplay.hebyun.com.cn/live/xttv/1500k/tzwj_video.m3u8?zhebd
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🚓河南频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 临颍综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/临颍综合.png" group-title="🚓河南频道", 临颍综合
 http://tvpull.dxhmt.cn:9081/tv/11122-1.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1 tvg-name=" 义马新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/义马新闻综合.png" group-title="🚓河南频道", 义马新闻综合
@@ -4673,6 +4671,8 @@ http://112.46.105.20:8009/hls/19/index.m3u8
 http://112.46.105.20:8009/hls/20/index.m3u8
 #EXTINF:-1 tvg-name=" 万荣综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/万荣综合.png" group-title="🦼山西频道", 万荣综合
 http://60.222.246.220:19433/hls1.m3u8
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/东莞新闻综合.png" group-title="🦼山西频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 五台综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/五台综合.png" group-title="🦼山西频道", 五台综合
 https://568slnjf.live.sxmty.com/live/hls/90c8b2efeb164cc0a6c2409eed668d6b/f77cbb89ec57435b9ba4c47589c16e4f-1.m3u8
 #EXTINF:-1 tvg-name=" 吉县新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/logo/吉县新闻综合.png" group-title="🦼山西频道", 吉县新闻综合
