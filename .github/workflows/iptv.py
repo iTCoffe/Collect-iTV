@@ -32,7 +32,8 @@ CONFIG = {
     "max_parallel": 30,  # Max concurrent requests
     "output_m3u": "Internet_iTV.m3u",  # Output file for the sorted M3U
     "output_txt": "Internet_iTV.txt",  # Output file for the TXT format
-    "iptv_directory": "IPTV"  # Directory containing IPTV files
+    "iptv_directory": "IPTV",  # Directory containing IPTV files
+    "logo_base_url": "https://itv.shrimp.cloudns.biz/logo"  # Base URL for logos
 }
 
 
@@ -69,6 +70,19 @@ def load_province_channels(files):
             print(f"Error: The file {file_path} was not found.")
 
     return province_channels
+
+
+# 正规化频道名称，生成Logo文件名
+def normalize_logo_name(channel_name):
+    """将频道名称正规化，只保留字母和数字，用于Logo文件名"""
+    # 首先进行基本的正规化处理
+    normalized = re.sub(r'[^\w\s]', '', channel_name)  # 移除标点符号
+    normalized = re.sub(r'\s+', '', normalized)  # 移除空格
+    
+    # 替换特定的CCTV格式
+    normalized = re.sub(r'CCTV[-]?(\d+)(?:综合|新闻|财经|综艺|体育|电影|电视剧|戏曲|音乐|科教|少儿)?', r'CCTV\1', normalized)
+    
+    return normalized
 
 
 # 正规化 CCTV 频道名称
@@ -176,6 +190,12 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
             continue  # 跳过含时间名字的源
         
+        # 正规化频道名称，作为Logo文件名
+        logo_name = normalize_logo_name(channel)
+        
+        # 生成Logo URL
+        logo_url = f"{CONFIG['logo_base_url']}/{logo_name}.png"
+        
         # 正规化 CCTV 频道名
         normalized_channel = normalize_cctv_name(channel)
 
@@ -187,7 +207,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             cctv_channels_list.append({
                 "channel": channel,
                 "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
+                "logo": logo_url,  # 使用新的统一Logo
                 "group_title": "📺央视频道"
             })
         # 2. 检查是否是卫视频道
@@ -195,7 +215,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             satellite_channels.append({
                 "channel": channel,
                 "url": url,
-                "logo": orig_logo,  # 直接使用原始logo
+                "logo": logo_url,  # 使用新的统一Logo
                 "group_title": "📡卫视频道"
             })
         # 3. 处理地方台频道
@@ -235,7 +255,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 province_channels_list[found_province].append({
                     "channel": channel,
                     "url": url,
-                    "logo": orig_logo,  # 直接使用原始logo
+                    "logo": logo_url,  # 使用新的统一Logo
                     "group_title": f"{found_province}"
                 })
             else:
@@ -244,14 +264,14 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     province_channels_list["🧯樂玩公社"].append({
                         "channel": channel,
                         "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
+                        "logo": logo_url,  # 使用新的统一Logo
                         "group_title": "🧯樂玩公社"
                     })
                 else:
                     other_channels.append({
                         "channel": channel,
                         "url": url,
-                        "logo": orig_logo,  # 直接使用原始logo
+                        "logo": logo_url,  # 使用新的统一Logo
                         "group_title": "🧯樂玩公社"
                     })
 
@@ -297,24 +317,16 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     # 写入 M3U 文件
     with open(m3u_filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
-        f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
+        f.write("#EXTM3U x-tvg-url=\"https://erw.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         
         # 写入频道信息
         for channel_info in deduped_channels:
             # 生成频道ID（去除-符号的频道名）
             channel_id = channel_info['channel'].replace('-', '')
             
-            # 处理logo地址：替换为指定域名
-            logo_url = ""
-            if channel_info['logo']:  # 如果有原始logo信息
-                # 提取文件名部分
-                logo_filename = channel_info['logo'].split("/")[-1]
-                # 构造新的logo地址
-                logo_url = f"https://itv.shrimp.cloudns.biz/logo/{logo_filename}"
-            
-            # 写入EXTINF行，使用新的logo地址
+            # 写入EXTINF行，使用统一的logo地址
             f.write(
-                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{logo_url}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
+                f"#EXTINF:-1 tvg-name=\"{channel_id}\" tvg-logo=\"{channel_info['logo']}\" group-title=\"{channel_info['group_title']}\",{channel_info['channel']}\n")
             
             # 写入频道URL
             f.write(f"{channel_info['url']}\n")
