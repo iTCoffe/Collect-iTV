@@ -33,15 +33,7 @@ jobs:
 
     - name: Generate README.md
       run: |
-        echo -e "# iTV 自动更新\n\n### 更新于 $GET_TIME\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](LITV.m3u)（LITV.M3U）\n- [TXT播放列表](LITV.txt)（LITV.TXT）" > README.md
-
-    - name: Generate additional lists
-      run: |
-        # 复制生成其他格式的播放列表
-        cp Internet_iTV.m3u IPTV.m3u
-        cp Internet_iTV.txt IPTV.txt
-        cp Internet_iTV.m3u LITV.m3u
-        cp Internet_iTV.txt LITV.txt
+        echo -e "# iTV 自动更新\n\n### 更新于 $GET_TIME\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)\n- [TXT频道列表](Internet_iTV.txt)" > README.md
 
     - name: Commit changes
       env:
@@ -51,11 +43,10 @@ jobs:
         git config --global user.email "actions@github.com"
         git remote set-url origin $REPO_URL
         
-        # 添加所有文件
+        # 添加实际存在的文件
         git add README.md
-        git add Internet_iTV.*
-        git add IPTV.*
-        git add LITV.*
+        git add Internet_iTV.m3u
+        git add Internet_iTV.txt
         
         git commit -am "自动更新：$GET_TIME"
         git push origin main
