@@ -345,7 +345,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             "📛4K·8K频道",
             "📺央视频道",
             "📡卫视频道",
-            "💰央视付费频道",
+            "💰付费频道",
             "🍁数字频道",
             "🍱NewTV频道",
             "🐳iHOT频道",
@@ -476,7 +476,7 @@ if __name__ == "__main__":
     # 省份频道文件列表
     province_channel_files = [
         ".github/workflows/iTV/📛4K·8K频道.txt",
-        ".github/workflows/iTV/💰央视付费频道.txt",
+        ".github/workflows/iTV/💰付费频道.txt",
         ".github/workflows/iTV/🍁数字频道.txt",
         ".github/workflows/iTV/🍱NewTV频道.txt",
         ".github/workflows/iTV/🐳iHOT频道.txt",
