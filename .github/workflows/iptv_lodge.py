@@ -15,7 +15,7 @@ def get_dynamic_keywords():
     today = datetime.now().strftime("%Y-%m-%d")
     tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
     
-    fixed_keywords = ["免费提供", today, tomorrow]
+    fixed_keywords = ["免费提供", "独家", "最新", "稳定", today, tomorrow]
     return fixed_keywords
 
 def contains_date(text):
@@ -30,8 +30,8 @@ def contains_date(text):
 CONFIG = {
     "timeout": 10,  # Timeout in seconds
     "max_parallel": 30,  # Max concurrent requests
-    "output_m3u": "Internet_iTV.m3u",  # Output file for the sorted M3U
-    "output_txt": "Internet_iTV.txt",  # Output file for the TXT format
+    "output_m3u": "LodGe_iTV.m3u",  # 修复：使用正确的输出文件名
+    "output_txt": "LodGe_iTV.txt",  # 修复：使用正确的输出文件名
     "iptv_directory": "IPTV",  # Directory containing IPTV files
     "logo_base_url": "https://itv.shrimp.cloudns.biz/tv"  # Base URL for logos
 }
@@ -150,7 +150,7 @@ async def read_and_test_file(file_path, is_m3u=False):
     try:
         # 获取文件内容
         async with aiohttp.ClientSession(cookie_jar=None) as session:  # 禁用 cookie 处理
-            async with session.get(file_path) as response:
+            async with session.get(file_path, timeout=aiohttp.ClientTimeout(total=15)) as response:
                 content = await response.text()
 
         # 提取 URL
@@ -333,6 +333,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             f.write(f"{channel_info['url']}\n")
             
     print(f"🎉 Generated M3U file: {m3u_filename}")
+    print(f"文件位置: {os.path.abspath(m3u_filename)}")
+    print(f"文件大小: {os.path.getsize(m3u_filename)} 字节")
     
     # 写入结构化的 TXT 文件 (按分组结构输出)
     with open(txt_filename, 'w', encoding='utf-8') as f:
@@ -421,6 +423,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     f.write(f"{channel_info['channel']},{channel_info['url']}\n")
                     
     print(f"🎉 Generated structured TXT file: {txt_filename}")
+    print(f"文件位置: {os.path.abspath(txt_filename)}")
+    print(f"文件大小: {os.path.getsize(txt_filename)} 字节")
 
 
 # 主函数：处理多个文件并生成输出文件
