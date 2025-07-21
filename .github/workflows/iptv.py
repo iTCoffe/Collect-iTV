@@ -33,7 +33,7 @@ CONFIG = {
     "output_m3u": "Internet_iTV.m3u",  # Output file for the sorted M3U
     "output_txt": "Internet_iTV.txt",  # Output file for the TXT format
     "iptv_directory": "IPTV",  # Directory containing IPTV files
-    "logo_base_url": "https://itv.shrimp.cloudns.biz/logo"  # Base URL for logos
+    "logo_base_url": "https://itv.shrimp.cloudns.biz/tv"  # Base URL for logos
 }
 
 
