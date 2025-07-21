@@ -12,16 +12,16 @@ jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
 
-    permissions:  # 修复权限问题的关键配置
-      contents: write  # 授予写入权限
+    permissions:
+      contents: write
       pull-requests: write
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        ref: main  # 明确指定分支
-        token: ${{ secrets.GITHUB_TOKEN }}  # 传递认证令牌
+        ref: main
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -33,6 +33,17 @@ jobs:
 
     - name: Run scraping script
       run: python .github/workflows/iptv_lodge.py
+
+    - name: Verify file generation
+      run: |
+        if [ ! -f "LodGe_iTV.m3u" ]; then
+          echo "##[error]LodGe_iTV.m3u 文件未生成！"
+          exit 1
+        fi
+        if [ ! -f "LodGe_iTV.txt" ]; then
+          echo "##[error]LodGe_iTV.txt 文件未生成！"
+          exit 1
+        fi
 
     - name: GetTime
       run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
@@ -54,11 +65,13 @@ jobs:
         git config --global user.email "actions@github.com"
         git remote set-url origin $REPO_URL
         
-        # 明确指定分支和认证
         git pull origin main
-        git add README.md LodGe_iTV.m3u LodGe_iTV.txt
         
-        # 避免空提交导致失败
+        # 确保文件存在再添加
+        [ -f "README.md" ] && git add README.md
+        [ -f "LodGe_iTV.m3u" ] && git add LodGe_iTV.m3u
+        [ -f "LodGe_iTV.txt" ] && git add LodGe_iTV.txt
+        
         if git diff-index --quiet HEAD --; then
           echo "没有变更需要提交"
         else
