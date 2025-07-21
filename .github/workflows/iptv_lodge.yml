@@ -1,0 +1,67 @@
+name: IPTV LodGe Daily Update
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # 每6小时运行一次
+  workflow_dispatch:  # 支持手动触发
+  
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    permissions:  # 修复权限问题的关键配置
+      contents: write  # 授予写入权限
+      pull-requests: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: main  # 明确指定分支
+        token: ${{ secrets.GITHUB_TOKEN }}  # 传递认证令牌
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: pip install aiohttp
+
+    - name: Run scraping script
+      run: python .github/workflows/iptv_lodge.py
+
+    - name: GetTime
+      run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
+
+    - name: Update README.md with run time and file links
+      run: |
+        m3u_link="https://raw.githubusercontent.com/${{ github.repository }}/main/LodGe_iTV.m3u"
+        txt_link="https://raw.githubusercontent.com/${{ github.repository }}/main/LodGe_iTV.txt"
+        
+        sed -i "s|<!-- Last Run Time -->.*|<!-- Last Run Time --> ${GET_TIME}|" README.md
+        sed -i "s|<!-- M3U File Link -->.*|<!-- M3U File Link --> [M3U播放列表](${m3u_link})|" README.md
+        sed -i "s|<!-- TXT File Link -->.*|<!-- TXT File Link --> [TXT频道列表](${txt_link})|" README.md
+
+    - name: Commit changes
+      env:
+        REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git remote set-url origin $REPO_URL
+        
+        # 明确指定分支和认证
+        git pull origin main
+        git add README.md LodGe_iTV.m3u LodGe_iTV.txt
+        
+        # 避免空提交导致失败
+        if git diff-index --quiet HEAD --; then
+          echo "没有变更需要提交"
+        else
+          git commit -am "自动更新：${GET_TIME}"
+          git push origin HEAD:main
+        fi
