@@ -1,4 +1,6 @@
 #EXTM3U x-tvg-url="https://112114.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/img/温馨提示.png" group-title="🦧温馨提示",温馨提示
+https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://itv.shrimp.cloudns.biz/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
 http://1.180.2.93:9901/tsfile/live/1020_1.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://itv.shrimp.cloudns.biz/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
@@ -3297,6 +3299,8 @@ http://file.ysxtv.cn/cms/videos/nmip-media/channellive/channel4/playlist.m3u8
 https://file.ysxtv.cn/nmip-media/channellive/channel101492/playlist.m3u8
 #EXTINF:-1 tvg-name="雅安新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/tv/雅安新闻综合.png" group-title="🚄四川频道",雅安新闻综合
 https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🚅云南频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 屏边综合" tvg-logo="https://itv.shrimp.cloudns.biz/tv/屏边综合.png" group-title="🚅云南频道", 屏边综合
 http://live.ynurl.com/video/s10040-pbzh/index.m3u8?zyund
 #EXTINF:-1 tvg-name=" 峨山电视" tvg-logo="https://itv.shrimp.cloudns.biz/tv/峨山电视.png" group-title="🚅云南频道", 峨山电视
@@ -4143,8 +4147,6 @@ http://218.84.12.186:8002/hls/main/playlist.m3u8
 http://218.84.127.245:1026/hls/main1/playlist.m3u8
 #EXTINF:-1 tvg-name="石河子新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/tv/石河子新闻综合.png" group-title="🛹新疆频道",石河子新闻综合
 http://124.88.144.73:1935/live/xwzh/playlist.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://itv.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🛺陕西频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 乐家购物" tvg-logo="https://itv.shrimp.cloudns.biz/tv/乐家购物.png" group-title="🛺陕西频道", 乐家购物
 http://112.46.105.20:8009/hls/23/index.m3u8
 #EXTINF:-1 tvg-name=" 西安新闻" tvg-logo="https://itv.shrimp.cloudns.biz/tv/西安新闻.png" group-title="🛺陕西频道", 西安新闻
