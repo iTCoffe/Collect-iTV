@@ -318,6 +318,10 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     with open(m3u_filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
         f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
+
+        # 添加新的 EXTINF 行
+        f.write("#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/img/温馨提示.png" group-title="🦧温馨提示",温馨提示")
+        f.write("https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4")
         
         # 写入频道信息
         for channel_info in deduped_channels:
