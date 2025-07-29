@@ -56,7 +56,15 @@ jobs:
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
         
         # 生成TXT播放列表
-        awk '/^#EXTINF:/ {\n            split($0, a, \",\");\n            name = a[2];\n            getline url;\n            gsub(/\\r/, \"\", name);\n            gsub(/\\r/, \"\", url);\n            sub(/^ /, \"\", name);\n            print name \",\" url;\n        }'LiTV.m3u | awk '!seen[$0]++' >LiTV.txt
+        awk '/^#EXTINF:/ {
+            split($0, a, ",");
+            name = a[2];
+            getline url;
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
+            sub(/^ /, "", name);
+            print name "," url;
+        }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
         # 清理临时文件
         rm -f Base.m3u CCTV.m3u CNTV.m3u
