@@ -41,42 +41,38 @@ jobs:
         echo '#EXTM3U x-tvg-url="https://itv.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/tv/温馨提示.png" group-title="🦧温馨提示\",温馨提示' >>LiTV.m3u
         echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
-
+        
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.shrimp.cloudns.biz/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.shrimp.cloudns.biz/tv/谨防诈骗.png" group-title="🦧温馨提示\",谨防诈骗' >>LiTV.m3u
         echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
-
+        
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.shrimp.cloudns.biz/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.shrimp.cloudns.biz/tv/禁止蕉绿.png" group-title="🦧温馨提示\",禁止蕉绿' >>LiTV.m3u
         echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
         
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
         
         # 生成TXT播放列表
-        awk '/^#EXTINF:/ {
-            split($0, a, ",");
-            name = a[2];
-            getline url;
-            gsub(/\r/, "", name);
-            gsub(/\r/, "", url);
-            sub(/^ /, "", name);
-            print name "," url;
-        }'LiTV.m3u | awk '!seen[$0]++' >LiTV.txt
+        awk '/^#EXTINF:/ {\n            split($0, a, \",\");\n            name = a[2];\n            getline url;\n            gsub(/\\r/, \"\", name);\n            gsub(/\\r/, \"\", url);\n            sub(/^ /, \"\", name);\n            print name \",\" url;\n        }'LiTV.m3u | awk '!seen[$0]++' >LiTV.txt
         
         # 清理临时文件
         rm -f Base.m3u CCTV.m3u CNTV.m3u
-
+        
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git addLiTV.m3uLiTV.txt README.md
+
+        # 添加文件
+        git add LiTV.m3u LiTV.txt README.md
+
+        # 提交更改
         git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
