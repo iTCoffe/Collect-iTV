@@ -27,13 +27,13 @@ jobs:
     - name: Run scraping script
       run: python .github/workflows/iptv.py
 
-    - name: GetTime
+    - name: Get current time
       id: get-time
-      run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
+      run: echo "GET_TIME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_ENV
 
     - name: Generate README.md
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 $env{GET_TIME}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）" > README.md
 
     - name: Commit changes
       env:
@@ -47,6 +47,8 @@ jobs:
         git add README.md
         git add Internet_iTV.m3u
         git add Internet_iTV.txt
+        git add Keep_iTV.m3u
+        git add Keep_iTV.txt
         
         git commit -am "自动更新：$GET_TIME"
         git push origin main
