@@ -1,6 +1,5 @@
 name: LiTV Daily Update
 
-# 触发时间：北京时间 03:00、12:00、21:00
 on:
   workflow_dispatch:
   watch:
@@ -14,91 +13,49 @@ env:
 jobs:
   Update:
     runs-on: ubuntu-latest
-
-    # 设置时区，方便后续步骤使用 date 命令获取 CST 时间
     steps:
-    - name: Set timezone
-      run: |
-        echo "TZ=${{ env.TZ }}" > $GITHUB_OUTPUT
-
-    - name: Get Current Time
-      id: date
-      run: |
-        CURRENT_TIME=$(date -u --date=@"$(( $(date +%s) + 8 * 3600 ))" +'%Y-%m-%d %H:%M:%S CST')
-        echo "date=$CURRENT_TIME" >> $GITHUB_OUTPUT
-
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Install required tools
-      run: |
-        sudo apt-get update -qq
-        sudo apt-get install -qq awk grep wget
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Download Base Sources
-      id: download_sources
+    - name: Update Files
       run: |
-        echo "Downloading base sources..." >> $GITHUB_OUTPUT 2>&1
         # 下载基础源文件
-        wget -q -O Base1.m3u "https://raw.githubusercontent.com/zqs1qiwan/laobaitv/main/test/test/main.m3u"
-        wget -q -O Base2.m3u "https://sub.iptv.darwinchow.com/cqcb.m3u8"
-        wget -q -O Base3.m3u "https://iptv.catvod.com/tv.m3u"
-
-        # 检查下载是否成功（简单检查文件大小）
-        for file in Base1.m3u Base2.m3u Base3.m3u; do
-          if [ ! -s "$file" ]; then
-            echo "Error: Failed to download or empty file: $file" >&2
-            exit 1
-          fi
-        done
-        echo "Downloaded base sources." >> $GITHUB_OUTPUT
-
-    - name: Merge and Deduplicate Base Sources
-      id: merge_dedupe
-      run: |
-        echo "Merging and deduplicating base sources..." >> $GITHUB_OUTPUT
-        # 合并并去重基础源，使用临时文件
+        wget -q https://raw.githubusercontent.com/zqs1qiwan/laobaitv/main/test/test/main.m3u -O Base1.m3u
+        wget -q https://sub.iptv.darwinchow.com/cqcb.m3u8 -O Base2.m3u
+        wget -q https://iptv.catvod.com/tv.m3u -O Base3.m3u
+        
+        # 合并并去重基础源
         cat Base1.m3u Base2.m3u Base3.m3u | awk '!seen[$0]++' > Base.m3u
-        echo "Base sources merged and deduplicated." >> $GITHUB_OUTPUT
-
-    - name: Process CTV Sources
-      id: process_ctv_sources
-      run: |
-        echo "Processing Central Television sources..." >> $GITHUB_OUTPUT
-        # 处理央视源：查找包含"央视"的行及其后的一行（直到遇到 -- 或新的 #EXTINF）
+        
+        # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
-        # 处理非央视源：跳过包含"央视"的行及其后的一行
+        
+        # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
-        echo "CTV sources processed." >> $GITHUB_OUTPUT
-
-    - name: Generate Final M3U Playlist
-      id: generate_final_playlist
-      run: |
-        echo "Generating final LiTV.m3u playlist..." >> $GITHUB_OUTPUT
-        # 创建 M3U 文件头，包含元数据
-        echo '#EXTM3U x-tvg-url="https://itv.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
-
+        
+        # 生成最终M3U
+        echo '#EXTM3U x-tvg-url="https://itv.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
-        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >> LiTV.m3u
-
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.shrimp.cloudns.biz/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
+        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
+        
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.shrimp.cloudns.biz/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
-        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >> LiTV.m3u
-
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.shrimp.cloudns.biz/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
+        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
+        
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.shrimp.cloudns.biz/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
-        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >> LiTV.m3u
-
-        # 合并源文件：央视源 + 非央视源
-        cat CCTV.m3u CNTV.m3u >> LiTV.m3u
-        echo "Final LiTV.m3u generated." >> $GITHUB_OUTPUT
-
-    - name: Generate TXT Playlist
-      id: generate_txt_playlist
-      run: |
-        echo "Generating LiTV.txt playlist..." >> $GITHUB_OUTPUT
-        # 从 M3U 文件生成 TXT 格式 (只保留 #EXTINF: 和 URL行，去除换行并去重)
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.shrimp.cloudns.biz/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
+        echo 'https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4' >>LiTV.m3u
+        
+        # 合并源文件
+        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
+        
+        # 生成TXT播放列表
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -108,37 +65,14 @@ jobs:
             sub(/^ /, "", name);
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
-        echo "LiTV.txt generated." >> $GITHUB_OUTPUT
-
-    - name: Cleanup Temp Files
-      id: cleanup
-      run: |
-        echo "Cleaning up temporary files..." >> $GITHUB_OUTPUT
+        
+        # 清理临时文件
         rm -f Base.m3u CCTV.m3u CNTV.m3u
-        echo "Temporary files removed." >> $GITHUB_OUTPUT
-
-    - name: Update README
-      id: update_readme
-      run: |
-        echo "Updating README.md..." >> $GITHUB_OUTPUT
-        # 构建更新的README内容，包含最新的更新时间和链接
-        cat <<EOF > README.md
-# IPTV 自动更新
-
-### 更新于 \${{ steps.date.outputs.date }}
-
-### 包含格式:
-- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）
-- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）
-- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）
-- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）
-- [M3U播放列表](LiTV.m3u)（LiTV.M3U）
-- [TXT播放列表](LiTV.txt)（LiTV.TXT）
-EOF
-        echo "README.md updated." >> $GITHUB_OUTPUT
+        
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
-      id: commit_changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
@@ -146,14 +80,8 @@ EOF
         # 添加文件
         git add LiTV.m3u LiTV.txt README.md
 
-        # 获取当前提交的哈希值（用于区分每次提交）
-        CURRENT_COMMIT=$(git rev-parse HEAD)
-        DATE=$(echo ${{ steps.date.outputs.date }} | sed 's/ /_/g') # 将空格替换为下划线用于文件名，但这不是必须的
-        COMMIT_MSG="IPTV Playlist Update: LiTV - Updated at ${{ steps.date.outputs.date }} (Commit: $CURRENT_COMMIT)"
-        git commit -m "$COMMIT_MSG"
+        # 提交更改
+        git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
-      run: |
-        echo "Pushing updates..." >> $GITHUB_OUTPUT
-        git push
-        echo "Updates pushed successfully." >> $GITHUB_OUTPUT
+      run: git push
