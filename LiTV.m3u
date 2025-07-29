@@ -340,302 +340,100 @@ https://live.chinacert.cftest5.cn/douyu/319576
 https://live.chinacert.cftest5.cn/douyu/12400977
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="https://ir.douyu.com/images/LOGO.jpg" group-title="互联网直播频道;影视",斗鱼 RunningMan
 https://live.chinacert.cftest5.cn/douyu/131977
-<!DOCTYPE html>
-<html class="no-js" lang="en-US">
-<head>
-<title>CDN节点请求源服务器被阻断</title>
-<link rel="icon" href="https://assets.rnmcnm.com/assets/img/cdnfly/favicon.ico" type="image/x-icon">
-<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
-<meta charset="UTF-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-<meta name="robots" content="noindex, nofollow" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<style>
-:root {
-    --primary-color: #4a90e2;
-    --error-color: #e74c3c;
-    --text-color: #2c3e50;
-    --bg-color: #f5f6fa;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-/* ipxinxi 容器 */
-.ipxinxi {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    z-index: 1000;
-.ipxinxi:hover {
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
-/* 图片容器 */
-.images-container {
-    gap: 20px;
-    margin: 40px 0;
-    perspective: 1000px;
-/* 图片样式和动画 */
-.images-container img {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-/* 图片尺寸设置 */
-.电脑 { 
-    width: 70px;
-    height: auto;
-.箭头_右 { 
-    width: 40px;
-.SCDN { 
-.链接 {
-.绿洲云 {
-.叉 { 
-    width: 25px;
-.服务器 { 
-    width: 60px;
-@keyframes floatAnimation {
-    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-    25% { transform: translate3d(0, -10px, 5px) rotate(2deg); }
-    75% { transform: translate3d(0, 10px, -5px) rotate(-2deg); }
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-.电脑, .服务器, .SCDN, .链接, .绿洲云 {
-    animation: fadeInScale 0.5s forwards, floatAnimation 6s ease-in-out infinite;
-.电脑 {
-    animation-delay: 0s, 0s; /* 默认延迟 */
-.SCDN {
-    animation-delay: 0s, -2s; /* SCDN的floatAnimation延迟-2s */
-    animation-delay: 0s, -3s;
-    animation-delay: 0s, -1s;
-.服务器 {
-    animation-delay: 0s, -4s; /* 服务器的floatAnimation延迟-4s */
-.箭头_右 {
-    animation: fadeInScale 0.5s forwards 0.3s;
-    transform-origin: center;
-    transition: transform 0.3s ease;
-.箭头_右:hover {
-    transform: scale(1.2);
-.叉 {
-    animation: fadeInScale 0.5s forwards 0.6s;
-.叉:hover {
-    transform: rotate(180deg) scale(1.2);
-/* 标题样式 */
-h1 {
-    font-weight: 600;
-    font-size: 4rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--error-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 20px 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    animation: fadeInScale 0.8s forwards;
-/* 页脚样式 */
-footer {
-    bottom: 0;
-    width: 100%;
-    padding: 15px 0;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-footer:hover {
-    transform: translateY(-2px);
-.left-content, .right-content {
-    flex: 1;
-    text-align: center;
-    padding: 0 20px;
-    position: relative;
-    gap: 10px;
-.left-content::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 80%;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--text-color), transparent);
-h2 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-p {
-    font-size: 1rem;
-/* 响应式设计 */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    
-    .images-container {
-        flex-wrap: wrap;
-        gap: 15px;
-    .ipxinxi {
-        width: 80%;
-        font-size: 0.9rem;
-    footer {
-        padding: 12px 0;
-    .left-content, .right-content {
-        padding: 0 10px;
-    h2 {
-        font-size: 1rem;
-    p {
-    /* 移动端按钮样式 */
-    .help-button {
-        padding: 4px 8px;
-        font-size: 10px;
-        border-radius: 3px 0 0 3px;
-    .help-button:hover {
-        padding-right: 10px;
-    /* 移动端提示框样式 */
-    .tooltip {
-        right: 50px;
-        padding: 3px 6px;
-        font-size: 9px;
-        max-width: 70px;
-        border-radius: 3px;
-    .tooltip::after {
-        border-width: 3px 0 3px 3px;
-        right: -3px;
-/* 更小屏幕的特殊处理 */
-@media (max-width: 480px) {
-        padding-right: 8px;
-        right: 40px;
-        padding: 2px 4px;
-        font-size: 8px;
-        max-width: 60px;
-/* 添加按钮和提示框样式 */
-.help-button {
-    background: linear-gradient(135deg, var(--primary-color), #2980b9);
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: bold;
-    box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
-    z-index: 999;
-    text-decoration: none;
-.help-button:hover {
-    padding-right: 18px;
-    background: linear-gradient(135deg, #2980b9, var(--primary-color));
-.tooltip {
-    right: 100px;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-size: 12px;
-    visibility: hidden;
-    z-index: 998;
-    max-width: 140px;
-.tooltip::after {
-    right: -8px;
-    border-width: 8px 0 8px 8px;
-    border-style: solid;
-    border-color: transparent transparent transparent white;
-.tooltip.show {
-    opacity: 1;
-    visibility: visible;
-    animation: pulse 1s infinite;
-@keyframes pulse {
-    0% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-50%) scale(1.05); }
-    100% { transform: translateY(-50%) scale(1); }
-</style>
-</head>
-<body>
-    <div class="ipxinxi" style="text-align: center;">
-    <span class="inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed">您的IP: 48.217.143.96 &bull;<br></span>
-    <span class="inline-block md:block heading-ray-id font-mono text-15 lg:text-sm lg:leading-relaxed">节点IP: 10.0.0.19<br></span>
-</div>
-<div class="images-container">
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/电脑.svg" class="电脑" alt="电脑">
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/箭头_右.svg" class="箭头_右" alt="箭头_右">
-    <a href="https://www.cdn1.vip" target="_blank">
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/SCDN.svg" class="SCDN" alt="SCDN">
-    </a>
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/%E9%93%BE%E6%8E%A5.svg" class="链接" alt="链接">
-    <a href="https://www.lzyidc.net" target="_blank">
-        <img src="https://img.scdn.io/i/685ccb397780e_1750911801.webp" class="绿洲云" alt="绿洲云">
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/叉.svg" class="叉" alt="叉">
-    <img src="https://assets.rnmcnm.com/assets/img/cdnfly/服务器.svg" class="服务器" alt="服务器">
-<div class="center-container">
-    <h1 class="inline-block md:block mr-2 md:mb-2 font-light text-60 md:text-3xl text-black-dark leading-tight">
-       <span data-translate="error">Error</span>
-       <span>502</span>
-    </h1>
-<footer>
-    <div class="left-content">
-        <h2>什么问题？</h2>
-        <p>CDN节点请求源服务器被阻断！</p>
-    </div>
-    <div class="right-content">
-        <h2>如何解决？</h2>
-        <p>请检查该站点源服务器的回源端口能否访问或拦截了CDN节点！</p>
-</footer>
-<a href="https://www.rnmcnm.com/archives/3479" class="help-button">疑难杂症</a>
-<div class="tooltip">点"疑难杂症"查解决方法</div>
-<script>
-// 添加页面载入动画
-document.addEventListener('DOMContentLoaded', function() {
-    // 为所有图片添加渐入效果
-    const images = document.querySelectorAll('.images-container img');
-    images.forEach((img, index) => {
-        setTimeout(() => {
-            img.style.opacity = '1';
-            img.style.transform = 'translateY(0)';
-        }, index * 200);
-    });
-    // IP信息容器动画
-    const ipxinxi = document.querySelector('.ipxinxi');
-    ipxinxi.style.opacity = '0';
-    ipxinxi.style.transform = 'translateX(-50%) translateY(-20px)';
-    setTimeout(() => {
-        ipxinxi.style.transition = 'all 0.5s ease';
-        ipxinxi.style.opacity = '1';
-        ipxinxi.style.transform = 'translateX(-50%) translateY(0)';
-    }, 300);
-});
-// 添加鼠标移动视差效果
-document.addEventListener('mousemove', function(e) {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    images.forEach((img) => {
-        img.style.transform = `translate(${xAxis}px, ${yAxis}px)`;
-// 添加提示框显示逻辑
-function showTooltip() {
-    const tooltip = document.querySelector('.tooltip');
-    tooltip.classList.add('show');
-        tooltip.classList.remove('show');
-    }, 3000); // 显示3秒后隐藏
-// 每5秒显示一次提示
-setInterval(showTooltip, 5000);
-// 页面加载后先显示一次
-setTimeout(showTooltip, 1000);
-</script>
-</body>
-</html>
+#EXTINF:-1 tvg-name="2025-07-29 20:54:12" tvg-logo="https://cdn.jsdelivr.net/gh/feiyang666999/testvideo/tg.jpg" group-title="列表更新时间",2025-07-29 20:54:12
+https://cdn.jsdelivr.net/gh/feiyang666999/testvideo/time/time.mp4
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/24/100000001056106a1884.png" group-title="和美乡村足球超级联赛", 07/28 18:20_贵州村超20强决赛day4_贵州村超20强决赛day4_贵州村超20强决赛day4
+https://www.freetv.top/migu/956503703.m3u8?migutoken=50b16d7a5d1617b6a8f6cb68417787bbe00b61f6c7ddae4018b763c7827e95f48ee44ebaf3b4c09fc614c6c54d8b33a786e5e451ab64cfa7e2089c2f0f9ad8c3c5f4050144eee5fc5e6b6a4d9a
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2022/7/6/1000000003511067e9ca.png" group-title="乒超", 07/28 19:20_林诗栋独得两分 率队战胜山东魏桥_林诗栋独得两分 率队战胜山东魏桥_混采区
+https://www.freetv.top/migu/956554365.m3u8?migutoken=2c5ff4889ddeed87e917a4c96b893006da8e38b14cbb752528806038e57004c612c444e87d6c7c51e16eb9ad9772bba6315677d93e8bc3653a709823e61d5ccd1b1b66a0af23f6fc55f6edafb1
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/1/12/1000000010091065c93e.png" group-title="LPL", 07/28 19:00_TES vs JDG_TES vs JDG_官方解说
+https://www.freetv.top/migu/956667517.m3u8?migutoken=52bb5f42f483fe551a2e1d70bb7ba51bd1dc5ecef975ab647fa68ec5a5ad8a4e74c001a238adcd82184ac278837f417e817d3528aac3c37b2d300c6b35b9163075be3ffe94bdc89073b1131bad
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2022/8/4/1000000005511065bb48.jpg" group-title="超三联赛", 01/01 08:00_超三联赛 靖江赛区第3站 小组赛第三轮_超三联赛 靖江赛区第3站 小组赛第三轮_2025超三联赛靖江赛区第3站小组赛第三轮全场回放（李月擎）
+https://www.freetv.top/migu/956685058.m3u8?migutoken=a367ea3f4b8fe64e4a740b9ac335f7413e9dffb5c86bc42f97b18cfbd71b41cdf4a72ab40c72ffa421a0b97597093f960f231011e06946e1cc8995676a662b89367a1741fd75a12d50c6352c3c
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2022/8/4/1000000005511065bb48.jpg" group-title="超三联赛", 07/28 18:50_超三联赛 靖江赛区第3站 小组赛第三轮_超三联赛 靖江赛区第3站 小组赛第三轮_李月擎
+https://www.freetv.top/migu/956571632.m3u8?migutoken=3a79e8c0ebc48fb0f964785116deff3c4b1b5e7c4ef7d762ef4150df7f6ad9e7661e321deada063c26d51e6e0a3154a179e92210e6da961ba803c2cd5fd32421e2b43b1834b7fce37a8c34bb4e
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/22/100000001295106d57dc.png" group-title="世界泳联世锦赛", 07/28 19:05_覃海洋后程超越100蛙夺冠_覃海洋后程超越100蛙夺冠_C5
+https://www.freetv.top/migu/956664672.m3u8?migutoken=a5bc9e373589ad88327b9fc14875513dfcb7b95da86821c048886f9e87d8e93ff50b50c6a70a199649071cf1e678a2be5620acf3a94967d916632100c37f5003dde3b307a19c0fa375ee689f48
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/28 19:30_2025斯诺克上海大师赛第一轮：尼尔·罗伯逊 6-2 庞俊旭_尼尔·罗伯逊 6-2 庞俊旭_解说员：朱蒙
+https://www.freetv.top/migu/956620251.m3u8?migutoken=0392afa7ee0c80f9921081bb34961ca147a5bd1e0f9ace4534cd01903f12493395b2389bcaf4c1338ab6d4cbb09de03db80db39b7691fe574fbe6d21d1fdce00f01d4e60ed7b881b80b5214c02
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/28 19:30_2025斯诺克上海大师赛第一轮：尼尔·罗伯逊 6-2 庞俊旭_尼尔·罗伯逊 6-2 庞俊旭_1号桌
+https://www.freetv.top/migu/956150822.m3u8?migutoken=3329563044bfff977dd42a2536b1ec90570ce13db5fda45244335979c5f9f6c740b501eb91b6d8dcb66c4cd605dd5ad7a839301b908a1c4f5cac37bfbd74e2447cd231cec6274cd41232d0d4aa
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/28 19:30_肖恩·墨菲6-0韩富源_肖恩·墨菲6-0韩富源_2号桌
+https://www.freetv.top/migu/956150839.m3u8?migutoken=9aaadf9809d7d9753bfff5083ea31756b7dd5d032e88db1c093e322f5525b6fe7fd36fc6f82dac777486d5ca4e699bfb9a48fe3fe8eb791ced3d8446162cb93cf73cdb4f986a44d0eb1ea653e9
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/25/100000001221106f665b.jpg" group-title="福建闽港澳台“同心杯”篮球邀请赛", 07/28 19:25_福建闽港澳台“同心杯”篮球邀请赛_香港汉友篮球队vs福建浔兴俱乐部_解说
+https://www.freetv.top/migu/956620423.m3u8?migutoken=745db172e9ff0e69df6fdab0c7f836a9b0984546c8297e45d867aa30482b032c402fd42685efff3707d1a7a447048005f9ca5d756403ddd11804cba46b6c8eb7772cc9a4c2199929b5562e356b
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/19/1000000010661064fe5a.png" group-title="和美乡村篮球赛", 07/28 19:45_2025斗阵·泉BA篮球赛 池店赛区 DAY5_2025斗阵·泉BA篮球赛 池店赛区 DAY5_“宝盖商会杯”2025年斗阵·泉BA暨和美乡村篮球大赛: 2025斗阵·泉BA篮球赛 池店赛区 DAY5
+https://www.freetv.top/migu/956620983.m3u8?migutoken=23b4ee80474f77fe64b57f4aa6fccef9d3253979702e339fc831b5800d78c880a435c0e652ea31bde2661c873bd3743032517b2399dd9a4a84c3b3f2c85c7a7ed5bb19fb91e5f1d7679db35348
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/19/1000000010661064fe5a.png" group-title="和美乡村篮球赛", 07/28 19:45_2025斗阵·泉BA篮球赛 宝盖赛区 DAY5_2025斗阵·泉BA篮球赛 宝盖赛区 DAY5_“宝盖商会杯”2025年斗阵·泉BA暨和美乡村篮球大赛: 2025斗阵·泉BA篮球赛 宝盖赛区 DAY5
+https://www.freetv.top/migu/956620998.m3u8?migutoken=ea4e027f1fe143a756e27520b9b033dac0f782302fa23ee934916b214324f7af01815fcd620f488e50bc52dc748a7f0a56680269bb9700889e4c26f49732a611037158386abe033b441f8f7fc3
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/28 21:45_斯佳辉6-4战胜王信伯_斯佳辉6-4战胜王信伯_清流播出
+https://www.freetv.top/migu/956682556.m3u8?migutoken=65fb5eeec80c4adcb65a2658e6df74c564473e059a519592a89d6082795748dda47353895556fcd57a0edc2e85360a27bbe067ea553726301c42da209bdb7eb8f0bab8ee0d29d36161eed61ee2
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/3/7/1000000012341069e1a8.jpg" group-title="WTA", 07/28 23:00_拉杜卡努2-0鲁塞 拉克西莫娃晋级_拉杜卡努2-0鲁塞 拉克西莫娃晋级_赛场原声
+https://www.freetv.top/migu/956653524.m3u8?migutoken=2742ce8d53b35b39028e6f51a23862c5b16adba1f3de0c9a622f3a2817c6a849952611bf11e9332846e775c0a4ea52b3ed9134d9c8bb9c805277c105efc467daff8881cbb98d78661832c6ddda
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/3/7/1000000012341069e1a8.jpg" group-title="WTA", 07/28 23:00_拉杜卡努2-0鲁塞 拉克西莫娃晋级_拉杜卡努2-0鲁塞 拉克西莫娃晋级_英文解说
+https://www.freetv.top/migu/956653539.m3u8?migutoken=37371470a0604f97803dd5d87bba3099a7326c1198523aa570e3fde0472825461ce7cbe296f3f70c094432ef89bba66420257da70adb46de18bf32f6064972631ebb30d7da042dd4601862db1b
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 09:30_阿里·卡特 6-1 邱磊_阿里·卡特 6-1 邱磊_1号桌
+https://www.freetv.top/migu/956150869.m3u8?migutoken=b77e83fe356433d947f06772de6f6fe9e7e55f4ccb44258f985bd2ed59cb9bff9975d1ba6a0c57e840606cc90c8d2691361e763fe12ce67e0c9bccf392cd3b15957dba586365bfb844b2fa8ee3
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 09:30_2025斯诺克上海大师赛第一轮：肖国栋 6-3 雷佩凡_肖国栋 6-3 雷佩凡_解说员：朱蒙
+https://www.freetv.top/migu/956620299.m3u8?migutoken=b2b3b2cbbfe0b97aaf1246b430e60b2812bc157c9474805100e4269c06d89f3746cfece176b733e86ed8f2dfbba19885e411dde543625b6cdf321e6a3b3a2165ebc92ba2daabdcffcdef254605
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 09:30_2025斯诺克上海大师赛第一轮：肖国栋 6-3 雷佩凡_肖国栋 6-3 雷佩凡_2号桌
+https://www.freetv.top/migu/956150884.m3u8?migutoken=d2d444b8f08d06ca73910131a512c81e314c84920c114f18dba3ad92537b608a29d4f654106b4a06fd9892103591ab7961530e41fe706e1b5e33773ab614fe12e3c3e67bba35cc53fc15d0417b
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/22/100000001295106d57dc.png" group-title="世界泳联世锦赛", 07/29 10:00_覃海洋、李冰洁携手晋级_覃海洋、李冰洁携手晋级_2025年世界泳联世锦赛(游泳)-男子50米蛙泳 预赛 等
+https://www.freetv.top/migu/956673901.m3u8?migutoken=5f0be21a91b843a992d1e3cec6976ff337aa8fad75f02c0b18432bdbf6ce17b4d6dcad744f13460d61cc6ecac36c03cc09fdc7efd3751a1a43bb0d373b589165c424b6c07a5501cd7ea1e93cd5
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 14:00_2025斯诺克上海大师赛第二轮：马克·塞尔比 6-0 肖恩·墨菲_马克·塞尔比 6-0 肖恩·墨菲_解说员：朱蒙
+https://www.freetv.top/migu/956620322.m3u8?migutoken=d8deced5a772f9105901b925a44018e36123ea252e1223e572bb365e1a1a5124049449316e78799642f2d0693d7deb8c4cc19f70b70db89b4907d4abc232f3cefe944865870f563f92dc8001ed
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 14:00_2025斯诺克上海大师赛第二轮：马克·塞尔比 6-0 肖恩·墨菲_马克·塞尔比 6-0 肖恩·墨菲_1号桌
+https://www.freetv.top/migu/956150894.m3u8?migutoken=83aef6f34e22bcb9f5f921bc1b5bfca529a64cdf83c38d9835a74a5a55a268c51310f83c943cf1feabcf4f8f0bd3d4601f30b298311805b2631999c1067fa037e01582fb33f05ae257932e975f
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 14:00_2025斯诺克上海大师赛第二轮：凯伦·威尔逊 6-5 斯佳辉_凯伦·威尔逊 6-5 斯佳辉_解说员：秦正
+https://www.freetv.top/migu/956620329.m3u8?migutoken=e9dd4043a646a6d403aab53f5a3403de2576ad99fd83c53909044944bfc1eadc4cda12c3b70511ca544c9f3fd9f8a6e934a3d06913dc834c72cec8c209093b9a01983a561474af89c28135231b
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 14:00_2025斯诺克上海大师赛第二轮：凯伦·威尔逊 6-5 斯佳辉_凯伦·威尔逊 6-5 斯佳辉_2号桌
+https://www.freetv.top/migu/956150917.m3u8?migutoken=c5727a80a97087aad822d1eef1c460e9ea83966a7bffcb157d6904f73e9b0328f23db22a9b701bece2617d74563ca26e6914a0ee926377f1c654353d8a003bf42f04308380c7b178372a663a7d
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/1/12/1000000010091065c93e.png" group-title="LPL", 07/29 16:30_UP vs LGD_UP vs LGD_官方解说
+https://www.freetv.top/migu/956667539.m3u8?migutoken=cf1d9d603603007e30c23ff7c491f19196371323fa3ae3151fd8ea199b32f2060db553b20ebb48951f6c29590bc5c515385465ecc46f465a08fa5340514410f67883efbfe5dcda5ecf40dbdf6a
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/22/100000001295106d57dc.png" group-title="世界泳联世锦赛", 07/29 17:28_程子龙/朱子锋最后一跳绝杀夺金_程子龙/朱子锋最后一跳绝杀夺金_2025年世界泳联世锦赛(跳水)-男子双人10米跳台 决赛
+https://www.freetv.top/migu/956674092.m3u8?migutoken=fb17ae9a117661cc4fd85d34af84076df57d4ea3855b55906b70254ecb75bd0e2e079927defb0c66190d9e629234f9f5e6cbecd6fe7dfcced45b672f09b54f284a49a8346f02b247e660c15387
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/18/1000000012941069da17.png" group-title="全国少年体操U系列锦标赛", 07/29 18:00_全国少年体操U系列锦标赛 第一日_全国少年体操U系列锦标赛 第一日_清流播出
+https://www.freetv.top/migu/956429999.m3u8?migutoken=33f8edb3ac2e73a1b99d84215ad8dec5151293d6531a094946f8d31bb1006dc3b56330aec487b3b23865322314d9cc348435c429106b2541d1a92b7a8598fad07db8c2621e161cbea935149a7e
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2022/8/4/1000000005511065bb48.jpg" group-title="超三联赛", 07/29 17:50_超三联赛 靖江赛区第3站 淘汰赛及决赛_超三联赛 靖江赛区第3站 淘汰赛及决赛_张俊卿
+https://www.freetv.top/migu/956571687.m3u8?migutoken=dea313e8853ad96f819c7c7d084a0f4d5f384266c183e4600c2dd3c78b08f3dc6ed9c193b36080ad007f7186a695bec4d1ce7eaa1aa84a651b21993aa3f98e8b5b1f40098e4f3b333c908ebd78
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/24/100000001056106a1884.png" group-title="和美乡村足球超级联赛", 07/29 18:20_贵州村超20强决赛day5_贵州村超20强决赛day5_贵州村超20强决赛day5
+https://www.freetv.top/migu/956503730.m3u8?migutoken=4cd70024fde7474fc6b81caba866059e753b2c0063c71da9f04374ae955b327e40832fe6e3ace3c6f880a698c4490e7a04f442e549255039a7ef614660a6d65792b3a05924ef5b75f78e74134a
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/22/100000001295106d57dc.png" group-title="世界泳联世锦赛", 07/29 19:02_唐钱婷女子100米蛙泳冲金_唐钱婷女子100米蛙泳冲金_2025年世界泳联世锦赛(游泳)-男子200米自由泳 决赛 等
+https://www.freetv.top/migu/956674158.m3u8?migutoken=e4e988885a16fa1ff4361046129c32da2e4f1f14ee3fdcf7189b125dc68e5bf312809617c0b33fc4fef0871a0f148f19ef23820f03309722aea58c33ed467073b263c3fbd59f47e570ad0b7511
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 19:10_2025斯诺克上海大师赛第二轮：丁俊晖 vs 张安达_丁俊晖 vs 张安达_演播室
+https://www.freetv.top/migu/956620446.m3u8?migutoken=03a91c67af810b2fd887e5a0e37dfde34fb992016d42d9c361c1498273e04662fb49860dfe4b6374938271a83d1294ac9c73f53d6839c1ad633bc8410a1eec6532afda2aacf164697ad1788966
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 19:30_2025斯诺克上海大师赛第二轮：丁俊晖 vs 张安达_丁俊晖 vs 张安达_2号桌
+https://www.freetv.top/migu/956150936.m3u8?migutoken=e3d852782b4612e1607f096b796c4469f71acc0e838c25590e8b68f2701b4b1fc0e8d9d986548c70ad8e126405ab52af290b87518be18d1aada9299b5279aa362bf5f95fe480e885797996bd09
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 19:30_2025斯诺克上海大师赛第二轮：特鲁姆普 vs 尼尔·罗伯逊_特鲁姆普 vs 尼尔·罗伯逊_解说员：秦正
+https://www.freetv.top/migu/956620347.m3u8?migutoken=ac764c2a07a414fbba294ac6c88062eaa538449e83a360697a1b6396eddb1f37375b4e0344d98495a1ca99c4bec342b2e7bb65f7201eb7d56f9dfcf7309894d21ed36e0d9349180b65f76d5912
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/1/16/100000001001106678f6.jpg" group-title="斯诺克", 07/29 19:30_2025斯诺克上海大师赛第二轮：特鲁姆普 vs 尼尔·罗伯逊_特鲁姆普 vs 尼尔·罗伯逊_1号桌
+https://www.freetv.top/migu/956150927.m3u8?migutoken=aa762621585d26a6ec9b039ad8ff0cab351556beb7a8a205a3ab06d7783b7c6c1d06aa9607e8a44bd7804aab47fc2f2e2921b25cd56c8eb59d37a6bbff3e6da678de765f6b0be2a9c91c3f5af4
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_长沙勇胜vs广西威壮_解说
+https://www.freetv.top/migu/956481131.m3u8?migutoken=4d7b850eecfaaf8faadf1012112ecd63e16ccd95c49097e56cbca19941567a7af86fefb7428172649f67fc150e9da4f4dfc6185585ff970e31ab88456ea3f36c3bc33dd789b426fb9d198e95ac
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_长沙勇胜vs广西威壮_现场原声
+https://www.freetv.top/migu/956481164.m3u8?migutoken=b170547ec49d4ed9653baefc69b9f07f30914a72a7193bb815f9108e4f4cb1f9b483874996bbe652e214c3fc00dc28919a8d4bc1ad2c0bc1272808fb41fa18e09c7e2ebea960bfc4645fb4a7a3
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_湖北文旅vs石家庄翔蓝_解说
+https://www.freetv.top/migu/956481182.m3u8?migutoken=8d1b7ce59439858f48353fb19fbbaa580d9ed3c15a1873e7fea1831f61433e6a68250d2bad7ce8907599c5c5f2c85128e027cda966695e61272317e63fbf8eed848124b2087adb46f6d92174ce
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_湖北文旅vs石家庄翔蓝_现场原声
+https://www.freetv.top/migu/956481201.m3u8?migutoken=bfe311b38ee139f9471b5584f5c885da4a3a619b8b0d6172951a76d5f8616ee491f35a8d0d79912fc6f0ba8145a433968990b2edf5177f011a1472167eeffe26119d5c81069e616f6737a44be9
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_香港金牛vs合肥狂风峻茂_解说
+https://www.freetv.top/migu/956481237.m3u8?migutoken=291f0530f89300abf5cc3c0cef1700ba553d8be0cede1feb44269fae30a06d6cbef44db791a283c2f9680464c59bb4906ed88ac250b3ee9a432ff8a38b142a3d46548e5f73e95becd6a54109df
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/29/1000000010691064a6f5.png" group-title="NBL", 07/29 19:20_NBL_香港金牛vs合肥狂风峻茂_现场原声
+https://www.freetv.top/migu/956481254.m3u8?migutoken=32bfb9ebe8c98aaf885d593cb883a9f12971be808910a12d79cb87a51d3b18d97eb3db0cf5eca00c1c63c1ce76015759346176dddfda42ca3d35fc7a8d2dde6f47e1d2042ae748c37e169d0963
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/6/25/1000000012031069fd7c.jpg" group-title="中国男篮系列热身赛", 07/29 19:20_中国男篮系列热身赛_中国vs波黑_邵化谦 季孟年
+https://www.freetv.top/migu/956546622.m3u8?migutoken=3b9f0df9ace5cbaeea0cdb04137cf3c22ee8b11fc045aa49272205c4dc06065aa9c3f48ce502c15c4097cb9e7b3e9f15ee73762584838c47cbf00dfa01c92f0777121515d65efbd244327fab04
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2024/6/25/1000000012031069fd7c.jpg" group-title="中国男篮系列热身赛", 07/29 19:20_中国男篮系列热身赛_中国vs波黑_现场原声
+https://www.freetv.top/migu/956504290.m3u8?migutoken=3ab5ee2dd32415eb2b4f5c7d882cf3823336b336301b2a4d11265326d530ff99e77287b49f3e75f52b0e0e80af0d75b6c577e042087bd7843bbb1121d76cc3daf750970718cd28664f1d2a1748
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/7/25/100000001221106f665b.jpg" group-title="福建闽港澳台“同心杯”篮球邀请赛", 07/29 19:25_福建闽港澳台“同心杯”篮球邀请赛_香港汉友篮球队vs台湾桃园台啤永丰云豹_解说
+https://www.freetv.top/migu/956620383.m3u8?migutoken=cbb5dcf823481c83a036d8b116cf71815ad3e38af7d756cf09e407877f23ea77ad64c67f094369fae823f8516f88fb95f834e2f5258de67b67a10615ace4aa50b0878aa9cbc9a56947ddb93c50
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/1/12/1000000010091065c93e.png" group-title="LPL", 07/29 19:40_FPX vs IG_FPX vs IG_官方解说
+https://www.freetv.top/migu/956667557.m3u8?migutoken=67bd3895423d7e63673375779c0805769b85a3959122edb47b47acbbac8949c1da2da51c71bb06f9828a94d595da20506fdd011864672ffb5384fd7fc56724ebe2f9d872274829788bf33b9fca
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2023/6/19/1000000010661064fe5a.png" group-title="和美乡村篮球赛", 07/29 19:45_2025斗阵·泉BA篮球赛 宝盖赛区 DAY6_2025斗阵·泉BA篮球赛 宝盖赛区 DAY6_“宝盖商会杯”2025年斗阵·泉BA暨和美乡村篮球大赛: 2025斗阵·泉BA篮球赛 宝盖赛区 DAY6
+https://www.freetv.top/migu/956621011.m3u8?migutoken=a1a1bd10a711e0e79d448294b07f571f8048ea4ecd75efe385f18fdc76dd2bc5b7bb5c8e3d0f625d5b9e28187c437efa4b938af05a62ad94283e8030ae4f1f0441e57e3f70ba9da5a289ec5ddb
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/3/7/1000000012341069e1a8.jpg" group-title="WTA", 07/29 23:00_纳瓦罗率先出战 高芙对战柯林斯_纳瓦罗率先出战 高芙对战柯林斯_赛场原声
+https://www.freetv.top/migu/956653565.m3u8?migutoken=12c042d8c281d0da0af85607918d8bbcf483efd7a76a7d52d68c68813c05f76a4cc0c60421e173186e07124f9f02bab5439f52b3670da7d4edc0faa4d49d3c95db5bc38782e4798e3d7117319f
+#EXTINF:-1 tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/3/7/1000000012341069e1a8.jpg" group-title="WTA", 07/29 23:00_纳瓦罗率先出战 高芙对战柯林斯_纳瓦罗率先出战 高芙对战柯林斯_英文解说
+https://www.freetv.top/migu/956653602.m3u8?migutoken=2b8fcee5108303d87136f8905eaf73527666ccfb62216c6503a9327eaa2acfbe2b12715ae03bf4eb1044ef634fc8e3d1f40582b463bc0495c55b65f5db76585334483275989a1c9f6ec265e377
 ######互联网直播频道end######
 #EXTINF:-1 tvg-id="" tvg-name="" tvg-logo="" group-title="北京频道",北京IPTV淘精彩
 http://nasv4.laobaidajiji.com:4022/rtp/239.3.1.178:8001
