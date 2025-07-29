@@ -5,5 +5,5 @@
 ### 包含格式:
 - [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）
 - [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）
-- [M3U播放列表](Internet_LiTV.m3u)（Internet_LiTV.m3u）
-- [TXT播放列表](Internet_LiTV.txt)（Internet_LiTV.TXT）
+- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）
+- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）
