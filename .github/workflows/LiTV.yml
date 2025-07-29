@@ -27,10 +27,9 @@ jobs:
         wget -q https://sub.iptv.darwinchow.com/cqcb.m3u8 -O Base2.m3u
         wget -q https://iptv.catvod.com/tv.m3u -O Base3.m3u
         wget -q https://raw.githubusercontent.com/Jifeng4ever/iptv/main/hkmt.m3u8 -O Base4.m3u
-        wget -q https://raw.githubusercontent.com/Jifeng4ever/iptv/main/global.m3u8 -O Base5.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u Base3.m3u Base4.m3u Base5.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u Base2.m3u Base3.m3u Base4.m3u| awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
@@ -71,7 +70,7 @@ jobs:
         rm -f Base.m3u CCTV.m3u CNTV.m3u
 
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](Internet_LiTV.m3u)（Internet_LiTV.m3u）\n- [TXT播放列表](Internet_LiTV.txt)（Internet_TV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\n- [M3U播放列表](Internet_LiTV.m3u)（Internet_LiTV.m3u）\n- [TXT播放列表](Internet_LiTV.txt)（Internet_LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
