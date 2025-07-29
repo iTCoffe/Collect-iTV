@@ -33,7 +33,7 @@ CONFIG = {
     "output_m3u": "Keep_iTV.m3u",  # 修复：使用正确的输出文件名
     "output_txt": "Keep_iTV.txt",  # 修复：使用正确的输出文件名
     "iptv_directory": "IPTV",  # Directory containing IPTV files
-    "logo_base_url": "https://itv.shrimp.cloudns.biz/tv"  # Base URL for logos
+    "logo_base_url": "https://logo.shrimp.cloudns.biz/tv"  # Base URL for logos
 }
 
 
@@ -318,16 +318,16 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     # 写入 M3U 文件
     with open(m3u_filename, 'w', encoding='utf-8') as f:
         # 添加带有所需属性的标题行
-        f.write("#EXTM3U x-tvg-url=\"https://112114.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
+        f.write("#EXTM3U x-tvg-url=\"https://itv.shrimp.cloudns.biz/epg.xml\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
 
         # 添加新的 EXTINF 行
-        f.write("#EXTINF:-1 tvg-id=\"温馨提示\" tvg-name=\"温馨提示\" tvg-logo=\"https://logo.shrimp.cloudns.biz/img/温馨提示.png\" group-title=\"🦧温馨提示\",温馨提示\n")
+        f.write("#EXTINF:-1 tvg-id=\"温馨提示\" tvg-name=\"温馨提示\" tvg-logo=\"https://logo.shrimp.cloudns.biz/tv/温馨提示.png\" group-title=\"🦧温馨提示\",温馨提示\n")
         f.write("https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4\n")
 
-        f.write("#EXTINF:-1 tvg-id=\"谨防诈骗\" tvg-name=\"谨防诈骗\" tvg-logo=\"https://logo.shrimp.cloudns.biz/img/谨防诈骗.png\" group-title=\"🦧温馨提示\",谨防诈骗\n")
+        f.write("#EXTINF:-1 tvg-id=\"谨防诈骗\" tvg-name=\"谨防诈骗\" tvg-logo=\"https://logo.shrimp.cloudns.biz/tv/谨防诈骗.png\" group-title=\"🦧温馨提示\",谨防诈骗\n")
         f.write("https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4\n")
 
-        f.write("#EXTINF:-1 tvg-id=\"禁止蕉绿\" tvg-name=\"禁止蕉绿\" tvg-logo=\"https://logo.shrimp.cloudns.biz/img/禁止蕉绿.png\" group-title=\"🦧温馨提示\",禁止蕉绿\n")
+        f.write("#EXTINF:-1 tvg-id=\"禁止蕉绿\" tvg-name=\"禁止蕉绿\" tvg-logo=\"https://logo.shrimp.cloudns.biz/tv/禁止蕉绿.png\" group-title=\"🦧温馨提示\",禁止蕉绿\n")
         f.write("https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4\n")
         
         # 写入频道信息
