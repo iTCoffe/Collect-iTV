@@ -15,7 +15,7 @@ def get_dynamic_keywords():
     today = datetime.now().strftime("%Y-%m-%d")
     tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
     
-    fixed_keywords = ["免费提供", today, tomorrow]
+    fixed_keywords = ["免费提供", "独家", "最新", "稳定", today, tomorrow]
     return fixed_keywords
 
 def contains_date(text):
@@ -30,8 +30,8 @@ def contains_date(text):
 CONFIG = {
     "timeout": 10,  # Timeout in seconds
     "max_parallel": 30,  # Max concurrent requests
-    "output_m3u": "Internet_iTV.m3u",  # Output file for the sorted M3U
-    "output_txt": "Internet_iTV.txt",  # Output file for the TXT format
+    "output_m3u": "LodGe_iTV.m3u",  # 修复：使用正确的输出文件名
+    "output_txt": "LodGe_iTV.txt",  # 修复：使用正确的输出文件名
     "iptv_directory": "IPTV",  # Directory containing IPTV files
     "logo_base_url": "https://itv.shrimp.cloudns.biz/tv"  # Base URL for logos
 }
@@ -58,6 +58,11 @@ def load_province_channels(files):
     province_channels = defaultdict(set)
 
     for file_path in files:
+        # 修复：处理路径不存在的情况
+        if not os.path.exists(file_path):
+            print(f"Warning: File {file_path} does not exist, skipping.")
+            continue
+            
         province_name = os.path.basename(file_path).replace(".txt", "")  # 使用文件名作为省份名称
 
         try:
@@ -99,7 +104,8 @@ def extract_urls_from_txt(content):
         line = line.strip()
         if line and ',' in line:  # 格式应该是: <频道名>,<URL>
             parts = line.split(',', 1)
-            urls.append((parts[0], parts[1], None))  # 提取频道名、URL和logo (TXT没有logo)
+            if len(parts) > 1:
+                urls.append((parts[0], parts[1], None))  # 提取频道名、URL和logo (TXT没有logo)
     return urls
 
 
@@ -144,7 +150,7 @@ async def read_and_test_file(file_path, is_m3u=False):
     try:
         # 获取文件内容
         async with aiohttp.ClientSession(cookie_jar=None) as session:  # 禁用 cookie 处理
-            async with session.get(file_path) as response:
+            async with session.get(file_path, timeout=aiohttp.ClientTimeout(total=15)) as response:
                 content = await response.text()
 
         # 提取 URL
@@ -157,6 +163,7 @@ async def read_and_test_file(file_path, is_m3u=False):
         return entries
 
     except Exception as e:
+        print(f"Error reading file {file_path}: {str(e)}")
         return []
 
 
@@ -166,7 +173,6 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     cctv_channels_list = []
     province_channels_list = defaultdict(list)
     satellite_channels = []
-    other_channels = []
     
     # 构建四连字索引（优化匹配准确率）
     quadgram_to_province = defaultdict(set)
@@ -259,24 +265,16 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": f"{found_province}"
                 })
             else:
-                # 最后的防线：查找包含"台"字的频道
-                if "台" in channel:
-                    province_channels_list["🧯樂玩公社"].append({
-                        "channel": channel,
-                        "url": url,
-                        "logo": logo_url,  # 使用新的统一Logo
-                        "group_title": "🧯樂玩公社"
-                    })
-                else:
-                    other_channels.append({
-                        "channel": channel,
-                        "url": url,
-                        "logo": logo_url,  # 使用新的统一Logo
-                        "group_title": "🧯樂玩公社"
-                    })
+                # 归入默认分组
+                province_channels_list["🧯樂玩公社"].append({
+                    "channel": channel,
+                    "url": url,
+                    "logo": logo_url,  # 使用新的统一Logo
+                    "group_title": "🧯樂玩公社"
+                })
 
     # --- URL去重逻辑开始 ---
-    # 按分组优先级排序 (CCTV -> 卫视 -> 省份 -> 其他)
+    # 按分组优先级排序 (CCTV -> 卫视 -> 省份 -> 樂玩公社)
     all_groups = [
         ("📺央视频道", cctv_channels_list),
         ("📡卫视频道", satellite_channels)
@@ -285,12 +283,11 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     # 添加省份频道（按省份名称排序）
     for province in sorted(province_channels_list.keys()):
         if province == "🧯樂玩公社":
-            continue  # 其他频道单独处理
+            continue  # 樂玩公社单独处理
         all_groups.append((province, province_channels_list[province]))
     
-    # 添加其他频道
+    # 添加樂玩公社分组
     all_groups.append(("🧯樂玩公社", province_channels_list.get("🧯樂玩公社", [])))
-    all_groups.append(("🧯樂玩公社", other_channels))
 
     # 使用字典根据URL去重（保留每个URL第一次出现的频道）
     seen_urls = set()
@@ -313,6 +310,10 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": group_title
                 })
     # --- URL去重逻辑结束 ---
+
+    # 确保输出目录存在
+    os.makedirs(os.path.dirname(m3u_filename) or '.', exist_ok=True)
+    os.makedirs(os.path.dirname(txt_filename) or '.', exist_ok=True)
 
     # 写入 M3U 文件
     with open(m3u_filename, 'w', encoding='utf-8') as f:
@@ -342,6 +343,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             f.write(f"{channel_info['url']}\n")
             
     print(f"🎉 Generated M3U file: {m3u_filename}")
+    print(f"文件位置: {os.path.abspath(m3u_filename)}")
+    print(f"文件大小: {os.path.getsize(m3u_filename)} 字节")
     
     # 写入结构化的 TXT 文件 (按分组结构输出)
     with open(txt_filename, 'w', encoding='utf-8') as f:
@@ -411,7 +414,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         # 3. 按优先级输出分组
         for group in group_order:
             if group in grouped_channels and grouped_channels[group]:
-                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
+                # 输出分组标题行格式为 "分组标题,#genre#"
                 f.write(f"{group},#genre#\n")
                 
                 # 按频道名称排序并输出
@@ -422,7 +425,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         # 4. 处理可能漏掉的分组
         for group, channels in grouped_channels.items():
             if group not in group_order and channels:
-                # 修改为: 输出分组标题行格式为 "分组标题,#genre#"
+                # 输出分组标题行格式为 "分组标题,#genre#"
                 f.write(f"{group},#genre#\n")
                 
                 # 按频道名称排序并输出
@@ -431,6 +434,8 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     f.write(f"{channel_info['channel']},{channel_info['url']}\n")
                     
     print(f"🎉 Generated structured TXT file: {txt_filename}")
+    print(f"文件位置: {os.path.abspath(txt_filename)}")
+    print(f"文件大小: {os.path.getsize(txt_filename)} 字节")
 
 
 # 主函数：处理多个文件并生成输出文件
@@ -476,9 +481,9 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
 if __name__ == "__main__":
     # IPTV 文件 URL（您可以添加自己的文件 URL 列表）
     file_urls = [
-        "https://raw.githubusercontent.com/mytv-android/iptv-api/master/output/result.m3u",
-        "https://raw.githubusercontent.com/Ethan-Men/8159-TV/master/output/user_result.m3u",
-        "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u"
+        "https://raw.githubusercontent.com/zqs1qiwan/laobaitv/main/test/test/main.m3u",
+        "https://sub.iptv.darwinchow.com/cqcb.m3u8",
+        "https://iptv.catvod.com/tv.m3u"
     ]
 
     # CCTV 频道文件（例如 IPTV/CCTV.txt）
@@ -538,7 +543,6 @@ if __name__ == "__main__":
         ".github/workflows/iTV/🚁直播中国.txt",
         ".github/workflows/iTV/🗺️国际频道.txt",
         ".github/workflows/iTV/🏮历年春晚.txt"
-
     ]
 
     # 执行主函数
