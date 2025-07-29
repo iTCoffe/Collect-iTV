@@ -1,11 +1,10 @@
 name: LiTV Daily Update
-
 on:
   workflow_dispatch:
   watch:
     types: [started]
   schedule:
-    cron: '0 */5 * * *'  
+    - cron: '0 */5 * * *'  
 
 env:
   TZ: Asia/Shanghai
@@ -27,9 +26,11 @@ jobs:
         wget -q https://raw.githubusercontent.com/zqs1qiwan/laobaitv/main/test/test/main.m3u -O Base1.m3u
         wget -q https://sub.iptv.darwinchow.com/cqcb.m3u8 -O Base2.m3u
         wget -q https://iptv.catvod.com/tv.m3u -O Base3.m3u
+        wget -q https://raw.githubusercontent.com/Jifeng4ever/iptv/main/hkmt.m3u8 -O Base4.m3u
+        wget -q https://raw.githubusercontent.com/Jifeng4ever/iptv/main/global.m3u8 -O Base5.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u Base3.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u Base2.m3u Base3.m3u Base4.m3u Base5.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
