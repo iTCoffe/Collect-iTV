@@ -277,6 +277,8 @@ http://125.43.244.172:9901/tsfile/live/0009_2.m3u8?key=txiptv&playlive=1&authid=
 http://121.19.134.113:808/tsfile/live/1038_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="中国教育电视台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/中国教育电视台.png" group-title="📺央视频道",中国教育电视台
 http://61.138.128.226:19901/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="教育一套" tvg-logo="https://logo.shrimp.cloudns.biz/tv/教育一套.png" group-title="📺央视频道",教育一套
+http://110.72.53.146:8181/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 http://61.138.128.226:19901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="上海卫视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/上海卫视.png" group-title="📡卫视频道",上海卫视
@@ -913,14 +915,16 @@ http://171.14.89.243:9901/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 http://1.198.67.70:9901/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="CCTV17军事" tvg-logo="https://logo.shrimp.cloudns.biz/tv/CCTV17军事.png" group-title="📛4K·8K频道",CCTV17军事
 http://182.114.214.103:9901/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="郑州新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/郑州新闻综合.png" group-title="🚄四川频道",郑州新闻综合
+#EXTINF:-1 tvg-name="郑州新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/郑州新闻综合.png" group-title="🚅云南频道",郑州新闻综合
 http://1.198.67.70:9901/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="郑州新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/郑州新闻综合.png" group-title="🚄四川频道",郑州新闻综合
+#EXTINF:-1 tvg-name="郑州新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/郑州新闻综合.png" group-title="🚅云南频道",郑州新闻综合
 http://171.14.89.243:9901/tsfile/live/1048_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="马鞍山新闻" tvg-logo="https://logo.shrimp.cloudns.biz/tv/马鞍山新闻.png" group-title="🚈安徽频道",马鞍山新闻
 http://223.241.247.214:9901/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="广东影视1" tvg-logo="https://logo.shrimp.cloudns.biz/tv/广东影视1.png" group-title="🚌广东频道",广东影视1
 http://110.72.53.146:8181/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="深圳" tvg-logo="https://logo.shrimp.cloudns.biz/tv/深圳.png" group-title="🚌广东频道",深圳
+http://110.72.53.146:8181/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="珠江台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/珠江台.png" group-title="🚌广东频道",珠江台
 http://110.72.53.146:8181/tsfile/live/1076_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="珠江台BM" tvg-logo="https://logo.shrimp.cloudns.biz/tv/珠江台BM.png" group-title="🚌广东频道",珠江台BM
@@ -1193,6 +1197,10 @@ http://110.72.53.146:8181/tsfile/live/1029_1.m3u8?key=txiptv&playlive=1&authid=0
 http://110.72.53.146:8181/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="新疆4" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆4.png" group-title="🛹新疆频道",新疆4
 http://110.72.53.146:8181/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="新疆5" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆5.png" group-title="🛹新疆频道",新疆5
+http://110.72.53.146:8181/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 tvg-name="新疆9" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆9.png" group-title="🛹新疆频道",新疆9
+http://110.72.53.146:8181/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="陕西都市青春" tvg-logo="https://logo.shrimp.cloudns.biz/tv/陕西都市青春.png" group-title="🛺陕西频道",陕西都市青春
 http://36.40.236.131:9999/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0
 #EXTINF:-1 tvg-name="陕西银铃" tvg-logo="https://logo.shrimp.cloudns.biz/tv/陕西银铃.png" group-title="🛺陕西频道",陕西银铃
@@ -1259,20 +1267,12 @@ http://36.99.206.77:9901/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
 http://110.72.53.146:8181/tsfile/live/1074_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="快乐购" tvg-logo="https://logo.shrimp.cloudns.biz/tv/快乐购.png" group-title="🧯樂玩公社",快乐购
 http://116.128.242.83:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="教育一套" tvg-logo="https://logo.shrimp.cloudns.biz/tv/教育一套.png" group-title="🧯樂玩公社",教育一套
-http://110.72.53.146:8181/tsfile/live/1032_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="新疆5" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆5.png" group-title="🧯樂玩公社",新疆5
-http://110.72.53.146:8181/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="新疆9" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆9.png" group-title="🧯樂玩公社",新疆9
-http://110.72.53.146:8181/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/欢腾购物.png" group-title="🧯樂玩公社",欢腾购物
 http://182.114.214.103:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/欢腾购物.png" group-title="🧯樂玩公社",欢腾购物
 http://1.198.67.70:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/欢腾购物.png" group-title="🧯樂玩公社",欢腾购物
 http://171.14.89.243:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 tvg-name="深圳" tvg-logo="https://logo.shrimp.cloudns.biz/tv/深圳.png" group-title="🧯樂玩公社",深圳
-http://110.72.53.146:8181/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南导视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/湖南导视.png" group-title="🧯樂玩公社",湖南导视
 http://116.128.242.83:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="相声小品" tvg-logo="https://logo.shrimp.cloudns.biz/tv/相声小品.png" group-title="🧯樂玩公社",相声小品
