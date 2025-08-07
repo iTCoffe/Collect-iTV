@@ -2,7 +2,7 @@ name: IPTV Keep Daily Update
 
 on:
   schedule:
-    - cron: '0 10,22 * * *'  # 早10点和22点运行
+    - cron: '0 */9 * * *'  # 每9小时运行
   workflow_dispatch:  # 支持手动触发
   
 env:
