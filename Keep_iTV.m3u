@@ -1633,6 +1633,16 @@ http://113.64.147.31:8081/hls/33/index.m3u8
 http://113.64.147.116:8081/hls/33/index.m3u8
 #EXTINF:-1 tvg-name="中国气象" tvg-logo="https://logo.shrimp.cloudns.biz/tv/中国气象.png" group-title="🍁数字频道",中国气象
 http://113.64.147.207:8081/hls/33/index.m3u8
+#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🍁数字频道",乒羽
+http://60.16.18.243:4949/hls/91/index.m3u8
+#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🍁数字频道",乒羽
+http://120.79.26.58:80/taoqi/hdtv.php?id=380
+#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🍁数字频道",乒羽
+http://47.109.181.197:88/051380/
+#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🍁数字频道",乒羽
+http://47.109.181.197:88/041380/
+#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🍁数字频道",乒羽
+http://47.109.181.197:88/071380/
 #EXTINF:-1 tvg-name="书画" tvg-logo="https://logo.shrimp.cloudns.biz/tv/书画.png" group-title="🍁数字频道",书画
 http://113.64.147.207:8081/hls/107/index.m3u8
 #EXTINF:-1 tvg-name="书画" tvg-logo="https://logo.shrimp.cloudns.biz/tv/书画.png" group-title="🍁数字频道",书画
@@ -4533,6 +4543,8 @@ http://47.104.102.192:80/nnlive/NNTV_METRO_A.m3u8
 http://47.104.102.192:80/tsfile/live/1006_1.m3u8
 #EXTINF:-1 tvg-name="广西|广西都市" tvg-logo="https://logo.shrimp.cloudns.biz/tv/广西广西都市.png" group-title="🚎广西频道",广西|广西都市
 http://47.104.102.192:80/tsfile/live/1005_1.m3u8
+#EXTINF:-1 tvg-name="云南移动电视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/云南移动电视.png" group-title="🚐贵州频道",云南移动电视
+http://47.109.181.197:88/gitv_live/G_QICAIGONGJIAO/G_QICAIGONGJIAO.m3u8
 #EXTINF:-1 tvg-name="六盘水1" tvg-logo="https://logo.shrimp.cloudns.biz/tv/六盘水1.png" group-title="🚐贵州频道",六盘水1
 http://47.108.221.227:9099/PLTV/88888888/224/3221225772/10000100000000060000000000189070_0.smil/index.m3u8
 #EXTINF:-1 tvg-name="六盘水1" tvg-logo="https://logo.shrimp.cloudns.biz/tv/六盘水1.png" group-title="🚐贵州频道",六盘水1
@@ -4901,8 +4913,6 @@ http://58.17.48.228:808/hls/21/index.m3u8
 http://58.17.48.228:808/hls/22/index.m3u8
 #EXTINF:-1 tvg-name="江西四套" tvg-logo="https://logo.shrimp.cloudns.biz/tv/江西四套.png" group-title="🚛江西频道",江西四套
 http://58.17.48.228:808/hls/20/index.m3u8
-#EXTINF:-1 tvg-name="云南移动电视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/云南移动电视.png" group-title="🚜辽宁频道",云南移动电视
-http://47.109.181.197:88/gitv_live/G_QICAIGONGJIAO/G_QICAIGONGJIAO.m3u8
 #EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://logo.shrimp.cloudns.biz/tv/辽宁体育.png" group-title="🚜辽宁频道",辽宁体育
 http://124.93.18.238:9002/hls/25/index.m3u8
 #EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://logo.shrimp.cloudns.biz/tv/辽宁体育.png" group-title="🚜辽宁频道",辽宁体育
@@ -5513,16 +5523,6 @@ http://120.78.151.79:80/tslive/c60_fast_1029_720P_t10/c60_fast_1029_720P_t10.m3u
 http://120.79.26.58:80/huya/huya.php?id=11352907
 #EXTINF:-1 tvg-name="乐享中国年" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乐享中国年.png" group-title="🧯樂玩公社",乐享中国年
 http://47.104.102.192:80/asp/hls/2000/0303000a/3/default/1df423e35b3e44fdb4f4674e966e0290/2000.m3u8
-#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🧯樂玩公社",乒羽
-http://60.16.18.243:4949/hls/91/index.m3u8
-#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🧯樂玩公社",乒羽
-http://120.79.26.58:80/taoqi/hdtv.php?id=380
-#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🧯樂玩公社",乒羽
-http://47.109.181.197:88/051380/
-#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🧯樂玩公社",乒羽
-http://47.109.181.197:88/041380/
-#EXTINF:-1 tvg-name="乒羽" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乒羽.png" group-title="🧯樂玩公社",乒羽
-http://47.109.181.197:88/071380/
 #EXTINF:-1 tvg-name="乘车看中国" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乘车看中国.png" group-title="🧯樂玩公社",乘车看中国
 http://47.104.102.192:80/asp/hls/2000/0303000a/3/default/883bd24f4f704da78434a2a73bb27685/2000.m3u8
 #EXTINF:-1 tvg-name="人与自然" tvg-logo="https://logo.shrimp.cloudns.biz/tv/人与自然.png" group-title="🧯樂玩公社",人与自然
