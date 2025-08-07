@@ -1,8 +1,8 @@
-name: IPTV Keep Daily Update
+name: IPTV Daily Update
 
 on:
   schedule:
-    - cron: '0 9,21 * * *'  # 早9点和21点运行
+    - cron: '0 */4 * * *'  # 每4小时运行
   workflow_dispatch:  # 支持手动触发
   
 env:
@@ -32,7 +32,7 @@ jobs:
       run: pip install aiohttp
 
     - name: Run scraping script
-      run: python .github/workflows/iptv_keep.py
+      run: python .github/workflows/iptv.py
 
     - name: Verify file generation
       run: |
