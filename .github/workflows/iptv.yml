@@ -2,9 +2,9 @@ name: IPTV Daily Update
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  
-  workflow_dispatch: 
-  
+    - cron: '0 */4 * * *'  # 每4小时运行一次
+  workflow_dispatch:  # 手动触发选项
+
 env:
   TZ: Asia/Shanghai
 
@@ -35,6 +35,10 @@ jobs:
       run: |
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
     
+    - name: Stash any uncommitted changes
+      run: |
+        git stash -u
+
     - name: Commit changes
       env:
         REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
@@ -53,3 +57,7 @@ jobs:
         
         git commit -am "自动更新：$GET_TIME"
         git push origin main
+
+    - name: Pop stashed changes (if any)
+      run: |
+        git stash pop --quiet || true
