@@ -1,10 +1,10 @@
-name: IPTV Daily Update
+name: IPTV Keep Daily Update
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # 每4小时运行一次
-  workflow_dispatch:  # 手动触发选项
-
+    - cron: '0 9,21 * * *'  # 早9点和21点运行
+  workflow_dispatch:  # 支持手动触发
+  
 env:
   TZ: Asia/Shanghai
 
@@ -12,9 +12,16 @@ jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        ref: main
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -25,23 +32,25 @@ jobs:
       run: pip install aiohttp
 
     - name: Run scraping script
-      run: python .github/workflows/iptv.py
+      run: python .github/workflows/iptv_keep.py
+
+    - name: Verify file generation
+      run: |
+        if [ ! -f "Internet_iTV.m3u" ]; then
+          echo "##[error]Internet_iTV.m3u 文件未生成！"
+          exit 1
+        fi
+        if [ ! -f "Internet_iTV.txt" ]; then
+          echo "##[error]Internet_iTV.txt 文件未生成！"
+          exit 1
+        fi
 
     - name: GetTime
-      id: get-time
       run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
 
-    - name: Generate README.md
+    - name: Update README.md with run time and file links
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
-    
-    - name: Check repository status
-      run: |
-        git status -s
-
-    - name: Stash unstaged changes
-      run: |
-        git stash -u
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit changes
       env:
@@ -51,17 +60,16 @@ jobs:
         git config --global user.email "actions@github.com"
         git remote set-url origin $REPO_URL
         
-        # 拉取远程仓库的最新更改
-        git pull --rebase origin main
+        git pull origin main
         
-        # 添加实际存在的文件
-        git add README.md
-        git add Internet_iTV.m3u
-        git add Internet_iTV.txt
+        # 确保文件存在再添加
+        [ -f "README.md" ] && git add README.md
+        [ -f "Internet_iTV.m3u" ] && git add Internet_iTV.m3u
+        [ -f "Internet_iTV.txt" ] && git add Internet_iTV.txt
         
-        git commit -am "自动更新：$GET_TIME"
-        git push origin main
-
-    - name: Pop stashed changes (if any)
-      run: |
-        git stash pop --quiet || true
+        if git diff-index --quiet HEAD --; then
+          echo "没有变更需要提交"
+        else
+          git commit -am "自动更新：${GET_TIME}"
+          git push origin HEAD:main
+        fi
