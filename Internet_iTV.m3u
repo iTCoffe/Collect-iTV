@@ -3575,6 +3575,8 @@ http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8
 https://gcalic.v.myalicdn.com/gc/blg03_1/index.m3u8
 #EXTINF:-1 tvg-name=" 新疆天山" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新疆天山.png" group-title="🗺️直播中国", 新疆天山
 http://gctxyc.liveplay.myqcloud.com/gc/xjtcdhsz_1/index.m3u8
+#EXTINF:-1 tvg-name=" 泰山大观峰" tvg-logo="https://logo.shrimp.cloudns.biz/tv/泰山大观峰.png" group-title="🗺️直播中国", 泰山大观峰
+https://gcalic.v.myalicdn.com/gc/taishan03_1/index.m3u8
 #EXTINF:-1 tvg-name=" 黄花城水长城02" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黄花城水长城02.png" group-title="🗺️直播中国", 黄花城水长城02
 http://gctxyc.liveplay.myqcloud.com/gc/wgw02_1/index.m3u8
 #EXTINF:-1 tvg-name=" 东莞生活资讯" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞生活资讯.png" group-title="🚂江苏频道", 东莞生活资讯
@@ -4713,16 +4715,12 @@ http://nas.hssvm.com:8888/udp/225.1.1.128:5002
 http://play.jinnantv.top/live/JNTV1.m3u8?ztianjd
 #EXTINF:-1 tvg-name="津南一套" tvg-logo="https://logo.shrimp.cloudns.biz/tv/津南一套.png" group-title="🛴天津频道",津南一套
 http://play.jinnantv.top/live/JNTV1.m3u8
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🛵青海频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 西宁新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/西宁新闻综合.png" group-title="🛵青海频道", 西宁新闻综合
 https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd#https://liveout.xntv.tv/a65jur/90p2i1.m3u8#http://dtrmlive.qhdtrm.cn/xnds/sd/live.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🛵青海频道",新闻综合
-https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🛵青海频道",新闻综合
-https://cm-live.ntjoy.com/live/4f1.m3u8
 #EXTINF:-1 tvg-name="西宁新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/西宁新闻综合.png" group-title="🛵青海频道",西宁新闻综合
 https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🛹新疆频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 伊犁哈萨克" tvg-logo="https://logo.shrimp.cloudns.biz/tv/伊犁哈萨克.png" group-title="🛹新疆频道", 伊犁哈萨克
 http://110.153.180.106:55555/out_3/index.m3u8
 #EXTINF:-1 tvg-name=" 伊犁汉语综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/伊犁汉语综合.png" group-title="🛹新疆频道", 伊犁汉语综合
@@ -4757,6 +4755,10 @@ http://110.153.180.106:55555/out_1/index.m3u8?zxinjd
 http://110.153.180.106:55555/out_4/index.m3u8?zxinjd
 #EXTINF:-1 tvg-name="伊犁维吾尔" tvg-logo="https://logo.shrimp.cloudns.biz/tv/伊犁维吾尔.png" group-title="🛹新疆频道",伊犁维吾尔
 http://110.153.180.106:55555/out_2/index.m3u8?zxinjd
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🛹新疆频道",新闻综合
+https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🛹新疆频道",新闻综合
+https://cm-live.ntjoy.com/live/4f1.m3u8
 #EXTINF:-1 tvg-name=" 乐家购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/乐家购物.png" group-title="🛺陕西频道", 乐家购物
 http://112.46.105.20:8009/hls/23/index.m3u8
 #EXTINF:-1 tvg-name=" 西安新闻" tvg-logo="https://logo.shrimp.cloudns.biz/tv/西安新闻.png" group-title="🛺陕西频道", 西安新闻
@@ -4783,6 +4785,8 @@ https://mursor.ottiptv.cc/douyu/9822277
 https://mursor.ottiptv.cc/douyu/9456379
 #EXTINF:-1 tvg-name=" Michael说大片" tvg-logo="https://logo.shrimp.cloudns.biz/tv/Michael说大片.png" group-title="🦙解说频道", Michael说大片
 https://mursor.ottiptv.cc/douyu/8841881
+#EXTINF:-1 tvg-name=" SAO东西又再说SAO话" tvg-logo="https://logo.shrimp.cloudns.biz/tv/SAO东西又再说SAO话.png" group-title="🦙解说频道", SAO东西又再说SAO话
+https://mursor.ottiptv.cc/douyu/8833450
 #EXTINF:-1 tvg-name=" yaoyao说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/yaoyao说.png" group-title="🦙解说频道", yaoyao说
 https://mursor.ottiptv.cc/douyu/884073
 #EXTINF:-1 tvg-name=" 一朵老香菇解说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/一朵老香菇解说.png" group-title="🦙解说频道", 一朵老香菇解说
@@ -5131,8 +5135,6 @@ https://0472.org/hls/cgtne.m3u8
 https://0472.org/hls/cgtnf.m3u8
 #EXTINF:-1 tvg-name=" CGTN纪录" tvg-logo="https://logo.shrimp.cloudns.biz/tv/CGTN纪录.png" group-title="🧯樂玩公社", CGTN纪录
 https://0472.org/hls/cgtnd.m3u8
-#EXTINF:-1 tvg-name=" SAO东西又再说SAO话" tvg-logo="https://logo.shrimp.cloudns.biz/tv/SAO东西又再说SAO话.png" group-title="🧯樂玩公社", SAO东西又再说SAO话
-https://mursor.ottiptv.cc/douyu/8833450
 #EXTINF:-1 tvg-name=" 中国村庄" tvg-logo="https://logo.shrimp.cloudns.biz/tv/中国村庄.png" group-title="🧯樂玩公社", 中国村庄
 http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8
 #EXTINF:-1 tvg-name=" 人与自然" tvg-logo="https://logo.shrimp.cloudns.biz/tv/人与自然.png" group-title="🧯樂玩公社", 人与自然
@@ -5141,8 +5143,6 @@ http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1425e1d505654cb48ba
 http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
 #EXTINF:-1 tvg-name=" 安徽导视" tvg-logo="https://logo.shrimp.cloudns.biz/tv/安徽导视.png" group-title="🧯樂玩公社", 安徽导视
 http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8
-#EXTINF:-1 tvg-name=" 泰山大观峰" tvg-logo="https://logo.shrimp.cloudns.biz/tv/泰山大观峰.png" group-title="🧯樂玩公社", 泰山大观峰
-https://gcalic.v.myalicdn.com/gc/taishan03_1/index.m3u8
 #EXTINF:-1 tvg-name=" 自然传奇" tvg-logo="https://logo.shrimp.cloudns.biz/tv/自然传奇.png" group-title="🧯樂玩公社", 自然传奇
 http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/81a1ad3a661748bfb8560c92d38204ca/1200.m3u8
 #EXTINF:-1 tvg-name=" 飞碟之谜01" tvg-logo="https://logo.shrimp.cloudns.biz/tv/飞碟之谜01.png" group-title="🧯樂玩公社", 飞碟之谜01
