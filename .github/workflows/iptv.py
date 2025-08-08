@@ -407,6 +407,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
             "🪁动漫频道",
             "🐼熊猫频道",
             "🗺️直播中国",
+            "🦙解说频道",
             "🏮历年春晚",
             "🧯樂玩公社"
         ]
@@ -542,6 +543,7 @@ if __name__ == "__main__":
         ".github/workflows/iTV/🪁动漫频道.txt",
         ".github/workflows/iTV/🐼熊猫频道.txt",
         ".github/workflows/iTV/🗺️直播中国.txt",
+        ".github/workflows/iTV/🦙解说频道.txt",
         ".github/workflows/iTV/🏮历年春晚.txt"
     ]
 
