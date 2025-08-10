@@ -3307,8 +3307,6 @@ http://120.78.151.79:80/gc/hsmbsh_1_md.m3u8
 http://47.104.102.192:80/channels/njtv/sbpd/m3u8:500k/live.m3u8
 #EXTINF:-1 tvg-name="南京新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/南京新闻综合.png" group-title="🚂江苏频道",南京新闻综合
 http://47.104.102.192:80/channels/njtv/xwzh/m3u8:500k/live.m3u8
-#EXTINF:-1 tvg-name="四川|洪雅新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/四川洪雅新闻综合.png" group-title="🚂江苏频道",四川|洪雅新闻综合
-http://47.104.102.192:80/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.M3U8
 #EXTINF:-1 tvg-name="江苏Ⅰ徐州公共" tvg-logo="https://logo.shrimp.cloudns.biz/tv/江苏Ⅰ徐州公共.png" group-title="🚂江苏频道",江苏Ⅰ徐州公共
 http://47.104.102.192:80/PLTV/3/224/3221225951/index.m3u8
 #EXTINF:-1 tvg-name="江苏公共新闻" tvg-logo="https://logo.shrimp.cloudns.biz/tv/江苏公共新闻.png" group-title="🚂江苏频道",江苏公共新闻
@@ -3325,14 +3323,6 @@ http://60.16.18.243:4949/hls/34/index.m3u8
 http://47.104.102.192:80/channels/njtv/jkpd/m3u8:500k/live.m3u8
 #EXTINF:-1 tvg-name="苏州|南京生活" tvg-logo="https://logo.shrimp.cloudns.biz/tv/苏州南京生活.png" group-title="🚂江苏频道",苏州|南京生活
 http://47.104.102.192:80/channels/njtv/shpd/m3u8:500k/live.m3u8
-#EXTINF:-1 tvg-name="西青新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/西青新闻综合.png" group-title="🚂江苏频道",西青新闻综合
-http://47.104.102.192:80/hls/live1.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚂江苏频道",黔东南1（新闻综合）
-http://117.72.36.109:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚂江苏频道",黔东南1（新闻综合）
-http://47.108.221.227:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚂江苏频道",黔东南1（新闻综合）
-http://47.108.221.227:9089/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
 #EXTINF:-1 tvg-name="万州综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/万州综合.png" group-title="🚃重庆频道",万州综合
 http://47.104.102.192:80/tslslive/noEX9SG/hls/live_sd.m3u8
 #EXTINF:-1 tvg-name="万州综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/万州综合.png" group-title="🚃重庆频道",万州综合
@@ -3357,6 +3347,16 @@ http://47.104.102.192:80/hls/51/index.m3u8
 http://47.104.102.192:80/hls/52/index.m3u8
 #EXTINF:-1 tvg-name="四川|四川经济" tvg-logo="https://logo.shrimp.cloudns.biz/tv/四川四川经济.png" group-title="🚄四川频道",四川|四川经济
 http://47.104.102.192:80/hls/50/index.m3u8
+#EXTINF:-1 tvg-name="四川|洪雅新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/四川洪雅新闻综合.png" group-title="🚄四川频道",四川|洪雅新闻综合
+http://47.104.102.192:80/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.M3U8
+#EXTINF:-1 tvg-name="西青新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/西青新闻综合.png" group-title="🚄四川频道",西青新闻综合
+http://47.104.102.192:80/hls/live1.m3u8
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚄四川频道",黔东南1（新闻综合）
+http://117.72.36.109:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚄四川频道",黔东南1（新闻综合）
+http://47.108.221.227:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.shrimp.cloudns.biz/tv/黔东南1新闻综合.png" group-title="🚄四川频道",黔东南1（新闻综合）
+http://47.108.221.227:9089/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
 #EXTINF:-1 tvg-name="临沧1" tvg-logo="https://logo.shrimp.cloudns.biz/tv/临沧1.png" group-title="🚅云南频道",临沧1
 http://47.109.181.197:88/gitv_live/G_LINCANGTV-1/G_LINCANGTV-1.m3u8
 #EXTINF:-1 tvg-name="临沧2" tvg-logo="https://logo.shrimp.cloudns.biz/tv/临沧2.png" group-title="🚅云南频道",临沧2
@@ -3611,6 +3611,8 @@ http://47.109.181.197:88/031485/
 http://47.109.181.197:88/main/031485/
 #EXTINF:-1 tvg-name="剑川台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/剑川台.png" group-title="🚅云南频道",剑川台
 http://47.109.181.197:88/?id=031485
+#EXTINF:-1 tvg-name="勐海台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/勐海台.png" group-title="🚅云南频道",勐海台
+http://120.79.26.58:80/yndztv/banla.php?id=438
 #EXTINF:-1 tvg-name="华宁台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/华宁台.png" group-title="🚅云南频道",华宁台
 http://47.109.181.197:88/071576/
 #EXTINF:-1 tvg-name="华宁台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/华宁台.png" group-title="🚅云南频道",华宁台
@@ -3821,6 +3823,10 @@ http://120.79.26.58:80/TV/0/00000001000000050000000000000140/141.m3u8
 http://120.79.26.58:80/yndztv/wenshan.php?id=268
 #EXTINF:-1 tvg-name="文山新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/文山新闻综合.png" group-title="🚅云南频道",文山新闻综合
 http://120.79.26.58:80/TV/0/00000001000000050000000000000141/140.m3u8
+#EXTINF:-1 tvg-name="新平台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新平台.png" group-title="🚅云南频道",新平台
+http://47.109.181.197:88/071571/
+#EXTINF:-1 tvg-name="新平台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新平台.png" group-title="🚅云南频道",新平台
+http://47.109.181.197:88/main/071571/
 #EXTINF:-1 tvg-name="施甸" tvg-logo="https://logo.shrimp.cloudns.biz/tv/施甸.png" group-title="🚅云南频道",施甸
 http://47.109.181.197:88/gitv_live/G_SHIDIAN/G_SHIDIAN.m3u8
 #EXTINF:-1 tvg-name="施甸台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/施甸台.png" group-title="🚅云南频道",施甸台
@@ -4763,6 +4769,8 @@ http://60.9.236.140:50003/hls/33/index.m3u8
 http://60.9.236.208:50003/hls/32/index.m3u8
 #EXTINF:-1 tvg-name="霸州台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/霸州台.png" group-title="🚒河北频道",霸州台
 http://111.61.236.247:9081/hls/122/index.m3u8
+#EXTINF:-1 tvg-name="孝义新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/孝义新闻综合.png" group-title="🚓河南频道",孝义新闻综合
+http://47.104.102.192:80/live/stream:xy1.stream/playlist.m3u8
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/欢腾购物.png" group-title="🚓河南频道",欢腾购物
 http://123.13.155.101:808/hls/23/index.m3u8
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.shrimp.cloudns.biz/tv/欢腾购物.png" group-title="🚓河南频道",欢腾购物
@@ -5011,8 +5019,6 @@ http://47.104.102.192:80/channels/lantian/SXyuyao1/720p.m3u8
 http://123.13.156.26:808/hls/33/index.m3u8
 #EXTINF:-1 tvg-name="周口电视台2" tvg-logo="https://logo.shrimp.cloudns.biz/tv/周口电视台2.png" group-title="🚞浙江频道",周口电视台2
 http://123.13.157.151:808/hls/33/index.m3u8
-#EXTINF:-1 tvg-name="孝义新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/孝义新闻综合.png" group-title="🚞浙江频道",孝义新闻综合
-http://47.104.102.192:80/live/stream:xy1.stream/playlist.m3u8
 #EXTINF:-1 tvg-name="嵊州新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/嵊州新闻综合.png" group-title="🚞浙江频道",嵊州新闻综合
 http://47.104.102.192:80/channels/lantian/SXshengzhou1/720p.m3u8
 #EXTINF:-1 tvg-name="新昌新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新昌新闻综合.png" group-title="🚞浙江频道",新昌新闻综合
@@ -5631,8 +5637,6 @@ http://171.34.76.62:808/PLTV/88888888/224/3221225901/1.m3u8
 http://120.79.26.58:80/huya/huya.php?id=14925599
 #EXTINF:-1 tvg-name="动物世界" tvg-logo="https://logo.shrimp.cloudns.biz/tv/动物世界.png" group-title="🧯樂玩公社",动物世界
 http://47.104.102.192:80/asp/hls/1200/0303000a/3/default/3242bdd438af47b684b3f6e33b40dac5/1200.m3u8
-#EXTINF:-1 tvg-name="勐海台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/勐海台.png" group-title="🧯樂玩公社",勐海台
-http://120.79.26.58:80/yndztv/banla.php?id=438
 #EXTINF:-1 tvg-name="十万个冷笑话" tvg-logo="https://logo.shrimp.cloudns.biz/tv/十万个冷笑话.png" group-title="🧯樂玩公社",十万个冷笑话
 http://120.79.26.58:80/huya/huya.php?id=11602078
 #EXTINF:-1 tvg-name="卡酷" tvg-logo="https://logo.shrimp.cloudns.biz/tv/卡酷.png" group-title="🧯樂玩公社",卡酷
@@ -5733,10 +5737,6 @@ http://123.10.77.56:808/hls/25/index.m3u8
 http://123.10.79.210:808/hls/25/index.m3u8
 #EXTINF:-1 tvg-name="新娱乐	" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新娱乐.png" group-title="🧯樂玩公社",新娱乐	
 http://47.104.102.192:80/udp/226.0.1.120:3138
-#EXTINF:-1 tvg-name="新平台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新平台.png" group-title="🧯樂玩公社",新平台
-http://47.109.181.197:88/071571/
-#EXTINF:-1 tvg-name="新平台" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新平台.png" group-title="🧯樂玩公社",新平台
-http://47.109.181.197:88/main/071571/
 #EXTINF:-1 tvg-name="新春欢会" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新春欢会.png" group-title="🧯樂玩公社",新春欢会
 http://47.104.102.192:80/asp/hls/2000/0303000a/3/default/d60827a411bd497397e5aa14254eae80/2000.m3u8
 #EXTINF:-1 tvg-name="新闻" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻.png" group-title="🧯樂玩公社",新闻
