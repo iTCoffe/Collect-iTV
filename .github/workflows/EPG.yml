@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '0 1,7,13,19 * * *'  # 每天在凌晨1点、7点、13点、19点运行
+    - cron: '0 1,7,13,19 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -15,88 +15,46 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0  # 获取完整提交历史
-    
+
     - name: Update EPG Files
       id: update
       run: |
-        # 使用正确的mktemp格式创建临时文件
-        temp_file1=$(mktemp)
-        temp_file2=$(mktemp)
-
-        # EPG源列表，按优先级排序
-        epg_urls=(
-          "https://epg.112114.xyz/pp.xml"  # 第一优先级，最全面
-          "http://e.erw.cc/e.xml"          # 第二优先级
-        )
+        # 使用临时文件避免部分下载
+        temp_file=$(mktemp)
         
-        epg_source=""
-        old_epg_hash=""
+        # 下载源文件
+        wget -nv -O "$temp_file" https://epg.112114.xyz/pp.xml
         
-        # 计算现有epg.xml的完整文件哈希（如果存在）
-        if [ -f epg.xml ]; then
-          old_epg_hash=$(sha256sum epg.xml | cut -d' ' -f1)
-          echo "现有epg.xml文件哈希: $old_epg_hash"
-        else
-          echo "epg.xml文件不存在，将尝试所有EPG源"
-        fi
-        
-        # 按优先级尝试下载EPG文件
-        for ((i = 0; i < ${#epg_urls[@]}; i++)); do
-          url="${epg_urls[$i]}"
-          echo "正在从 $url 下载EPG文件..."
+        # 检查文件是否有效（非空且包含XML声明）
+        if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
+          # 替换 URL
+          sed -i 's|https://epg.112114.xyz|https://itv.shrimp.cloudns.biz|g' "$temp_file"
           
-          # 来自第一个源的文件
-          if wget -nv -O "$temp_file1" "$url" && [ -s "$temp_file1" ] && grep -q '<?xml' "$temp_file1"; then
-            echo "成功下载$epg_urls[$i]文件"
-            
-            # 尝试合并文件
-            if [ -f "$temp_file1" ] && [ -f "$temp_file2" ]; then
-              echo "合并两个EPG文件"
-              # 清空现有文件（如果存在）
-              >epg.xml
-              # 合并文件内容
-              cat "$temp_file1" >> epg.xml
-              echo "<!-- Merged EPG from multiple sources at $(date) -->" >> epg.xml
-              
-              # 计算新文件的哈希值
-              new_epg_hash=$(sha256sum epg.xml | cut -d' ' -f1)
-              echo "合并后EPG文件哈希值: $new_epg_hash"
-              
-              # 比较文件哈希值
-              if [ "$old_epg_hash" != "$new_epg_hash" ]; then
-                epg_source="$url"
-                echo "changed=true" >> $GITHUB_ENV
-                echo "使用$epg_source的EPG更新"
-                break
-              else
-                echo "合并后的文件与现有文件无差异"
-              fi
-            else
-              echo "需要先下载第二个源的文件才能合并"
-            fi
+          # 只在内容变更时更新
+          if ! cmp -s "$temp_file" epg.xml; then
+            mv "$temp_file" epg.xml
+            echo "changed=true" >> $GITHUB_ENV
           else
-            echo "::error::从'$url'下载了无效的EPG文件"
+            echo "内容未变化，跳过更新"
+            rm -f "$temp_file"
           fi
-          
-          # 删除临时文件
-          rm -f "$temp_file1"
-          rm -f "$temp_file2"
-        done
+        else
+          echo "::error::下载的文件无效或为空"
+          rm -f "$temp_file"
+          exit 1
+        fi
 
     - name: 提交更改
       if: ${{ env.changed == 'true' }}
       run: |
-        if [ -f epg.xml ]; then
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add epg.xml
-          git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
-        fi
-    
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add epg.xml
+        git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
+
     - name: Push changes
       if: ${{ env.changed == 'true' }}
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        repository: ${{ github.repository }}
-        branch: $${{ github.ref_name }}  # 修复GitHub Actions中的变量引用格式
+        force: false
