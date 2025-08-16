@@ -81,12 +81,9 @@ jobs:
 
         if [ "$changed" = "true" ]; then
           echo "EPG 文件成功更新，来源为: $new_source_url"
+          echo "准备提交更改..."
         else
-          if [ "$new_file_downloaded" = "true" ]; then
-            echo "EPG 文件已更新，但从源 '$new_source_url' 更新后内容似乎与预期相同，请检查。"
-          else
-            echo "未检测到 EPG 文件变化或所有来源均不可用。"
-          fi
+          echo "未检测到 EPG 文件变化，跳过提交步骤。"
         fi
 
         # 清理临时文件
@@ -95,17 +92,75 @@ jobs:
         # 将 changed 变量输出为环境变量，供后续步骤使用
         echo "changed=$changed" >> $GITHUB_ENV
 
-    - name: 提交更改
+    - name: Commit changes
       if: ${{ env.changed == 'true' }}
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        git commit -m "EPG更新: $(date -R)"
+        # 安全配置git环境
+        git config --global user.email "github-actions@noreply.com"
+        git config --global user.name "GitHub Action Bot"
+        
+        # 验证 epg.xml 是否确实变化
+        if [ -f epg.xml ] && cmp -n epg.xml .github/epg-latest.xml || [ ! -f .github/epg-latest.xml ]; then
+          echo "准备提交 epg.xml 更改"
+          git add epg.xml
+          
+          # 设置提交消息
+          current_date="$((TZ=${env.TZ} date +'%Y-%m-%d %H:%M:%S %Z'))"
+          commit_message="EPG更新: $current_date"
+          
+          git commit -m "$commit_message"
+          
+          # 使用 API 密钥推送更改
+          if [ "$GITHUB_TOKEN" != "" ]; then
+            echo "使用 GITHUB_TOKEN 推送更改"
+            git push origin HEAD --force-with-lease || true
+          else
+            echo "警告：GITHUB_TOKEN 未设置，跳过硬推"
+          fi
+        else
+          echo "epg.xml 未更改，无需提交"
+        fi
 
-    - name: Push changes
-      if: $${{ env.changed == 'true' }}
-      uses: ad-m/github-push-action@master
+    - name: Manual push using API
+      if: ${{ env.changed == 'true' }}
+      uses: stuartlewis/manual-action@v1.0.0
       with:
-        github_token: $${{ secrets.GITHUB_TOKEN }}
-        force: false
+        command: |
+          # 获取最新文件信息
+          echo "推送 EPG 更新: $(date -R)"
+          
+          # 确认 epg.xml 已更新
+          if ! cmp -s epg.xml .github/epg-latest.xml || [ ! -f .github/epg-latest.xml ]; then
+            echo "EPG 文件已变化，准备推送"
+            
+            # 设置 GITHUB_TOKEN 环境变量
+            if [ "$GITHUB_TOKEN" = "" ]; then
+              echo "错误：缺少 GITHUB_TOKEN 环境变量，请确保已设置！"
+              exit 1
+            fi
+            
+            # 存储当前目录
+            working_dir=$(pwd)
+            
+            # 检查 token 是否有效
+            if curl -Is --header "Authorization: Bearer ${GITHUB_TOKEN}" https://api.github.com/user > /dev/null; then
+              echo "GITHUB_TOKEN 有效，开始提交更改"
+              
+              # 执行 git 提交和推送
+              cd "$working_dir"
+              git config user.email "github-actions@noreply.com"
+              git config user.name "GitHub Action Bot"
+              git add epg.xml
+              git commit -m "EPG更新: $(date -R)" -m '自动更新 EPG 数据' || exit 0
+              
+              # 安全推送更改
+              git push origin HEAD --force-with-lease
+            else
+              echo "错误：GITHUB_TOKEN 失效，请在仓库设置中更新！"
+            fi
+          else
+            echo "epg.xml 文件未变化，跳过推送"
+          exit 0
+          fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
