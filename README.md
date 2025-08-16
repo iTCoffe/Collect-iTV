@@ -1,6 +1,6 @@
 # IPTV 自动更新
 
-### 更新于 
+### 更新于 2025-08-16 11:41:46 CST
 
 ### 包含格式:
 - [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）
