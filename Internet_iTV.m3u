@@ -2969,6 +2969,8 @@ http://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
 https://radio.0472.org/?id=641
 #EXTINF:-1 tvg-name="音乐之声" tvg-logo="https://logo.shrimp.cloudns.biz/tv/音乐之声.png" group-title="🎵音乐频道",音乐之声
 http://live.xmcdn.com/live/1205/64.m3u8
+#EXTINF:-1 tvg-name="音乐广播" tvg-logo="https://logo.shrimp.cloudns.biz/tv/音乐广播.png" group-title="🎵音乐频道",音乐广播
+https://tv-1.iill.top/fm/552
 #EXTINF:-1 tvg-name=" JJ斗地主" tvg-logo="https://logo.shrimp.cloudns.biz/tv/JJ斗地主.png" group-title="🏀体育频道", JJ斗地主
 http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.flv?wsAuth=fd695c444eeee99cc6122ed396c805ba&token=cpn-androidmpro-0-488743-df8b1830ef2e6ce156759645768df95bf77749da61fcc901&logo=0&expire=0&did=d010b07dcb997ada9934081c873542f0&origin=tct&vhost=play2
 #EXTINF:-1 tvg-name=" 广东体育" tvg-logo="https://logo.shrimp.cloudns.biz/tv/广东体育.png" group-title="🏀体育频道", 广东体育
@@ -3461,8 +3463,6 @@ http://36.105.100.208:35455/gaoma/cctv6.m3u8
 http://183.215.134.239:19901/tsfile/live/0008_1.m3u8
 #EXTINF:-1 tvg-name=" 纪实科教8K" tvg-logo="https://logo.shrimp.cloudns.biz/tv/纪实科教8K.png" group-title="📛4K·8K频道", 纪实科教8K
 http://111.31.106.140/downflv.brtvcloud.com/8klive/8kliveok.m3u8
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🚂江苏频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 东莞生活资讯" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞生活资讯.png" group-title="🚂江苏频道", 东莞生活资讯
 https://stream.sun0769.com/dgrtv1/mp4tv2_800/index.m3u8
 #EXTINF:-1 tvg-name=" 句容党建" tvg-logo="https://logo.shrimp.cloudns.biz/tv/句容党建.png" group-title="🚂江苏频道", 句容党建
@@ -3527,8 +3527,6 @@ https://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8
 http://live.xysrmt.cn/xwzh/sd/live.m3u8
 #EXTINF:-1 tvg-name="新沂生活" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新沂生活.png" group-title="🚂江苏频道",新沂生活
 http://live.xysrmt.cn/shpd/sd/live.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🚂江苏频道",新闻综合
-https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 #EXTINF:-1 tvg-name="无锡娱乐" tvg-logo="https://logo.shrimp.cloudns.biz/tv/无锡娱乐.png" group-title="🚂江苏频道",无锡娱乐
 https://stream.thmz.com/wxtv2/playlist.m3u8
 #EXTINF:-1 tvg-name="无锡娱乐" tvg-logo="https://logo.shrimp.cloudns.biz/tv/无锡娱乐.png" group-title="🚂江苏频道",无锡娱乐
@@ -4227,12 +4225,16 @@ http://120.76.248.139/live/bfgd/4200000076.m3u8
 http://120.76.248.139/live/bfgd/4200000068.m3u8
 #EXTINF:-1 tvg-name=" 三明新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/三明新闻综合.png" group-title="🚝福建频道", 三明新闻综合
 http://ls.qingting.fm/live/4885.m3u8
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/东莞新闻综合.png" group-title="🚝福建频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 云霄综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/云霄综合.png" group-title="🚝福建频道", 云霄综合
 https://live.zzyxxw.com:2443/live/xwzh.m3u8
 #EXTINF:-1 tvg-name=" 福建经济" tvg-logo="https://logo.shrimp.cloudns.biz/tv/福建经济.png" group-title="🚝福建频道", 福建经济
 http://satellitepull.cnr.cn/live/wx32fjdnjjgb/playlist.m3u8
 #EXTINF:-1 tvg-name="云霄综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/云霄综合.png" group-title="🚝福建频道",云霄综合
 http://live.zzyxxw.com:85/live/xwzh.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/新闻综合.png" group-title="🚝福建频道",新闻综合
+https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 #EXTINF:-1 tvg-name="福州综合" tvg-logo="https://logo.shrimp.cloudns.biz/tv/福州综合.png" group-title="🚝福建频道",福州综合
 http://live.zohi.tv/video/s10001-fztv-1/index.m3u8
 #EXTINF:-1 tvg-name=" 上虞文化影院" tvg-logo="https://logo.shrimp.cloudns.biz/tv/上虞文化影院.png" group-title="🚞浙江频道", 上虞文化影院
@@ -4619,6 +4621,8 @@ http://112.46.105.20:8009/hls/20/index.m3u8
 https://mursor.ottiptv.cc/douyu/9822277
 #EXTINF:-1 tvg-name=" Ido漫说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/Ido漫说.png" group-title="🦙解说频道", Ido漫说
 https://mursor.ottiptv.cc/douyu/9456379
+#EXTINF:-1 tvg-name=" LOL动画剧情解说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/LOL动画剧情解说.png" group-title="🦙解说频道", LOL动画剧情解说
+https://mursor.ottiptv.cc/huya/29982690
 #EXTINF:-1 tvg-name=" yaoyao说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/yaoyao说.png" group-title="🦙解说频道", yaoyao说
 https://mursor.ottiptv.cc/douyu/884073
 #EXTINF:-1 tvg-name=" 一朵老香菇解说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/一朵老香菇解说.png" group-title="🦙解说频道", 一朵老香菇解说
@@ -4643,6 +4647,8 @@ https://mursor.ottiptv.cc/huya/30296754
 https://mursor.ottiptv.cc/douyu/9419771
 #EXTINF:-1 tvg-name=" 听wo姐说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/听wo姐说.png" group-title="🦙解说频道", 听wo姐说
 https://mursor.ottiptv.cc/douyu/8830082
+#EXTINF:-1 tvg-name=" 威廉说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/威廉说.png" group-title="🦙解说频道", 威廉说
+https://mursor.ottiptv.cc/huya/24969192
 #EXTINF:-1 tvg-name=" 小松说剧" tvg-logo="https://logo.shrimp.cloudns.biz/tv/小松说剧.png" group-title="🦙解说频道", 小松说剧
 https://mursor.ottiptv.cc/huya/11593369
 #EXTINF:-1 tvg-name=" 小片片说大片" tvg-logo="https://logo.shrimp.cloudns.biz/tv/小片片说大片.png" group-title="🦙解说频道", 小片片说大片
@@ -4943,8 +4949,6 @@ https://0472.org/hls/cgtnf.m3u8
 https://0472.org/hls/cgtnd.m3u8
 #EXTINF:-1 tvg-name=" CGTN阿语" tvg-logo="https://logo.shrimp.cloudns.biz/tv/CGTN阿语.png" group-title="🧯樂玩公社", CGTN阿语
 https://0472.org/hls/cgtna.m3u8
-#EXTINF:-1 tvg-name=" LOL动画剧情解说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/LOL动画剧情解说.png" group-title="🧯樂玩公社", LOL动画剧情解说
-https://mursor.ottiptv.cc/huya/29982690
 #EXTINF:-1 tvg-name=" 且听我说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/且听我说.png" group-title="🧯樂玩公社", 且听我说
 https://mursor.ottiptv.cc/huya/20985820
 #EXTINF:-1 tvg-name=" 中国村庄" tvg-logo="https://logo.shrimp.cloudns.biz/tv/中国村庄.png" group-title="🧯樂玩公社", 中国村庄
@@ -4955,8 +4959,6 @@ http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1425e1d505654cb48ba
 https://mursor.ottiptv.cc/bilibili/31293318
 #EXTINF:-1 tvg-name=" 地理中国" tvg-logo="https://logo.shrimp.cloudns.biz/tv/地理中国.png" group-title="🧯樂玩公社", 地理中国
 http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
-#EXTINF:-1 tvg-name=" 威廉说" tvg-logo="https://logo.shrimp.cloudns.biz/tv/威廉说.png" group-title="🧯樂玩公社", 威廉说
-https://mursor.ottiptv.cc/huya/24969192
 #EXTINF:-1 tvg-name=" 板子不用动画笔全自动" tvg-logo="https://logo.shrimp.cloudns.biz/tv/板子不用动画笔全自动.png" group-title="🧯樂玩公社", 板子不用动画笔全自动
 https://mursor.ottiptv.cc/bilibili/22581354
 #EXTINF:-1 tvg-name=" 玛纳斯" tvg-logo="https://logo.shrimp.cloudns.biz/tv/玛纳斯.png" group-title="🧯樂玩公社", 玛纳斯
@@ -4971,5 +4973,3 @@ https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d3
 https://newcntv.qcloudcdn.com/asp/hls/2000/0303000a/3/default/d2454bbb542d4613a9db478dab2addfd/2000.m3u8
 #EXTINF:-1 tvg-name=" 飞碟说官方" tvg-logo="https://logo.shrimp.cloudns.biz/tv/飞碟说官方.png" group-title="🧯樂玩公社", 飞碟说官方
 https://mursor.ottiptv.cc/douyu/1449125
-#EXTINF:-1 tvg-name="音乐广播" tvg-logo="https://logo.shrimp.cloudns.biz/tv/音乐广播.png" group-title="🧯樂玩公社",音乐广播
-https://tv-1.iill.top/fm/552
