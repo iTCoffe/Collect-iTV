@@ -20,7 +20,8 @@ jobs:
       id: update
       run: |
         # 使用临时文件避免部分下载
-        temp_file=$(mktemp)
+        temp_file1=$(mktemp)
+        temp_file2=$(mktemp "e.xml")
         
         # EPG源列表，按优先级排序
         epg_urls=(
@@ -42,44 +43,80 @@ jobs:
         # 按优先级尝试下载EPG文件
         for url in "${epg_urls[@]}"; do
           echo "正在从 $url 下载EPG文件..."
-          wget -nv -O "$temp_file" "$url"
           
-          if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
-            # 计算下载文件的哈希值
-            new_epg_hash=$(sha256sum "$temp_file" | cut -d' ' -f1)
-            echo "来自'$url'文件哈希值: $new_epg_hash"
+          if [[ "$url" == *".xml"* ]]; then
+            # 如果是e.xml格式，直接下载到外部文件
+            wget -nv -O "$temp_file2" "$url"
+            if [ -s "$temp_file2" ] && grep -q '<?xml' "$temp_file2"; then
+              echo "成功下载$epg_urls[$i]文件"
+            else
+              echo "::error::从'$url'下载了无效的EPG文件"
+              continue
+            fi
+          else
+            # 下载其他格式的文件
+            if wget -nv -O "$temp_file1" "$url" && [ -s "$temp_file1" ] && grep -q '<?xml' "$temp_file1"; then
+              echo "成功下载$epg_urls[$i]文件"
+            else
+              echo "::error::从'$url'下载了无效的EPG文件"
+              continue
+            fi
+          fi
+          
+          # 合并两个EPG文件
+          if [ -f $temp_file1 ] && [ -f $temp_file2 ]; then
+            echo "合并两个EPG文件"
+            # 合并文件内容
+            cat $temp_file1 > epg.xml
+            tail -n +2 $temp_file2 >> epg.xml
+            
+            # 计算合并后文件的哈希值
+            new_epg_hash=$(sha256sum epg.xml | cut -d' ' -f1)
+            echo "合并后EPG文件哈希值: $new_epg_hash"
             
             # 比较文件哈希值
             if [ "$old_epg_hash" != "$new_epg_hash" ]; then
-              # 使用来自此源的EPG文件
               epg_source="$url"
-              mv "$temp_file" epg.xml
               echo "changed=true" >> $GITHUB_ENV
               echo "使用$epg_source的EPG更新"
               break
             else
-              echo "从'$url'下载的文件与现有文件无差异"
+              echo "合并后的文件与现有文件无差异"
             fi
-          else
-            echo "::error::下载的文件无效或为空"
           fi
           
-          rm -f "$temp_file"
+          # 删除临时文件
+          rm -f "$temp_file1"
+          rm -f "$temp_file2"
         done
         
+        # 如果上述循环中变化了
+        if $GITHUB_ENV contains 'changed=true'; then
+          # 打印成功使用的源
+          echo "EPG文件已更新，来源: $epg_source"
+        elif [ -f epg.xml ]; then
+          echo "EPG文件未更新，使用现有文件"
+        else
+          # 如果没有文件，创建一个基本的EPG文件
+          echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tv>" > epg.xml
+          echo "</tv>" >> epg.xml
+          echo "created initial EPG file" >> $GITHUB_ENV
+        fi
 
     - name: 提交更改
       if: ${{ env.changed == 'true' }}
       run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
+        if [ -f epg.xml ]; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add epg.xml
+          git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
+        fi
     
     - name: Push changes
       if: ${{ env.changed == 'true' }}
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # 修改：使用secrets.GITHUB_TOKEN作为token
-        repository: ${{ github.repository }}  # 添加：指定仓库信息，可选但推荐
-        branch: ${{ github.ref_name }}  # 添加：指定分支，可选但推荐
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ github.repository }}
+        branch: ${{ github.ref_name }}
