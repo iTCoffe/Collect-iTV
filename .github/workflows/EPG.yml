@@ -16,68 +16,72 @@ jobs:
       with:
         fetch-depth: 0  # 获取完整提交历史
 
-    - name: Update EPG Files with Checksum
+    - name: Update EPG Files
       id: update
       run: |
-        # 使用临时文件避免部分下载
-        temp_file=$(mktemp)
-        epg_file="epg.xml"
-        prev_checksum=$(git show HEAD:epg.xml | md5sum | cut -d ' ' -f 1 || echo "N/A")
-        
-        # 文件来源列表，包括新添加的两个
-        sources=(
+        set -o errexit  # 确保脚本错误时立即退出
+        set -o pipefail  # 确保管道错误处理
+
+        # 定义要下载的 URL 列表（包括原始和新 URL）
+        urls=(
           "https://epg.112114.xyz/pp.xml"
-          "http://epg.51zmt.top:8000/e.xml"  # 注意：原URL可能有误，请确认正确域名或路径
+          "http://epg.51zmt.top:8000/e.xml"
           "http://e.erw.cc/e.xml"
         )
-        
         changed=false
-        
-        # 遍历并下载各个数据源
-        for source in "${sources[@]}"; do
-          echo "Downloading $source..." >&2
-         wget -nv -O "$temp_file" "$source"
-          
-          # 检查文件是否有效
+        temp_file=$(mktemp)
+
+        for url in "${urls[@]}"; do
+          echo "正在从 $url 下载 EPG 数据..."
+          # 下载文件到临时文件
+          wget -nv -O "$temp_file" "$url"  # -nv 表示静默模式，减少输出
+
+          # 检查文件是否有效（非空且包含 XML 声明 '<?xml'）
           if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
-            current_checksum=$(md5sum "$temp_file" | cut -d ' ' -f 1)
-            if [ "$prev_checksum" != "$current_checksum" ] || [ "$prev_checksum" == "N/A" ]; then
-              echo "MD5 checksum changed. Previous: $prev_checksum, Current: $current_checksum" >&2
-              mv "$temp_file" "$epg_file"
+            # 比较与本地 epg.xml 文件
+            if ! cmp -s "$temp_file" epg.xml; then
+              echo "EPG 文件内容已更改，使用从 '$url' 下载的新文件。"
+              mv "$temp_file" epg.xml
               changed=true
+              # 找到变化后可以退出循环，避免不必要下载
+              break
             else
-              echo "MD5 checksum matches existing file. No update needed." >&2
+              echo "从 '$url' 下载的文件与本地 epg.xml 内容相同，跳过更新。"
+              # 删除临时文件，节省空间
               rm -f "$temp_file"
+              continue
             fi
           else
-            echo "::error::无效来源: $source，下载失败或为空" >&2
+            echo "::error::从 '$url' 下载的文件无效或为空，请检查 URL 或文件内容。"
             rm -f "$temp_file"
-            exit 1
+            continue
           fi
         done
-        
-        # 更新上一次下载的MD5值
-        current_md5=$(md5sum "$epg_file" | cut -d ' ' -f 1)
-        echo "Last MD5 sum: $current_md5" >&2
-        echo "last_md5=$current_md5" >> $GITHUB_ENV
 
-    - name: Commit and Push Changes
+        # 输出结果信息，便于调试
+        if [ "$changed" = "true" ]; then
+          echo "EPG 文件成功更新，设置 changed=true。"
+        else
+          echo "未检测到任何 EPG 文件变化，设置 changed=false。"
+        fi
+
+        # 将 changed 变量输出为环境变量，供后续步骤使用
+        if [ "$changed" = "true" ]; then
+          echo "changed=true" >> $GITHUB_ENV
+        else
+          echo "changed=false" >> $GITHUB_ENV
+
+    - name: 提交更改
       if: ${{ env.changed == 'true' }}
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add $epg_file
-        git commit -m "EPG更新: $(date '+%Y-%m-%d %H:%M:%S' | fromdate "Asia/Shanghai")"
-        echo "File updated and committed." >&2
+        git add epg.xml  # 添加更改的 epg.xml 文件
+        git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"  # 提交消息包含更新时间和指定格式
 
     - name: Push changes
       if: ${{ env.changed == 'true' }}
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: false
-
-    - name: Display current EPG file
-      if: ${{ always() }}
-      run: |
-        head -n 20 $epg_file || echo "epg.xml is empty or unavailable"
+        force: false  # 只推送更改的文件，不强制推送
