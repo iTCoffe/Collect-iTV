@@ -26,8 +26,7 @@ jobs:
         # 定义所有 EPG 源，按优先级排序
         epg_urls=(
           "https://epg.112114.xyz/pp.xml"  # 第一优先级
-          "http://epg.51zmt.top:8000/e.xml"  # 第二优先级
-          "http://e.erw.cc/e.xml"           # 第三优先级
+          "http://e.erw.cc/e.xml"           # 第二优先级
         )
         
         changed=false
@@ -111,3 +110,4 @@ jobs:
       if: ${{ env.changed == 'true' }}
       run: |
         git push origin HEAD --force-with-lease
+
