@@ -99,12 +99,15 @@ jobs:
         git add epg.xml
         git commit -m "$commit_message"
         
-        # 使用 GITHUB_TOKEN 推送更改
+        # 推送更改
         git push origin HEAD --force-with-lease
+
+    - name: Set up Git
+      run: |
+        git config user.email "github-actions@noreply.com"
+        git config user.name "GitHub Action Bot"
 
     - name: Push changes
       if: ${{ env.changed == 'true' }}
-      uses: ad-m/github-push-action@v0.6.0
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        force: false
+      run: |
+        git push origin HEAD --force-with-lease
