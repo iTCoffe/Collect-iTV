@@ -28,8 +28,8 @@ jobs:
         # 检查文件是否有效（非空且包含XML声明）
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           # 替换 URL
-          sed -i 's|by spark |Google|g' "$temp_file"
-          sed -i 's|https://epg.112114.xyz|https://loong.5iclub.us.kg|g' "$temp_file"
+          sed -i 's|by spark |精準導航✨ | 盡享觀看|g' "$temp_file"
+          sed -i 's|https://epg.112114.xyz|https://loong.5iclub.cloudns.org|g' "$temp_file"
           
           # 只在内容变更时更新
           if ! cmp -s "$temp_file" epg.xml; then
@@ -59,6 +59,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: false
+
 
 
 
