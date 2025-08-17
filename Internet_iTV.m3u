@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://itv.shrimp.cloudns.biz/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
 https://itcoffe.5iclub.us.kg/Loong/iTV/Disclaimer.mp4
 #EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
@@ -3613,6 +3613,8 @@ http://lxfile.lxxcb.cn/nmip-media/channellive/channel103799/playlist.m3u8
 http://lxfile.lxxcb.cn:80/nmip-media/channellive/channel103799/playlist.m3u8
 #EXTINF:-1 tvg-name="荥经综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/荥经综合.png" group-title="🚄四川频道",荥经综合
 https://file.ysxtv.cn/nmip-media/channellive/channel101492/playlist.m3u8
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/东莞新闻综合.png" group-title="🚅云南频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 丽江古城大研花巷观景" tvg-logo="https://logo.5iclub.dpdns.org/tv/丽江古城大研花巷观景.png" group-title="🚅云南频道", 丽江古城大研花巷观景
 https://gcalic.v.myalicdn.com/gc/ljgcdyhxgjt_1/index.m3u8
 #EXTINF:-1 tvg-name=" 屏边综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/屏边综合.png" group-title="🚅云南频道", 屏边综合
@@ -3663,6 +3665,10 @@ https://zb-live.ynurl.com/longchuan/58f88df3-605e-4c57-865c-8e8f85241ca1.m3u8
 http://tvdrs.wsrtv.com.cn:8100/channellive/mlptv.flv?zyund
 #EXTINF:-1 tvg-name="文山州公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/文山州公共.png" group-title="🚅云南频道",文山州公共
 http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel8/playlist.m3u8?zyund
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚅云南频道",新闻综合
+http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚅云南频道",新闻综合
+https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 #EXTINF:-1 tvg-name="昆明公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/昆明公共.png" group-title="🚅云南频道",昆明公共
 http://wshls.live.migucloud.com/live/UD0YLY2G_C0_3/playlist.m3u8
 #EXTINF:-1 tvg-name=" 亳州农村" tvg-logo="https://logo.5iclub.dpdns.org/tv/亳州农村.png" group-title="🚈安徽频道", 亳州农村
@@ -4191,16 +4197,10 @@ http://stream9.jlntv.cn:80/aac_jygb/playlist.m3u8
 http://stream8.jlntv.cn/ljtv/sd/live.m3u8?zjild
 #EXTINF:-1 tvg-name=" 龙井综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/龙井综合.png" group-title="🚚吉林频道", 龙井综合
 http://stream9.jlntv.cn:80/aac_longjinggb/playlist.m3u8
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/东莞新闻综合.png" group-title="🚛江西频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 赣州公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/赣州公共.png" group-title="🚛江西频道", 赣州公共
 https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526334096251.m3u8
 #EXTINF:-1 tvg-name=" 赣州新闻" tvg-logo="https://logo.5iclub.dpdns.org/tv/赣州新闻.png" group-title="🚛江西频道", 赣州新闻
 https://pili-live-hls-sjxgz2024.sobeylive.com/jxgz2024/396_q_live172526329228525.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚛江西频道",新闻综合
-http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚛江西频道",新闻综合
-https://m3u8-channel.lytv.tv/nmip-media/channellive/channel111841/playlist.m3u8
 #EXTINF:-1 tvg-name=" 朝阳新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/朝阳新闻综合.png" group-title="🚜辽宁频道", 朝阳新闻综合
 http://120.76.248.139/live/bfgd/4200000282.m3u8
 #EXTINF:-1 tvg-name=" 辽宁公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/辽宁公共.png" group-title="🚜辽宁频道", 辽宁公共
