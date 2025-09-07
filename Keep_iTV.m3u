@@ -4243,6 +4243,8 @@ http://113.64.147.225:8081/hls/30/index.m3u8
 http://113.64.147.10:8081/hls/30/index.m3u8
 #EXTINF:-1 tvg-name="南方都市" tvg-logo="https://logo.5iclub.dpdns.org/tv/南方都市.png" group-title="🚌广东频道",南方都市
 http://113.64.147.145:8081/hls/30/index.m3u8
+#EXTINF:-1 tvg-name="四川|洪雅新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/四川洪雅新闻综合.png" group-title="🚌广东频道",四川|洪雅新闻综合
+http://47.104.102.192:80/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.M3U8
 #EXTINF:-1 tvg-name="岭南戏曲" tvg-logo="https://logo.5iclub.dpdns.org/tv/岭南戏曲.png" group-title="🚌广东频道",岭南戏曲
 http://113.64.147.54:8081/hls/108/index.m3u8
 #EXTINF:-1 tvg-name="岭南戏曲" tvg-logo="https://logo.5iclub.dpdns.org/tv/岭南戏曲.png" group-title="🚌广东频道",岭南戏曲
@@ -4361,6 +4363,8 @@ http://113.64.147.143:8081/hls/21/index.m3u8
 http://113.64.147.145:8081/hls/21/index.m3u8
 #EXTINF:-1 tvg-name="揭阳综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/揭阳综合.png" group-title="🚌广东频道",揭阳综合
 http://113.64.147.109:8081/hls/21/index.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚌广东频道",新闻综合
+http://1.183.139.254:9001/hls/39/index.m3u8
 #EXTINF:-1 tvg-name="汕头台" tvg-logo="https://logo.5iclub.dpdns.org/tv/汕头台.png" group-title="🚌广东频道",汕头台
 http://113.64.147.10:8081/hls/24/index.m3u8
 #EXTINF:-1 tvg-name="汕头台" tvg-logo="https://logo.5iclub.dpdns.org/tv/汕头台.png" group-title="🚌广东频道",汕头台
@@ -4413,6 +4417,10 @@ http://113.64.147.225:8081/hls/23/index.m3u8
 http://113.64.147.145:8081/hls/23/index.m3u8
 #EXTINF:-1 tvg-name="潮州综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/潮州综合.png" group-title="🚌广东频道",潮州综合
 http://113.64.147.109:8081/hls/23/index.m3u8
+#EXTINF:-1 tvg-name="经济生活" tvg-logo="https://logo.5iclub.dpdns.org/tv/经济生活.png" group-title="🚌广东频道",经济生活
+http://1.183.139.254:9001/hls/40/index.m3u8
+#EXTINF:-1 tvg-name="西青新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/西青新闻综合.png" group-title="🚌广东频道",西青新闻综合
+http://47.104.102.192:80/hls/live1.m3u8
 #EXTINF:-1 tvg-name="金平" tvg-logo="https://logo.5iclub.dpdns.org/tv/金平.png" group-title="🚌广东频道",金平
 http://47.109.181.197:88/gitv_live/G_JINPING/G_JINPING.m3u8
 #EXTINF:-1 tvg-name="金平台" tvg-logo="https://logo.5iclub.dpdns.org/tv/金平台.png" group-title="🚌广东频道",金平台
@@ -4425,6 +4433,12 @@ http://47.109.181.197:88/021518/
 http://211.149.143.188:88/?id=10518
 #EXTINF:-1 tvg-name="金平台" tvg-logo="https://logo.5iclub.dpdns.org/tv/金平台.png" group-title="🚌广东频道",金平台
 http://47.109.181.197:88/?id=011518
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚌广东频道",黔东南1（新闻综合）
+http://47.108.221.227:9089/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚌广东频道",黔东南1（新闻综合）
+http://117.72.36.109:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
+#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚌广东频道",黔东南1（新闻综合）
+http://47.108.221.227:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
 #EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
 http://171.38.193.227:9003/hls/29/index.m3u8
 #EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
@@ -4635,16 +4649,12 @@ http://47.108.221.227:9099/PLTV/88888888/224/3221225693/100001000000000600000000
 http://47.108.221.227:9089/PLTV/88888888/224/3221225693/10000100000000060000000000146075_0.smil/index.m3u8
 #EXTINF:-1 tvg-name="黔西综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔西综合.png" group-title="🚐贵州频道",黔西综合
 http://117.72.36.109:9099/PLTV/88888888/224/3221225693/10000100000000060000000000146075_0.smil/index.m3u8
-#EXTINF:-1 tvg-name="四川|洪雅新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/四川洪雅新闻综合.png" group-title="🚒河北频道",四川|洪雅新闻综合
-http://47.104.102.192:80/videos/live/35/39/GQVbrgob5CGJM/GQVbrgob5CGJM.M3U8
 #EXTINF:-1 tvg-name="廊坊公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/廊坊公共.png" group-title="🚒河北频道",廊坊公共
 http://111.61.236.247:9081/hls/56/index.m3u8
 #EXTINF:-1 tvg-name="廊坊导视" tvg-logo="https://logo.5iclub.dpdns.org/tv/廊坊导视.png" group-title="🚒河北频道",廊坊导视
 http://111.61.236.247:9081/hls/57/index.m3u8
 #EXTINF:-1 tvg-name="廊坊新闻" tvg-logo="https://logo.5iclub.dpdns.org/tv/廊坊新闻.png" group-title="🚒河北频道",廊坊新闻
 http://111.61.236.247:9081/hls/55/index.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚒河北频道",新闻综合
-http://1.183.139.254:9001/hls/39/index.m3u8
 #EXTINF:-1 tvg-name="河北|邯郸公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/河北邯郸公共.png" group-title="🚒河北频道",河北|邯郸公共
 http://47.104.102.192:80/video/s10001-2021hdgg/index.m3u8
 #EXTINF:-1 tvg-name="河北公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/河北公共.png" group-title="🚒河北频道",河北公共
@@ -4693,14 +4703,6 @@ http://47.104.102.192:80/yule/HD2/live.m3u8
 http://47.104.102.192:80/xmzh/HD/live.m3u8
 #EXTINF:-1 tvg-name="石家庄生活" tvg-logo="https://logo.5iclub.dpdns.org/tv/石家庄生活.png" group-title="🚒河北频道",石家庄生活
 http://27.185.1.27:8092/hls/22/index.m3u8
-#EXTINF:-1 tvg-name="西青新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/西青新闻综合.png" group-title="🚒河北频道",西青新闻综合
-http://47.104.102.192:80/hls/live1.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚒河北频道",黔东南1（新闻综合）
-http://47.108.221.227:9089/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚒河北频道",黔东南1（新闻综合）
-http://117.72.36.109:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
-#EXTINF:-1 tvg-name="黔东南1（新闻综合）" tvg-logo="https://logo.5iclub.dpdns.org/tv/黔东南1新闻综合.png" group-title="🚒河北频道",黔东南1（新闻综合）
-http://47.108.221.227:9099/PLTV/88888888/224/3221226033/373966731.smil/index.m3u8
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.5iclub.dpdns.org/tv/欢腾购物.png" group-title="🚓河南频道",欢腾购物
 http://123.13.159.87:808/hls/23/index.m3u8
 #EXTINF:-1 tvg-name="欢腾购物" tvg-logo="https://logo.5iclub.dpdns.org/tv/欢腾购物.png" group-title="🚓河南频道",欢腾购物
@@ -4909,8 +4911,6 @@ http://171.34.76.62:808/PLTV/88888888/224/3221226857/index.m3u8
 http://171.34.76.62:808/PLTV/88888888/224/3221226446/index.m3u8
 #EXTINF:-1 tvg-name="湖南Ⅰ湘潭综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/湖南Ⅰ湘潭综合.png" group-title="🚛江西频道",湖南Ⅰ湘潭综合
 http://47.104.102.192:80/live/xwzh/800K/tzwj_video.m3u8
-#EXTINF:-1 tvg-name="经济生活" tvg-logo="https://logo.5iclub.dpdns.org/tv/经济生活.png" group-title="🚛江西频道",经济生活
-http://1.183.139.254:9001/hls/40/index.m3u8
 #EXTINF:-1 tvg-name="辽宁体育" tvg-logo="https://logo.5iclub.dpdns.org/tv/辽宁体育.png" group-title="🚜辽宁频道",辽宁体育
 http://60.16.18.243:4949/hls/25/index.m3u8
 #EXTINF:-1 tvg-name="辽宁公共" tvg-logo="https://logo.5iclub.dpdns.org/tv/辽宁公共.png" group-title="🚜辽宁频道",辽宁公共
