@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://iptv.laobaitv.net -O Base1.m3u
+        wget -q https://live.catvod.com/tv.m3u -O Base1.m3u
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
         
         # 合并并去重基础源
