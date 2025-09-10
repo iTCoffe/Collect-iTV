@@ -95,15 +95,3 @@ jobs:
         # 提交更改
         git commit -m "Update at ${{ steps.date.outputs.date }}"
         git push
-
-
-这个修改后的代码包括两个重要改进：
-
-1. 添加了独立的 `Git Pull Latest Changes` 步骤，在推送前先拉取远程最新内容，解决 "Updates were rejected because the remote contains work that you do not have locally" 错误
-
-2. 简化了提交信息，更清晰地标明更新时间
-
-请注意：
-- 将 `git pull origin main` 中的 `main` 替换为你的实际分支名称（通常是 `main` 或 `master`）
-- 这个解决方案假设你有足够的推送权限
-- 如果代码库有复杂分支策略，可能需要更高级的冲突解决方案
