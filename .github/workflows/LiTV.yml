@@ -1,4 +1,4 @@
-name: LiTV Daily Update
+name: IPTV Update
 
 on:
   workflow_dispatch:
@@ -15,72 +15,92 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: GetTime
+    - name: Set up Cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.npm-packages
+        key: ${{ runner.os }}-node
+        restore-keys: |
+          ${{ runner.os }}-node=
+
+    - name: Get Current Time
       id: date
-      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
-
-    - name: Update Files
       run: |
-        # 下载基础源文件
-        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
-        
-        # 合并并去重基础源
-        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
-        
-        # 处理央视源
-        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
-        
-        # 处理非央视源
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
-        
-        # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
-        echo '#EXTVLCOPT http-user-agent=okHttp/Mod-1.3.0.0' >LiTV.m3u
-        
-        # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
-        
-        # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
-        
-        # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
-        
-        # 合并源文件
-        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
-        
-        # 生成TXT播放列表
-        awk '/^#EXTINF:/ {
-            split($0, a, ",");
-            name = a[2];
-            getline url;
-            gsub(/\r/, "", name);
-            gsub(/\r/, "", url);
-            sub(/^ /, "", name);
-            print name "," url;
-        }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
-        
-        # 清理临时文件
-        rm -f Base.m3u CCTV.m3u CNTV.m3u
-        
-        # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        echo "date=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB/OUTPUTS
 
-    - name: Commit Changes
+    - name: Setup Environment
+      run: |
+        export TZ=Asia/Shanghai
+        export upstream_url="https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u"
+
+    - name: Download Base Source
+      run: |
+        wget -q "$upstream_url"
+
+    - name: Merge Sources
+      run: |
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+
+    - name: Extract CCTV Sources
+      run: |
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+
+    - name: Process Non-CCTV Sources
+      run: |
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > Other.m3u
+
+    - name: Create M3U File
+      run: |
+        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
+        echo '#EXTVLCOPT:http-user-agent=okHttp/Mod-1.3.0.0' >> LiTV.m3u
+
+    - name: Add Custom Notice
+      run: |
+        echo '#EXTINF:-1 tvg-id="notice" tvg-logo="https://logo.5iclub.dpdns.org/tv/notice.png" group-title="📢 Notice",Notice' >> LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/notice.mp4' >> LiTV.m3u
+
+    - name: Merge Sources
+      run: |
+        cat CCTV.m3u Other.m3u >> LiTV.m3u
+
+    - name: Generate TXT Playlist
+      run: |
+        awk '/^#EXTINF:/ {
+          split($0, a, ",");
+          name = a[2];
+          getline url;
+          gsub(/\r/, "", name);
+          gsub(/\r/, "", url);
+          sub(/^ /, "", name);
+          print name "," url;
+        }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
+
+    - name: Cleanup
+      run: |
+        rm -f Base1.m3u Base.m3u CCTV.m3u Other.m3u
+
+    - name: Update README
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        cat <<EOF > README.md
+        # IPTV Automatic Playlist
+        Updated: ${{ steps.date.outputs.date }}
+        
+        ## Included Sources:
+        - Main IPTV Playlist (M3U): [Download Here](https://github.com/your-repo/LiTV.m3u)
+        - TXT Playlist: [Download Here](https://github.com/your-repo/LiTV.txt)
+        EOF
 
-        # 添加文件
+    - name: Commit Changes
+      run: |
         git add LiTV.m3u LiTV.txt README.md
+        git commit -m "Update - ${{ steps.date.outputs.date }}"
+        git tag -a "Update-$(date -u +'%Y%m%d')" -m "Automatic Update"
 
-        # 提交更改
-        git commit -m "${{ steps.date.outputs.date }}"
-
-    - name: Push Update
-      run: git push
+    - name: Push Changes
+      run: |
+        git push --set-upstream origin HEAD --force
+        git push --tags
