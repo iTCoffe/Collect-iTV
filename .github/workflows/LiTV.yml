@@ -37,6 +37,7 @@ jobs:
         
         # 生成最终M3U
         echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        echo '#EXTVLCOPT:http-user-agent=okHttp/Mod-1.3.0.0' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
