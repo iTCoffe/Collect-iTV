@@ -15,16 +15,19 @@ jobs:
   Update:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - name: Checkout to clean repository
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git checkout .
+        git clean -df   # 删除所有未跟踪文件，包括目录（带 -f 和 -d 选项）
 
-    - name: GetTime
+    - name: Get Current Date
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Update Files
+    - name: Download Sources
       run: |
-        # 下载基础源文件
         wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base1.m3u
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
         
@@ -74,13 +77,9 @@ jobs:
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
-        # 创建干净的工作区，避免Untracked files问题
-        git config --global user.email "actions@github.com"
-        git config --global user.name "GitHub Actions"
-        git checkout .
+        # 删除所有临时文件，确保工作目录干净
+        rm -rf *.bak *.tmp var log config
 
-        # 检查并解决冲突
-        git status
 
     - name: Commit Changes
       run: |
@@ -93,5 +92,5 @@ jobs:
         # 提交更改
         git commit -m "Update at ${{ steps.date.outputs.date }}"
         
-        # 强制推送（覆盖远程分支）
+        # 推送更新
         git push origin main --force-with-lease
