@@ -15,12 +15,24 @@ jobs:
   Update:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout to clean repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Configure Git
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
+
+    - name: Clean repository
+      run: |
         git checkout .
-        git clean -df   # 删除所有未跟踪文件，包括目录（带 -f 和 -d 选项）
+        git clean -df  # 删除所有未跟踪文件，包括目录（带 -f 和 -d 选项）
+        
+        # 确保我们处于仓库目录
+        if [ ! -d ".git" ]; then
+          echo "Error: Not a git repository (or any of the parent directories): .git"
+          exit 1
+        fi
 
     - name: Get Current Date
       id: date
@@ -28,11 +40,12 @@ jobs:
 
     - name: Download Sources
       run: |
-        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base1.m3u
-        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
+        mkdir -p temp_files
+        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O temp_files/Base1.m3u
+        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O temp_files/Base2.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
+        cat temp_files/Base1.m3u temp_files/Base2.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
@@ -77,8 +90,8 @@ jobs:
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
-        # 删除所有临时文件，确保工作目录干净
-        rm -rf *.bak *.tmp var log config
+        # 删除临时文件
+        rm -rf temp_files *.bak *.tmp var log config
 
 
     - name: Commit Changes
