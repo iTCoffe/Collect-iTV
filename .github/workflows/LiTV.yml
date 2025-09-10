@@ -74,24 +74,24 @@ jobs:
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
-        # 清理临时文件
-        rm -f Base.m3u CCTV.m3u CNTV.m3u
+        # 创建干净的工作区，避免Untracked files问题
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git checkout .
 
+        # 检查并解决冲突
+        git status
 
-    - name: Git Pull Latest Changes
+    - name: Commit Changes
       run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git pull origin main  # 请替换为你的实际分支名称，如master或main
-
-    - name: Add Changes to Git
-      run: |
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git config user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
 
         # 添加文件
         git add LiTV.m3u LiTV.txt
 
         # 提交更改
         git commit -m "Update at ${{ steps.date.outputs.date }}"
-        git push
+        
+        # 强制推送（覆盖远程分支）
+        git push origin main --force-with-lease
