@@ -23,29 +23,22 @@ jobs:
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
 
-    - name: Clean repository
-      run: |
-        git checkout .
-        git clean -df  # 删除所有未跟踪文件，包括目录（带 -f 和 -d 选项）
-        
-        # 确保我们处于仓库目录
-        if [ ! -d ".git" ]; then
-          echo "Error: Not a git repository (or any of the parent directories): .git"
-          exit 1
-        fi
-
     - name: Get Current Date
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Download Sources
+    - name: Update Files
       run: |
+        # 创建临时目录
         mkdir -p temp_files
-        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O temp_files/Base1.m3u
-        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O temp_files/Base2.m3u
+        cd temp_files
+        
+        # 下载基础源文件
+        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base1.m3u
+        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
         
         # 合并并去重基础源
-        cat temp_files/Base1.m3u temp_files/Base2.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
@@ -53,45 +46,41 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U，所有直播流使用全局UA
-        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        # 返回上级目录
+        cd ..
+        
+        # 生成最终M3U，仅在文件头添加全局用户代理设置
+        echo '#EXTVLCOPT:http-user-agent=okHttp/Mod-1.3.0.0' > LiTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >> LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
         
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
         
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
         
         # 合并源文件
-        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
-
-        # 🔥 核心功能：为所有直播流添加全局UA
-        awk '
-        /^#/ { print; next }  # 所有以 # 开头的行（注释）原样输出
-        /^[^#]/ {               # 匹配非注释的真实播放链接
-            print $0"|http-user-agent=okHttp/Mod-1.3.0.0"
-        }
-        ' LiTV.m3u > temp.m3u && mv temp.m3u LiTV.m3u
+        cat CCTV.m3u CNTV.m3u >> LiTV.m3u
         
         # 生成TXT播放列表
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
             getline url;
-            gsub(/\\r/, "", name);
-            gsub(/\\r/, "", url);
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
             sub(/^ /, "", name);
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
-        # 删除临时文件
-        rm -rf temp_files *.bak *.tmp var log config
+        # 清理临时文件
+        rm -rf temp_files Base.m3u CCTV.m3u CNTV.m3u
 
 
     - name: Commit Changes
@@ -103,7 +92,9 @@ jobs:
         git add LiTV.m3u LiTV.txt
 
         # 提交更改
-        git commit -m "Update at ${{ steps.date.outputs.date }}"
-        
-        # 推送更新
+        git commit -m "${{ steps.date.outputs.date }}"
+
+
+    - name: Push Update
+      run: |
         git push origin main --force-with-lease
