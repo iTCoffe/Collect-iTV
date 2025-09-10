@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://iptv.laobaitv.net -O Base1.m3u
+        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base1.m3u
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
         
         # 合并并去重基础源
@@ -53,6 +53,14 @@ jobs:
         
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
+
+        # 🔥 核心功能：仅对非 # 开头的播放链接行追加 |http-user-agent=...
+        awk '
+        /^#/ { print; next }            # 所有以 # 开头的行（如 #EXTINF）原样输出
+        /^[^#]/ {                       # 匹配非注释的真实播放链接
+            print $0"|http-user-agent=okHttp/Mod-1.3.0.0"
+        }
+        ' LiTV.m3u > temp.m3u && mv temp.m3u LiTV.m3u
         
         # 生成TXT播放列表
         awk '/^#EXTINF:/ {
