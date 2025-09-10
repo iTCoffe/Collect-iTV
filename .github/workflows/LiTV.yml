@@ -25,7 +25,7 @@ jobs:
       run: |
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
-        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/refs/heads/main/iptv.m3uBase2.m3u
+        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u  -O Base2.m3u
         
         # 合并并去重基础源
         cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
