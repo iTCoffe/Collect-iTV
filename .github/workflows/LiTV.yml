@@ -22,47 +22,39 @@ jobs:
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
     - name: Update Files
-       run: |
+      run: |
         # 下载基础源文件
-        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
-        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base2.m3u
+        wget -q https://iptv.laobaitv.net -O Base1.m3u
+        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base2.m3u
         
         # 合并并去重基础源
         cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
-
+        
         # 处理央视源
-        grep -A 1 '央视' temp_base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
         
         # 处理非央视源
-        grep -v -A 1 '央视' temp_base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
-
-        # 生成最终 M3U 文件头
-        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+        
+        # 生成最终M3U
+        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
         
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
         
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >> LiTV.m3u
-
-        # 合并央视与非央视源到最终文件
-        cat CCTV.m3u CNTV.m3u >> LiTV.m3u
-
-        # 🔥 核心功能：仅对非 # 开头的播放链接行追加 |http-user-agent=...
-        awk '
-        /^#/ { print; next }            # 所有以 # 开头的行（如 #EXTINF）原样输出
-        /^[^#]/ {                       # 匹配非注释的真实播放链接
-            print $0"|http-user-agent=okHttp/Mod-1.3.0.0"
-        }
-        ' LiTV.m3u > temp.m3u && mv temp.m3u LiTV.m3u
-
-        # 生成 TXT 播放列表（仅名称和链接，去重）
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        
+        # 合并源文件
+        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
+        
+        # 生成TXT播放列表
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -72,21 +64,23 @@ jobs:
             sub(/^ /, "", name);
             print name "," url;
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
-
+        
         # 清理临时文件
-        rm -f Base.m3u temp_base.m3u CCTV.m3u CNTV.m3u
-
-        # 更新 README.md
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        rm -f Base.m3u CCTV.m3u CNTV.m3u
+        
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
+
+        # 添加文件
         git add LiTV.m3u LiTV.txt README.md
-        
-        git commit -m "Update: ${{ steps.date.outputs.date }}" || echo "No changes to commit"
+
+        # 提交更改
+        git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
       run: git push
