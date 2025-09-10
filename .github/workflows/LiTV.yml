@@ -17,7 +17,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Get Time
+    - name: GetTime
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
@@ -25,10 +25,9 @@ jobs:
       run: |
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
-        wget -q https://raw.githubusercontent.com/mursor1985/LIVE/main/iptv.m3u -O Base2.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
@@ -36,7 +35,7 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U并添加用户代理选项
+        # 生成最终M3U
         echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
@@ -50,16 +49,6 @@ jobs:
         # 添加新增提示 (禁止蕉绿)
         echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
         echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
-        
-        # 为每个直播源URL添加用户代理选项
-        awk '{
-          if ($0 ~ /^(http|https)[:]/{ 
-             print "#EXTVLCOPT:http-user-agent=okHttp/Mod-1.3.0.0"
-             print $0
-          } else {
-             print $0
-          }
-        }' LiTV.m3u > LiTV_final.m3u && mv LiTV_final.m3u LiTV.m3u
         
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
@@ -77,6 +66,9 @@ jobs:
         
         # 清理临时文件
         rm -f Base.m3u CCTV.m3u CNTV.m3u
+        
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
