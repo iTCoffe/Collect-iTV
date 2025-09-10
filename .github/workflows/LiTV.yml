@@ -71,11 +71,10 @@ jobs:
         # 提交更改
         git commit -m "Automatic update at ${{ steps.date.outputs.date }}"
         
-    - name: Fetch remote changes
+    - name: Pull and Push with fetch first
       run: |
-        git pull --allow-unrelated_histories -u origin main
-        echo "Fetched remote changes before pushing"
-
-    - name: Push Update
-      run: |
+        # 拉取远程更改
+        git fetch --all
+        
+        # 强制推送，覆盖远程分支
         git push origin main --force-with-lease
