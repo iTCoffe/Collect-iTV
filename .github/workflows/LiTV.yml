@@ -37,7 +37,7 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U
+        # 生成最终M3U，所有直播流使用全局UA
         echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
@@ -55,9 +55,9 @@ jobs:
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
 
-        # 🔥 核心功能：仅对非 # 开头的播放链接行追加 |http-user-agent=...
+        # 🔥 核心功能：为所有直播流添加全局UA
         awk '
-        /^#/ { print; next }  # 所有以 # 开头的行（如 #EXTINF）原样输出
+        /^#/ { print; next }  # 所有以 # 开头的行（注释）原样输出
         /^[^#]/ {               # 匹配非注释的真实播放链接
             print $0"|http-user-agent=okHttp/Mod-1.3.0.0"
         }
@@ -80,11 +80,11 @@ jobs:
 
     - name: Git Pull Latest Changes
       run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "GitHub Actions"
-        git pull origin main  # 修改为你的实际分支名称，可能是 main 或 master
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git pull origin main  # 请替换为你的实际分支名称，如master或main
 
-    - name: Commit Changes
+    - name: Add Changes to Git
       run: |
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git config user.name "github-actions[bot]"
