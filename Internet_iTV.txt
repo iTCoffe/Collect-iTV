@@ -8,7 +8,6 @@
  CCTV15,http://39.164.160.249:9901/tsfile/live/0015_1.m3u8
  CCTV17,http://58.57.40.22:9901/tsfile/live/0019_1.m3u8
  CCTV3,http://58.57.40.22:9901/tsfile/live/1002_1.m3u8
- CCTV4,http://58.57.40.22:9901/tsfile/live/1003_1.m3u8
  CCTV5,http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
  CCTV6,http://58.57.40.22:9901/tsfile/live/1006_1.m3u8
  CCTV8,http://58.57.40.22:9901/tsfile/live/1008_1.m3u8
@@ -256,8 +255,9 @@ CCTV-9,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226197/index.m3u8
 CCTV-9,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225626/index.m3u8
 CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.m3u8?channel-id=ystenlive&Contentid=1000000001000014583&livemode=1&stbId=3
 📡卫视频道,#genre#
+ 三沙卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887452.m3u8
  东南卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873473.m3u8
- 东方卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873462.m3u8
+ 东方卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8
  云南卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887453.m3u8
  兵团卫视,http://liveout.btzx.com.cn/62ds9e/yil08g.m3u8
  内蒙古卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887427.m3u8
@@ -269,15 +269,15 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  吉林卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000004972569.m3u8
  四川卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887274.m3u8
  大湾区卫视,http://222.128.55.152:9080/live/dwq.m3u8
- 天津卫视,http://58.57.40.22:9901/tsfile/live/1034_1.m3u8
+ 天津卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873466.m3u8
  宁夏卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887433.m3u8
  安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8
  安多卫视,https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd
  安徽卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873469.m3u8
- 山东卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873467.m3u8
+ 山东卫视,http://39.164.160.249:9901/tsfile/live/0131_1.m3u8
  山西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887413.m3u8
  广东卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873459.m3u8
- 广西卫视,http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
+ 广西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887394.m3u8
  康巴卫视,http://218.89.240.144:59901/tsfile/live/1010_1.m3u8
  延边卫视,http://120.76.248.139/live/bfgd/4200000117.m3u8
  延边卫视,http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#
@@ -286,7 +286,7 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  江西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000004796511.m3u8
  河北卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873460.m3u8
  河南卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887270.m3u8
- 浙江卫视,http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
+ 浙江卫视,http://223.105.252.8/PLTV/4/224/3221228147/index.m3u8
  海南卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000004796877.m3u8
  海峡卫视,http://38.64.72.148:80/hls/modn/list/4009/chunklist0.m3u8
  深圳卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873474.m3u8
@@ -294,16 +294,15 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  湖南卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873458.m3u8
  甘肃卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887450.m3u8
  莲花卫视,https://fenghuang.tv12.xyz/187.m3u8
- 西藏卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887434.m3u8
- 贵州卫视,http://39.164.160.249:9901/tsfile/live/0120_1.m3u8
- 辽宁卫视,http://39.164.160.249:9901/tsfile/live/0121_1.m3u8
+ 西藏卫视,http://120.238.94.10:9901/tsfile/live/1077_1.m3u8
+ 贵州卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873471.m3u8
+ 辽宁卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873468.m3u8
  重庆卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000004796458.m3u8
- 陕西卫视,http://hlsbkmgsplive.miguvideo.com/migu/kailu/shan3xiws/57/20220809/index.m3u8?msisdn=&mtv_session=&HlsSubType=1&HlsProfileId=1&nphaid=0&encrypt=
+ 陕西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887404.m3u8
  青海卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887430.m3u8
  香港卫视,http://cctvtxyh5c.liveplay.myqcloud.com/cstv/xianggangweishi_2/index.m3u8
- 黑龙江卫视,http://39.164.160.249:9901/tsfile/live/0143_1.m3u8
+ 黑龙江卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873470.m3u8
 三沙卫视,https://live3.hnntv.cn/srs/tv/ssws.m3u8
-三沙卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887452.m3u8
 三沙卫视,http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226544/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7Eb2dn60YQRxhB5rAyOnrv0g%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNO_hnHaWpTsMQwR98VJGduo%2CEND
 三沙卫视,https://livessws.hnntv.cn/live/ssws_01hnntv.m3u8?_upt=626783981743357501
 三沙卫视,http://[2409:8087:2001:20:2800:0:df6e:eb21]:80/ott.mobaibox.com/PLTV/4/224/3221228626/index.m3u8
@@ -329,11 +328,11 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 东南卫视,http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/yinhe/88888888/224/3221226341/index.m3u8
 东南卫视,http://[2409:8087:1a01:df::4035]:80/TVOD/88888888/224/3221225950/main.m3u8
 东南卫视,https://www.freetv.top/migu/849116810.m3u8?migutoken=57b23005d895a6cd3e15ca214fe62e9cf83a69badc0ce3b833b22fe7eefbfc38e185d5f9539eca0a9cfebc7fd19dbe2b49cc2146019b049ffb948722d504a126278700ecc8a776cc6e8d23507a
-东方卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8
 东方卫视,http://z.b.bkpcp.top/m.php?id=dfws#rtsp://115.85.232.19/PLTV/88888910/224/3221225531/10000100000000060000000000107311_0.smil
 东方卫视,http://lu.wqwqwq.sbs/itv/1000000005000265018.m3u8?cdn=ystenlive
 东方卫视,http://tvbox6.com/tv/bfgd.php?id=093
 东方卫视,http://gf.you123.fun:35455/itv/1000000005000265018.m3u8?cdn=ystenlive
+东方卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873462.m3u8
 东方卫视,http://iptv.huuc.edu.cn/hls/dfhd.m3u8
 东方卫视,https://hls-gateway.vpstv.net/streams/709068.m3u8
 东方卫视,http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226237/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EuOKqNaOUqqiJjXIfPoRPMQ%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNNeqgYr1eA9ESriCOsl_DTz%2CEND
@@ -426,7 +425,6 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 天津卫视,http://tvbox6.com/tv/bfgd.php?id=084
 天津卫视,http://cdn.jdshipin.com:8880/ysp.php?id=tjws
 天津卫视,http://gf.you123.fun:35455/itv/1000000005000265026.m3u8?cdn=ystenlive
-天津卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873466.m3u8
 天津卫视,https://hls-gateway.vpstv.net/streams/708872.m3u8
 天津卫视,http://php.jdshipin.com/TVOD/hljyd.php?id=3221226459
 天津卫视,http://yc.myds.me:35455/itv/1000000005000265026.m3u8?cdn=ystenlive
@@ -469,6 +467,7 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 山东卫视,http://lu.wqwqwq.sbs/itv/1000000005000265019.m3u8?cdn=ystenlive
 山东卫视,http://tvbox6.com/tv/bfgd.php?id=099
 山东卫视,http://gf.you123.fun:35455/itv/1000000005000265019.m3u8?cdn=ystenlive
+山东卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873467.m3u8
 山东卫视,http://iptv.huuc.edu.cn/hls/sdhd.m3u8
 山东卫视,https://hls-gateway.vpstv.net/streams/708860.m3u8
 山东卫视,http://[2409:8087:1:20:20::2a]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226244/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EycMz-PML_dQW8iLcNBkw7g%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNMYCYLC04QAM6EBli1wTuET%2CEND
@@ -507,7 +506,6 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 广西卫视,https://mobilelive.gxtv.cn/live/gx_live1004/playlist.m3u8
 广西卫视,http://live.cztv.cc:85/live/ggpd.m3u8
 广西卫视,http://tvbox6.com/tv/bfgd.php?id=116
-广西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887394.m3u8
 广西卫视,https://hlscdn.liangtv.cn/live/de0f97348eb84f62aa6b7d8cf0430770/dd505d87880c478f901f38560ca4d4e6.m3u8
 广西卫视,https://hls-gateway.vpstv.net/streams/708864.m3u8
 广西卫视,http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226534/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EpjsBggKPaCw3f-xlBWZWaQ%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNMJYhPE64lykNkIsypBRZqO%2CEND
@@ -686,6 +684,7 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 西藏卫视,http://z.b.bkpcp.top/m.php?id=xzws
 西藏卫视,http://tvbox6.com/tv/bfgd.php?id=121
 西藏卫视,http://ygbh.live/xz.php?id=xzws
+西藏卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887434.m3u8
 西藏卫视,http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226527/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EmHuqUIe0F51C4h6xZanhig%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNMi3qn27U9rBeXpVrJ8eLy7%2CEND
 西藏卫视,http://php.jdshipin.com/TVOD/hljyd.php?id=3221225638
 西藏卫视,http://goo.bkpcp.top/mg/xzws
@@ -699,7 +698,6 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 贵州卫视,http://z.b.bkpcp.top/m.php?id=gzws
 贵州卫视,http://j.x.bkpcp.top/jx/GUIZHD
 贵州卫视,http://lu.wqwqwq.sbs/itv/5000000004000025843.m3u8?cdn=bestzb
-贵州卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873471.m3u8
 贵州卫视,https://hls-gateway.vpstv.net/streams/708850.m3u8
 贵州卫视,http://php.jdshipin.com/TVOD/hljyd.php?id=3221226474
 贵州卫视,http://goo.bkpcp.top/mg/gzws
@@ -714,7 +712,6 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 辽宁卫视,http://tvbox6.com/tv/bfgd.php?id=058
 辽宁卫视,http://lu.wqwqwq.sbs/itv/1000000005000265022.m3u8?cdn=ystenlive
 辽宁卫视,http://gf.you123.fun:35455/itv/1000000005000265022.m3u8?cdn=ystenlive
-辽宁卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873468.m3u8
 辽宁卫视,http://iptv.huuc.edu.cn/hls/lnhd.m3u8
 辽宁卫视,https://hls-gateway.vpstv.net/streams/708828.m3u8
 辽宁卫视,http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226488/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7E0dsu8dOBmGQQO7fSrvySew%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNN4l9PIxeExdzsncIMJiPZb%2CEND
@@ -741,7 +738,7 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 陕西卫视,http://z.b.bkpcp.top/m.php?id=sxws
 陕西卫视,http://gat.bkpcp.top/ymg.php?id=sxws
 陕西卫视,http://hlsbkmgsplive.miguvideo.com/migu/kailu/shan3xiws/57/20220809/index.m3u8
-陕西卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003887404.m3u8
+陕西卫视,http://hlsbkmgsplive.miguvideo.com/migu/kailu/shan3xiws/57/20220809/index.m3u8?msisdn=&mtv_session=&HlsSubType=1&HlsProfileId=1&nphaid=0&encrypt=
 陕西卫视,http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226532/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7E6sNSqmLCqLFl_AJPBXp1qA%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNO6b4uKEI14SNy0LDiw52LH%2CEND
 陕西卫视,http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010113
 陕西卫视,http://goo.bkpcp.top/mg/sxws
@@ -771,7 +768,6 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
 黑龙江卫视,http://j.x.bkpcp.top/jx/HEILJHD
 黑龙江卫视,http://lu.wqwqwq.sbs/itv/1000000001000001925.m3u8?cdn=ystenlive
 黑龙江卫视,http://tvbox6.com/tv/bfgd.php?id=095
-黑龙江卫视,http://dsj.motem.top:8880/bptv/10000100000000050000000003873470.m3u8
 黑龙江卫视,http://iptv.huuc.edu.cn/hls/hljhd.m3u8
 黑龙江卫视,http://[2409:8087:1:20:20::2c]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226239/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EEHwpSHKc5p-bHJfhpIWFig%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNM5Y8rTELLykZJHp-bmY2YW%2CEND
 黑龙江卫视,http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010056
@@ -792,9 +788,9 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  CCTV怀旧剧场,https://cc06.tv12.xyz/52.m3u8
  CCTV第一剧场,https://epg.pw/stream/6d7bf281e3d739806a73f5373acaa6e01988ec9739f5ac1355ce54b47a928472.m3u8
  CCTV风云足球,http://61.184.46.85:9901/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
- 卫生健康,http://nas.hssvm.com:8888/udp/225.1.1.210:5002
  电视指南,https://cc06.tv12.xyz/39.m3u8
  车迷频道,http://120.76.248.139/live/bfgd/4200000146.m3u8
+ 风云剧场,https://mursor.ottiptv.cc/mcp/fyjc.m3u8?sign=4504fb617281e8909e4259760d3b64d8&tm=1757535222
 世界地理,http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8
 央视台球,http://[2409:8087:7001:20:2::3]/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8
 风云剧场,https://mursor.ottiptv.cc/mcp/fyjc.m3u8?sign=b2f39a8a6bde51405aca53e0ac0f10e9&tm=1757443317
@@ -804,14 +800,18 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  CHC家庭影院,http://113.195.172.192:808/hls/113/index.m3u8
  上海第一财经,https://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
  中华特产,http://120.76.248.139/live/bfgd/4200000158.m3u8
- 中华美食,http://nas.hssvm.com:8888/udp/225.1.1.218:5002
  中国交通,http://drive.mxmy.net:8888/udp/239.3.1.188:8001
  优优宝贝,http://120.76.248.139/live/bfgd/4200000153.m3u8
- 动漫秀场,http://nas.hssvm.com:8888/udp/225.1.1.134:5002
+ 动漫秀场,http://113.195.7.46:9901/tsfile/live/1082_1.m3u8?key=txiptv&playlive=1&authid=0
  卡酷少儿,http://58.57.40.22:9901/tsfile/live/1060_1.m3u8
  哈哈炫动,http://58.57.40.22:9901/tsfile/live/1061_1.m3u8
  四海钓鱼,http://120.76.248.139/live/bfgd/4200000229.m3u8
+ 国学免米一问,https://mursor.ottiptv.cc/bilibili/6374829
+ 国学文化解析,https://mursor.ottiptv.cc/bilibili/1829181607
  快乐垂钓,http://drive.mxmy.net:8888/udp/239.3.1.164:8001
+ 情感咨询历史小说国学,https://mursor.ottiptv.cc/bilibili/1912369582
+ 情感咨询茶水随缘进来看,https://mursor.ottiptv.cc/bilibili/1852352040
+ 找个摄影搭子,https://mursor.ottiptv.cc/bilibili/1868877299
  收藏天下,http://www.cdnstv.com:6398/hls/1118/index.m3u8
  数码时代,http://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8?zzhed
  新动漫,http://nas.hssvm.com:8888/udp/225.1.1.216:5002
@@ -820,15 +820,19 @@ CCTV-9,http://zteres.sn.chinamobile.com:6060/000000001000/1000000001000014583/1.
  淘娱乐,http://zjzcf.synology.me:35455/bptv/10000100000000050000000003887499.m3u8
  淘电影,http://dsj.motem.top:8880/bptv/10000100000000050000000003887498.m3u8
  环球旅游,http://120.76.248.139/live/bfgd/4200000147.m3u8
+ 球迷茶吧侃球时间,https://mursor.ottiptv.cc/bilibili/483203
  生态环境,http://120.76.248.139/live/bfgd/4200000149.m3u8
  第一财经,http://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
  纪实科教,http://120.76.248.139/live/bfgd/4200000113.m3u8
+ 聊天饮茶直播间,https://mursor.ottiptv.cc/bilibili/6234072
  茶频道,http://drive.mxmy.net:8888/udp/239.3.1.165:8001
+ 讲干货重品质安心喝茶安静聊茶,https://mursor.ottiptv.cc/bilibili/25144691
  都市剧场,http://112.46.105.20:8009/hls/72/index.m3u8
  都市剧场,https://satellitepull.cnr.cn/live/wxcqxwgb/playlist.m3u8
  重庆汽摩,http://120.76.248.139/live/bfgd/4200000168.m3u8
  金鹰卡通,http://dsj.motem.top:8880/bptv/10000100000000050000000004796942.m3u8
  长影频道,http://tpc.x3322.net:9901/tsfile/live/1010_1.m3u8
+ 首问免米聊国学,https://mursor.ottiptv.cc/bilibili/1991383080
  黑莓电影,https://epg.pw/stream/ffcb6572863f0745a7369fbd9d901f1dfd0ab8fab8bad8bebb4e01c90b303c47.m3u8
 CHC动作电影,http://t.061899.xyz/tl/dq.php?id=chcdzdy
 CHC动作电影,http://z.b.bkpcp.top/m.php
@@ -948,6 +952,8 @@ CHC家庭影院,https://mgtv.ottiptv.cc/mg/644368373.m3u8?sign=bda539eec2bb0ede8
  国内经典动作电影,https://mursor.ottiptv.cc/yy/1382851522
  热血动作电影,https://mursor.ottiptv.cc/yy/1382736804
  精品体育,https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8
+ 精彩动作电影,https://mursor.ottiptv.cc/yy/1382736823
+ 精彩动作电影享不停,https://mursor.ottiptv.cc/yy/1382736809
  超精彩系列动作电影,https://mursor.ottiptv.cc/yy/1382745096
 NewTV动作电影,http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010003
 NewTV动作电影,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225661/index.m3u8
@@ -985,6 +991,7 @@ NewTV惊悚悬疑,http://yc.myds.me:35455/itv/1000000004000024282.m3u8?cdn=ysten
  CETV2,https://cc06.tv12.xyz/24.m3u8
  CETV4,https://mursor.ottiptv.cc/migu/923287339.m3u8?migutoken=165b545b4402eaba61cdc31defb6548a443d9b5eebb1d99392852bd799c553e8817e85eb324c512581ca9a1ed8e56e530144f79606cf44fe5b2d5e97b6da577e0f2adae2a90c2a55089c95880b
  中国党员教育,http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8
+ 中国教育2,http://113.195.7.46:9901/tsfile/live/1033_1.m3u8?key=txiptv&playlive=1&authid=0
  兵团八师石河子教育,http://124.88.144.73:1935/live/jiaoyu/playlist.m3u8
  山东教育,https://test1.live.sdetv.com.cn/live/dianshizhibo/playlist.m3u8
  江苏教育,https://mursor.ottiptv.cc/migu/628008321.m3u8?migutoken=f23d4bcff80819f435db9a666e24d1bb6cb7daed4d5f480936906885f3d62861b56b769a71332c450d31bc8d287919f595d3e6345a45469a801811eaae8da0bc75fecc6ad6284507ffd4495d3d
@@ -1106,15 +1113,15 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  固镇新闻,http://www.guzhenm.com:7001/hls/hd-live.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
  安徽导视,http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8
  安徽综艺体育,http://112.27.235.94:8000/hls/25/index.m3u8
- 宿松新闻综合,http://live.ahsz.tv/video/s10001-szzh/index.m3u8
  广德生活,https://live.gdtv.ah.cn/live/newsTV.m3u8
- 新闻综合,http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
+ 新闻综合,https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
  祁门综合,http://zbbf2.ahbztv.com/live/416.m3u8?zanhd
  铜陵新闻综合,https://ls.qingting.fm/live/21303/64k.m3u8
  黄山公共生活,http://hslive.hsnewsnet.com/lsdream/iY92ady/1000/live.m3u8?zanhd
  黄山新闻综合,http://hslive.hsnewsnet.com/lsdream/hve9Wjs/1000/live.m3u8
 安徽综艺体育,https://live.lalifeier.eu.org/ahtv/ahzyty.m3u8?t=1745774515&key=27009aec794adc785b22478c5aa2ae16
 宿州公共,http://live.ahsz.tv/video/s10001-ggpd/index.m3u8
+宿松新闻综合,http://live.ahsz.tv/video/s10001-szzh/index.m3u8
 滁州公共,http://live.cztv.cc:85/live/ggpd.m3u8?zanhd#http://live.cztv.cc:85/live/ggpd.m3u8
 滁州市广播电视台 新闻综合,http://live.cztv.cc:85/live/xwpd.m3u8
 滁州科教,http://live.cztv.cc:85/live/sjpd.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
@@ -1158,6 +1165,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
 🚌广东频道,#genre#
  南国都市,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de
  南国都市,http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4
+ 在深圳了外卖搬砖两手抓香哦,https://mursor.ottiptv.cc/bilibili/2810822
  广东民生,http://183.11.239.36:808/hls/18/index.m3u8
  广东珠江,http://120.238.94.10:9901/tsfile/live/1009_1.m3u8
  广州影视,http://tencentplay.gztv.com/live/yingshi.m3u8?txSecret=1bd3a1082ab5b89f48c1bff9a3760da4&txTime=18d57929bd4
@@ -1165,11 +1173,9 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  广州法治,http://tencentplay.gztv.com/live/fazhi.m3u8?txSecret=3e84cd8eba844b5dc2150612295c7a52&txTime=18d578f4493
  广州竞赛,http://8.138.7.223/tv/gzjs.m3u8
  广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
- 河源公共,http://tmpstream.hyrtv.cn/hygg/sd/live.m3u8
- 河源综合,http://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8
  番禺综合,http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv
+ 粤语甜妹,https://mursor.ottiptv.cc/bilibili/27167784
  粤语电影丶,https://mursor.ottiptv.cc/douyu/1226741
- 粤语电影放映厅,https://mursor.ottiptv.cc/huya/21059572
 广东珠江,http://cdn2.163189.xyz/live/gdzj/stream.m3u8
 广东珠江,http://cdn2.132.us.kg/live/gdzj/stream.m3u8
 广东珠江,http://lu.wqwqwq.sbs/itv/2000000003000000033.m3u8?cdn=hnbblive
@@ -1191,11 +1197,9 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
 广西国际,http://hlscdn.liangtv.cn/live/0234c48e0bc24fe1b41b9999a253e581/1075ee38e04f490690f6a36a16e09c79.m3u8?fbl=
 广西新闻,https://mobilelive.gxtv.cn/live/gx_live1007/playlist.m3u8
 🚐贵州频道,#genre#
- 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
  安顺新闻,http://hplayer1.juyun.tv/camera/154379194.m3u8
  清镇新闻综合,http://pili-live-rtmp.143.i2863.com/i2863-143/live_143_397273.m3u8?zguizd
  贵州省兴义市万峰林,https://gcalic.v.myalicdn.com/gc/xywfl_1/index.m3u8
-新闻综合,https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
 🚑海南频道,#genre#
  海南新闻,http://ls.qingting.fm/live/1861.m3u8
 海南新闻,http://nn.7x9d.cn/地方台8563/海南.php?id=xwpd
@@ -1257,6 +1261,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  河南新闻,http://www.cdnstv.com:6398/hls/1114/index.m3u8
  河南法治,http://www.cdnstv.com:6398/hls/1112/index.m3u8
  河南电视剧,http://www.cdnstv.com:6398/hls/1113/index.m3u8
+ 河南都市,https://migu.188766.xyz/?migutoken=d8baa9c6f8f07f20ac65a02d15b59731&id=%E9%83%BD%E5%B8%82%E9%A2%91%E9%81%93&type=yy
  泌阳新闻综合,http://live.dxhmt.cn:9081/tv/11726-1.m3u8
  洛阳文旅,https://wshlslive.migucloud.com/live/CVN934JS_C0/playlist.m3u8
  洛阳科教,https://wshlslive.migucloud.com/live/RJ0EYBCZ_C0/playlist.m3u8
@@ -1359,7 +1364,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  南京十八,https://mgtv.ottiptv.cc/migu/838151753.m3u8?migutoken=e1c3c9e2e67541d90ea94c4c917f96ecf43c6c0ae7c616929d8676e7c14bc5587ba870ce22575333640bfff61b05d4d468f6564c6251023f1ad20957cfe3b2c12e71b4662f83dce5d920a86c29
  南京教科,https://mgtv.ottiptv.cc/migu/838153729.m3u8?migutoken=0427a8c0867765b66984ce8ef774d494eeb52a2d6a7eefe17c4b03fa30923700917323b8951caa30617f3eecc1db2844cdff2f7470556533fbc072ad7a7cb0c6284344cc57983294a2b26f4303
  南京新闻综合,https://mgtv.ottiptv.cc/migu/838109047.m3u8?migutoken=d3d943815e6d6e9e9493a9b4b1d5a1d360bb5f3c04230f6d4d71f7f7c9f30771d321f1c262008c92ffde17fef4a62d1e1c58d5a9454573fb1489994d9be29f4e1cc7786813b671581eda4b9439
- 南通新闻综合,https://mursor.ottiptv.cc/migu/955227985.m3u8?migutoken=be267bde65321b03020def1e8efad6d03353e251d524566f48e873e9dd9d55f8c97e4ed4b30ee9079e46ad70c47b5fd76ddb351b8c4a1d3425dc45a91518f7dfe8f2ca008c97ab08852dbe49c3
+ 南通新闻综合,https://mgtv.ottiptv.cc/migu/955227985.m3u8?migutoken=03e9c85f19b5ac291f5863436507873a8f47ec3c677c7857c89bda5778edc8e38fc38b4270aa374c49eee39b39ffaf80a20b750130c27760df766c0cf7b5d437be8dc60c1ced9117d98f6c9b3e
  句容党建,http://jrlive.jrntv.com/live/_definst_/dangjians/playlist.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
  句容生活,http://jrlive.jrntv.com/live/_definst_/shenghuos/playlist.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
  宜兴新闻,http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8
@@ -1382,6 +1387,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  淮阴综合,https://huaiyin-tv-replay.cm.jstv.com/huaiyin-tv/huaiyinf.m3u8
  溧水新闻综合,https://mgtv.ottiptv.cc/migu/639737327.m3u8?migutoken=4c07b7afe94ad06d114a6bccae5747804d493ab7b1100069e485b78d3cb91c0fb0dbd92aa90a6157d7066e5b90780fabf5e150e17ebb9bc72b8bb18f43c5acddd1c0fd4d1904a99210aa962135
  滨海新闻综合,http://traffic.jbh.tjbh.com/live/bhtv10/playlist.m3u8
+ 睢宁三农,http://3739115337.cloudvdn.com/a.m3u8?domain=suining-tv-hls.cm.jstv.com&player=nwEAAJApyIx-AKAX&secondToken=secondToken%3AfyPrvACXUQ_VSZUu3Rxm-2py1fo&streamid=suining-tv%3Asuining-tv%2Fsuiningsn&v3=1
  睢宁综合,https://live-auth.51kandianshi.com/szgd/csztv4k_hd.m3u8
  苏州文化生活,https://live-auth.51kandianshi.com/szgd/csztv3.m3u8
  苏州新闻综合,https://live-auth.51kandianshi.com/szgd/csztv1.m3u8
@@ -1396,6 +1402,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
 南京教科,https://mursor.ottiptv.cc/migu/838153729.m3u8?migutoken=98de282c32eafc9a4b5acb6a30e117df1024ef4fac48d0348aa808540419b9072643b9f63e1411783dd42b9978f99128ce02062868fedeb4af89c194b9aa6722196b357ace002aa267e696cb66
 南京新闻综合,http://z.b.bkpcp.top/m.php?id=njxwzh
 南京新闻综合,https://mursor.ottiptv.cc/migu/838109047.m3u8?migutoken=fc1711b9c156db946a3c118fc27dae4c680e060dce4ac71e6daee3575118e0d40e394f66435e2a580495ab5e9c3d79668b5ed551ad777e18298343a466ce1308e398329241cfb78dcbdced39b1
+南通新闻综合,https://mursor.ottiptv.cc/migu/955227985.m3u8?migutoken=be267bde65321b03020def1e8efad6d03353e251d524566f48e873e9dd9d55f8c97e4ed4b30ee9079e46ad70c47b5fd76ddb351b8c4a1d3425dc45a91518f7dfe8f2ca008c97ab08852dbe49c3
 宜兴新闻,http://yixing-tv-ori-hls.jstv.com/yixing-tv-ori/yixing_xw.m3u8?zjiangsd
 徐州新聞綜合,http://z.b.bkpcp.top/m.php?id=xzxwzh
 无锡娱乐,http://stream.thmz.com/wxtv2/playlist.m3u8
@@ -1445,6 +1452,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  西宁生活服务,https://liveout.xntv.tv/a65jur/90p2i1.m3u8
  青海综合,http://lmt.scqstv.com/live1/live1.m3u8
 🦽山东频道,#genre#
+ 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
  山东文旅,http://58.57.40.22:9901/tsfile/live/1023_1.m3u8
  山东新闻,http://ls.qingting.fm/live/60180.m3u8
  山东生活,http://ls.qingting.fm/live/60260.m3u8
@@ -1467,11 +1475,12 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  武乡新闻综合,http://uzoiczhh.live.sxmty.com/live/hls/0d41f1480c4042d49927858f01fde707/53130407737b417b9a6259b57246bae3.m3u8?zshanxd
  汾西综合,https://qmmqvzoz.live.sxmty.com/live/hls/f24f8a390c084386a564074c9260100c/be3fdf07606145739ab2c4b80fe0136a.m3u8?zshanxd
  祁县新闻综合,http://ggpagerl.live.sxmty.com/live/hls/b350dc1ac5da45c2b2233f6eb122ddf4/49d3766c7f204685a2a8f027b234c33d.m3u8?zshanxd
- 长子综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd
+ 长子综合,https://www.wxhcgbds.com:8081/channelTv/WXTV_1.m3u8?zshanxd
  长治公共,http://live.njgdmm.com/changzhi/cztv2.m3u8
  黎城综合,http://111.53.96.67:8081/live/1/index.m3u8
 五台综合,https://568slnjf.live.sxmty.com/live/hls/90c8b2efeb164cc0a6c2409eed668d6b/f77cbb89ec57435b9ba4c47589c16e4f-1.m3u8?zshanxd-1024x576
 怀仁综合,http://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc.m3u8?zshanxd
+长子综合,https://83awgyp5.live.sxmty.com/live/hls/6f6f4b36f9bd42628b718b595ba507ed/724b7e8907a8414d873eb2a2f69bfa18.m3u8?zshanxd
 🛺陕西频道,#genre#
  乐家购物,http://112.46.105.20:8009/hls/23/index.m3u8
  西安新闻,http://112.46.105.20:8009/hls/28/index.m3u8
@@ -1489,6 +1498,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
 陕西都市青春,https://mursor.ottiptv.cc/migu/956909358.m3u8?migutoken=c87dc81c3a4dfa5f0241fa92cbd0f962df97329d2447bcb3ff76c61e9bb4cb6baa92af67d4f1269e95c16358b6bb2468bd5220ac0872a32bf5025673f04e39d4c4a840f29104c5af836051f154
 🚲上海频道,#genre#
  上海新闻综合,https://mgtv.ottiptv.cc/migu/651632657.m3u8?migutoken=348c9164063c2b1df215dd2fa7cd92cb119d8a335ae0edfb5d615a6c714e71b669eee2f5ff1730afa92af7ca41d0aa96e3a280d7e5f2069eb8a3b852f3ebc270147489d7c8bfb08a7c4b9c4d80
+ 上海楼市还有救吗,https://mursor.ottiptv.cc/bilibili/24632104
  法治天地,https://cc06.tv12.xyz/42.m3u8
 上海外语,http://z.b.bkpcp.top/m.php?id=shics
 上海新闻综合,http://z.b.bkpcp.top/m.php?id=shxwzh
@@ -1580,7 +1590,7 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
  海宁新闻综合,https://p2hs.vzan.com/slowlive/317913155078575177/live.m3u8
  湖州公共民生,http://hzcm-live.media.hugd.com/1e6b554b9ab74513958c0e1ffe664d22/9acaa7634309494cb29a85eb12136607.m3u8?auth_key=2272900830-9a2389b8bf4e49d580d4ad807423d326-0-ea78a5c7a678c436263582d368f5009e
  湖州文化娱乐,https://hzcm-live.media.hugd.com/613c47f0ab0d4eaa98b21378d0db6ded/0051d31c9dd543a7825eea4e49675b2a.m3u8?auth_key=2277598059-0a5ebfa1c0dc4671b42a60810fc37039-0-fa625b7d1feab612062453c12e3c8887
- 湖州新闻综合,https://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865
+ 湖州新闻综合,http://hzcm-live.media.hugd.com/3f5fa7d64c7c46a38c6bd8ad35e836cc/65128273761b4731ae53729ea6dcf932.m3u8?auth_key=2277598215-9d21c15111244bea8d298c361d31a72e-0-d031198f58d44b0e91ba2e3f3b188865
  绍兴公共,http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8
  绍兴电视台公共,http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
  缙云新闻综合,http://l.cztvcloud.com/channels/lantian/SXjinyun1/720p.m3u8
@@ -1642,17 +1652,16 @@ CETV4,http://player.cntv.cn/standard/live_HLSDRM20180524.swf?ChannelID=cetv4&vid
 龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
 龙游生活娱乐,http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8?zzhed
 🛩️北京频道,#genre#
- 北京新闻,https://satellitepull.cnr.cn/live/wxbjxwgb/playlist.m3u8
+ 北京新闻,http://dsj.motem.top:8880/bptv/10000100000000050000000003870780.m3u8
  北京生活,https://wstvcpudali.v.myalicdn.com/wstvcpud/udrmbtv7_1/index.m3u8?adapt=0&BR=audio
  北京科教,http://player.cntv.cn/standard/live_HLSDRM20180606.swf?ChannelID=btv3&P2PChannelID=pd://cctv_p2p_hdbtv3
  北京青年,http://player.cntv.cn/standard/live_HLSDRM20180919.swf?v=180.171.5.8.9.6.3.9&ChannelID=btv8&videoTVChannel=btv8&P2PChannelID=pd://cctv_p2p_hdbtv8&tai=btv8&VideoName=btv8&channelID=btv8
 北京新闻,http://iptv.huuc.edu.cn/hls/btv9hd.m3u8
 北京新闻,https://brtv-radiolive.rbc.cn/alive/fm945.m3u8
-北京新闻,http://dsj.motem.top:8880/bptv/10000100000000050000000003870780.m3u8
 🏍️港澳台频道,#genre#
  东森电影,http://1b6467f415.iok.la:9931/tsfile/live/1043_1.m3u8
  凤凰电影,http://iot-mqqt.111yao.cn:8080/live/diyp_fhdy.m3u8
- 天映经典,https://epg.pw/stream/cb817875cf26eb683af274dd8cdf7f559a71353d9565c32447c8d98894bc8095.ctv
+ 天映经典,https://migu.188766.xyz/?migutoken=3637f4ae3861b554c9b368728cc8b391&id=Celestial2&type=dy
  美亚电影,https://live.tvfix.org/live/mydy/index.m3u8
  龙华电影,https://cdn8.163189.xyz/live/lhdy/stream.m3u8
 J2,http://php.jdshipin.com:8880/PLTV/iptv.php?id=j2
@@ -1706,7 +1715,6 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
 凤凰香港,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=3523&tk=7877e7cc41c7
 天映经典,https://cdn9.163189.xyz/smt1.1.php
 天映经典,https://cdn.jsdelivr.net/gh/Meroser/Media_Coll@main/Meroser.mp4
-天映经典,https://migu.188766.xyz/?migutoken=3637f4ae3861b554c9b368728cc8b391&id=Celestial2&type=dy
 天映经典,https://live.tvfix.org/live/tyjd/index.m3u8
 天映经典,https://classicarts.akamaized.net/hls/live/1024257/CAS/master.m3u8
 无线新闻,http://php.jdshipin.com:8880/TVOD/iptv.php?id=tvbxw
@@ -1789,14 +1797,13 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
 咪咕直播9,http://[2409:8087:5e00:24::2d]:6610/000000001000/1/3000000001000028638/index.m3u8?channel-id=FifastbLive&Contentid=3000000001000028638&livemode=1&stbId=YanG-1989
 🎬影视剧频道,#genre#
  1930年代经典电影,https://mursor.ottiptv.cc/yy/1356363815
- 24h高分电影,https://mursor.ottiptv.cc/yy/1355171357
- 24小时轮播还珠格格少年包青天,https://mursor.ottiptv.cc/bilibili/6823190
  28岁电影,https://mursor.ottiptv.cc/douyu/8884164
  3说电影,https://mursor.ottiptv.cc/douyu/9643264
+ 77说电影,https://mursor.ottiptv.cc/douyu/9444320
  AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8
  CHC电影,http://218.15.183.23:9901/tsfile/live/23044_1.m3u8
  JG影视解说,https://mursor.ottiptv.cc/douyu/9391277
- 一起来看那些经典影视片段,https://mursor.ottiptv.cc/bilibili/21787784
+ 三七电影V,https://mursor.ottiptv.cc/douyu/9457792
  丽姐说电影,https://mursor.ottiptv.cc/douyu/9437283
  九叔说电影v,https://mursor.ottiptv.cc/douyu/9348282
  二哈讲电影,https://mursor.ottiptv.cc/douyu/8778280
@@ -1807,8 +1814,11 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  人在囧途,https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8
  人在囧途之泰囧,https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8
  人在囧途之港囧,https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8
+ 以防你不知道来可以和up一起看电影,https://mursor.ottiptv.cc/bilibili/1908052749
+ 传奇之王影视剧,https://mursor.ottiptv.cc/yy/1354926735
  伦帝电影说,https://mursor.ottiptv.cc/douyu/9368091
  伯乐说电影V,https://mursor.ottiptv.cc/douyu/9386057
+ 佛曰影视,https://mursor.ottiptv.cc/douyu/9671758
  使徒行者,http://iptv.jxpan.vip:18888/aio/huya/23734256
  俗哥看电影,https://mursor.ottiptv.cc/douyu/2161818
  倩女幽魂人间道,http://jsmov2.a.yximgs.com/bs3/video-hls/5250634317044855747_hlsb.m3u8
@@ -1816,6 +1826,8 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  倩女幽魂道道道,http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8
  冰冰影剧,http://iptv.jxpan.vip:18888/aio/douyu/74374
  刑事侦缉档案,http://iptv.jxpan.vip:18888/aio/huya/29465856
+ 刘哔电影,https://mursor.ottiptv.cc/douyu/2632223
+ 刘德华电影,http://iptv.jxpan.vip:18888/aio/huya/11342424
  刘老师说电影,https://mursor.ottiptv.cc/douyu/8317926
  前任电影,https://mursor.ottiptv.cc/douyu/9329242
  功夫电影,http://iptv.jxpan.vip:18888/aio/huya/11352941
@@ -1825,29 +1837,37 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  句容影院,http://jrlive.jrntv.com/live/_definst_/yingshis/chunklist_w1994429382.m3u8?zjiangsd
  可乐撩电影,https://mursor.ottiptv.cc/douyu/9371552
  史诗级科幻电影阿凡达,https://mursor.ottiptv.cc/yy/1382735577
+ 同同电影,https://mursor.ottiptv.cc/douyu/10155359
  周墨看电影,https://mursor.ottiptv.cc/douyu/9505584
  周星驰搞笑电影,https://mursor.ottiptv.cc/yy/38670875
  周星驰电影,http://iptv.jxpan.vip:18888/aio/huya/11342412
+ 和我看电影,https://mursor.ottiptv.cc/huya/21967180
+ 哈利影视,https://mursor.ottiptv.cc/douyu/8475821
  哏老师撩电影,https://mursor.ottiptv.cc/douyu/9991820
  唐司令说电影,https://mursor.ottiptv.cc/douyu/8774345
  喜人电影,https://mursor.ottiptv.cc/douyu/10348735
  喜剧电影冒牌天神12,https://mursor.ottiptv.cc/yy/1354936210
  喜剧电影笑不停,https://mursor.ottiptv.cc/douyu/10298856
  喵妹说电影,https://mursor.ottiptv.cc/douyu/9312432
+ 噬元兽影视,https://mursor.ottiptv.cc/douyu/8896723
+ 国产大片电影,https://mursor.ottiptv.cc/yy/1354926655
+ 国产电影就是闹着玩的,https://mursor.ottiptv.cc/yy/1354931503
  国内玄幻电影林正英,https://mursor.ottiptv.cc/yy/1354932444
  墨逗电影,https://mursor.ottiptv.cc/douyu/9614847
  夏洛特烦恼国内电影喜剧,https://mursor.ottiptv.cc/yy/1354936201
- 夜探微电影,https://mursor.ottiptv.cc/bilibili/1750972654
  大唐双龙传,http://iptv.jxpan.vip:18888/aio/huya/29465850
- 大墨电影,https://mursor.ottiptv.cc/huya/29458834
  大壮撞电影,https://mursor.ottiptv.cc/douyu/9437349
  大时代,http://iptv.jxpan.vip:18888/aio/huya/23865161
  大江大河2高分影视推荐,https://mursor.ottiptv.cc/yy/1382736797
  大江大河高分影视推荐,https://mursor.ottiptv.cc/yy/1382736806
+ 大神影视,https://mursor.ottiptv.cc/huya/30297011
  大米饭影视,https://mursor.ottiptv.cc/douyu/9824094
  大荒电影,https://mursor.ottiptv.cc/douyu/3508538
+ 大趴电影院,https://mursor.ottiptv.cc/douyu/8747638
  大进军全集红色系列电影,https://mursor.ottiptv.cc/yy/1382745083
+ 天堂电影1895,https://mursor.ottiptv.cc/douyu/9573592
  太空生命高分科幻电影开播,https://mursor.ottiptv.cc/yy/1382851586
+ 奇怪电影,https://mursor.ottiptv.cc/douyu/9440966
  女汉子说电影,https://mursor.ottiptv.cc/douyu/9395966
  女神撩电影,https://mursor.ottiptv.cc/douyu/9439594
  妙手仁心,http://iptv.jxpan.vip:18888/aio/huya/29465853
@@ -1856,18 +1876,20 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  安小闫说电影x,https://mursor.ottiptv.cc/douyu/1842621
  寒战,https://vip.ffzy-play6.com/20221019/157_bf0740ee/index.m3u8
  寻秦记,http://iptv.jxpan.vip:18888/aio/huya/29465848
+ 小丑电影,https://mursor.ottiptv.cc/huya/29869799
  小丽说电影,https://mursor.ottiptv.cc/douyu/9368016
  小乔讲电影,https://mursor.ottiptv.cc/douyu/8413908
+ 小儛电影嘚啵嘚,https://mursor.ottiptv.cc/douyu/8362978
  小儿难养影视剧,https://mursor.ottiptv.cc/yy/1382735559
  小岛讲电影,https://mursor.ottiptv.cc/douyu/9390955
  小浅说电影,https://mursor.ottiptv.cc/douyu/9665834
  小涛讲电影V,https://mursor.ottiptv.cc/douyu/8415464
- 小猫影视,https://mursor.ottiptv.cc/huya/30569079
  小超讲电影,https://mursor.ottiptv.cc/douyu/3432645
  小马哥说电影,https://mursor.ottiptv.cc/douyu/9396672
  少年看电影,https://mursor.ottiptv.cc/douyu/8762120
  岳云鹏宋小宝也来演电影了,https://mursor.ottiptv.cc/yy/1354926612
  崽崽撩电影,https://mursor.ottiptv.cc/douyu/8325511
+ 幕撩电影,https://mursor.ottiptv.cc/douyu/9486015
  强人说笑,https://mursor.ottiptv.cc/douyu/10329713
  影视小艺,https://mursor.ottiptv.cc/yy/1382737886
  影视梗大叔,https://mursor.ottiptv.cc/douyu/9480648
@@ -1877,14 +1899,12 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  怪兽电影,http://iptv.jxpan.vip:18888/aio/huya/21059577
  怪兽马提尼电影,https://mursor.ottiptv.cc/douyu/9075333
  怪医文三块影视剧,https://mursor.ottiptv.cc/yy/1354936154
+ 怪味爆米花电影,https://mursor.ottiptv.cc/douyu/9422144
  恐怖电影,https://mursor.ottiptv.cc/yy/24066336
- 惊悚电影放映厅,https://mursor.ottiptv.cc/huya/26355795
+ 悬疑电影放映厅,https://mursor.ottiptv.cc/huya/29982641
  成龙电影,http://iptv.jxpan.vip:18888/aio/huya/11342386
  我不是药神,https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8
  我是吃泡面看电影,https://mursor.ottiptv.cc/douyu/8851063
- 战争电影,http://iptv.jxpan.vip:18888/aio/huya/21059574
- 战争电影放映厅,https://mursor.ottiptv.cc/huya/21059618
- 扁豆看电影2,https://mursor.ottiptv.cc/huya/21059623
  扫黄先锋,http://iptv.jxpan.vip:18888/aio/huya/29465855
  拆弹专家1,https://vip.ffzy-online.com/20221015/719_80ff87c2/index.m3u8
  拆弹专家2,https://vip.ffzy-online.com/20221015/722_e32c42bc/index.m3u8
@@ -1894,74 +1914,82 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  撩电影8,https://mursor.ottiptv.cc/douyu/9351043
  播放影视为主,https://mursor.ottiptv.cc/yy/1353454489
  斗鱼港剧,http://iptv.jxpan.vip:18888/aio/douyu/5061550
- 新海电影,https://mursor.ottiptv.cc/huya/29396806
  无心法师,http://iptv.jxpan.vip:18888/aio/huya/30080233
- 无际电影,https://mursor.ottiptv.cc/douyu/9720498
- 易说影视,https://mursor.ottiptv.cc/douyu/10859591
+ 无限复活张柏芝主演爱情电影,https://mursor.ottiptv.cc/yy/1382745190
+ 星君说电影,https://mursor.ottiptv.cc/douyu/8014467
  晓晓说电影,https://mursor.ottiptv.cc/douyu/9430717
  晓麦讲电影,https://mursor.ottiptv.cc/douyu/453963
- 晨晨的影视小窝,https://mursor.ottiptv.cc/yy/1382851576
  有部电影儿,https://mursor.ottiptv.cc/douyu/9736479
  末日系列外国电影合集,https://mursor.ottiptv.cc/yy/1354889019
  末日说电影,https://mursor.ottiptv.cc/douyu/9431125
+ 李连杰电影,http://iptv.jxpan.vip:18888/aio/huya/11342390
  松轩说电影,https://mursor.ottiptv.cc/douyu/1524969
- 林正英电影,http://iptv.jxpan.vip:18888/aio/huya/11342421
- 林正英经典电影,https://mursor.ottiptv.cc/yy/34229877
+ 林九影视,https://mursor.ottiptv.cc/douyu/7212528
+ 林正英经典玄幻电影,https://mursor.ottiptv.cc/yy/1462895099
  枪战电影,http://iptv.jxpan.vip:18888/aio/huya/21059579
  梓帆说电影,https://mursor.ottiptv.cc/douyu/9769563
+ 梦梦影视,https://mursor.ottiptv.cc/huya/25129377
+ 梦溪影视,https://mursor.ottiptv.cc/huya/25742076
  楚哥说电影,https://mursor.ottiptv.cc/douyu/9375743
- 楚汉骄雄,http://iptv.jxpan.vip:18888/aio/huya/29465854
+ 欣欣爱看电影,https://mursor.ottiptv.cc/huya/14290297
  欧美大片,http://iptv.jxpan.vip:18888/aio/douyu/2793084
- 武侠电影放映厅,https://mursor.ottiptv.cc/huya/29982611
+ 每日好电影V,https://mursor.ottiptv.cc/douyu/9533302
  江苏影视,https://mursor.ottiptv.cc/migu/626064697.m3u8?migutoken=b73f8d78cfb5fb25d1b0e54e8b651db35d48ff071c6fe1f7826fcc4e6212a20ba7c8991185d03743da42bafdff874a4a03b5df60e7c2aa293ad3b34997faa082e300149433e3b1c2694909770b
  汪哥说电影,https://mursor.ottiptv.cc/douyu/9312685
  沈腾电影,http://iptv.jxpan.vip:18888/aio/huya/11601968
  治愈电影阳光小美女一家人的寻梦之旅,https://mursor.ottiptv.cc/yy/1382736920
  法政先锋,http://iptv.jxpan.vip:18888/aio/huya/23863804
+ 泡菜电影,https://mursor.ottiptv.cc/huya/29812160
  洗冤录,http://iptv.jxpan.vip:18888/aio/huya/29465851
  洛克电影,https://mursor.ottiptv.cc/douyu/9414884
- 涛浪浪电影,https://mursor.ottiptv.cc/douyu/5424258
- 涵哥评电影,https://mursor.ottiptv.cc/huya/16865726
- 淘剧场,http://zjzcf.synology.me:35455/bptv/10000100000000050000000003887497.m3u8
+ 活佛济公3,http://iptv.jxpan.vip:18888/aio/huya/23903123
+ 淘剧场,http://dsj.motem.top:8880/bptv/10000100000000050000000003887497.m3u8
+ 火龙果讲电影本人,https://mursor.ottiptv.cc/douyu/2039501
  火龙果说电影,https://mursor.ottiptv.cc/douyu/9559158
  灯泡兄弟影游谈,https://mursor.ottiptv.cc/douyu/1690081
  热血抗日电影,https://mursor.ottiptv.cc/yy/1382749907
  熊猫电影,https://mursor.ottiptv.cc/douyu/3506483
  爆笑电影王牌大贱谍23,https://mursor.ottiptv.cc/yy/1382735556
- 爱情电影放映厅,https://mursor.ottiptv.cc/huya/29982639
+ 爱星影视,https://mursor.ottiptv.cc/douyu/9476806
  牛叔说电影,https://mursor.ottiptv.cc/douyu/2758565
- 牛叔说电影二台,https://mursor.ottiptv.cc/douyu/10010651
  特辑电影院,https://mursor.ottiptv.cc/douyu/3637778
  狄仁杰电影,http://iptv.jxpan.vip:18888/aio/huya/30080229
+ 狗毛电影,https://mursor.ottiptv.cc/douyu/9356637
  独立鱼电影,https://mursor.ottiptv.cc/douyu/2413555
- 猛虎电影,https://mursor.ottiptv.cc/huya/24770988
  猫叔说电影,https://mursor.ottiptv.cc/douyu/9820039
- 王坑坑聊电影,https://mursor.ottiptv.cc/douyu/9402110
+ 猫眼电影,https://mursor.ottiptv.cc/douyu/8726221
+ 玄幻电影,http://iptv.jxpan.vip:18888/aio/huya/11342414
  王晶电影,http://iptv.jxpan.vip:18888/aio/huya/11602058
  珍珠港电影,https://mursor.ottiptv.cc/yy/1354936234
  珞珞说电影,https://mursor.ottiptv.cc/douyu/3718888
  甄子丹电影,http://iptv.jxpan.vip:18888/aio/huya/11352935
  电影七十二变,https://mursor.ottiptv.cc/douyu/9323164
  电影先锋V,https://mursor.ottiptv.cc/douyu/8711212
- 电影八点档,http://live.metshop.top/huya/880261?cdn=alicdn
+ 电影兴风作浪系列播放,https://mursor.ottiptv.cc/yy/1382736857
  电影冷知识,https://mursor.ottiptv.cc/douyu/9660835
+ 电影刘油果,https://mursor.ottiptv.cc/douyu/3985805
  电影吐槽汇,https://mursor.ottiptv.cc/douyu/9447668
  电影周星星,http://live.metshop.top/huya/11336587?cdn=alicdn
  电影小班长,https://mursor.ottiptv.cc/douyu/549693
- 电影搞笑喜剧,http://live.metshop.top/huya/11342423?cdn=alicdn
- 电影最TOP2,https://mursor.ottiptv.cc/huya/29982676
+ 电影幕后喵,https://mursor.ottiptv.cc/douyu/8884074
+ 电影漩涡,https://mursor.ottiptv.cc/douyu/8706350
  电影电影电影电影电影电影,https://mursor.ottiptv.cc/yy/1351496216
  电影百团大战,https://mursor.ottiptv.cc/yy/1382736871
  电影笔记,https://mursor.ottiptv.cc/douyu/9636034
+ 电影谍战,http://live.metshop.top/huya/21059585?cdn=alicdn
  电影迷小雅,https://mursor.ottiptv.cc/douyu/9639225
- 电影黑匣子,https://mursor.ottiptv.cc/douyu/8706652
  电影黑豹,https://mursor.ottiptv.cc/yy/1382736816
- 百晓生说剧,https://mursor.ottiptv.cc/douyu/9649681
  看电影了没V,https://mursor.ottiptv.cc/douyu/9562616
+ 神羊说电影,https://mursor.ottiptv.cc/douyu/9443552
+ 神雕侠侣,http://iptv.jxpan.vip:18888/aio/huya/23865171
  科幻电影,https://mursor.ottiptv.cc/yy/1354930209
  科幻电影环太平洋,https://mursor.ottiptv.cc/yy/1354936170
+ 童乐说电影,https://mursor.ottiptv.cc/douyu/9660704
+ 笑看风云,http://iptv.jxpan.vip:18888/aio/huya/29465858
+ 粟裕大将影视,https://mursor.ottiptv.cc/yy/1354926542
  经典武侠电影如来神掌,https://mursor.ottiptv.cc/yy/1382749944
  经典港片电影,https://mursor.ottiptv.cc/yy/1461889059
+ 经典电影,https://mursor.ottiptv.cc/bilibili/1777481601
  经典电影港片枪战,https://mursor.ottiptv.cc/yy/1355076627
  经典电影重温,https://mursor.ottiptv.cc/yy/1382793140
  经典科幻电影2001漫游太空,https://mursor.ottiptv.cc/yy/1354926671
@@ -1969,49 +1997,45 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
  维立方电影,https://mursor.ottiptv.cc/douyu/8706393
  缉魂科幻悬疑电影,https://mursor.ottiptv.cc/yy/1382745090
  罪犯电影,http://iptv.jxpan.vip:18888/aio/huya/11352962
- 老巴电影,https://mursor.ottiptv.cc/huya/29340502
  老王的夜电影院,https://mursor.ottiptv.cc/douyu/3498219
+ 老电影故事,https://mursor.ottiptv.cc/douyu/9167273
  老邪说电影,https://mursor.ottiptv.cc/douyu/9222870
  胶片看电影,https://mursor.ottiptv.cc/douyu/3715426
  腹黑电影,https://mursor.ottiptv.cc/douyu/8867878
- 荒野求生影视,https://mursor.ottiptv.cc/huya/24766781
+ 莱纳电影,https://mursor.ottiptv.cc/douyu/9356937
  菠萝说电影,https://mursor.ottiptv.cc/douyu/3714736
- 虫哥说电影,https://mursor.ottiptv.cc/douyu/8915074
+ 蒲公英电影,https://mursor.ottiptv.cc/huya/28806637
  西施撩电影,https://mursor.ottiptv.cc/douyu/7532080
  让子弹飞,https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8
  说说电影故事,https://mursor.ottiptv.cc/douyu/9444627
  谁语说电影,https://mursor.ottiptv.cc/douyu/8705754
- 谍战电影,http://iptv.jxpan.vip:18888/aio/huya/21059585
+ 谈判专家,https://mursor.ottiptv.cc/yy/1382735560
  豆瓣电影,https://live.tvfix.org/live/cmc/index.m3u8
  贝爷求生影视,https://mursor.ottiptv.cc/douyu/9661369
  贰哥电影,https://mursor.ottiptv.cc/douyu/9338867
- 贺岁电影,http://iptv.jxpan.vip:18888/aio/huya/11601986
  越越爱影视,https://mursor.ottiptv.cc/yy/1382736886
  辰哥说电影,https://mursor.ottiptv.cc/douyu/9371407
  远去的飞鹰影视剧,https://mursor.ottiptv.cc/yy/1354930912
- 逗米说电影,https://mursor.ottiptv.cc/douyu/421222
+ 逐梦电影,https://mursor.ottiptv.cc/douyu/4058285
  邵氏影院,http://iptv.jxpan.vip:18888/aio/douyu/4246519
  野山鹰影视剧,https://mursor.ottiptv.cc/yy/1354932395
  野格影视,https://mursor.ottiptv.cc/douyu/9931766
- 野蛮亲家,http://iptv.jxpan.vip:18888/aio/huya/23863796
  金庸武侠,http://iptv.jxpan.vip:18888/aio/huya/11342435
  金枝欲孽,http://iptv.jxpan.vip:18888/aio/huya/29465847
- 鉴证实录,http://iptv.jxpan.vip:18888/aio/huya/23903183
+ 鑫鑫影视,https://mursor.ottiptv.cc/huya/30439676
  钟馗传说,https://mursor.ottiptv.cc/yy/1382736839
- 钱小元说电影,https://mursor.ottiptv.cc/douyu/9368265
  铁血影视汇,https://mursor.ottiptv.cc/douyu/9649701
+ 阳阳影视,https://mursor.ottiptv.cc/huya/29805872
  阿木讲电影,https://mursor.ottiptv.cc/douyu/532050
- 阿神电影,https://mursor.ottiptv.cc/huya/29396896
+ 阿松撩剧,https://mursor.ottiptv.cc/douyu/8880843
  阿苏电影,https://mursor.ottiptv.cc/douyu/9037784
  陀枪师姐,http://iptv.jxpan.vip:18888/aio/huya/29465857
  陪你看电影,https://mursor.ottiptv.cc/yy/1382745084
  静静影视,https://mursor.ottiptv.cc/huya/30712558
  韩国电影1,https://stream.ads.ottera.tv/playlist.m3u8?network_id=595
  韩国电影2,https://stream.ads.ottera.tv/playlist.m3u8?network_id=743
- 饿梦影视,https://mursor.ottiptv.cc/huya/24886896
  香兰爱影视,https://mursor.ottiptv.cc/douyu/9487090
  驴哥说电影,https://mursor.ottiptv.cc/douyu/5376478
- 驴子爱影视,https://mursor.ottiptv.cc/huya/20380270
  鲨说电影,https://mursor.ottiptv.cc/douyu/9544628
  鸡哥聊电影,https://mursor.ottiptv.cc/douyu/5067952
  鹏友说电影,https://mursor.ottiptv.cc/douyu/9445244
@@ -2021,9 +2045,8 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
 南宁影视娱乐,http://688b7cbf9b7a8d911a085372b6c70ab5.livehwc3.cn/hls.nntv.cn/nnlive/YSYL_244.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=e7eb508555e76e08cc1b198d04f41fb5
 江苏影视,http://z.b.bkpcp.top/m.php?id=jsys
 江苏影视,http://gslbmgsplive.miguvideo.com/wd_r2/jstv/jsyingshi/600/index.m3u8?msisdn=2025090309003105f41cc73cf04c92833c2265c0140111&mdspid=&spid=699067&netType=0&sid=5500260517&pid=2028597139&timestamp=20250903090031&Channel_ID=0116_2600037000-99000-200300220100002&ProgramID=626064697&ParentNodeID=-99&assertID=5500260517&client_ip=106.13.250.83&SecurityKey=20250903090031&promotionId=&mvid=5100186424&mcid=500020&playurlVersion=WX-A1-8.8.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=6814112e9248d0d7b2bc482bd82b9897&ddCalcu=7698v81a94wb1a2182deb9228448cdb02db7&sv=10004&ct=android
-淘剧场,http://dsj.motem.top:8880/bptv/10000100000000050000000003887497.m3u8
+淘剧场,http://zjzcf.synology.me:35455/bptv/10000100000000050000000003887497.m3u8
 淘剧场,http://[2409:8087:1:20:20::26]/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226553/1.m3u8?GuardEncType=2&accountinfo=%7E%7EV2.0%7EQaJ92NID2SpQlY6_VJVogg%7E_eNUbgU9sJGUcVVduOMKhafLvQUgE_zlz_7pvDimJNOuQYJeiYEeFWTkFfE86Vq-%2CEND
-经典电影,https://mursor.ottiptv.cc/bilibili/1777481601
 经典电影,http://goo.bkpcp.top/mg/jdxgdy
 经典电影,https://tv.iill.top/4gtv/201
 经典电影,http://tv.scjyhd.com:4022/udp/239.93.0.57:9024
@@ -2038,13 +2061,14 @@ Viutv,http://php.jdshipin.com:8880/PLTV/iptv.php?id=viutv
 音乐之声,https://radio.0472.org/?id=641
 音乐广播,https://tv-1.iill.top/fm/552
 🏀体育频道,#genre#
- JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.flv?wsAuth=fd695c444eeee99cc6122ed396c805ba&token=cpn-androidmpro-0-488743-df8b1830ef2e6ce156759645768df95bf77749da61fcc901&logo=0&expire=0&did=d010b07dcb997ada9934081c873542f0&origin=tct&vhost=play2
+ JJ斗地主,https://live.iill.top/douyin/685317364746
+ 五星体育,https://migu.188766.xyz/?migutoken=71ffa78ec0f711ac9ea667fb3b8b2c9c&id=%E4%BA%94%E6%98%9F%E4%BD%93%E8%82%B2&pp=1
+ 全网第二强足球博主,https://mursor.ottiptv.cc/bilibili/1982724765
  广东体育,http://120.238.94.10:9901/tsfile/live/1012_1.m3u8
  睛彩广场舞,http://dsj.motem.top:8880/itv/3000000020000011523.m3u8?cdn=FifastbLive
  绘说篮球C,https://mursor.ottiptv.cc/douyu/9401305
 JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8?wsAuth=fd695c444eeee99cc6122ed396c805ba&token=cpn-androidmpro-0-488743-df8b1830ef2e6ce156759645768df95bf77749da61fcc901&logo=0&expire=0&did=d010b07dcb997ada9934081c873542f0&origin=tct&vhost=play2
 JJ斗地主,https://lunbo.freetv.top/douyu/488743
-JJ斗地主,https://live.iill.top/douyin/685317364746
 JJ斗地主,http://live.iill.top/bilibili.php?id=22021983
 JJ斗地主,http://huanqiuzhibo.cn/manifest/douyu.php?id=488743
 JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
@@ -2067,10 +2091,7 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
 睛彩篮球,http://lt.hxtre.com:35455/itv/2000000003000000061.m3u8?cdn=hnbblive
 睛彩羽毛球,http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=8c1c22&tk=6949f8ce7202
 🏛经典剧场,#genre#
- 封神榜,http://iptv.jxpan.vip:18888/aio/huya/29465849
  百家讲坛红楼梦篇,https://mursor.ottiptv.cc/yy/1382741639
- 经典港片轮播,https://mursor.ottiptv.cc/huya/23865086
- 西游记2,http://iptv.jxpan.vip:18888/aio/huya/29465859
 三国演义,https://www.goodiptv.club/yy/32788000
 三国演义,https://live.metshop.top/yy/32788000
 三国演义,https://live.metshop.top/yy/1354936241
@@ -2095,6 +2116,7 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
 封神榜,http://luobo.bkpcp.top/yy/1353426319
 封神榜,http://live.iill.top/yy.php?id=1353426319
 封神榜,http://cdn.jdshipin.com:8880/huya.php?id=23749096
+封神榜,http://iptv.jxpan.vip:18888/aio/huya/29465849
 射雕英雄传,http://iptv.jxpan.vip:18888/aio/huya/23824164
 射雕英雄传,https://live.metshop.top/yy/40959929
 射雕英雄传,http://live.iill.top/yy.php?id=1354210357
@@ -2130,11 +2152,15 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
  七龙珠,http://iptv.jxpan.vip:18888/aio/huya/11601966
  中华小当家,http://iptv.jxpan.vip:18888/aio/huya/11342413
  动画大师姐,https://mursor.ottiptv.cc/douyu/9742136
+ 动画魂,https://mursor.ottiptv.cc/douyu/9393242
  名侦探柯南,http://iptv.jxpan.vip:18888/aio/huya/30080236
- 喜羊羊与灰太狼,http://iptv.jxpan.vip:18888/aio/huya/23865080
+ 哆啦A梦,http://iptv.jxpan.vip:18888/aio/huya/11601963
  林小二动画,https://mursor.ottiptv.cc/douyu/11184164
  海绵宝宝,https://live.metshop.top/douyu/3949681
- 猫和老鼠,http://iptv.jxpan.vip:18888/aio/huya/11352879
+ 猫和老鼠,https://live.iill.top/huya/11352879
+ 立秋动画,https://mursor.ottiptv.cc/douyu/10351891
+ 精灵宝可梦,http://iptv.jxpan.vip:18888/aio/huya/23749096
+ 蜡笔小新,http://www.douzhicloud.site:35455/bilibili/30837590
 24H国漫热播,https://www.goodiptv.club/yy/1353937086
 七龙珠,https://live.iill.top/huya/11601966
 七龙珠,http://huanqiuzhibo.cn/manifest/huya.php?id=11601966
@@ -2149,13 +2175,12 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
 火影忍者,https://live.iill.top/douyu/1997723
 炫动卡通,http://tv.scjyhd.com:4022/udp/239.93.0.173:5140
 猫和老鼠,http://live.iill.top/huya.php?id=11352879
-猫和老鼠,https://live.iill.top/huya/11352879
+猫和老鼠,http://iptv.jxpan.vip:18888/aio/huya/11352879
 猫和老鼠,http://huanqiuzhibo.cn/manifest/huya.php?id=11352879
 经典动漫,https://lunbo.freetv.top/yy/24180320
 经典动漫,https://www.goodiptv.club/yy/22777075
 经典动漫,https://www.goodiptv.club/yy/24180320
 经典动漫,http://luobo.bkpcp.top/yy/24180320
-蜡笔小新,http://www.douzhicloud.site:35455/bilibili/30837590
 青春动漫,http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000011000288008/index.m3u8?channel-id=bestzb&Contentid=5000000011000288008&livemode=1&stbId=YanG-1989
 青春动漫,https://live.v1.mk/api/bestv.php?id=qcdm8m/8000000
 青春动漫,http://tv.scjyhd.com:4022/udp/239.93.0.146:5140
@@ -2237,12 +2262,14 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
  侃片黑菠萝,https://mursor.ottiptv.cc/douyu/5803764
  冬粮说故事,https://mursor.ottiptv.cc/douyu/5192695
  冷君聊大片,https://mursor.ottiptv.cc/douyu/9666219
+ 北京大妈有话说er,https://mursor.ottiptv.cc/douyu/9440530
  北大落说大片,https://mursor.ottiptv.cc/douyu/8828811
  十里说,https://mursor.ottiptv.cc/douyu/9064711
  史君说剧,https://mursor.ottiptv.cc/douyu/9419771
  听wo姐说,https://mursor.ottiptv.cc/douyu/8830082
+ 哑巴竟然会说话,https://mursor.ottiptv.cc/yy/1354932427
  大魔王动漫解说,https://mursor.ottiptv.cc/douyu/9963128
- 天雷鼓鼓说剧,https://mursor.ottiptv.cc/huya/30277823
+ 大魔王说游,https://mursor.ottiptv.cc/douyu/10415661
  好像视说故事,https://mursor.ottiptv.cc/douyu/8891883
  将军侃片,https://mursor.ottiptv.cc/douyu/8529736
  小司马说剧,https://mursor.ottiptv.cc/douyu/9660127
@@ -2255,6 +2282,7 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
  新视角解说,https://mursor.ottiptv.cc/douyu/8813254
  漫画解说,https://mursor.ottiptv.cc/yy/1382735568
  灵佑奇谈,https://mursor.ottiptv.cc/douyu/9678207
+ 爱讲神话的小志,https://mursor.ottiptv.cc/douyu/9495613
  猴博士爱讲课V,https://mursor.ottiptv.cc/douyu/8799739
  百家讲坛之女皇武则天,https://mursor.ottiptv.cc/yy/1354889015
  百家讲坛之明太祖朱元璋,https://mursor.ottiptv.cc/yy/1354936149
@@ -2272,6 +2300,7 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
  说笑武林,https://mursor.ottiptv.cc/douyu/10329706
  调侃贫道XIN版,https://mursor.ottiptv.cc/douyu/9463586
  豆客解说,https://mursor.ottiptv.cc/douyu/8883122
+ 锋哥聊商机,https://mursor.ottiptv.cc/douyu/9472141
  阎君说剧,https://mursor.ottiptv.cc/douyu/10475459
  露爷说漫,https://mursor.ottiptv.cc/douyu/9542830
  飞行员欧文讲故事,https://mursor.ottiptv.cc/douyu/9678790
@@ -2301,25 +2330,330 @@ JJ斗地主,http://zzy789.xyz/douyu1.php?id=488743
  2014年春晚,https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTNfNDAzMDAxOTlfOTI4OTY2ODAzNjlfMF8z_b_Bdee65c77f9e7b2120a185c919dad81d2.mp4
  2018年春晚,https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTRfNDAzMDAxOTlfOTI4OTY2ODE2MTBfMF8z_b_B11a778e34390a21de42d407e94f45b91.mp4
  2024年春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8
+ 2025古德伍德复古节现场直播周日场,https://mursor.ottiptv.cc/bilibili/1962485044
  2025年春晚,https://svip.high24-playback.com/20250129/17159_7bca93c4/2000k/hls/mixed.m3u8
+ 2025年澄迈村排暨全国村排测试赛,https://mursor.ottiptv.cc/bilibili/6317122
 🧯樂玩公社,#genre#
+ 00后脑出血言语训练,https://mursor.ottiptv.cc/bilibili/22335702
+ 02双子东莞单身,https://mursor.ottiptv.cc/bilibili/1773653817
+ 05刚毕业试试直播,https://mursor.ottiptv.cc/bilibili/1840173794
+ 05独居摄像头就是你想的那样,https://mursor.ottiptv.cc/bilibili/1844048177
+ 130爆肥盒,https://mursor.ottiptv.cc/bilibili/1763575184
+ 2500粉丝纪念直播写谱,https://mursor.ottiptv.cc/bilibili/24142648
+ 26岁女程序员,https://mursor.ottiptv.cc/bilibili/30576840
+ 27岁晚期女孩乐观生活,https://mursor.ottiptv.cc/bilibili/27381572
+ 4k解说曼城vs曼联,https://mursor.ottiptv.cc/bilibili/23319766
+ B站装修顶流在线美缝,https://mursor.ottiptv.cc/bilibili/14724678
+ B限搬砖这一块,https://mursor.ottiptv.cc/bilibili/13339029
  CGTN,https://0472.org/hls/cgtn.m3u8
  CGTN俄语,https://0472.org/hls/cgtne.m3u8
  CGTN法语,https://0472.org/hls/cgtnf.m3u8
  CGTN纪录,https://0472.org/hls/cgtnd.m3u8
  CGTN西语,https://0472.org/hls/cgtnx.m3u8
  CGTN阿语,https://0472.org/hls/cgtna.m3u8
+ Fat兽的直播,https://mursor.ottiptv.cc/bilibili/3273548
+ Mr迷瞪秋季家装节九牧卫浴专场,https://mursor.ottiptv.cc/bilibili/22491717
+ baby仙人,https://mursor.ottiptv.cc/bilibili/4255533
+ coverber流,https://mursor.ottiptv.cc/bilibili/1722882214
+ i纯帅,https://mursor.ottiptv.cc/bilibili/1916957449
+ oi盾盾送模型啦,https://mursor.ottiptv.cc/bilibili/30067431
+ rtjoiwaefjqpawefiq,https://mursor.ottiptv.cc/bilibili/8988602
+ ut动画,https://mursor.ottiptv.cc/bilibili/1967507634
+ 一y一wen,https://mursor.ottiptv.cc/bilibili/1908056904
+ 一人一问有事排队,https://mursor.ottiptv.cc/bilibili/31898715
+ 一周目星露谷慢慢来啦,https://mursor.ottiptv.cc/bilibili/2821397
+ 一月一问,https://mursor.ottiptv.cc/bilibili/31775829
+ 一线城市新政以后楼市会涨吗,https://mursor.ottiptv.cc/bilibili/30960299
+ 一起看曼联轻松拿捏曼城,https://mursor.ottiptv.cc/bilibili/1854252971
+ 一起看英超伯恩利VS利物浦,https://mursor.ottiptv.cc/bilibili/821514
+ 一起聊天一起成长,https://mursor.ottiptv.cc/bilibili/30581297
+ 一边直播一边直播,https://mursor.ottiptv.cc/bilibili/32187214
+ 一问一答,https://mursor.ottiptv.cc/bilibili/1881912543
+ 一问一答欢迎聊天,https://mursor.ottiptv.cc/bilibili/30715633
+ 不画稿子没钱吃饭说是,https://mursor.ottiptv.cc/bilibili/4331422
+ 不说话悄悄滴加班勾线,https://mursor.ottiptv.cc/bilibili/5553896
  中国村庄,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8
+ 为什么不进来欲擒故纵么,https://mursor.ottiptv.cc/bilibili/1784934140
+ 主任难以解答,https://mursor.ottiptv.cc/bilibili/1840174879
+ 主播只玩典韦交不起租房了住在帐篷直播,https://mursor.ottiptv.cc/bilibili/1887785337
+ 习惯了被说成野孩子,https://mursor.ottiptv.cc/bilibili/1978001213
+ 云软软玩电脑,https://mursor.ottiptv.cc/bilibili/10117456
+ 亮哥小卖部,https://mursor.ottiptv.cc/bilibili/32559725
  人与自然,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1425e1d505654cb48ba82b807b221193/1200.m3u8
+ 人间水蜜桃,https://mursor.ottiptv.cc/bilibili/1784933951
+ 今天要赚九块九,https://mursor.ottiptv.cc/bilibili/22348233
+ 今日主题你在做自己吗,https://mursor.ottiptv.cc/bilibili/21588773
+ 今晚战个痛期待伊萨克的亮相拿下,https://mursor.ottiptv.cc/bilibili/32646628
+ 他是大佬的心尖宠剪辑ing,https://mursor.ottiptv.cc/bilibili/23623214
+ 优咕咕不咕咕,https://mursor.ottiptv.cc/bilibili/4241936
+ 伯恩利VS利物浦刚开始看英超,https://mursor.ottiptv.cc/bilibili/22280749
+ 伯恩利vs利物浦曼城vs曼联咖啡解说,https://mursor.ottiptv.cc/bilibili/22715338
+ 你的女友在渡劫,https://mursor.ottiptv.cc/bilibili/1955432147
+ 你问我答,https://mursor.ottiptv.cc/bilibili/32408572
+ 偏瘫10年真真的,https://mursor.ottiptv.cc/bilibili/23187506
+ 做完单子再做剧,https://mursor.ottiptv.cc/bilibili/1947177227
+ 先利物浦再曼市德比,https://mursor.ottiptv.cc/bilibili/26701152
+ 免米聊明天的剧本发展,https://mursor.ottiptv.cc/bilibili/1920264649
+ 免米首看,https://mursor.ottiptv.cc/bilibili/27379157
+ 全网最真实徒步,https://mursor.ottiptv.cc/bilibili/26331792
+ 再不进来找人弄你,https://mursor.ottiptv.cc/bilibili/1823575165
+ 军训日记,https://mursor.ottiptv.cc/bilibili/1879185655
+ 初来报道关注一下吧,https://mursor.ottiptv.cc/bilibili/1806665542
+ 初来报道关注一下吧,https://mursor.ottiptv.cc/bilibili/1842356732
+ 利物浦VS伯恩利,https://mursor.ottiptv.cc/bilibili/1882760734
+ 别特么看,https://mursor.ottiptv.cc/bilibili/30748365
+ 到校第15天今天会开组会吗,https://mursor.ottiptv.cc/bilibili/1101253
+ 剩男是经济问题剩女是认知问题,https://mursor.ottiptv.cc/bilibili/9056704
+ 十个灯牌,https://mursor.ottiptv.cc/bilibili/1922218389
+ 十年老v人进来挂睡,https://mursor.ottiptv.cc/bilibili/1770860442
+ 单身男人脱单必修课,https://mursor.ottiptv.cc/bilibili/1784938343
+ 卖星月养鱼的第11天,https://mursor.ottiptv.cc/bilibili/1861374363
+ 双双乐乐好帮手,https://mursor.ottiptv.cc/bilibili/1871971822
+ 双节福利欢迎问,https://mursor.ottiptv.cc/bilibili/26299330
+ 古月糖看看圈圈看看感情,https://mursor.ottiptv.cc/bilibili/31852474
+ 可以涨涨牌子,https://mursor.ottiptv.cc/bilibili/23093061
+ 可以说我画丑但不能说我听歌品味差,https://mursor.ottiptv.cc/bilibili/4225123
+ 同事干了六年今天突然被开除,https://mursor.ottiptv.cc/bilibili/8546143
+ 同道中人,https://mursor.ottiptv.cc/bilibili/25432953
+ 听儿歌画儿童画看儿童视频,https://mursor.ottiptv.cc/bilibili/30514019
+ 听深情的歌小憩一下,https://mursor.ottiptv.cc/bilibili/3806680
+ 听说这个直播间很会画龙,https://mursor.ottiptv.cc/bilibili/1899233099
+ 呜呜呜,https://mursor.ottiptv.cc/bilibili/27135282
+ 周末了随便玩玩,https://mursor.ottiptv.cc/bilibili/21365370
+ 周末放松下,https://mursor.ottiptv.cc/bilibili/32282383
+ 周末闲聊,https://mursor.ottiptv.cc/bilibili/30210846
+ 咨询世人不明阴阳理徒劳我辈泄天机,https://mursor.ottiptv.cc/bilibili/22273289
+ 唠一会,https://mursor.ottiptv.cc/bilibili/30594609
+ 喜欢阿姨的进,https://mursor.ottiptv.cc/bilibili/1859175061
+ 喝中药真的有用吗,https://mursor.ottiptv.cc/bilibili/1822709481
+ 嗯,https://mursor.ottiptv.cc/bilibili/11026365
+ 回答问题,https://mursor.ottiptv.cc/bilibili/25019940
+ 在线修电脑帮助新手更好的使用电脑,https://mursor.ottiptv.cc/bilibili/1894645516
  地理中国,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
- 序章动画监工区,https://mursor.ottiptv.cc/bilibili/1746145540
+ 坐等哥哥夺冠,https://mursor.ottiptv.cc/bilibili/14380578
+ 塔罗占卜情感分析聊天八卦,https://mursor.ottiptv.cc/bilibili/12573781
+ 塔罗情感首关免一,https://mursor.ottiptv.cc/bilibili/1728489687
+ 塔罗情感首关免费,https://mursor.ottiptv.cc/bilibili/1763574159
+ 塔罗看情感解惑聊天,https://mursor.ottiptv.cc/bilibili/6635814
+ 夜间助眠纯雨声无说话快速入睡,https://mursor.ottiptv.cc/bilibili/32747854
+ 大哥花50w见不到我一次拿下,https://mursor.ottiptv.cc/bilibili/1746174576
+ 大姨庇佑你,https://mursor.ottiptv.cc/bilibili/1963452801
+ 大家都说又来回购了,https://mursor.ottiptv.cc/bilibili/21448335
+ 大战丝之歌,https://mursor.ottiptv.cc/bilibili/5663468
+ 大数据一下吧,https://mursor.ottiptv.cc/bilibili/385290
+ 大闹狗头人们坩埚,https://mursor.ottiptv.cc/bilibili/32424507
+ 央视新闻,http://tencentplaygsm.gztv.com/live/jingsai.m3u8
+ 夺舍,https://mursor.ottiptv.cc/bilibili/9512956
+ 奇瑞月怎么选底价参考,https://mursor.ottiptv.cc/bilibili/25105293
+ 女团将何去何从,https://mursor.ottiptv.cc/bilibili/1758149955
+ 好运连连刮刮刮,https://mursor.ottiptv.cc/bilibili/1903489760
+ 如同开挂般精准的心理分析,https://mursor.ottiptv.cc/bilibili/23354866
+ 妈妈我想当太空人,https://mursor.ottiptv.cc/bilibili/30793296
+ 媗媗师姐铁口植断,https://mursor.ottiptv.cc/bilibili/1903484066
+ 学习工作背景音乐247自习室,https://mursor.ottiptv.cc/bilibili/27519423
+ 学生服,https://mursor.ottiptv.cc/bilibili/27442912
+ 宝宝想我了没有,https://mursor.ottiptv.cc/bilibili/11252446
+ 实况利物浦大战超级强队伯恩利,https://mursor.ottiptv.cc/bilibili/1970746533
+ 实时占卜情感杂谈,https://mursor.ottiptv.cc/bilibili/1786564943
+ 家里催得急,https://mursor.ottiptv.cc/bilibili/1922217276
+ 小be一下,https://mursor.ottiptv.cc/bilibili/1851392181
+ 少女哥哥上车咯,https://mursor.ottiptv.cc/bilibili/1840174402
+ 就是你想的那样,https://mursor.ottiptv.cc/bilibili/1702263365
+ 山雀杯立直麻将大赛季后赛03场,https://mursor.ottiptv.cc/bilibili/22341392
+ 崔子走近科学,https://mursor.ottiptv.cc/bilibili/1784930803
+ 川渝妹儿温柔得很,https://mursor.ottiptv.cc/bilibili/27239579
+ 弹琴拼胶聊天看球赛,https://mursor.ottiptv.cc/bilibili/7310999
+ 心易谈快来看看ta的心意,https://mursor.ottiptv.cc/bilibili/1064165
+ 怎么又要上班了,https://mursor.ottiptv.cc/bilibili/30847592
+ 恭喜王楚钦重返遮个世一,https://mursor.ottiptv.cc/bilibili/24982126
+ 恶俗啊,https://mursor.ottiptv.cc/bilibili/8627925
+ 情感咨询解惑疗愈陪伴,https://mursor.ottiptv.cc/bilibili/1945806396
+ 情感塔罗免米2张,https://mursor.ottiptv.cc/bilibili/1809233405
+ 情感塔罗在线摆摊,https://mursor.ottiptv.cc/bilibili/1806666591
+ 情感塔罗星盘在线摆摊,https://mursor.ottiptv.cc/bilibili/32387050
+ 情感塔罗紫薇星盘专业解惑准是基础,https://mursor.ottiptv.cc/bilibili/31529735
+ 情感塔罗问答,https://mursor.ottiptv.cc/bilibili/1991385216
+ 情感塔罗随意问,https://mursor.ottiptv.cc/bilibili/1991474560
+ 情感塔罗首关免一,https://mursor.ottiptv.cc/bilibili/32395561
+ 情感疗愈占卜,https://mursor.ottiptv.cc/bilibili/30863525
+ 情感锐评骂不醒算我输,https://mursor.ottiptv.cc/bilibili/1904412315
+ 情感问题首关限免,https://mursor.ottiptv.cc/bilibili/1856651409
+ 想找对象哈哈哈哈,https://mursor.ottiptv.cc/bilibili/11133456
+ 感性小奶仙在线开包,https://mursor.ottiptv.cc/bilibili/1777408105
+ 感情解惑塔罗,https://mursor.ottiptv.cc/bilibili/31549807
+ 成步堂偷心事务所,https://mursor.ottiptv.cc/bilibili/7742742
+ 我说大坝危机四伏你耳朵聋吗,https://mursor.ottiptv.cc/bilibili/21563298
+ 我说小神晶也是假小子有没有懂的,https://mursor.ottiptv.cc/bilibili/1564926
+ 我这一生如履薄冰你说我能走到对岸吗,https://mursor.ottiptv.cc/bilibili/1702264384
+ 户晨风提督Emo总在线分析户晨风直播,https://mursor.ottiptv.cc/bilibili/31964414
+ 户晨风粉丝在线直播买iPhone17,https://mursor.ottiptv.cc/bilibili/1926381986
+ 所以今天要完成生日礼物拼图,https://mursor.ottiptv.cc/bilibili/26349935
+ 把玩,https://mursor.ottiptv.cc/bilibili/1939497667
+ 挂个直播聊聊天,https://mursor.ottiptv.cc/bilibili/4960089
+ 挑战全网最甜连麦,https://mursor.ottiptv.cc/bilibili/25048154
+ 挑战看完自己所有的视频,https://mursor.ottiptv.cc/bilibili/23536590
+ 挑战骑行台打卡180天死也要骑完,https://mursor.ottiptv.cc/bilibili/31705454
+ 挑杆试打,https://mursor.ottiptv.cc/bilibili/30167970
+ 探索未来,https://mursor.ottiptv.cc/bilibili/23260632
+ 接种善堂,https://mursor.ottiptv.cc/bilibili/1956257
+ 摄像头07反差喷了会哭,https://mursor.ottiptv.cc/bilibili/1784937186
+ 摄像头超好看,https://mursor.ottiptv.cc/bilibili/1883016824
+ 摆摊卖画,https://mursor.ottiptv.cc/bilibili/8173344
+ 摸动画,https://mursor.ottiptv.cc/bilibili/7904701
+ 摸金校尉搬山倒斗,https://mursor.ottiptv.cc/bilibili/614439
+ 播两小时做卫生,https://mursor.ottiptv.cc/bilibili/23624561
+ 播播小马内容同人音乐正剧,https://mursor.ottiptv.cc/bilibili/21463726
  支持作者,https://vd4.bdstatic.com/mda-rht8yb8mk7prjpvb/1080p/cae_h264/1756373484708582178/mda-rht8yb8mk7prjpvb.mp4
+ 收容禁止上舰,https://mursor.ottiptv.cc/bilibili/21282867
+ 收集并回答一些关于徐师傅采访的问题,https://mursor.ottiptv.cc/bilibili/1811718760
+ 新人动画博主欢迎监督,https://mursor.ottiptv.cc/bilibili/22908295
+ 新的一年你要振作起来啊码字人,https://mursor.ottiptv.cc/bilibili/14051719
+ 新粉免费,https://mursor.ottiptv.cc/bilibili/1867557373
+ 无美颜无滤镜素颜日常练琴直播间,https://mursor.ottiptv.cc/bilibili/1863470624
+ 日入一块七大伙来蹦迪,https://mursor.ottiptv.cc/bilibili/30011839
+ 日常连麦闲聊,https://mursor.ottiptv.cc/bilibili/7920234
+ 明天不交房租就被老板赶出去了,https://mursor.ottiptv.cc/bilibili/22731362
+ 是奶牛,https://mursor.ottiptv.cc/bilibili/31650065
+ 是是但但是撚但播下,https://mursor.ottiptv.cc/bilibili/1829733643
+ 晚上好,https://mursor.ottiptv.cc/bilibili/31905613
+ 有什么好说的,https://mursor.ottiptv.cc/bilibili/1067852
+ 杂谈,https://mursor.ottiptv.cc/bilibili/24980218
+ 李家观观全职塔罗情感疗愈首关免一问,https://mursor.ottiptv.cc/bilibili/1852501680
+ 来听相声,https://mursor.ottiptv.cc/bilibili/30199366
+ 来聊会天打游戏,https://mursor.ottiptv.cc/bilibili/2955336
+ 来聊天吧,https://mursor.ottiptv.cc/bilibili/1724231317
+ 来零元购,https://mursor.ottiptv.cc/bilibili/21181933
+ 极品二等兵魏玲莹到,https://mursor.ottiptv.cc/bilibili/27340717
+ 桃园相声先看TI再看曼市德比,https://mursor.ottiptv.cc/bilibili/26797317
+ 桥牌做庄初级,https://mursor.ottiptv.cc/bilibili/1970747082
+ 正经人谁下班后上班啊,https://mursor.ottiptv.cc/bilibili/2370007
+ 每人2问理性思维,https://mursor.ottiptv.cc/bilibili/32720505
+ 每周日晚上画速写amp聊天,https://mursor.ottiptv.cc/bilibili/174130
+ 每天免米10位,https://mursor.ottiptv.cc/bilibili/1914280241
+ 江湖夜雨十年灯,https://mursor.ottiptv.cc/bilibili/1702711836
+ 没活了看看b站,https://mursor.ottiptv.cc/bilibili/26936611
+ 波奇酱解答世间万物读投稿回,https://mursor.ottiptv.cc/bilibili/1210741
+ 浅聊一会儿,https://mursor.ottiptv.cc/bilibili/1794709068
+ 测一测你是不是天选之人,https://mursor.ottiptv.cc/bilibili/21560707
+ 测问,https://mursor.ottiptv.cc/bilibili/31437347
+ 炒股及生活分享闲聊,https://mursor.ottiptv.cc/bilibili/24790396
+ 爱博以撒以够贼,https://mursor.ottiptv.cc/bilibili/1232983
+ 特摄伏魔三剑侠全38话,https://mursor.ottiptv.cc/bilibili/939703
  狂野的种马小说家,https://mursor.ottiptv.cc/douyu/8849703
+ 猫菜瘾大,https://mursor.ottiptv.cc/bilibili/22362696
  玛纳斯,http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd
+ 现在是中象爱好者环节,https://mursor.ottiptv.cc/bilibili/11967249
+ 现场的朋友们你们好吗,https://mursor.ottiptv.cc/bilibili/32819416
+ 球球哥哥姐姐进来给孩子投个票吧,https://mursor.ottiptv.cc/bilibili/1790892660
+ 生活聊天日常和阿柑一起聊天,https://mursor.ottiptv.cc/bilibili/1856106590
+ 电脑坏了人麻了,https://mursor.ottiptv.cc/bilibili/2956095
+ 画图吃饭看视频,https://mursor.ottiptv.cc/bilibili/932552
+ 画点我的OC来一起画画聊聊天吧,https://mursor.ottiptv.cc/bilibili/1728484912
+ 画画玩游戏听音乐小马聊天室,https://mursor.ottiptv.cc/bilibili/1863470308
+ 画画聊天听歌可以点歌哦,https://mursor.ottiptv.cc/bilibili/21599574
+ 画画顺便聊天,https://mursor.ottiptv.cc/bilibili/1867583984
+ 画聊,https://mursor.ottiptv.cc/bilibili/5329388
+ 百年变局地块制作amp摸鱼中,https://mursor.ottiptv.cc/bilibili/23460007
+ 直播发呆,https://mursor.ottiptv.cc/bilibili/571061
+ 直断,https://mursor.ottiptv.cc/bilibili/25021804
+ 直男RE闲聊闲聊闲聊树立正确人生观,https://mursor.ottiptv.cc/bilibili/218325
+ 看曼市德比,https://mursor.ottiptv.cc/bilibili/27406934
+ 码字和猫总y总燃冬,https://mursor.ottiptv.cc/bilibili/26578534
+ 磕嗨了,https://mursor.ottiptv.cc/bilibili/30381641
+ 社恐黑皮大一新生为了吃饭豁出去了,https://mursor.ottiptv.cc/bilibili/1728864253
+ 秘密基地,https://mursor.ottiptv.cc/bilibili/25557471
+ 空洞骑士打破防了,https://mursor.ottiptv.cc/bilibili/6765561
+ 立夏的雪听歌闲聊玩魔方,https://mursor.ottiptv.cc/bilibili/21750251
+ 笨蛋鼠很多次,https://mursor.ottiptv.cc/bilibili/23864510
+ 第五届中医学批斗大会,https://mursor.ottiptv.cc/bilibili/30897517
+ 第五期黑白使者,https://mursor.ottiptv.cc/bilibili/1993209300
+ 粤韶关女孩,https://mursor.ottiptv.cc/bilibili/27515648
+ 红利低波跌了这么久还可以持有不,https://mursor.ottiptv.cc/bilibili/7293962
+ 纽北NLS8耐力赛正赛,https://mursor.ottiptv.cc/bilibili/23954427
+ 绝美紫黄晶,https://mursor.ottiptv.cc/bilibili/23302103
+ 绣球之家陪你养好绣球花,https://mursor.ottiptv.cc/bilibili/32615252
+ 罗老师和西贝麦当劳不贵么,https://mursor.ottiptv.cc/bilibili/31980904
+ 美美开播,https://mursor.ottiptv.cc/bilibili/22188468
+ 美院失业画师集资点拼好饭可点歌有会员聊天,https://mursor.ottiptv.cc/bilibili/3721770
+ 群里聊天,https://mursor.ottiptv.cc/bilibili/23996407
  老孙聊游戏,https://mursor.ottiptv.cc/douyu/2987298
+ 耍废,https://mursor.ottiptv.cc/bilibili/30003897
+ 聊会天吧,https://mursor.ottiptv.cc/bilibili/22490005
+ 聊天,https://mursor.ottiptv.cc/bilibili/32443446
+ 聊天局,https://mursor.ottiptv.cc/bilibili/30738194
+ 聊天解惑,https://mursor.ottiptv.cc/bilibili/32655711
+ 聊聊动画看看天,https://mursor.ottiptv.cc/bilibili/9037800
+ 聊聊天,https://mursor.ottiptv.cc/bilibili/1814193758
+ 聊聊天做手工,https://mursor.ottiptv.cc/bilibili/22773608
+ 聊聊故事,https://mursor.ottiptv.cc/bilibili/25929837
+ 肌肉版老公,https://mursor.ottiptv.cc/bilibili/30676335
+ 胆拖技巧深度讲解,https://mursor.ottiptv.cc/bilibili/1951973865
+ 自我监督,https://mursor.ottiptv.cc/bilibili/656048
  自然传奇,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/81a1ad3a661748bfb8560c92d38204ca/1200.m3u8
+ 舞台已re完聊聊这个TOP神奇的组合,https://mursor.ottiptv.cc/bilibili/1830092436
  航拍中国第二季,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/2bdfdad540b342f592f9817cb7f3b79a/4000.m3u8
- 虹猫蓝兔系列动画轮播,https://mursor.ottiptv.cc/bilibili/31913902
+ 英超伯恩利vs利物浦,https://mursor.ottiptv.cc/bilibili/23923452
+ 英超伯恩利vs利物浦+曼城vs曼联,https://mursor.ottiptv.cc/bilibili/22466417
+ 英超夜利物浦+曼市德比,https://mursor.ottiptv.cc/bilibili/1874917070
+ 英超直播伯恩利VS利物浦,https://mursor.ottiptv.cc/bilibili/701979
+ 英雄无敌3jc殴打老外上分,https://mursor.ottiptv.cc/bilibili/27056086
+ 萌新继续打空洞骑士是不是要三螳螂了,https://mursor.ottiptv.cc/bilibili/1861784252
+ 萌新驾到,https://mursor.ottiptv.cc/bilibili/1861372822
+ 萌新驾到多多指教,https://mursor.ottiptv.cc/bilibili/1784933321
+ 萌新驾到多多指教,https://mursor.ottiptv.cc/bilibili/1828675237
+ 董事长不要吃了反正热度也不在了,https://mursor.ottiptv.cc/bilibili/32477804
+ 虐虐菜,https://mursor.ottiptv.cc/bilibili/5794535
+ 虫王驾到跟手下聊天画画,https://mursor.ottiptv.cc/bilibili/1881086684
+ 蚕哥自营烈隐官方直播间,https://mursor.ottiptv.cc/bilibili/1824228096
+ 衣柜哥实木定制讲解视频,https://mursor.ottiptv.cc/bilibili/23591525
+ 袋鼠妈妈直播送好礼,https://mursor.ottiptv.cc/bilibili/1949988489
+ 视频回一起看视频,https://mursor.ottiptv.cc/bilibili/30961629
+ 解答提桶跑路,https://mursor.ottiptv.cc/bilibili/4995340
+ 解说伯恩利利物浦,https://mursor.ottiptv.cc/bilibili/1882950923
+ 认真干活莫打扰啊你们自己玩弹幕,https://mursor.ottiptv.cc/bilibili/32657332
+ 说是在画画,https://mursor.ottiptv.cc/bilibili/27607822
+ 象棋布局陷阱飞刀出其不意以弱胜强,https://mursor.ottiptv.cc/bilibili/1861371474
+ 赚钱,https://mursor.ottiptv.cc/bilibili/5818506
+ 赛马娘小说一天两更上推荐不是梦,https://mursor.ottiptv.cc/bilibili/22781165
+ 超简单站内过审轮播,https://mursor.ottiptv.cc/bilibili/13064231
+ 超管我在学习别切我,https://mursor.ottiptv.cc/bilibili/23797506
+ 跑测试+装机,https://mursor.ottiptv.cc/bilibili/30677116
+ 跟封面不太一样,https://mursor.ottiptv.cc/bilibili/26751906
+ 跨服聊天,https://mursor.ottiptv.cc/bilibili/10609304
+ 身心灵松弛岛,https://mursor.ottiptv.cc/bilibili/1814194809
+ 进来给我拿2w,https://mursor.ottiptv.cc/bilibili/1863479009
+ 进来聊天,https://mursor.ottiptv.cc/bilibili/3060152
+ 进来领亲亲,https://mursor.ottiptv.cc/bilibili/1951596282
+ 逍遥姐姐小课堂,https://mursor.ottiptv.cc/bilibili/30319092
+ 酷酷迪大冒险,https://mursor.ottiptv.cc/bilibili/8949829
+ 重生之塔罗首关可免三张情感咨询那天,https://mursor.ottiptv.cc/bilibili/13100239
+ 重生之我拯救恋爱脑,https://mursor.ottiptv.cc/bilibili/1759870692
+ 锐评万物,https://mursor.ottiptv.cc/bilibili/9697033
+ 锻炼一会儿,https://mursor.ottiptv.cc/bilibili/12434387
+ 门没锁快进来看看,https://mursor.ottiptv.cc/bilibili/1844044431
+ 问答紫色星星de成长日记,https://mursor.ottiptv.cc/bilibili/27759941
+ 问题咨询情感个人,https://mursor.ottiptv.cc/bilibili/23803549
+ 闯进生活区的歌杂,https://mursor.ottiptv.cc/bilibili/32415943
+ 闲得无聊,https://mursor.ottiptv.cc/bilibili/590760
+ 闲着无聊来跟姐姐聊聊天,https://mursor.ottiptv.cc/bilibili/1926785457
+ 闲聊一会喵,https://mursor.ottiptv.cc/bilibili/1997901125
+ 随便播播,https://mursor.ottiptv.cc/bilibili/1702261898
+ 随便玩玩接跑刀,https://mursor.ottiptv.cc/bilibili/1852634023
+ 随喜问事,https://mursor.ottiptv.cc/bilibili/1830096822
+ 随喜问问题,https://mursor.ottiptv.cc/bilibili/1883014903
+ 随缘看,https://mursor.ottiptv.cc/bilibili/1769471876
+ 随缘问答情感,https://mursor.ottiptv.cc/bilibili/1844844671
+ 露脸,https://mursor.ottiptv.cc/bilibili/1962486265
+ 静默行动,https://mursor.ottiptv.cc/bilibili/26283185
+ 韩女在北京,https://mursor.ottiptv.cc/bilibili/1962480079
+ 额,https://mursor.ottiptv.cc/bilibili/6169893
  飞碟之谜01,https://hls.cntv.lxdns.com/asp/hls/2000/0303000a/3/default/f0a47e155d32450daa1d36a04fd7d262/2000.m3u8
  飞碟之谜02,https://newcntv.qcloudcdn.com/asp/hls/2000/0303000a/3/default/d2454bbb542d4613a9db478dab2addfd/2000.m3u8
  飞碟说官方,https://mursor.ottiptv.cc/douyu/1449125
+ 食品安全领先世界100年,https://mursor.ottiptv.cc/bilibili/1960958772
+ 首免一个问题,https://mursor.ottiptv.cc/bilibili/1849302935
+ 首免塔罗情感人在,https://mursor.ottiptv.cc/bilibili/27691709
+ 首关情感解惑,https://mursor.ottiptv.cc/bilibili/32129529
+ 首关灯牌免三张情感塔罗,https://mursor.ottiptv.cc/bilibili/1961602408
+ 首次开播请多关照,https://mursor.ottiptv.cc/bilibili/1912481867
+ 麦克风电的好爽,https://mursor.ottiptv.cc/bilibili/1874915447
