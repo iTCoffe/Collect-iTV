@@ -3195,8 +3195,6 @@ http://222.179.42.129:8181/hls1.m3u8
 http://183.64.174.171:40123/ch1.m3u8?zzhongqd
 #EXTINF:-1 tvg-name="垫江综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/垫江综合.png" group-title="🚃重庆频道",垫江综合
 http://play-sh.quklive.com/live/1672366847646284.m3u8
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/东莞新闻综合.png" group-title="🚄四川频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 乐至综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/乐至综合.png" group-title="🚄四川频道", 乐至综合
 http://175.155.106.72:89/live1/live1.m3u8?zsicd
 #EXTINF:-1 tvg-name=" 井研综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/井研综合.png" group-title="🚄四川频道", 井研综合
@@ -3257,10 +3255,6 @@ http://lmt.scqstv.com:80/live1/live1.m3u8
 http://2061827161.cloudvdn.com/a.m3u8?domain=pili-live-hls.ybcxjd.com&player=IjsAAN-1KyqjjPYX&secondToken=secondToken%3AMHl3QtaAs-H2KkHpuGUAlKuJ9a8&streamid=jdh-live%3Ajdh-live%2F2108111201035597&v3=1
 #EXTINF:-1 tvg-name="叙永综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/叙永综合.png" group-title="🚄四川频道",叙永综合
 http://luzhi.xuyongrongmei.com:1935/live/_definst_/xyxw/playlist.m3u8?zsicd#rtmp://luzhi.xuyongrongmei.com:1935/live/xyxw?zsicd
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚄四川频道",新闻综合
-http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚄四川频道",新闻综合
-https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
 #EXTINF:-1 tvg-name="旺苍新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/旺苍新闻综合.png" group-title="🚄四川频道",旺苍新闻综合
 http://live.spccmc.com:90/live/spxwzh.m3u8?%E5%85%B3%E6%B3%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7[%E6%99%B4%E5%9B%AD]
 #EXTINF:-1 tvg-name="汉源综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/汉源综合.png" group-title="🚄四川频道",汉源综合
@@ -3367,6 +3361,8 @@ http://dspdhls.appcoo.com:8888/live/dspd/index.m3u8
 http://112.27.235.94:8000/hls/25/index.m3u8
 #EXTINF:-1 tvg-name=" 广德生活" tvg-logo="https://logo.5iclub.dpdns.org/tv/广德生活.png" group-title="🚈安徽频道", 广德生活
 https://live.gdtv.ah.cn/live/newsTV.m3u8
+#EXTINF:-1 tvg-name=" 新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🚈安徽频道", 新闻综合
+https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
 #EXTINF:-1 tvg-name=" 祁门综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/祁门综合.png" group-title="🚈安徽频道", 祁门综合
 http://zbbf2.ahbztv.com/live/416.m3u8?zanhd
 #EXTINF:-1 tvg-name=" 铜陵新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/铜陵新闻综合.png" group-title="🚈安徽频道", 铜陵新闻综合
@@ -4175,6 +4171,8 @@ http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd
 http://124.88.144.73:1935/live/dywt/playlist.m3u8
 #EXTINF:-1 tvg-name=" 玛纳斯综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/玛纳斯综合.png" group-title="🛹新疆频道", 玛纳斯综合
 http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/东莞新闻综合.png" group-title="🛺陕西频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 乐家购物" tvg-logo="https://logo.5iclub.dpdns.org/tv/乐家购物.png" group-title="🛺陕西频道", 乐家购物
 http://112.46.105.20:8009/hls/23/index.m3u8
 #EXTINF:-1 tvg-name=" 西安新闻" tvg-logo="https://logo.5iclub.dpdns.org/tv/西安新闻.png" group-title="🛺陕西频道", 西安新闻
@@ -4197,6 +4195,8 @@ http://112.46.105.20:8009/hls/62/index.m3u8
 http://112.46.105.20:8009/hls/19/index.m3u8
 #EXTINF:-1 tvg-name=" 陕西银龄" tvg-logo="https://logo.5iclub.dpdns.org/tv/陕西银龄.png" group-title="🛺陕西频道", 陕西银龄
 http://112.46.105.20:8009/hls/20/index.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.5iclub.dpdns.org/tv/新闻综合.png" group-title="🛺陕西频道",新闻综合
+http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
 #EXTINF:-1 tvg-name="陕西体育休闲" tvg-logo="https://logo.5iclub.dpdns.org/tv/陕西体育休闲.png" group-title="🛺陕西频道",陕西体育休闲
 https://mgtv.ottiptv.cc/migu/956909356.m3u8?migutoken=2cd1b3120e6a6d3cec136ca61cb23c24512860d4956d391b8c7d8a1fce58c3fa549930217eede8887c05f73eb24ac9692be10bdd06557f58130ff6717e37e1b6ba38adfacf8e74298fe1d4f48c
 #EXTINF:-1 tvg-name="陕西体育休闲" tvg-logo="https://logo.5iclub.dpdns.org/tv/陕西体育休闲.png" group-title="🛺陕西频道",陕西体育休闲
