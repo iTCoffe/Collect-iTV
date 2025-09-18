@@ -70,7 +70,7 @@ jobs:
         rm -f Base.m3u CCTV.m3u CNTV.m3u
         
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](Keep_iTV.m3u)（Keep_iTV.M3U）\\n- [TXT播放列表](Keep_iTV.txt)（Keep_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](Internet_iTV.m3u)（Internet_iTV.M3U）\\n- [TXT播放列表](Internet_iTV.txt)（Internet_iTV.TXT）\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
