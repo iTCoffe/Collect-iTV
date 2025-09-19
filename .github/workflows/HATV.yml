@@ -43,16 +43,9 @@ jobs:
         wget -q https://live.hacks.tools/tv/ipv4/categories/直播中国.m3u -O Base17.m3u
         wget -q https://live.hacks.tools/tv/ipv4/categories/春晚频道.m3u -O Base18.m3u
         wget -q https://live.hacks.tools/tv/ipv4/categories/其他频道.m3u -O Base19.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/央视频道.m3u -O Base20.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/卫视频道.m3u -O Base21.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/地方频道.m3u -O Base22.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/电影频道.m3u -O Base23.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/儿童频道.m3u -O Base24.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/体育频道.m3u -O Base25.m3u
-        wget -q https://live.hacks.tools/tv/ipv6/categories/其他频道.m3u -O Base26.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u Base3.m3u Base4.m3u Base5.m3u Base6.m3u Base7.m3u Base8.m3u Base9.m3u Base10.m3u Base11.m3u Base12.m3u Base13.m3u Base14.m3u Base15.m3u Base16.m3u Base17.m3u Base18.m3u Base19.m3u Base20.m3u Base21.m3u Base22.m3u Base23.m3u Base24.m3u Base25.m3u Base26.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u Base2.m3u Base3.m3u Base4.m3u Base5.m3u Base6.m3u Base7.m3u Base8.m3u Base9.m3u Base10.m3u Base11.m3u Base12.m3u Base13.m3u Base14.m3u Base15.m3u Base16.m3u Base17.m3u Base18.m3u Base19.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
