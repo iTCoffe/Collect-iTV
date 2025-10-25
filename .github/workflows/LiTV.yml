@@ -50,14 +50,6 @@ jobs:
         # 添加新增提示 (禁止蕉绿)
         echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
         echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
-
-        # 添加新增提示 (重温经典 ²⁰²⁵)
-        echo '#EXTINF:-1 tvg-id="重温经典" tvg-name="重温经典" tvg-logo="https://logo.5iclub.dpdns.org/tv/重温经典.png" group-title="🦧温馨提示",重温经典 ²⁰²⁵' >>LiTV.m3u
-        echo 'http://php.jdshipin.com/TVOD/iptv.php?id=cwjd' >>LiTV.m3u
-
-        # 添加新增提示 (重温经典 ²⁰²⁵)
-        echo '#EXTINF:-1 tvg-id="重温经典" tvg-name="重温经典" tvg-logo="https://logo.5iclub.dpdns.org/tv/重温经典.png" group-title="🦧温馨提示",重温经典 ²⁰²⁶' >>LiTV.m3u
-        echo 'https://other.chinacert.cftest5.cn/cwjd.m3u8' >>LiTV.m3u
         
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
