@@ -327,7 +327,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         f.write("#EXTINF:-1 tvg-id=\"谨防诈骗\" tvg-name=\"谨防诈骗\" tvg-logo=\"https://logo.5iclub.dpdns.org/tv/谨防诈骗.png\" group-title=\"🦧温馨提示\",谨防诈骗\n")
         f.write("https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4\n")
 
-        f.write("#EXTINF:-1 tvg-id=\"禁止蕉绿\" tvg-name=\"禁止蕉绿\" tvg-logo=\"https://logo.5iclub.dpdns.or/tv/禁止蕉绿.png\" group-title=\"🦧温馨提示\",禁止蕉绿\n")
+        f.write("#EXTINF:-1 tvg-id=\"禁止蕉绿\" tvg-name=\"禁止蕉绿\" tvg-logo=\"https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png\" group-title=\"🦧温馨提示\",禁止蕉绿\n")
         f.write("https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4\n")
         
         # 写入频道信息
