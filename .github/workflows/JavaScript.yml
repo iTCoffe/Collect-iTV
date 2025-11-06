@@ -1,0 +1,74 @@
+name: JavaScript Daily Update
+
+on:
+  workflow_dispatch:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '0 */12 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+
+    - name: Update Files
+      run: |
+        # 下载基础源文件
+        wget -q https://raw.githubusercontent.com/mytv-android/mytvJS/main/js.gitee.m3u -O Base1.m3u
+        
+        # 合并并去重基础源
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        
+        # 处理央视源
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+        
+        # 处理非央视源
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+        
+        # 生成最终M3U
+        echo '#EXTM3U x-tvg-url="https://itv.jsdelivr.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >JavaScript.m3u
+        
+        # 添加自定义提示 (温馨提示)
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>JavaScript.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>JavaScript.m3u
+        
+        # 添加新增提示 (谨防诈骗)
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>JavaScript.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>JavaScript.m3u
+        
+        # 添加新增提示 (禁止蕉绿)
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>JavaScript.m3u
+        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>JavaScript.m3u
+        
+        # 合并源文件
+        cat CCTV.m3u CNTV.m3u >>JavaScript.m3u
+        
+        # 清理临时文件
+        rm -f Base.m3u CCTV.m3u CNTV.m3u
+        
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](JavaScript.m3u)（JavaScript.M3U）" > README.md
+
+    - name: Commit Changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        # 添加文件
+        git add JavaScript.m3u README.md
+
+        # 提交更改
+        git commit -m "${{ steps.date.outputs.date }}"
+
+    - name: Push Update
+      run: git push
