@@ -36,19 +36,19 @@ jobs:
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
         # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.5iclub.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.spai.pp.ua/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.5iclub.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.sspai.pp.ua/img/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
+        echo 'https://iCloud.spai.pp.ua/video/Disclaimer.mp4' >>LiTV.m3u
         
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.5iclub.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.sspai.pp.ua/img/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
+        echo 'https://iCloud.spai.pp.ua/video/Disclaimer.mp4' >>LiTV.m3u
         
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.5iclub.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
-        echo 'https://iCloud.5iclub.dpdns.org/video/Disclaimer.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.sspai.pp.ua/img/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
+        echo 'https://iCloud.spai.pp.ua/video/Disclaimer.mp4' >>LiTV.m3u
         
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>LiTV.m3u
