@@ -187,6 +187,9 @@ CCTV16,#EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://gitee.com/suxuang/logo/raw
 湖南卫视4K,http://106.53.99.30/tv/api.php?id=hnws4k
 深圳卫视4K,http://106.53.99.30/tv/api.php?id=szws4k
 江苏卫视4K,http://106.53.99.30/tv/api.php?id=jsws4k
+苏州4K,https://live-auth.51kandianshi.com/szgd/csztv4k_hd.m3u8
+河北4K,https://event.pull.hebtv.com:443/live/live101.m3u8
+南国都市4K,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de
 峨眉电影4K,http://122.228.73.138:2380/hw1live.rxip.sc96655.com.huan.tv/live/emdy4k_8000.m3u8
 CCTV4K蓝光,http://106.53.99.30/php/cctv/cctvnews.php?id=cctv4k&q=lg
 CCTV4K真4K,http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8
@@ -224,8 +227,7 @@ CCTV16,http://ygbh.site/php/bfgd.php?id=204
 海南卫视,http://148.135.93.213/live.php?id=海南卫视
 大湾区卫视,http://148.135.93.213/live.php?id=大湾区卫视
 北京卫视4K,#EXTINF:-1 tvg-id="苏州4K" tvg-name="苏州4K" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/苏州4K.png" group-title="卫视频道",苏州4K
-河北4K,https://event.pull.hebtv.com:443/live/live101.m3u8
-tvg-id="河北卫视" tvg-name="河北卫视" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/河北卫视.png" group-title="卫视频道",http://120.76.248.139/live/bfgd/4200000108.m3u8
+河北4K,#EXTINF:-1,tvg-id="河北卫视" tvg-name="河北卫视" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/河北卫视.png" group-title="卫视频道",河北卫视
 内蒙古卫视,http://120.76.248.139/live/bfgd/4200000110.m3u8
 海南卫视,http://120.76.248.139/live/bfgd/4200000473.m3u8
 tvg-id="宁夏卫视" tvg-name="宁夏卫视" tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/宁夏卫视.png" group-title="卫视频道",http://120.76.248.139/live/bfgd/4200000118.m3u8
@@ -525,8 +527,7 @@ CCTV-6电影,http://8.138.7.223/tv/1905.php?id=LIVE3YPYZ30E7V1R0
 生活时尚,http://111.22.153.159:35455/itv/5000000002000019634.m3u8?cdn=bestzb
 都市剧场,http://112.46.105.20:8009/hls/72/index.m3u8
 金色学堂,http://111.22.153.159:35455/itv/5000000010000026105.m3u8?cdn=bestzb
-南国都市,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de
-天元围棋,http://wouu.net:9977/udp/239.93.42.55:5140
+南国都市,#EXTINF:-1 tvg-id="天元围棋" tvg-name="天元围棋" tvg-logo="https://live.fanmingming.cn/tv/天元围棋.png" group-title="数字频道",天元围棋
 睛彩竞技,#http://fjcm-2118.live.iptv.darwinchow.com/PLTV/88888888/224/3221227047/index.m3u8
 睛彩篮球,#http://fjcm-2118.live.iptv.darwinchow.com/PLTV/88888888/224/3221227158/index.m3u8
 睛彩青少,http://111.22.153.159:35455/itv/3000000020000011525.m3u8?cdn=FifastbLive
@@ -545,19 +546,12 @@ TVB翡翠台,http://101.35.240.114:88/live.php?id=翡翠台
 CGTN英语,https://0472.org/hls/cgtn.m3u8
 CGTN纪录,https://0472.org/hls/cgtnd.m3u8
 CCTV-13,http://106.53.99.30/tv/cctv13.php
-香港卫视,http://106.53.99.30/tv/hk.php?id=xgws
-香港国际卫视,http://106.53.99.30/tv/hk.php?id=HKI
-凤凰中文高清,http://106.53.99.30/tv/hk.php?id=fhzw
-凤凰资讯高清,http://106.53.99.30/tv/hk.php?id=fhzx
-凤凰香港高清,http://106.53.99.30/tv/hk.php?id=fhxg
-凤凰电影标清,http://106.53.99.30/tv/hk.php?id=fhdy
-无线翡翠高清,http://106.53.99.30/tv/hk.php?id=fct
-无线明珠高清,http://106.53.99.30/tv/hk.php?id=mzt
 鳳凰衛視中文台,http://bxtv.3a.ink/api.php?id=fhzw
 鳳凰衛視資訊台,http://bxtv.3a.ink/api.php?id=fhzx
 鳳凰衛視香港台,http://bxtv.3a.ink/api.php?id=fhhk
 千禧經典台,http://bxtv.3a.ink/api.php?id=qxjd
 翡翠台,http://bxtv.3a.ink/api.php?id=fct
+翡翠高清,https://test-al-livepull.migucloud.com/live/CL7gYJcMM5BXZvyamZly3XZnyMmRJHUf2Rp12oP6KkG1PhQWJK.flv
 明珠台,http://bxtv.3a.ink/api.php?id=mz
 無線新聞台,http://bxtv.3a.ink/api.php?id=wxxw
 美亞電影台,http://bxtv.3a.ink/api.php?id=meiya
@@ -566,9 +560,9 @@ TVB Plus,http://bxtv.3a.ink/api.php?id=tvbp
 PopC,http://bxtv.3a.ink/api.php?id=popc
 VIUTV,http://bxtv.3a.ink/api.php?id=viutv
 NOW新闻,http://bxtv.3a.ink/api.php?id=now
+NOW爆谷,https://bxtv.3a.ink/api.php?id=baogu
+NOW爆谷星影台,https://bxtv.3a.ink/api.php?id=xingying
 中天新聞台,http://bxtv.3a.ink/api.php?id=ztxw
-广东体育,http://bxtv.3a.ink/api.php?id=gdty
-广东珠江,http://bxtv.3a.ink/api.php?id=gdzj
 凤凰中文,http://203.205.191.53/qctv.fengshows.cn/live/0701pcc72.m3u8
 凤凰资讯,http://203.205.191.53/qctv.fengshows.cn/live/0701pin72.m3u8
 凤凰香港,http://203.205.191.53/qctv.fengshows.cn/live/0701phk72.m3u8
@@ -828,7 +822,7 @@ NewTV 爱情喜剧,http://111.22.153.159:35455/itv/2000000003000000010.m3u8?cdn=
 少年包青天第一部,http://www.douzhicloud.site:35455/yy/1356043677
 少年包青天第三部,http://www.douzhicloud.site:35455/yy/1382736814
 神探狄仁杰第一部,http://www.douzhicloud.site:35455/huya/11352958
-神探狄仁杰第二部,http://www.douzhicloud.site:35455/douyu/431460
+神探狄仁杰第二部,http://www.douzhicloud.site:35455/douyu/6027991
 神探狄仁杰第三部,http://www.douzhicloud.site:35455/huya/11342425
 爱情公寓,http://www.douzhicloud.site:35455/huya/11336726
 亮剑,http://www.douzhicloud.site:35455/huya/30080238
@@ -873,18 +867,18 @@ NewTV 爱情喜剧,http://111.22.153.159:35455/itv/2000000003000000010.m3u8?cdn=
 如懿传,http://www.douzhicloud.site:35455/huya/29465868
 芈月传,http://www.douzhicloud.site:35455/huya/11352975
 楚汉骄雄,http://www.douzhicloud.site:35455/huya/29465854
-封神榜,http://www.douzhicloud.site:35455/huya/29465849
-无心法师,http://www.douzhicloud.site:35455/huya/30080233
-西游记2,http://www.douzhicloud.site:35455/huya/29465859
-活佛济公3,http://www.douzhicloud.site:35455/huya/23903123
-天龙八部,http://www.douzhicloud.site:35455/yy/1351814644
-鹿鼎记,http://www.douzhicloud.site:35455/yy/28265277
 寻秦记,http://www.douzhicloud.site:35455/huya/29465848
+封神榜,http://www.douzhicloud.site:35455/huya/29465849
+西游记2,http://www.douzhicloud.site:35455/huya/29465859
+鹿鼎记,http://www.douzhicloud.site:35455/yy/28265277
 大唐双龙传,http://www.douzhicloud.site:35455/huya/29465850
 神雕侠侣,http://www.douzhicloud.site:35455/huya/23865171
+天龙八部,http://www.douzhicloud.site:35455/yy/1351814644
 射雕英雄传,http://www.douzhicloud.site:35455/huya/23824164
 倚天屠龙记,http://www.douzhicloud.site:35455/huya/23734246
-笑傲江湖,#EXTINF:-1 tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/埋堆堆.png" group-title="埋堆堆频道",谈判专家
+笑傲江湖,#EXTINF:-1 tvg-logo="https://gitee.com/suxuang/logo/raw/master/mylogo/埋堆堆.png" group-title="埋堆堆频道",活佛济公3
+无心法师,http://www.douzhicloud.site:35455/huya/30080233
+谈判专家,http://www.douzhicloud.site:35455/yy/1382735560
 刑事侦缉档案,http://www.douzhicloud.site:35455/huya/29465856
 法政先锋,http://www.douzhicloud.site:35455/huya/23863804
 洗冤录,http://www.douzhicloud.site:35455/huya/29465851
