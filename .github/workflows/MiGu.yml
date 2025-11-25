@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://live.ottiptv.cc/iptv.m3u?userid=1928524516&sign=225fae89d396a3a3c128c7039ee9fd743bf0be6e27359361af6e31c6d682994ed5e923d74b64401f16430b8ea3358a394d474124d1767e349f86c7e33e936a2f83aef9a5641a58&auth_token=f219454d959d282edb2f96e8e2dd5232 -O Base1.m3u
+        wget -q https://github.com/develop202/migu_video/raw/main/interface.txt -O Base1.m3u
         
         # 合并并去重基础源
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
