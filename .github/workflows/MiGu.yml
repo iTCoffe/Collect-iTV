@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://github.com/develop202/migu_video/raw/main/interface.txt -O Base1.m3u
+        wget -q https://iptv.laobaitv.net -O Base1.m3u
         
         # 合并并去重基础源
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
