@@ -33,7 +33,7 @@ CONFIG = {
     "output_m3u": "Internet_iTV.m3u",  # 修复：使用正确的输出文件名
     "output_txt": "Internet_iTV.txt",  # 修复：使用正确的输出文件名
     "iptv_directory": "IPTV",  # Directory containing IPTV files
-    "logo_base_url": "https://logo.5iclub.dpdns.org/tv"  # Base URL for logos
+    "logo_base_url": "https://logo.jsdelivr.dpdns.org/tv"  # Base URL for logos
 }
 
 
