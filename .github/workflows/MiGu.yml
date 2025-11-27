@@ -38,6 +38,10 @@ jobs:
         # 过滤掉包含"冰茶体育"和"🎀冰茶公告"的行
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CCTV_temp.m3u > CCTV.m3u
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CNTV_temp.m3u > CNTV.m3u
+
+        # 去除特定URL
+        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CCTV.m3u > CCTV_cleaned.m3u
+        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV.m3u > CNTV_cleaned.m3u
         
         # 生成最终M3U
         echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
