@@ -17,14 +17,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Get Time
+    - name: GetTime
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://bc.188766.xyz/?ip=&mishitong=true -O Base1.m3u
+        wget -q https://bc.188766.xyz/?ip= -O Base1.m3u
         
         # 合并并去重基础源
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
@@ -35,7 +35,7 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' > CNTV_temp.m3u
         
-        # 过滤掉包含“冰茶体育”和“🎀冰茶公告”的行
+        # 过滤掉包含"冰茶体育"和"🎀冰茶公告"的行
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CCTV_temp.m3u > CCTV.m3u
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CNTV_temp.m3u > CNTV.m3u
         
@@ -44,30 +44,30 @@ jobs:
         grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV.m3u > CNTV_cleaned.m3u
         
         # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiGu.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
         
-        # 添加自定义提示（温馨提示）
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示/png" group-title="🦧温馨提示",温馨提示' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加自定义提示 (温馨提示)
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        # 添加新增提示（谨防诈骗）
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗/png" group-title="🦧温馨提示",谨防诈骗' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加新增提示 (谨防诈骗)
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        # 添加新增提示（禁止蕉绿）
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿/png" group-title="🦧温馨提示",禁止蕉绿' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加新增提示 (禁止蕉绿)
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
         # 合并源文件
-        cat CCTV_cleaned.m3u CNTV_cleaned.m3u >> MiGu.m3u
+        cat CCTV_cleaned.m3u CNTV_cleaned.m3u >>MiGu.m3u
         
         # 生成TXT播放列表
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
             getline url;
-            gsub(/\\r/, "", name);
-            gsub(/\\r/, "", url);
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
             sub(/^ /, "", name);
             print name "," url;
         }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
@@ -76,7 +76,7 @@ jobs:
         rm -f Base1.m3u Base.m3u CCTV_temp.m3u CNTV_temp.m3u CCTV.m3u CNTV.m3u CCTV_cleaned.m3u CNTV_cleaned.m3u
         
         # 更新README
-        echo "## IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
 
     - name: Commit Changes
       run: |
