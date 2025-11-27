@@ -52,7 +52,10 @@ jobs:
         
         # 合并源文件，但先过滤掉指定条目
         # 免费分享条目（移除冰茶体育相关内容）
-        grep -v -A 1 '您链接的密码不正确_已隐藏' MiGu.m3u >>MiGu.m3u
+        grep -v -A 1 '您链接的密码不正确_已隐藏' Base.m3u >>MiGu.m3u
+        
+        # 添加公告条目（根据需求选择：这里选择只保留其中一个）
+        grep -A 1 '冰茶专用' Base.m3u >>MiGu.m3u
         
         # 生成TXT播放列表
         awk '/^#EXTINF:/ {
