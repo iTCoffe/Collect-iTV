@@ -51,14 +51,8 @@ jobs:
         echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
         # 合并源文件，但先过滤掉指定条目
-        # 冰茶体育条目
-        grep -v -A 1 '#EXTINF:.*免费分享.*冰茶体育' MiGu.m3u | grep -v -A 1 '您链接的密码不正确_已隐藏' >>MiGu.m3u
-        # 免费分享条目
-        grep -v -A 1 '#EXTINF:.*免费分享.*用爱发电' MiGu.m3u | grep -v -A 1 '免费分享_用爱发电_拒绝贩卖_只有TG群' >>MiGu.m3u
-        # 请勿上当条目
-        grep -v -A 1 '#EXTINF:.*请勿上当.*奸商太多' MiGu.m3u | grep -v -A 1 '冰茶体育已隐藏_进群获取密码' >>MiGu.m3u
-        # 添加公告条目（根据需求选择：这里选择只保留其中一个）
-        grep -A 1 '冰茶专用' MiGu.m3u >>MiGu.m3u
+        # 免费分享条目（移除冰茶体育相关内容）
+        grep -v -A 1 '您链接的密码不正确_已隐藏' MiGu.m3u >>MiGu.m3u
         
         # 生成TXT播放列表
         awk '/^#EXTINF:/ {
@@ -69,7 +63,7 @@ jobs:
             gsub(/\r/, "", url);
             sub(/^ /, "", name);
             # 去除特定链接内容
-            if (name !~ /免费分享.*用爱发电|请勿上当|您链接的密码不正确|奸商太多/ || url !~ /188766.xyz/) {
+            if (name !~ /免费分享.*用爱发电/ || url !~ /188766.xyz/) {
                 print name "," url;
             }
         }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
