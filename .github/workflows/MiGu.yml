@@ -17,44 +17,82 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: GetTime
+    - name: Get Time and Date
       id: date
-      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+      run: |
+        echo "date=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_OUTPUT
+        echo "tz=$TZ" >> $GITHUB_OUTPUT
 
     - name: Update Files
       run: |
-        # 下载基础源文件
-        wget -q https://bc.188766.xyz/?ip= -O Base1.m3u
+        # Set locale to avoid warnings
+        export LC_ALL=C
         
-        # 合并并去重基础源
-        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        # Download base source file
+        wget -q "https://bc.188766.xyz/?ip=" -O Base1.m3u
         
-        # 处理央视源
-        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+        # Merge and deduplicate the base source
+        awk '!seen[$0]++' Base1.m3u > Base.m3u
         
-        # 处理非央视源
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+        # Process CNTV (non-CCTV) sources with filtering
+        awk '
+          # Skip empty lines and comments first
+          /^\#EXTM3U/ { getline; next }
+          /^\#/ { flag=0; next }
+          {!flag && $0 !~ /#/} {flag=1}
+          
+          # Process each channel entry
+          flag && /^\#EXTINF/ {
+            # Skip lines with specific tvg-id
+            if ($0 !~ /tvg-id="免费分享"/ && $0 !~ /tvg-id="请勿上当"/) {
+              # Process the channel entry
+              print $0;
+              # Get the URL line
+              getline;
+              # Only keep if it's a URL (not a comment)
+              if ($0 !~ /^#/) {
+                print $0;
+              }
+            }
+          }
+          # Include other lines normally
+          {
+            #
+          }
+        ' Base.m3u > CNTV.m3u
         
-        # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
+        # Process CCTV sources separately
+        awk '
+          # Skip empty lines and comments first
+          /^\#EXTM3U/ { getline; next }
+          /^\#/ { flag=0; next }
+          {!flag && $0 !~ /#/} {flag=1}
+          
+          # Process each channel entry
+          flag && /^\#EXTINF/ {
+            # Keep CCTV channels only
+            if ($0 !~ /tvg-id="免费分享"/ && $0 !~ /tvg-id="请勿上当"/) {
+              print $0
+              getline
+              print $0
+            }
+          }
+        ' Base.m3u > CCTV.m3u
         
-        # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
+        # Create the final M3U playlist
+        {
+          echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+          echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示'
+          echo 'https://cloudflare.tv/hls/live.m3u8'
+          echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗'
+          echo 'https://cloudflare.tv/hls/live.m3u8'
+          echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿'
+          echo 'https://cloudflare.tv/hls/live.m3u8'
+          cat CCTV.m3u CNTV.m3u
+        } > MiGu.m3u
         
-        # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
-        
-        # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
-        
-        # 合并源文件
-        cat CCTV.m3u CNTV.m3u >>MiGu.m3u
-        
-        # 生成TXT播放列表
-        awk '/^#EXTINF:/ {
+        # Generate TXT playlist
+        awk 'tolower($0) ~ /#extinf/{ 
             split($0, a, ",");
             name = a[2];
             getline url;
@@ -62,24 +100,23 @@ jobs:
             gsub(/\r/, "", url);
             sub(/^ /, "", name);
             print name "," url;
-        }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
+          }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
         
-        # 清理临时文件
-        rm -f Base.m3u CCTV.m3u CNTV.m3u
-        
-        # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+        # Clean up intermediate files
+        rm -f Base1.m3u Base.m3u CCTV.m3u CNTV.m3u
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
 
-        # 添加文件
-        git add MiGu.m3u MiGu.txt README.md
-
-        # 提交更改
-        git commit -m "${{ steps.date.outputs.date }}"
+        # Add files and commit
+        git add MiGu.m3u MiGu.txt
+        git add README.md
+        
+        # Set commit message with date
+        git commit -m "Updated IPTV playlist on $(date -u +"%Y-%m-%d %H:%M:%S UTC")" -m "Generated by GitHub Actions"
 
     - name: Push Update
-      run: git push
+      run: |
+        git push
