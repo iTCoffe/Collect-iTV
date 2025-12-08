@@ -9,18 +9,15 @@ on:
 
 env:
   TZ: Asia/Shanghai
-  REPLACE_FROM: "migu.188766.xyz"
-  REPLACE_TO: "migu.shrimp.hidns.co"
 
 jobs:
   Update:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4  # 升级到 v4
+      uses: actions/checkout@v3
       with:
-        fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # 获取完整历史
 
     - name: GetTime
       id: date
@@ -38,10 +35,6 @@ jobs:
           echo "错误：源文件下载失败"
           exit 1
         fi
-        
-        # 域名替换处理
-        echo "正在替换域名: $REPLACE_FROM -> $REPLACE_TO"
-        sed -i "s|$REPLACE_FROM|$REPLACE_TO|g" source.m3u
         
         # 去重基础源
         awk '!seen[$0]++' source.m3u > Base.m3u
@@ -70,12 +63,7 @@ jobs:
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
         
         # 合并源文件并去重
-        cat CCTV.m3u CNTV.m3u | sed "s|$REPLACE_FROM|$REPLACE_TO|g" | awk '!seen[$0]++' >> MiGu.m3u
-        
-        echo "完成域名替换"
-        
-        # 再次确保最终文件中的域名已被替换
-        sed -i "s|$REPLACE_FROM|$REPLACE_TO|g" MiGu.m3u
+        cat CCTV.m3u CNTV.m3u | awk '!seen[$0]++' >> MiGu.m3u
         
         # 生成TXT格式
         echo "生成TXT格式..."
@@ -91,57 +79,36 @@ jobs:
         echo "最终M3U文件大小: $(wc -l < MiGu.m3u) 行"
         echo "最终TXT文件大小: $(wc -l < MiGu.txt) 行"
         
-        # 检查域名替换是否成功
-        echo "检查域名替换结果:"
-        echo "包含 $REPLACE_FROM 的行数: $(grep -c "$REPLACE_FROM" MiGu.m3u)"
-        echo "包含 $REPLACE_TO 的行数: $(grep -c "$REPLACE_TO" MiGu.m3u)"
-        
         # 清理临时文件
         rm -f source.m3u Base.m3u CCTV.m3u CNTV.m3u
         
         # 更新README
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
 
-    - name: Configure Git
+    - name: Prepare for Commit
+      run: |
+        # 检查是否有实际变化
+        if git diff --quiet MiGu.m3u MiGu.txt README.md; then
+          echo "没有变化需要提交"
+          exit 0
+        fi
+
+    - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-
-    - name: Check for Changes
-      id: check-changes
-      run: |
-        if git diff --quiet MiGu.m3u MiGu.txt README.md; then
-          echo "没有变化需要提交"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-        else
-          echo "有变化需要提交"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-        fi
-
-    - name: Pull Latest Changes
-      if: steps.check-changes.outputs.has_changes == 'true'
-      run: |
-        # 先暂存更改，然后执行 pull
-        git stash
-        git pull origin main --rebase
-        git stash pop || echo "没有暂存的更改需要恢复"
-
-    - name: Commit Changes
-      if: steps.check-changes.outputs.has_changes == 'true'
-      run: |
-        git add MiGu.m3u MiGu.txt README.md
         
-        # 检查是否真的有更改需要提交
-        if ! git diff --cached --quiet; then
-          git commit -m "自动更新于 ${{ steps.date.outputs.date }}"
-          echo "提交成功"
-        else
-          echo "没有实际的更改需要提交"
-        fi
+        # 拉取最新代码
+        git pull origin main --rebase || echo "拉取失败，继续提交本地更改"
+        
+        git add MiGu.m3u MiGu.txt README.md
+        git commit -m "自动更新于 ${{ steps.date.outputs.date }}" || echo "提交失败或没有更改"
 
-    - name: Push Changes
-      if: steps.check-changes.outputs.has_changes == 'true'
+    - name: Push Update
       run: |
-        # 强制推送，覆盖远程分支（小心使用）
-        git push origin main --force-with-lease
-        echo "推送成功"
+        # 检查是否有commit需要推送
+        if git log --oneline origin/main..HEAD | grep -q .; then
+          git push origin main
+        else
+          echo "没有新的提交需要推送"
+        fi
