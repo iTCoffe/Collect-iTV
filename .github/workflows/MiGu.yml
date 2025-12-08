@@ -16,27 +16,25 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # 获取完整历史
 
     - name: GetTime
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Setup Dependencies
-      run: sudo apt-get update && sudo apt-get install -y wget
-
     - name: Update Files
       run: |
-        # 直接下载并处理源文件
         echo "开始下载和处理源文件..."
         
-        # 下载源文件并保存到本地，避免重复下载
-        wget -q https://bc.188766.xyz/?url=https://live.iill.top -O source.m3u
-        if [ ! -s source.m3u ]; then
-          echo "错误：源文件下载失败或为空"
+        # 下载源文件
+        if wget -q https://bc.188766.xyz/?url=https://live.iill.top -O source.m3u; then
+          echo "源文件下载成功"
+          echo "原始源文件大小: $(wc -l < source.m3u) 行"
+        else
+          echo "错误：源文件下载失败"
           exit 1
         fi
-        
-        echo "原始源文件大小: $(wc -l < source.m3u) 行"
         
         # 去重基础源
         awk '!seen[$0]++' source.m3u > Base.m3u
@@ -47,7 +45,7 @@ jobs:
         
         # 处理非央视源
         echo "处理非央视源..."
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | grep -v -e '冰茶体育' -e '🎀冰茶公告' | grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' > CNTV.m3u
+        grep -v '央视' Base.m3u | grep -v '^--$' | grep -v -e '冰茶体育' -e '🎀冰茶公告' | grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' > CNTV.m3u
         
         echo "央视源: $(wc -l < CCTV.m3u) 行，非央视源: $(wc -l < CNTV.m3u) 行"
         
@@ -55,34 +53,27 @@ jobs:
         echo '#EXTM3U x-tvg-url="https://itv.ifanr.netlib.re/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiGu.m3u
         
         # 添加自定义提示
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
-        
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
-        
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        cat >> MiGu.m3u << 'EOF'
+#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
+https://cloudflare.tv/hls/live.m3u8
+#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
+https://cloudflare.tv/hls/live.m3u8
+#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿
+https://cloudflare.tv/hls/live.m3u8
+EOF
         
         # 合并源文件并去重
-        cat CCTV.m3u CNTV.m3u | grep -v '^#' | sort | uniq | while read line; do
-          if [[ "$line" =~ ^#EXTINF ]]; then
-            echo "$line" >> MiGu.m3u
-          else
-            echo "$line" >> MiGu.m3u
-          fi
-        done
+        cat CCTV.m3u CNTV.m3u | awk '!seen[$0]++' >> MiGu.m3u
         
-        # 处理TXT格式，确保配对正确
+        # 生成TXT格式 - 简化版
         echo "生成TXT格式..."
-        cat CCTV.m3u CNTV.m3u | grep -A 1 '^#EXTINF' | awk '
+        grep -A 1 '^#EXTINF:' MiGu.m3u | awk '
           /^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
-            getline url;
-            if (url != "--") {
-              gsub(/^[ \t]+|[ \t]+$/, "", name);
-              print name "," url;
+            getline;
+            if ($0 !~ /^#EXT/ && $0 != "") {
+              print name "," $0;
             }
           }' | sort -u > MiGu.txt
         
@@ -93,14 +84,28 @@ jobs:
         rm -f source.m3u Base.m3u CCTV.m3u CNTV.m3u
         
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+
+    - name: Prepare for Commit
+      run: |
+        # 检查是否有实际变化
+        if git diff --quiet MiGu.m3u MiGu.txt README.md; then
+          echo "没有变化需要提交"
+          exit 0
+        fi
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        
+        # 拉取最新代码
+        git pull origin main --rebase
+        
         git add MiGu.m3u MiGu.txt README.md
-        git commit -m "更新于 ${{ steps.date.outputs.date }}" || echo "没有变化需要提交"
+        git commit -m "自动更新于 ${{ steps.date.outputs.date }}"
 
     - name: Push Update
-      run: git push
+      run: |
+        # 使用 --force-with-lease 安全推送
+        git push origin main --force-with-lease
