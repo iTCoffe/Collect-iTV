@@ -17,9 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4  # 升级到 v4
       with:
-        fetch-depth: 0  # 获取完整历史
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: GetTime
       id: date
@@ -101,30 +102,46 @@ jobs:
         # 更新README
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
 
-    - name: Prepare for Commit
-      run: |
-        # 检查是否有实际变化
-        if git diff --quiet MiGu.m3u MiGu.txt README.md; then
-          echo "没有变化需要提交"
-          exit 0
-        fi
-
-    - name: Commit Changes
+    - name: Configure Git
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 拉取最新代码
-        git pull origin main --rebase || echo "拉取失败，继续提交本地更改"
-        
-        git add MiGu.m3u MiGu.txt README.md
-        git commit -m "自动更新于 ${{ steps.date.outputs.date }}" || echo "提交失败或没有更改"
 
-    - name: Push Update
+    - name: Check for Changes
+      id: check-changes
       run: |
-        # 检查是否有commit需要推送
-        if git log --oneline origin/main..HEAD | grep -q .; then
-          git push origin main
+        if git diff --quiet MiGu.m3u MiGu.txt README.md; then
+          echo "没有变化需要提交"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
         else
-          echo "没有新的提交需要推送"
+          echo "有变化需要提交"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
+
+    - name: Pull Latest Changes
+      if: steps.check-changes.outputs.has_changes == 'true'
+      run: |
+        # 先暂存更改，然后执行 pull
+        git stash
+        git pull origin main --rebase
+        git stash pop || echo "没有暂存的更改需要恢复"
+
+    - name: Commit Changes
+      if: steps.check-changes.outputs.has_changes == 'true'
+      run: |
+        git add MiGu.m3u MiGu.txt README.md
+        
+        # 检查是否真的有更改需要提交
+        if ! git diff --cached --quiet; then
+          git commit -m "自动更新于 ${{ steps.date.outputs.date }}"
+          echo "提交成功"
+        else
+          echo "没有实际的更改需要提交"
+        fi
+
+    - name: Push Changes
+      if: steps.check-changes.outputs.has_changes == 'true'
+      run: |
+        # 强制推送，覆盖远程分支（小心使用）
+        git push origin main --force-with-lease
+        echo "推送成功"
