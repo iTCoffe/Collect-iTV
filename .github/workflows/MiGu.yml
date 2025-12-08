@@ -24,10 +24,11 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://iptv.laobaitv.net -O Base1.m3u
+        wget -q https://bc.188766.xyz/?url=https://live.ottiptv.cc -O Base1.m3u
+        wget -q https://iptv.laobaitv.net -O Base2.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' > CCTV_temp.m3u
@@ -35,9 +36,9 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' > CNTV_temp.m3u
         
-        # 过滤掉包含"冰茶体育"和"🎀冰茶公告"的行
-        grep -v -e '冰茶体育' -e '🎀冰茶公告' CCTV_temp.m3u > CCTV.m3u
-        grep -v -e '冰茶体育' -e '🎀冰茶公告' CNTV_temp.m3u > CNTV.m3u
+        # 过滤掉包含"冰茶体育"和"🎀冰茶公告"、"老白TV赞助：免费！请勿相信各类广告"的行
+        grep -v -e '冰茶体育' -e '🎀冰茶公告' -e '老白TV赞助：免费！请勿相信各类广告' CCTV_temp.m3u > CCTV.m3u
+        grep -v -e '冰茶体育' -e '🎀冰茶公告' -e '老白TV赞助：免费！请勿相信各类广告' CNTV_temp.m3u > CNTV.m3u
         
         # 去除特定URL
         grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CCTV.m3u > CCTV_cleaned.m3u
