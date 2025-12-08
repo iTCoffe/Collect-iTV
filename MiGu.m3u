@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://itv.sspai.netlib.re/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
 https://cloudflare.tv/hls/live.m3u8
 #EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
@@ -627,10 +627,10 @@ https://live.iill.top/bilibili/30098402
 https://live.iill.top/bilibili/30150311
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26752884&bilibili&logo" group-title="其他影视",B站|恶搞之家
 https://live.iill.top/bilibili/26752884
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/27554961&bilibili&logo" group-title="其他影视",B站|武林外传|西瓜放映厅
+https://live.iill.top/bilibili/27554961
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22056077&bilibili&logo" group-title="其他影视",B站|爱情公寓|福禄影视馆
 https://live.iill.top/bilibili/22056077
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1804461371&bilibili&logo" group-title="其他影视",B站|名侦探柯南|童年影视动漫
-https://live.iill.top/bilibili/1804461371
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30041682&bilibili&logo" group-title="其他影视",B站|臣臣
 https://live.iill.top/bilibili/30041682
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23776217&bilibili&logo" group-title="其他影视",B站|经典港剧大全
@@ -689,6 +689,8 @@ https://live.iill.top/douyu/122402
 https://live.iill.top/douyu/8009547
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11878141&douyu&logo" group-title="斗鱼影视",蕃薯粥粥煮好了
 https://live.iill.top/douyu/11878141
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/426517&douyu&logo" group-title="斗鱼影视",动漫轮播
+https://live.iill.top/douyu/426517
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/260322&douyu&logo" group-title="斗鱼影视",懒猫
 https://live.iill.top/douyu/260322
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/5522351&douyu&logo" group-title="斗鱼影视",疯狂小潴潴
