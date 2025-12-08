@@ -23,92 +23,312 @@ jobs:
 
     - name: Update Files
       run: |
-        echo "开始下载和处理IPTV源文件..."
+        echo "======= 开始下载和处理IPTV源文件 ======="
         
-        # 下载基础源文件
+        # 1. 下载基础源文件
+        echo "1. 下载源文件..."
         wget -q "https://bc.188766.xyz/?url=https://live.ottiptv.cc" -O Base1.m3u
         
-        # 合并并去重基础源
-        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        # 2. 统一编码并初步去重
+        echo "2. 编码统一和基础去重..."
+        # 转换为Unix行尾并去除BOM
+        sed -i 's/\r$//' Base1.m3u
+        sed -i '1s/^\xEF\xBB\xBF//' Base1.m3u
         
-        # 首次提取央视源和非央视源（创建临时文件）
-        grep -A 1 '央视' Base.m3u | grep -v '^--$' > CCTV_temp.m3u
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' > CNTV_temp.m3u
+        # 3. 主去重函数 - 基于URL和名称双重去重
+        deduplicate_m3u() {
+          local input_file=$1
+          local output_file=$2
+          
+          # 使用关联数组储存已看到的URL和频道名组合
+          awk '
+          BEGIN {
+            FS=","
+            seen_url[""] = 0
+            seen_name[""] = 0
+            last_extinf = ""
+            last_url = ""
+            output_lines = ""
+          }
+          
+          # EXTINF行处理
+          /^#EXTINF:-1/ {
+            full_line = $0
+            channel_name = ""
+            
+            # 提取频道名称（最后一个逗号后的内容）
+            for(i=1; i<=NF; i++) {
+              if(i == NF) {
+                channel_name = $i
+              }
+            }
+            
+            # 提取tvg-id
+            tvg_id = ""
+            if(match($0, /tvg-id="([^"]*)"/, arr)) {
+              tvg_id = arr[1]
+            }
+            
+            last_extinf = full_line
+            last_name = channel_name
+            next
+          }
+          
+          # URL行处理（非注释、非空行、非文件头）
+          /^http/ && last_extinf != "" {
+            url = $0
+            key = url "|" last_name
+            
+            # 如果URL或频道名已存在，跳过
+            if(!(key in seen_url) && !(last_name in seen_name)) {
+              seen_url[key] = 1
+              seen_name[last_name] = 1
+              
+              # 输出组合
+              output_lines = output_lines last_extinf "\n" url "\n"
+            }
+            
+            last_extinf = ""
+            last_name = ""
+            last_url = ""
+            next
+          }
+          
+          # 文件头和其他元数据行
+          /^#EXTM3U/ {
+            print $0 > "'"$output_file"'"
+            next
+          }
+          
+          # 其他注释行（直接保留）
+          /^#/ && !/^#EXTINF/ {
+            print $0 > "'"$output_file"'"
+            next
+          }
+          
+          # 处理最后一批数据
+          END {
+            print output_lines > "'"$output_file"'"
+          }
+          ' "$input_file"
+        }
         
-        # 过滤掉包含"冰茶体育"和"🎀冰茶公告"的行
-        grep -v -e '冰茶体育' -e '🎀冰茶公告' CCTV_temp.m3u > CCTV_temp2.m3u
-        grep -v -e '冰茶体育' -e '🎀冰茶公告' CNTV_temp.m3u > CNTV_temp2.m3u
+        # 4. 应用主去重
+        echo "3. 执行主去重逻辑..."
+        deduplicate_m3u Base1.m3u Base_deduped.m3u
         
-        # 去除特定URL
-        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CCTV_temp2.m3u > CCTV_cleaned.m3u
-        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV_temp2.m3u > CNTV_cleaned.m3u
+        # 5. 分离央视和非央视源（在去重基础上）
+        echo "4. 分离央视和非央视频道..."
+        grep -A 1 -i '央视\|CCTV' Base_deduped.m3u | grep -v '^--$' > CCTV_base.m3u
+        grep -v -A 1 -i '央视\|CCTV' Base_deduped.m3u | grep -v '^--$' > NonCCTV_base.m3u
         
-        # 生成最终M3U文件头
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.netlib.re/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiGu.m3u
+        # 6. 频道名称规范化去重
+        normalize_channels() {
+          local input_file=$1
+          local output_file=$2
+          
+          awk '
+          BEGIN {
+            last_extinf = ""
+            last_url = ""
+            name_map[""] = 0
+          }
+          
+          /^#EXTINF:-1/ {
+            last_extinf = $0
+            next
+          }
+          
+          /^http/ && last_extinf != "" {
+            # 提取规范化名称（去除特殊字符，统一大小写）
+            normalized = tolower(last_extinf)
+            gsub(/[^a-z0-9\u4e00-\u9fa5]/, "", normalized)
+            
+            if(!(normalized in name_map)) {
+              name_map[normalized] = 1
+              print last_extinf >> "'"$output_file"'"
+              print $0 >> "'"$output_file"'"
+            }
+            last_extinf = ""
+            last_url = ""
+          }
+          ' "$input_file"
+        }
         
-        # 添加自定义提示 (温馨提示)
+        echo "5. 频道名称规范化去重..."
+        > CCTV_normalized.m3u
+        > NonCCTV_normalized.m3u
+        normalize_channels CCTV_base.m3u CCTV_normalized.m3u
+        normalize_channels NonCCTV_base.m3u NonCCTV_normalized.m3u
+        
+        # 7. 过滤特定内容（黑名单）
+        echo "6. 应用黑名单过滤..."
+        grep -v -E -i '冰茶体育|🎀冰茶公告|成人|赌博|诈骗' CCTV_normalized.m3u > CCTV_filtered.m3u
+        grep -v -E -i '冰茶体育|🎀冰茶公告|成人|赌博|诈骗' NonCCTV_normalized.m3u > NonCCTV_filtered.m3u
+        
+        # 8. URL黑名单过滤
+        echo "7. 应用URL黑名单..."
+        grep -v -E 'https?://188766\.xyz/(dong|qiu|yu|pao)' CCTV_filtered.m3u > CCTV_final.m3u
+        grep -v -E 'https?://188766\.xyz/(dong|qiu|yu|pao)' NonCCTV_filtered.m3u > NonCCTV_final.m3u
+        
+        # 9. 生成最终M3U文件
+        echo "8. 生成最终M3U文件..."
+        
+        # 文件头
+        echo '#EXTM3U x-tvg-url="https://itv.ifanr.netlib.re/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiGu.m3u
+        echo '#' >> MiGu.m3u
+        echo '# 最后更新: '$(date +'%Y-%m-%d %H:%M:%S') >> MiGu.m3u
+        echo '# 总频道数: CCTV: '$(grep -c '^#EXTINF' CCTV_final.m3u)' | 其他: '$(grep -c '^#EXTINF' NonCCTV_final.m3u) >> MiGu.m3u
+        echo '#' >> MiGu.m3u
+        
+        # 添加温馨提示频道
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> MiGu.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
         
-        # 添加新增提示 (谨防诈骗)
         echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> MiGu.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
         
-        # 添加新增提示 (禁止蕉绿)
         echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> MiGu.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
         
-        # 合并处理后的源文件
-        cat CCTV_cleaned.m3u CNTV_cleaned.m3u >> MiGu.m3u
+        # 合并频道
+        cat CCTV_final.m3u NonCCTV_final.m3u >> MiGu.m3u
         
-        echo "验证最终M3U文件..."
-        echo "M3U条目数量: $(grep -c '#EXTINF:' MiGu.m3u)"
+        # 10. 最终全局去重（保险措施）
+        echo "9. 最终全局去重..."
+        awk '
+        BEGIN {
+          last_extinf = ""
+          url_map[""] = 0
+        }
         
-        # 生成TXT播放列表
-        awk '/^#EXTINF:/ {
-            split($0, a, ",");
-            name = a[2];
-            getline url;
-            gsub(/\r/, "", name);
-            gsub(/\r/, "", url);
-            sub(/^ /, "", name);
-            if (name != "" && url != "") {
-                print name "," url;
+        /^#EXTINF:-1/ {
+          last_extinf = $0
+          next
+        }
+        
+        /^http/ && last_extinf != "" {
+          if(!($0 in url_map)) {
+            url_map[$0] = 1
+            print last_extinf
+            print $0
+          }
+          last_extinf = ""
+        }
+        
+        !/^#EXTINF:-1/ && !/^http/ {
+          print $0
+        }
+        ' MiGu.m3u > MiGu_deduplicated.m3u
+        mv MiGu_deduplicated.m3u MiGu.m3u
+        
+        # 11. 生成TXT播放列表（带最终去重）
+        echo "10. 生成TXT播放列表..."
+        awk '
+        BEGIN {
+          FS=","
+          seen_combinations[""] = 0
+        }
+        
+        /^#EXTINF:-1/ {
+          full_line = $0
+          channel_name = ""
+          
+          # 提取最后一个逗号后的频道名称
+          for(i=1; i<=NF; i++) {
+            if (i == NF) {
+              channel_name = $i
+              gsub(/^\s+|\s+$/, "", channel_name)
             }
-        }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
+          }
+          
+          getline url
+          
+          # 清理URL
+          gsub(/\r/, "", url)
+          gsub(/^\s+|\s+$/, "", url)
+          
+          # 组合键（名称+URL的MD5哈希简化版）
+          if (channel_name != "" && url != "" && url ~ /^https?:\/\//) {
+            # 创建简化的组合键
+            combination = channel_name "|" url
+            simplified_key = ""
+            
+            # 只取前50个字符作为去重键（避免内存过大）
+            len = length(combination)
+            if (len > 50) len = 50
+            simplified_key = substr(combination, 1, len)
+            
+            if (!(simplified_key in seen_combinations)) {
+              seen_combinations[simplified_key] = 1
+              print channel_name "," url
+            }
+          }
+        }
+        ' MiGu.m3u | sort -u -t ',' -k1,1 > MiGu.txt
         
+        # 12. 统计信息
+        echo "======= 处理完成 ======="
+        echo "最终M3U文件频道数: $(grep -c '^#EXTINF' MiGu.m3u)"
+        echo "TXT文件行数: $(wc -l < MiGu.txt)"
+        echo "CCTV频道数: $(grep -c '^#EXTINF' CCTV_final.m3u)"
+        echo "其他频道数: $(grep -c '^#EXTINF' NonCCTV_final.m3u)"
+        
+        # 13. 清理临时文件
         echo "清理临时文件..."
-        rm -f Base1.m3u Base.m3u CCTV_temp.m3u CNTV_temp.m3u CCTV_temp2.m3u CNTV_temp2.m3u CCTV_cleaned.m3u CNTV_cleaned.m3u
-        
-        echo "更新README文件..."
+        rm -f Base1.m3u Base_deduped.m3u CCTV_base.m3u NonCCTV_base.m3u \
+              CCTV_normalized.m3u NonCCTV_normalized.m3u \
+              CCTV_filtered.m3u NonCCTV_filtered.m3u \
+              CCTV_final.m3u NonCCTV_final.m3u
         
     - name: Update README
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）\n\n### 最后更新时间: ${{ steps.date.outputs.date }}" > README.md
+        echo -e "# 🚀 IPTV 自动更新系统\n\n" > README.md
+        echo -e "## 📊 统计信息" >> README.md
+        echo -e "- **最后更新**: ${{ steps.date.outputs.date }}" >> README.md
+        echo -e "- **M3U频道数**: $(grep -c '^#EXTINF' MiGu.m3u || echo 'N/A')" >> README.md
+        echo -e "- **TXT频道数**: $(wc -l < MiGu.txt 2>/dev/null || echo 'N/A')" >> README.md
+        echo -e "\n## 📁 文件下载" >> README.md
+        echo -e "- [M3U播放列表](MiGu.m3u) - 标准IPTV格式" >> README.md
+        echo -e "- [TXT播放列表](MiGu.txt) - 简洁文本格式" >> README.md
+        echo -e "\n## 🔧 更新频率" >> README.md
+        echo -e "每2小时自动更新一次，保证源的时效性" >> README.md
+        echo -e "\n## 📝 说明" >> README.md
+        echo -e "1. 自动去重处理，去除重复频道和无效链接" >> README.md
+        echo -e "2. 黑名单过滤，移除违规内容" >> README.md
+        echo -e "3. 频道分类，CCTV和其他频道分开处理" >> README.md
         
-    - name: List Files
+    - name: Verify Files
       run: |
-        echo "当前目录文件列表:"
-        ls -la
-        echo -e "\nMiGu.m3u 前10行:"
-        head -10 MiGu.m3u
-        echo -e "\nMiGu.txt 前5行:"
-        head -5 MiGu.txt
+        echo "======= 文件验证 ======="
+        ls -la MiGu.*
+        echo ""
+        echo "M3U文件头:"
+        head -5 MiGu.m3u
+        echo ""
+        echo "TXT文件示例:"
+        head -3 MiGu.txt
+        echo ""
+        echo "M3U文件尾:"
+        tail -5 MiGu.m3u
         
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # 检查是否有文件需要提交
-        if git status --porcelain | grep -q "MiGu.m3u\|MiGu.txt\|README.md"; then
+        # 检查是否有实际变化
+        if [[ -n "$(git status --porcelain MiGu.m3u MiGu.txt README.md 2>/dev/null)" ]]; then
           echo "检测到文件变更，正在提交..."
           git add MiGu.m3u MiGu.txt README.md
-          git commit -m "自动更新于 ${{ steps.date.outputs.date }}"
+          git commit -m "🎯 自动更新 [${{ steps.date.outputs.date }}] | 频道数: $(grep -c '^#EXTINF' MiGu.m3u 2>/dev/null || echo 0)"
         else
           echo "没有检测到文件变更，跳过提交"
         fi
         
     - name: Push Update
       run: |
-        git push origin HEAD:${{ github.ref }}
+        # 设置push策略
+        git config push.default simple
+        # 强制推送到当前分支
+        git push origin HEAD:${{ github.ref }} --force-with-lease
