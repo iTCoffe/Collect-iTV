@@ -44,7 +44,7 @@ jobs:
         grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV.m3u > CNTV_cleaned.m3u
         
         # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.netlib.re/erw.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.ifanr.netlib.re/erw.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
         
         # 添加自定义提示 (温馨提示)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>MiGu.m3u
