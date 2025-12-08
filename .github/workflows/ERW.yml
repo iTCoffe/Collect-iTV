@@ -1,0 +1,69 @@
+name: ERW Update
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '0 2,8,14,20 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # 获取完整提交历史
+
+    - name: Update erw Files
+      id: update
+      run: |
+        # 使用临时文件避免部分下载
+        temp_file=$(mktemp)
+        
+        # 下载源文件
+        wget -nv -O "$temp_file" http://e.erw.cc/e.xml
+        
+        # 检查文件是否有效（非空且包含XML声明）
+        if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
+          # 替换 URL
+          sed -i 's|by spark |精準導航·盡享觀看|g' "$temp_file"
+          sed -i 's|http://e.erw.cc/e.xml|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
+          
+          # 只在内容变更时更新
+          if ! cmp -s "$temp_file" erw.xml; then
+            mv "$temp_file" erw.xml
+            echo "changed=true" >> $GITHUB_ENV
+          else
+            echo "内容未变化，跳过更新"
+            rm -f "$temp_file"
+          fi
+        else
+          echo "::error::下载的文件无效或为空"
+          rm -f "$temp_file"
+          exit 1
+        fi
+
+    - name: 提交更改
+      if: ${{ env.changed == 'true' }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add erw.xml
+        git commit -m "erw更新: $(date +'%Y-%m-%d %H:%M:%S')"
+
+    - name: Push changes
+      if: ${{ env.changed == 'true' }}
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: false
+
+
+
+
+
+
+
+
