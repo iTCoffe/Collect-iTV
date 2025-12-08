@@ -25,10 +25,9 @@ jobs:
       run: |
         # 下载基础源文件
         wget -q https://bc.188766.xyz/?url=https://live.ottiptv.cc -O Base1.m3u
-        wget -q https://iptv.laobaitv.net -O Base2.m3u
         
         # 合并并去重基础源
-        cat Base1.m3u Base2.m3u | awk '!seen[$0]++' > Base.m3u
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
         grep -A 1 '央视' Base.m3u | grep -v '^--$' > CCTV_temp.m3u
