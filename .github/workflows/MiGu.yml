@@ -30,18 +30,18 @@ jobs:
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
-        grep -A 1 '央视' Base.m3u | grep -v '^--$' > CCTV_temp.m3u
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' > CCTV.m3u
         
         # 处理非央视源
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' > CNTV_temp.m3u
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' > CNTV.m3u
         
         # 过滤掉包含"冰茶体育"和"🎀冰茶公告"的行
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CCTV_temp.m3u > CCTV.m3u
         grep -v -e '冰茶体育' -e '🎀冰茶公告' CNTV_temp.m3u > CNTV.m3u
         
         # 去除特定URL
-        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CCTV.m3u > CCTV_cleaned.m3u
-        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV.m3u > CNTV_cleaned.m3u
+        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CCTV.m3u > CCTV.m3u
+        grep -v -e 'https://188766.xyz/dong' -e 'https://188766.xyz/qiu' -e 'https://188766.xyz/yu' CNTV.m3u > CNTV.m3u
         
         # 生成最终M3U
         echo '#EXTM3U x-tvg-url="https://itv.sspai.netlib.re/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
@@ -73,7 +73,7 @@ jobs:
         }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
         
         # 清理临时文件
-        rm -f Base1.m3u Base.m3u CCTV_temp.m3u CNTV_temp.m3u CCTV.m3u CNTV.m3u CCTV_cleaned.m3u CNTV_cleaned.m3u
+        rm -f Base1.m3u Base.m3u CCTV.m3u CNTV.m3u
         
         # 更新README
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
