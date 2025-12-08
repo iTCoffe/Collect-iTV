@@ -9,6 +9,8 @@ on:
 
 env:
   TZ: Asia/Shanghai
+  REPLACE_FROM: "migu.188766.xyz"
+  REPLACE_TO: "migu.shrimp.hidns.co"
 
 jobs:
   Update:
@@ -35,6 +37,10 @@ jobs:
           echo "错误：源文件下载失败"
           exit 1
         fi
+        
+        # 域名替换处理
+        echo "正在替换域名: $REPLACE_FROM -> $REPLACE_TO"
+        sed -i "s|$REPLACE_FROM|$REPLACE_TO|g" source.m3u
         
         # 去重基础源
         awk '!seen[$0]++' source.m3u > Base.m3u
@@ -63,7 +69,12 @@ jobs:
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
         
         # 合并源文件并去重
-        cat CCTV.m3u CNTV.m3u | awk '!seen[$0]++' >> MiGu.m3u
+        cat CCTV.m3u CNTV.m3u | sed "s|$REPLACE_FROM|$REPLACE_TO|g" | awk '!seen[$0]++' >> MiGu.m3u
+        
+        echo "完成域名替换"
+        
+        # 再次确保最终文件中的域名已被替换
+        sed -i "s|$REPLACE_FROM|$REPLACE_TO|g" MiGu.m3u
         
         # 生成TXT格式
         echo "生成TXT格式..."
@@ -78,6 +89,11 @@ jobs:
         
         echo "最终M3U文件大小: $(wc -l < MiGu.m3u) 行"
         echo "最终TXT文件大小: $(wc -l < MiGu.txt) 行"
+        
+        # 检查域名替换是否成功
+        echo "检查域名替换结果:"
+        echo "包含 $REPLACE_FROM 的行数: $(grep -c "$REPLACE_FROM" MiGu.m3u)"
+        echo "包含 $REPLACE_TO 的行数: $(grep -c "$REPLACE_TO" MiGu.m3u)"
         
         # 清理临时文件
         rm -f source.m3u Base.m3u CCTV.m3u CNTV.m3u
