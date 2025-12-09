@@ -23,7 +23,7 @@ jobs:
         temp_file=$(mktemp)
         
         # 下载源文件
-        wget -nv -O "$temp_file" https://raw.githubusercontent.com/kuke31/xmlgz/main/e.xml.gz
+        wget -nv -O "$temp_file" http://e.erw.cc/e.xml
         
         # 检查文件是否有效（非空且包含XML声明）
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
