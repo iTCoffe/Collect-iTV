@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '0 2,11,16 * * *'
+    - cron: '0 1,11,16 * * *'
 
 env:
   TZ: Asia/Shanghai
