@@ -28,8 +28,8 @@ jobs:
         # 检查文件是否有效（非空且包含XML声明）
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           # 替换 URL
-          sed -i 's|by spark |精準導航·盡享觀看|g' "$temp_file"
-          sed -i 's|http://e.erw.cc/e.xml|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
+          sed -i 's|https://vip.erw.cc|精準導航·盡享觀看|g' "$temp_file"
+          sed -i 's|kuke21@vip.qq.com|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
           
           # 只在内容变更时更新
           if ! cmp -s "$temp_file" erw.xml; then
