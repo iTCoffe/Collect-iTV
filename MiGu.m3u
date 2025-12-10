@@ -45,8 +45,6 @@ https://migu.188766.xyz/?migutoken=d02c2292ece4ef3f141a20c7900f1346&id=CCTV4%E6%
 https://migu.188766.xyz/?migutoken=1d46cbf78b7fc937364a2b0d00d444eb&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
 https://live.iill.top/bilibili/8178490
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/nuanxinnengl&douyin&logo" group-title="其他影视",抖音|央视网财经
-https://live.iill.top/douyin/uid/nuanxinnengl
 #EXTM3U x-tvg-url="https://static.188766.xyz/all.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 
 #EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="卫视频道",湖南卫视
@@ -601,6 +599,8 @@ https://live.iill.top/bilibili/23776217
 https://live.iill.top/bilibili/22102223
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/B站.png" group-title="其他影视",B站|看纳豆的魔鬼天使
 https://live.iill.top/bilibili/uid:65989750
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/cctv6media.&douyin&logo" group-title="其他影视",抖音|CCTV6
+https://live.iill.top/douyin/uid/cctv6media.
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/4246519&douyu&logo" group-title="斗鱼影视",邵氏电影·1
 https://live.iill.top/douyu/4246519
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/4105989&douyu&logo" group-title="斗鱼影视",变形金刚
@@ -727,6 +727,8 @@ https://live.iill.top/douyu/5908256
 https://live.iill.top/douyu/9388938
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="斗鱼影视",弟邊爐
 https://live.iill.top/douyu/8912325
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1226741&douyu&logo" group-title="斗鱼影视",粤语电影丶
+https://live.iill.top/douyu/1226741
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/504368&yy&logo" group-title="其他影视",yy|小甜甜-悬疑电视剧
 https://live.iill.top/yy/504368
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/17091681&huya&logo" group-title="虎牙影视",音乐石榴[音乐]
@@ -738,14 +740,11 @@ https://live.iill.top/huya/21241813
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865080&huya&logo" group-title="虎牙影视",香港喜剧大全
 https://live.iill.top/huya/23865080
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342412&huya&logo" group-title="虎牙影视",周星星
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26058097&huya&logo" group-title="虎牙影视",都爱看
-https://live.iill.top/huya/26058097
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342403&huya&logo" group-title="虎牙影视",不发威当我Kitty
 https://live.iill.top/huya/11342403
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355850&huya&logo" group-title="虎牙影视",嶺外奇服兮
 https://live.iill.top/huya/26355850
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342386&huya&logo" group-title="虎牙影视",偷心大盗ヽ龍宝
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342421&huya&logo" group-title="虎牙影视",7喜先生
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355802&huya&logo" group-title="虎牙影视",之而成冠毛
 https://live.iill.top/huya/26355802
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26298751&huya&logo" group-title="虎牙影视",婧丶
@@ -796,8 +795,6 @@ https://live.iill.top/huya/11601958
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352877&huya&logo" group-title="虎牙影视",王宝强
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352970&huya&logo" group-title="虎牙影视",野原的一家
 https://live.iill.top/huya/11352970
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059567&huya&logo" group-title="虎牙影视",唯爱
-https://live.iill.top/huya/21059567
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342425&huya&logo" group-title="虎牙影视",神探
 https://live.iill.top/huya/11342425
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355781&huya&logo" group-title="虎牙影视",探索
@@ -820,16 +817,12 @@ https://live.iill.top/huya/11352962
 https://live.iill.top/huya/11279247
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602041&huya&logo" group-title="虎牙影视",电影_推荐
 https://live.iill.top/huya/11602041
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602081&huya&logo" group-title="虎牙影视",三国演义
-https://live.iill.top/huya/11602081
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080255&huya&logo" group-title="虎牙影视",乡村爱情
 https://live.iill.top/huya/30080255
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602071&huya&logo" group-title="虎牙影视",父母爱情
 https://live.iill.top/huya/11602071
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",痞子帅叔叔
 https://live.iill.top/huya/11342433
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",扁豆看电影
-https://live.iill.top/huya/16028551
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",止戈电影
 https://live.iill.top/huya/19863777
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",熊出没
@@ -852,8 +845,6 @@ https://live.iill.top/huya/11352872
 https://live.iill.top/huya/22592516
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11336726&huya&logo" group-title="虎牙影视",爱情公寓|武林萌主唐小姐
 https://live.iill.top/huya/11336726
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23740156&huya&logo" group-title="虎牙影视",埋堆堆官方
-https://live.iill.top/huya/23740156
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865142&huya&logo" group-title="虎牙影视",港剧慢品汇
 https://live.iill.top/huya/23865142
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342393&huya&logo" group-title="虎牙影视",漫长的季节
@@ -883,6 +874,8 @@ https://live.iill.top/huya/11601966
 https://live.iill.top/huya/11602069
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342394&huya&logo" group-title="虎牙影视",樱桃小丸子
 https://live.iill.top/huya/11342394
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30219264&huya&logo" group-title="虎牙影视",燕双鹰
+https://live.iill.top/huya/30219264
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355767&huya&logo" group-title="虎牙影视",乌龙闯情关
 https://live.iill.top/huya/26355767
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342430&huya&logo" group-title="虎牙影视",领带哥
@@ -916,6 +909,8 @@ https://live.iill.top/huya/11342439
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23650804&huya&logo" group-title="虎牙影视",马大帅
 https://live.iill.top/huya/23650804
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059588&huya&logo" group-title="虎牙影视",虎牙21059588
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30523326&huya&logo" group-title="虎牙影视",家有儿女
+https://live.iill.top/huya/30523326
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080148&huya&logo" group-title="虎牙影视",国语版柯南，点到哪集看哪集
 https://live.iill.top/huya/30080148
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",跑男1到4
