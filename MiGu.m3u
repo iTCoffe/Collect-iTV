@@ -43,8 +43,6 @@ https://migu.188766.xyz/?migutoken=2a2beeb8513ece879845089ba29d642c&id=CCTV17&ty
 https://migu.188766.xyz/?migutoken=1a63b830b6ced25ed8ad0448b4118219&id=CCTV4%E6%AC%A7%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV4美洲.png" group-title="央视频道",CCTV-4 中文国际 美洲
 https://migu.188766.xyz/?migutoken=ee8ffd4c8bff8f93d70c456670a738f6&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
-https://live.iill.top/bilibili/8178490
 #EXTM3U x-tvg-url="https://static.188766.xyz/all.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 
 #EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="卫视频道",湖南卫视
@@ -607,6 +605,8 @@ https://live.iill.top/douyu/7552568
 https://live.iill.top/douyu/9286868
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/131977&douyu&logo" group-title="斗鱼影视",Runningman
 https://live.iill.top/douyu/131977
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/3439096&douyu&logo" group-title="斗鱼影视",当燕双鹰遇见李元芳
+https://live.iill.top/douyu/3439096
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/2287949&douyu&logo" group-title="斗鱼影视",成龙历险记
 https://live.iill.top/douyu/2287949
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/610972&douyu&logo" group-title="斗鱼影视",都市夜魔人
@@ -661,6 +661,8 @@ https://live.iill.top/douyu/7655471
 https://live.iill.top/douyu/9375430
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/9942574&douyu&logo" group-title="斗鱼影视",爆笑虫子
 https://live.iill.top/douyu/9942574
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/6027991&douyu&logo" group-title="斗鱼影视",狄仁杰 1-4 部
+https://live.iill.top/douyu/6027991
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11756388&douyu&logo" group-title="斗鱼影视",经典
 https://live.iill.top/douyu/11756388
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/9273031&douyu&logo" group-title="斗鱼影视",相声
@@ -864,8 +866,8 @@ https://live.iill.top/huya/23865142
 https://live.iill.top/huya/11342393
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865058&huya&logo" group-title="虎牙影视",笑看风云
 https://live.iill.top/huya/23865058
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602072&huya&logo" group-title="虎牙影视",民兵葛二蛋
-https://live.iill.top/huya/11602072
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/28962587&huya&logo" group-title="虎牙影视",光头阿强
+https://live.iill.top/huya/28962587
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/15152155&huya&logo" group-title="虎牙影视",科幻梦工场
 https://live.iill.top/huya/15152155
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/13303478&huya&logo" group-title="虎牙影视",阿斗归来了
