@@ -45,8 +45,6 @@ https://migu.188766.xyz/?migutoken=1a63b830b6ced25ed8ad0448b4118219&id=CCTV4%E6%
 https://migu.188766.xyz/?migutoken=ee8ffd4c8bff8f93d70c456670a738f6&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
 https://live.iill.top/bilibili/8178490
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/nuanxinnengl&douyin&logo" group-title="其他影视",抖音|央视网财经
-https://live.iill.top/douyin/uid/nuanxinnengl
 #EXTM3U x-tvg-url="https://static.188766.xyz/all.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 
 #EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="卫视频道",湖南卫视
@@ -587,18 +585,16 @@ https://live.iill.top/bilibili/26752884
 https://live.iill.top/bilibili/27554961
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22056077&bilibili&logo" group-title="其他影视",B站|爱情公寓|福禄影视馆
 https://live.iill.top/bilibili/22056077
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1804461371&bilibili&logo" group-title="其他影视",B站|名侦探柯南|童年影视动漫
-https://live.iill.top/bilibili/1804461371
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30041682&bilibili&logo" group-title="其他影视",B站|臣臣
 https://live.iill.top/bilibili/30041682
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23776217&bilibili&logo" group-title="其他影视",B站|经典港剧大全
 https://live.iill.top/bilibili/23776217
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1&bilibili&logo" group-title="其他影视",B站|1
+https://live.iill.top/bilibili/1
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22102223&bilibili&logo" group-title="其他影视",B站|新华社
 https://live.iill.top/bilibili/22102223
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/B站.png" group-title="其他影视",B站|看纳豆的魔鬼天使
 https://live.iill.top/bilibili/uid:65989750
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/cctv6media.&douyin&logo" group-title="其他影视",抖音|CCTV6
-https://live.iill.top/douyin/uid/cctv6media.
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/4246519&douyu&logo" group-title="斗鱼影视",邵氏电影·1
 https://live.iill.top/douyu/4246519
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/4105989&douyu&logo" group-title="斗鱼影视",变形金刚
@@ -647,6 +643,8 @@ https://live.iill.top/douyu/122402
 https://live.iill.top/douyu/8009547
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11878141&douyu&logo" group-title="斗鱼影视",蕃薯粥粥煮好了
 https://live.iill.top/douyu/11878141
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/426517&douyu&logo" group-title="斗鱼影视",动漫轮播
+https://live.iill.top/douyu/426517
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11827530&douyu&logo" group-title="斗鱼影视",家有儿女|一样二职
 https://live.iill.top/douyu/11827530
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/260322&douyu&logo" group-title="斗鱼影视",懒猫
