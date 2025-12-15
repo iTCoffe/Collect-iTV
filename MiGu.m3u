@@ -45,7 +45,7 @@ https://migu.188766.xyz/?migutoken=6a06314d6b4691441d34e72cad087bc5&id=CCTV4%E6%
 https://migu.188766.xyz/?migutoken=cdfe59ebfd981390838047a2623b2d2e&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
 https://live.iill.top/bilibili/8178490
-#EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://static.188766.xyz/all.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 
 #EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="卫视频道",湖南卫视
 https://migu.188766.xyz/?migutoken=3cc4b832d19ed12dfe8a940e5a9f407e&id=hnws&type=sz
@@ -591,6 +591,8 @@ https://live.iill.top/bilibili/30041682
 https://live.iill.top/bilibili/23776217
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1788399700&bilibili&logo" group-title="其他影视",B站|金田一
 https://live.iill.top/bilibili/1788399700
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/32009238&bilibili&logo" group-title="其他影视",B站|飞橘
+https://live.iill.top/bilibili/32009238
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22102223&bilibili&logo" group-title="其他影视",B站|新华社
 https://live.iill.top/bilibili/22102223
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/B站.png" group-title="其他影视",B站|看纳豆的魔鬼天使
@@ -663,8 +665,6 @@ https://live.iill.top/douyu/9375430
 https://live.iill.top/douyu/9942574
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/6027991&douyu&logo" group-title="斗鱼影视",狄仁杰 1-4 部
 https://live.iill.top/douyu/6027991
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11756388&douyu&logo" group-title="斗鱼影视",经典
-https://live.iill.top/douyu/11756388
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/9273031&douyu&logo" group-title="斗鱼影视",相声
 https://live.iill.top/douyu/9273031
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/9487003&douyu&logo" group-title="斗鱼影视",宋江
@@ -746,8 +746,6 @@ https://live.iill.top/huya/11342403
 https://live.iill.top/huya/26355850
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342386&huya&logo" group-title="虎牙影视",偷心大盗ヽ龍宝
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342421&huya&logo" group-title="虎牙影视",7喜先生
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23796393&huya&logo" group-title="虎牙影视",赢城-江爽
-https://live.iill.top/huya/23796393
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355802&huya&logo" group-title="虎牙影视",之而成冠毛
 https://live.iill.top/huya/26355802
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26298751&huya&logo" group-title="虎牙影视",婧丶
@@ -923,8 +921,6 @@ https://live.iill.top/huya/29982670
 https://live.iill.top/huya/11342402
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342439&huya&logo" group-title="虎牙影视",我是詹密
 https://live.iill.top/huya/11342439
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30590779&huya&logo" group-title="虎牙影视",新橙记
-https://live.iill.top/huya/30590779
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29076690&huya&logo" group-title="虎牙影视",李连杰
 https://live.iill.top/huya/29076690
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23650804&huya&logo" group-title="虎牙影视",马大帅
