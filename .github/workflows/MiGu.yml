@@ -28,7 +28,7 @@ jobs:
         echo "开始下载和处理源文件..."
         
         # 下载源文件
-        if wget -q https://bc.188766.xyz/?url=https://live.iill.top -O source.m3u; then
+        if wget -q https://raw.githubusercontent.com/badboy518714/migu_video/main/migu.txt -O source.m3u; then
           echo "源文件下载成功"
           echo "原始源文件大小: $(wc -l < source.m3u) 行"
         else
