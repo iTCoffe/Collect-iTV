@@ -36,7 +36,7 @@ jobs:
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
         # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.dpdns.org/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
