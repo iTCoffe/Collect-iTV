@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://5iClub.Github.io/migu_video/migu.txt -O Base1.m3u
+        wget -q https://raw.githubusercontent.com/badboy518714/migu_video/main/migu.txt -O Base1.m3u
         
         # 合并并去重基础源
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
