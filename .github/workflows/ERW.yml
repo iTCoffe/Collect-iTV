@@ -28,7 +28,7 @@ jobs:
         # 检查文件是否有效（非空且包含XML声明）
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           # 替换 URL
-          sed -i 's|Tak|精準導航·盡享觀看|g' "$temp_file"
+          sed -i 's|Tak|精準導航·咪咕盡享|g' "$temp_file"
           sed -i 's|https://github.com/develop202/migu_video/|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
           
           # 只在内容变更时更新
