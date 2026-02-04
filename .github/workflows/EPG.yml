@@ -19,67 +19,30 @@ jobs:
     - name: Update EPG Files
       id: update
       run: |
-        # 定义下载源列表
-        declare -A epg_sources=(
-          ["source1"]="http://epg.51zmt.top:8000/e1.xml"
-          ["source2"]="https://epg.zsdc.eu.org/t.xml"
-        )
+        # 使用临时文件避免部分下载
+        temp_file=$(mktemp)
         
-        # 设置成功标志
-        download_success=false
+        # 下载源文件
+        wget -nv -O "$temp_file" http://epg.51zmt.top:8000/e1.xml
         
-        # 尝试从各个源下载，直到成功一个
-        for source_name in "${!epg_sources[@]}"; do
-          source_url="${epg_sources[$source_name]}"
-          echo "尝试从 $source_name ($source_url) 下载..."
+        # 检查文件是否有效（非空且包含XML声明）
+        if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
+          # 替换 URL
+          sed -i 's|https://epg.51zmt.top:8000|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
+          sed -i 's|老张的EPG|精準導航·盡享觀看|g' "$temp_file"
           
-          temp_file=$(mktemp)
-          
-          # 下载源文件，增加超时和重试设置
-          if wget -nv -T 30 --tries=2 -O "$temp_file" "$source_url"; then
-            # 检查文件是否有效（非空且包含XML声明）
-            if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
-              echo "✓ 成功从 $source_name 下载有效文件"
-              download_success=true
-              
-              # 替换旧版 URL (兼容性处理)
-              sed -i 's|https://epg.51zmt.top:8000|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
-              sed -i 's|http://epg.51zmt.top:8000|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
-              
-              # 替换描述文本
-              sed -i 's|老张的EPG|精準導航·盡享觀看|g' "$temp_file"
-              
-              # 针对第二个源可能需要的额外替换
-              if [ "$source_name" == "source2" ]; then
-                echo "应用 source2 特定的替换规则..."
-                sed -i 's|zsdc.eu.org|i叚娤.倖鍢.net.cn|g' "$temp_file"
-              fi
-              
-              break
-            else
-              echo "✗ 从 $source_name 下载的文件无效或为空"
-              rm -f "$temp_file"
-            fi
+          # 只在内容变更时更新
+          if ! cmp -s "$temp_file" epg.xml; then
+            mv "$temp_file" epg.xml
+            echo "changed=true" >> $GITHUB_ENV
           else
-            echo "✗ 无法从 $source_name 下载"
+            echo "内容未变化，跳过更新"
             rm -f "$temp_file"
           fi
-        done
-        
-        # 检查是否成功下载了有效文件
-        if [ "$download_success" != true ]; then
-          echo "::error::所有下载源均失败，无法更新 EPG 文件"
-          exit 1
-        fi
-        
-        # 只在内容变更时更新
-        if ! cmp -s "$temp_file" epg.xml; then
-          mv "$temp_file" epg.xml
-          echo "changed=true" >> $GITHUB_ENV
-          echo "文件已更新"
         else
-          echo "内容未变化，跳过更新"
+          echo "::error::下载的文件无效或为空"
           rm -f "$temp_file"
+          exit 1
         fi
 
     - name: 提交更改
@@ -89,7 +52,6 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add epg.xml
         git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
-        echo "提交成功"
 
     - name: Push changes
       if: ${{ env.changed == 'true' }}
@@ -97,3 +59,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: false
+
+
+
