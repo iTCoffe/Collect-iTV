@@ -2133,6 +2133,10 @@ http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000011000031113/1.m3u8
 http://iptv.cdn.ha.chinamobile.com/PLTV/88888888/224/3221226608/index.m3u8
 #EXTINF:-1 tvg-name="动漫秀场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/动漫秀场.png" group-title="🍁数字频道",动漫秀场
 http://tv.scjyhd.com:4022/udp/239.10.0.101:5140
+#EXTINF:-1 tvg-name="动漫秀场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/动漫秀场.png" group-title="🍁数字频道",动漫秀场
+http://139.196.214.238/rtp/239.45.3.134:5140
+#EXTINF:-1 tvg-name="动漫秀场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/动漫秀场.png" group-title="🍁数字频道",动漫秀场
+http://139.196.151.191:2051/rtp/239.45.3.134:5140
 #EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/劲爆体育.png" group-title="🍁数字频道",劲爆体育
 http://www.wmviv.com/iptv/bc2t.php?id=jbty
 #EXTINF:-1 tvg-name="劲爆体育" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/劲爆体育.png" group-title="🍁数字频道",劲爆体育
@@ -4289,6 +4293,10 @@ https://tv.gxtv.cn/channel/channelivePlay_9dfd8600075811e9ba67e41f13b60c62.html
 https://t.freetv.fun/live/yan-xi-xin-wen.m3u8
 #EXTINF:-1 tvg-name="广西新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广西新闻.png" group-title="🚎广西频道",广西新闻
 https://mobilelive.gxtv.cn/live/gx_live1007/playlist.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚎广西频道",新闻综合
+https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚎广西频道",新闻综合
+http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="来宾综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/来宾综合.png" group-title="🚎广西频道",来宾综合
 http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8
 #EXTINF:-1 tvg-name="安顺新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/安顺新闻.png" group-title="🚐贵州频道",安顺新闻
@@ -4963,10 +4971,6 @@ https://live.zzyxxw.com:2443/live/xwzh.m3u8
 http://live.zzyxxw.com:85/live/xwzh.m3u8
 #EXTINF:-1 tvg-name="云霄综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/云霄综合.png" group-title="🚝福建频道",云霄综合
 http://live.zzyxxw.com:85/live/xwzh.m3u8?fujian,
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚝福建频道",新闻综合
-https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚝福建频道",新闻综合
-http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="漳浦综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漳浦综合.png" group-title="🚝福建频道",漳浦综合
 http://220.161.87.62:8090/hls/0/index.m3u8
 #EXTINF:-1 tvg-name="漳浦综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漳浦综合.png" group-title="🚝福建频道",漳浦综合
