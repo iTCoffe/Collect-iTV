@@ -4669,6 +4669,10 @@ https://jwcdnqx.hebyun.com.cn/live/xlzh/1500k/tzwj_video.m3u8
 https://jwcdnqx.hebyun.com.cn/zb/xlzh/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="平泉综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/平泉综合.png" group-title="🚒河北频道",平泉综合
 https://jwcdnqx.hebyun.com.cn/live/pqzh/1500k/tzwj_video.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚒河北频道",新闻综合
+https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚒河北频道",新闻综合
+http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="昌黎综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/昌黎综合.png" group-title="🚒河北频道",昌黎综合
 https://jwcdnqx.hebyun.com.cn/live/clzhpd/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="昌黎综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/昌黎综合.png" group-title="🚒河北频道",昌黎综合
@@ -5079,10 +5083,6 @@ http://58.46.28.146:9999/tsfile/live/1088_1.m3u8
 http://58.46.29.253:9999/tsfile/live/1088_1.m3u8
 #EXTINF:-1 tvg-name="娄底综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/娄底综合.png" group-title="🚙湖南频道",娄底综合
 http://iptv.666230.xyz/iptv/hnyx.php/ldxw
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚙湖南频道",新闻综合
-https://m3u8channel.yunxya.com/nmip-media/channellive/channel100028/playlist.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚙湖南频道",新闻综合
-http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="湖南公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南公共.png" group-title="🚙湖南频道",湖南公共
 http://119.39.9.8:9901/tsfile/live/1009_1.m3u8
 #EXTINF:-1 tvg-name="湖南国际" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南国际.png" group-title="🚙湖南频道",湖南国际
@@ -5882,9 +5882,9 @@ https://qiniup-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江少儿.png" group-title="🚸少儿频道",浙江少儿
 http://ali-vl.cztv.com/channels/lantian/channel008/360p.m3u8?a=1000&amp;d=83b26bacf5397c013aff782b2c4287d0&amp;k=c99bdac76cff6ddc27e750ba689b7d5b&amp;t=1704368408
 #EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江少儿.png" group-title="🚸少儿频道",浙江少儿
-https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?#https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8#http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
-#EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江少儿.png" group-title="🚸少儿频道",浙江少儿
 http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?fbl=#migu5://611318244
+#EXTINF:-1 tvg-name="浙江少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江少儿.png" group-title="🚸少儿频道",浙江少儿
+https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8?#https://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8#http://ali-m-l.cztv.com/channels/lantian/channel008/1080p.m3u8
 #EXTINF:-1 tvg-name="海南少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南少儿.png" group-title="🚸少儿频道",海南少儿
 http://nn.7x9d.cn/地方台8563/海南.php?id=sepd
 #EXTINF:-1 tvg-name="福州少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/福州少儿.png" group-title="🚸少儿频道",福州少儿
