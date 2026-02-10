@@ -24,16 +24,16 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://raw.githubusercontent.com/5iClub/migu_video/main/migu.txt -O Base1.m3u
+        wget -q https://bc.188766.xyz/?url=https://live.188766.xyz -O Base1.m3u
         
         # 合并并去重基础源
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
-        # 处理央视源
-        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+        # 处理央视源（仅新增过滤冰茶体育、冰茶公告的逻辑）
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | grep -v -E '冰茶体育|冰茶公告' | awk '!seen[$0]++' > CCTV.m3u
         
-        # 处理非央视源
-        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+        # 处理非央视源（仅新增过滤冰茶体育、冰茶公告的逻辑）
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | grep -v -E '冰茶体育|冰茶公告' | awk '!seen[$0]++' > CNTV.m3u
         
         # 生成最终M3U
         echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/erw.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
@@ -53,7 +53,7 @@ jobs:
         # 合并源文件
         cat CCTV.m3u CNTV.m3u >>MiGu.m3u
         
-        # 生成TXT播放列表
+        # 生成TXT播放列表（仅新增过滤冰茶体育、冰茶公告的兜底逻辑）
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -61,7 +61,10 @@ jobs:
             gsub(/\r/, "", name);
             gsub(/\r/, "", url);
             sub(/^ /, "", name);
-            print name "," url;
+            # 新增：过滤冰茶体育、冰茶公告
+            if (name !~ /冰茶体育|冰茶公告/) {
+                print name "," url;
+            }
         }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
         
         # 清理临时文件
