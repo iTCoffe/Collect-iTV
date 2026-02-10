@@ -29,7 +29,7 @@ jobs:
         export LC_ALL=C.UTF-8
         
         # 下载基础源文件并清理换行符
-        wget -q https://bc.188766.xyz/?url=https://live.iill.top -O Base1.m3u
+        wget -q https://bc.188766.xyz/?url=live.ottiptv.cc -O Base1.m3u
         # 转换换行符为UNIX格式，过滤EXTM3U行，去重（使用独立的临时数组）
         cat Base1.m3u | tr -d '\r' | grep -v '^#EXTM3U' | awk -v seen=0 '!a[$0]++' > Base.m3u
         
