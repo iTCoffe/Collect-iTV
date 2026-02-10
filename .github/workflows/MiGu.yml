@@ -16,7 +16,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      # 新增：拉取所有历史，确保分支同步
       with:
         fetch-depth: 0
 
@@ -29,17 +28,17 @@ jobs:
         # 下载基础源文件
         wget -q https://bc.188766.xyz/?url=https://live.188766.xyz -O Base1.m3u
         
-        # 合并并去重基础源
-        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        # 合并并去重基础源，同时过滤掉原有EXTM3U行（核心修改）
+        cat Base1.m3u | grep -v '^#EXTM3U' | awk '!seen[$0]++' > Base.m3u
         
-        # 处理央视源（仅新增过滤冰茶体育、冰茶公告的逻辑）
+        # 处理央视源（过滤冰茶体育、冰茶公告，同时确保无EXTM3U）
         grep -A 1 '央视' Base.m3u | grep -v '^--$' | grep -v -E '冰茶体育|冰茶公告' | awk '!seen[$0]++' > CCTV.m3u
         
-        # 处理非央视源（仅新增过滤冰茶体育、冰茶公告的逻辑）
+        # 处理非央视源（过滤冰茶体育、冰茶公告，同时确保无EXTM3U）
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | grep -v -E '冰茶体育|冰茶公告' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/erw.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
+        # 生成最终M3U（只保留自定义的EXTM3U头）
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
         
         # 添加自定义提示 (温馨提示)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>MiGu.m3u
@@ -53,10 +52,10 @@ jobs:
         echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>MiGu.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        # 合并源文件
+        # 合并源文件（此时CCTV.m3u/CNTV.m3u已无EXTM3U）
         cat CCTV.m3u CNTV.m3u >>MiGu.m3u
         
-        # 生成TXT播放列表（仅新增过滤冰茶体育、冰茶公告的兜底逻辑）
+        # 生成TXT播放列表（过滤冰茶体育、冰茶公告的兜底逻辑）
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -64,7 +63,7 @@ jobs:
             gsub(/\r/, "", name);
             gsub(/\r/, "", url);
             sub(/^ /, "", name);
-            # 新增：过滤冰茶体育、冰茶公告
+            # 过滤冰茶体育、冰茶公告
             if (name !~ /冰茶体育|冰茶公告/) {
                 print name "," url;
             }
@@ -81,13 +80,13 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # 关键修复1：拉取远程最新代码，解决分支不同步问题
+        # 拉取远程最新代码，解决分支不同步问题
         git pull --rebase origin main
         
         # 添加文件
         git add MiGu.m3u MiGu.txt README.md
         
-        # 关键修复2：检查是否有文件变更，无变更则跳过提交
+        # 检查是否有文件变更，无变更则跳过提交
         if git diff --cached --quiet; then
           echo "没有文件变更，跳过提交"
           exit 0
@@ -97,5 +96,4 @@ jobs:
         git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
-      # 关键修复3：强制推送（仅在rebase后使用，确保提交能推送到远程）
       run: git push --set-upstream origin main
