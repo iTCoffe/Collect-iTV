@@ -16,6 +16,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      # 新增：拉取所有历史，确保分支同步
+      with:
+        fetch-depth: 0
 
     - name: GetTime
       id: date
@@ -77,12 +80,22 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-
+        
+        # 关键修复1：拉取远程最新代码，解决分支不同步问题
+        git pull --rebase origin main
+        
         # 添加文件
         git add MiGu.m3u MiGu.txt README.md
-
+        
+        # 关键修复2：检查是否有文件变更，无变更则跳过提交
+        if git diff --cached --quiet; then
+          echo "没有文件变更，跳过提交"
+          exit 0
+        fi
+        
         # 提交更改
         git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
-      run: git push
+      # 关键修复3：强制推送（仅在rebase后使用，确保提交能推送到远程）
+      run: git push --set-upstream origin main
