@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/erw.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
 https://cloudflare.tv/hls/live.m3u8
 #EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
@@ -44,54 +44,11 @@ https://migu.188766.xyz/?migutoken=e17a22b48afde8b65a91235347f6e165&id=CCTV4%E6%
 #EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV4美洲.png" group-title="央视频道",CCTV-4 中文国际 美洲
 https://migu.188766.xyz/?migutoken=f72d55636d57e2a4804fe595d82146da&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
-https://live.188766.xyz/bilibili/8178490
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/nuanxinnengl&douyin&logo" group-title="其他影视",抖音|央视网财经
-https://live.188766.xyz/douyin/nuanxinnengl
-#EXTM3U x-tvg-url="https://static.188766.xyz/all.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
-#EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV1.png" group-title="央视频道",CCTV-1 综合
-https://migu.188766.xyz/?migutoken=90927612f35aee238c464bde6e089170&id=CCTV1&type=yy
-#EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV2.png" group-title="央视频道",CCTV-2 财经
-https://migu.188766.xyz/?migutoken=740b58c37fb400d0e68f48273519bdcc&id=CCTV2&type=yy
-#EXTINF:-1 tvg-id="CCTV3" tvg-name="CCTV3" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV3.png" group-title="央视频道",CCTV-3 综艺
-https://migu.188766.xyz/?migutoken=10573b42bc170d0555be1ac70284ce3d&id=CCTV3&type=yy
-#EXTINF:-1 tvg-id="CCTV4" tvg-name="CCTV4" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV4.png" group-title="央视频道",CCTV-4 中文国际
-https://migu.188766.xyz/?migutoken=f9f3add9589773ecbc8ebc616f676ff6&id=CCTV4&type=yy
-#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV5.png" group-title="央视频道",CCTV-5 体育
-https://migu.188766.xyz/?migutoken=cdff10d6beb5a92bd1b9eddefe9c4703&id=CCTV5&type=yy
-#EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV5+.png" group-title="央视频道",CCTV-5+ 体育赛事
-https://migu.188766.xyz/?migutoken=2e5e4b649496d6e0d5b3aa2282d181a2&id=CCTV5p&type=yy
-#EXTINF:-1 tvg-id="CCTV6" tvg-name="CCTV6" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV6.png" group-title="央视频道",CCTV-6 电影
-https://migu.188766.xyz/?migutoken=ded719a18b393556bc4ab4ae96166b98&id=CCTV6&type=yy
-#EXTINF:-1 tvg-id="CCTV7" tvg-name="CCTV7" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV7.png" group-title="央视频道",CCTV-7 国防军事
-https://migu.188766.xyz/?migutoken=edc435830ce47aeb75a96e149c259bff&id=CCTV7&type=yy
-#EXTINF:-1 tvg-id="CCTV8" tvg-name="CCTV8" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV8.png" group-title="央视频道",CCTV-8 电视剧
-https://migu.188766.xyz/?migutoken=824f71b50f269deb62cf1f5b38a6b206&id=CCTV8&type=yy
-#EXTINF:-1 tvg-id="CCTV9" tvg-name="CCTV9" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV9.png" group-title="央视频道",CCTV-9 纪录
-https://migu.188766.xyz/?migutoken=829a887c0e5602be9149303f14d6b716&id=CCTV9&type=yy
-#EXTINF:-1 tvg-id="CCTV10" tvg-name="CCTV10" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV10.png" group-title="央视频道",CCTV-10 科教
-https://migu.188766.xyz/?migutoken=4d2775a13c7049cfcac105e87fb4f9ef&id=CCTV10&type=yy
-#EXTINF:-1 tvg-id="CCTV11" tvg-name="CCTV11" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV11.png" group-title="央视频道",CCTV-11 戏曲
-https://migu.188766.xyz/?migutoken=4fa382b74f29fd96030a25a79d7e4870&id=CCTV11&type=yy
-#EXTINF:-1 tvg-id="CCTV12" tvg-name="CCTV12" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV12.png" group-title="央视频道",CCTV-12 社会与法
-https://migu.188766.xyz/?migutoken=630a4883dbc6f3dc288489b9f6f8d719&id=CCTV12&type=yy
-#EXTINF:-1 tvg-id="CCTV13" tvg-name="CCTV13" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV13.png" group-title="央视频道",CCTV-13 新闻
-https://migu.188766.xyz/?migutoken=7443cb26c08f5a05664f4918eb266dd5&id=CCTV13&type=yy
-#EXTINF:-1 tvg-id="CCTV14" tvg-name="CCTV14" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV14.png" group-title="央视频道",CCTV-14 少儿
-https://migu.188766.xyz/?migutoken=3b1c7d1ea741ae29dc73568fcb8d77ae&id=CCTV14&type=yy
-#EXTINF:-1 tvg-id="CCTV15" tvg-name="CCTV15" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV15.png" group-title="央视频道",CCTV-15 音乐
-https://migu.188766.xyz/?migutoken=510eacfc9a9b627a1fa4dda20007be05&id=CCTV15&type=yy
-#EXTINF:-1 tvg-id="CCTV17" tvg-name="CCTV17" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV17.png" group-title="央视频道",CCTV-17 农业农村
-https://migu.188766.xyz/?migutoken=9501fa047d408cf6b74df694003a9518&id=CCTV17&type=yy
-#EXTINF:-1 tvg-id="CCTV4欧洲" tvg-name="CCTV4欧洲" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV4欧洲.png" group-title="央视频道",CCTV-4 中文国际 欧洲
-https://migu.188766.xyz/?migutoken=e17a22b48afde8b65a91235347f6e165&id=CCTV4%E6%AC%A7%E6%B4%B2&type=yy
-#EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/CCTV4美洲.png" group-title="央视频道",CCTV-4 中文国际 美洲
-https://migu.188766.xyz/?migutoken=f72d55636d57e2a4804fe595d82146da&id=CCTV4%E7%BE%8E%E6%B4%B2&type=yy
-
+https://live.iill.top/bilibili/8178490
 #EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/湖南卫视.png" group-title="卫视频道",湖南卫视
 https://migu.188766.xyz/?migutoken=78ff071f0aa63847506ce3d5617e4a6b&id=hnws&type=sz
 #EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/浙江卫视.png" group-title="卫视频道",浙江卫视
 https://migu.188766.xyz/?migutoken=98bb30b9f319a3022e8e242ff32c8364&id=%E6%B5%99%E6%B1%9F%E5%8D%AB%E8%A7%86&pp=1
-https://migu.188766.xyz/?migutoken=c790d80460dcc7fcd6df1078a3c2c5b5&id=z_jws&type=sz
 #EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/江苏卫视.png" group-title="卫视频道",江苏卫视
 https://migu.188766.xyz/?migutoken=d7b8aa7c2caa950ce0453640d8eb7f93&id=%E6%B1%9F%E8%8B%8F%E5%8D%AB%E8%A7%86&type=yy
 #EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/东方卫视.png" group-title="卫视频道",东方卫视
@@ -118,7 +75,6 @@ https://migu.188766.xyz/?migutoken=bd396a224727d2457739dd8c7441e543&id=hn_ssws&t
 https://migu.188766.xyz/?migutoken=14e3cfc3521515712714f04caf68f197&id=%E5%90%89%E6%9E%97%E5%8D%AB%E8%A7%86&type=yy
 #EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/青海卫视.png" group-title="卫视频道",青海卫视
 https://migu.188766.xyz/?migutoken=e9139f621189e3b84ddfd0a550431035&id=%E9%9D%92%E6%B5%B7%E5%8D%AB%E8%A7%86&type=yy
-https://migu.188766.xyz/?migutoken=6f4ac2b58153797b37ec8b5a89621996&id=%E6%B5%B7%E5%8D%97%E5%8D%AB%E8%A7%86&type=yy
 #EXTINF:-1 tvg-id="宁夏卫视" tvg-name="宁夏卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/宁夏卫视.png" group-title="卫视频道",宁夏卫视
 https://migu.188766.xyz/?migutoken=0f2b28786595eb7c6102b48a9e6b41ea&id=%E5%AE%81%E5%A4%8F%E5%8D%AB%E8%A7%86&type=yy
 #EXTINF:-1 tvg-id="农林卫视" tvg-name="农林卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/农林卫视.png" group-title="卫视频道",农林卫视
@@ -133,9 +89,6 @@ https://migu.188766.xyz/?migutoken=44f376abb0729f23a84b9682943f9246&id=%E6%B9%96
 https://migu.188766.xyz/?migutoken=aa6910f271042ec4920ad43e27c47984&id=%E6%B5%99%E6%B1%9F%E5%8D%AB%E8%A7%864K&pp=1
 #EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" tvg-logo="https://static.188766.xyz/logo/sln162/iptv-back/logo/东方卫视4K.png" group-title="超清频道",东方卫视4K
 #EXTVLCOPT:referer=https://live.kankanews.com/
-#EXTVLCOPT:http-referer=https://live.kankanews.com/
-#KODIPROP:inputstream.adaptive.stream_headers=Referer=https://live.kankanews.com/
-https://migu.188766.xyz/?migutoken=4ecc9c03234c9fbba7f5d162f466fc5d&id=dfws&type=sz
 #EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/北京卫视4K.png" group-title="超清频道",北京卫视4K
 https://migu.188766.xyz/?migutoken=57b8c212227caffe5b373b4fcfa4cb62&id=%E5%8C%97%E4%BA%AC%E5%8D%AB%E8%A7%86&type=yy
 #EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/深圳卫视4K.png" group-title="超清频道",深圳卫视4K
@@ -150,7 +103,6 @@ https://migu.188766.xyz/?migutoken=679133de831b8e189ed91cbcedc295fd&id=CHC%E5%BD
 https://migu.188766.xyz/?migutoken=5847e98dee681b69f3108bfc6bbfb05a&id=%E4%BA%94%E6%98%9F%E4%BD%93%E8%82%B2&pp=1
 #EXTINF:-1 tvg-id="五星体育" tvg-name="五星体育" http-user-agent="okHttp/Mod-1.5.0.0" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/五星体育.png" group-title="其他频道",五星体育
 #EXTVLCOPT:http-user-agent=okHttp/Mod-1.5.0.0
-https://other.ottiptv.cc/wxty.m3u8
 #EXTINF:-1 tvg-id="重温经典" tvg-name="重温经典" http-user-agent="okHttp/Mod-1.5.0.0" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/重温经典.png" group-title="其他频道",重温经典
 https://other.ottiptv.cc/cwjd.m3u8
 #EXTINF:-1 tvg-id="上视东方影视" tvg-name="上视东方影视" tvg-logo="https://wapx.cmvideo.cn/publish/poms/image/5500/002/274/202105271333_5100001715_2_HSJ720H.jpg" group-title="其他频道",上视东方影视
@@ -247,7 +199,6 @@ https://migu.188766.xyz/?migutoken=ad2f51fdbcf977c8009809d8a862a5c9&id=%E6%96%87
 https://migu.188766.xyz/?migutoken=bad46cd1dd6646d2e0aeaf42f670bc39&id=%E8%B1%A1%E8%A7%86%E7%95%8C&type=yy
 #EXTINF:-1 tvg-id="广东体育" tvg-name="广东体育" tvg-logo="https://static.188766.xyz/logo/sparkssssssssss/epg/logo/广东体育.png" group-title="地方频道",广东体育
 https://migu.188766.xyz/?migutoken=62d821ce00a2fcafa0e3f61ec2c4a4b9&id=hk_gdty&type=dy
-https://hk.188766.xyz/?migutoken=9e17a5b06081b9791e136940c9641662&id=gd_gdty&type=sz
 #EXTINF:-1 tvg-id="广东新闻" tvg-name="广东新闻" tvg-logo="https://static.188766.xyz/logo/sparkssssssssss/epg/logo/广东新闻.png" group-title="地方频道",广东新闻
 https://hk.188766.xyz/?migutoken=960402fc40ed0f305e48aea0d25c7e5f&id=gd_gdxw&type=sz
 #EXTINF:-1 tvg-id="广东珠江" tvg-name="广东珠江" tvg-logo="https://static.188766.xyz/logo/sparkssssssssss/epg/logo/广东珠江.png" group-title="地方频道",广东珠江
@@ -324,13 +275,10 @@ http://play1-qk.nmtv.cn/live/1686560387346365.m3u8
 http://play1-qk.nmtv.cn/live/1686561065304370.m3u8
 #EXTINF:-1 tvg-id="凤凰中文" tvg-name="凤凰中文" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/凤凰卫视中文台.png" group-title="粤语频道",凤凰中文
 https://mgev.188766.xyz/?migutoken=458604bd4538dfcc0bfe128fa0287fbc&id=fhzw&pp=1
-https://mgev.188766.xyz/?migutoken=ca3c9c508eb12f90a493765eb530b363&id=hk_fhzw&type=dy
 #EXTINF:-1 tvg-id="凤凰资讯" tvg-name="凤凰资讯" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/凤凰卫视资讯台.png" group-title="粤语频道",凤凰资讯
 https://mgev.188766.xyz/?migutoken=33aff965c3601ad29d129b995fe45194&id=fhzx&pp=1
-https://mgev.188766.xyz/?migutoken=7e23c23cb46f5e1747bd91f9a4172c0d&id=hk_fhzx&type=dy
 #EXTINF:-1 tvg-id="凤凰香港" tvg-name="凤凰香港" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/凤凰卫视香港台.png" group-title="粤语频道",凤凰香港
 https://mgev.188766.xyz/?migutoken=187549d83a8ca494a63fe86f1e936b7a&id=fhhk&pp=1
-https://mgev.188766.xyz/?migutoken=26c23c7fc12e22744eba41707be42464&id=hk_fhhk&type=dy
 #EXTINF:-1 tvg-id="翡翠台" tvg-name="翡翠台" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/翡翠台.png" group-title="粤语频道",翡翠台
 https://mgev.188766.xyz/?migutoken=e990abf8653801404d40d4932c9d98eb&id=hk_fct&type=dy
 #EXTINF:-1 tvg-id="翡翠台4K" tvg-name="翡翠台4K" tvg-logo="https://static.188766.xyz/logo/fanmingming/live/tv/翡翠台.png" group-title="粤语频道",翡翠台4K
@@ -359,522 +307,499 @@ https://mgev.188766.xyz/?migutoken=03145a669e6e1f4fa39f575975f7a6c5&id=hk_ch8&ty
 https://mgev.188766.xyz/?migutoken=19c5ef013db102782299322ec65de306&id=hk_asam&type=dy
 #EXTINF:-1 tvg-id="HOY77" tvg-name="HOY77" tvg-logo="https://static.188766.xyz/logo/sparkssssssssss/epg/logo/HOY77.png" group-title="粤语频道",HOY77
 https://mgev.188766.xyz/?migutoken=a7bfc0ca8bd209354dcff01b8ca4d77e&id=hk_hoy&type=dy
-https://188766.xyz/dong
 #EXTINF:-1 tvg-id="电影_星爷" tvg-name="电影_星爷" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_星爷
-https://live.188766.xyz/huya/11342412
+https://live.iill.top/huya/11342412
 #EXTINF:-1 tvg-id="电影_英叔" tvg-name="电影_英叔" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_英叔
-https://live.188766.xyz/huya/11342421
+https://live.iill.top/huya/11342421
 #EXTINF:-1 tvg-id="电影_发哥" tvg-name="电影_发哥" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_发哥
-https://live.188766.xyz/huya/11342387
+https://live.iill.top/huya/11342387
 #EXTINF:-1 tvg-id="电影_成龙" tvg-name="电影_成龙" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_成龙
-https://live.188766.xyz/huya/11342386
+https://live.iill.top/huya/11342386
 #EXTINF:-1 tvg-id="电影_王晶" tvg-name="电影_王晶" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_王晶
-https://live.188766.xyz/huya/11602058
+https://live.iill.top/huya/11602058
 #EXTINF:-1 tvg-id="电影_沈腾" tvg-name="电影_沈腾" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_沈腾
-https://live.188766.xyz/huya/11601968
+https://live.iill.top/huya/11601968
 #EXTINF:-1 tvg-id="电影_黄渤" tvg-name="电影_黄渤" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_黄渤
-https://live.188766.xyz/huya/11352876
+https://live.iill.top/huya/11352876
 #EXTINF:-1 tvg-id="电影_强森" tvg-name="电影_强森" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_强森
-https://live.188766.xyz/huya/21059581
+https://live.iill.top/huya/21059581
 #EXTINF:-1 tvg-id="电影_漫威" tvg-name="电影_漫威" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_漫威
-https://live.188766.xyz/huya/11602034
+https://live.iill.top/huya/11602034
 #EXTINF:-1 tvg-id="电影_宇宙" tvg-name="电影_宇宙" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_宇宙
-https://live.188766.xyz/huya/11342428
+https://live.iill.top/huya/11342428
 #EXTINF:-1 tvg-id="电影_怪兽" tvg-name="电影_怪兽" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_怪兽
-https://live.188766.xyz/huya/21059577
+https://live.iill.top/huya/21059577
 #EXTINF:-1 tvg-id="电影_贺岁" tvg-name="电影_贺岁" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_贺岁
-https://live.188766.xyz/huya/11601971
+https://live.iill.top/huya/11601971
 #EXTINF:-1 tvg-id="电影_玄幻" tvg-name="电影_玄幻" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_玄幻
-https://live.188766.xyz/huya/11342414
+https://live.iill.top/huya/11342414
 #EXTINF:-1 tvg-id="电影_谍战" tvg-name="电影_谍战" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_谍战
-https://live.188766.xyz/huya/21059585
+https://live.iill.top/huya/21059585
 #EXTINF:-1 tvg-id="电影_战争" tvg-name="电影_战争" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_战争
-https://live.188766.xyz/huya/21059592
+https://live.iill.top/huya/21059592
 #EXTINF:-1 tvg-id="电影_喜剧" tvg-name="电影_喜剧" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_喜剧
-https://live.188766.xyz/huya/11352877
+https://live.iill.top/huya/11352877
 #EXTINF:-1 tvg-id="电影_港片" tvg-name="电影_港片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_港片
-https://live.188766.xyz/huya/11602043
+https://live.iill.top/huya/11602043
 #EXTINF:-1 tvg-id="电影_国产" tvg-name="电影_国产" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_国产
-https://live.188766.xyz/huya/11352973
+https://live.iill.top/huya/11352973
 #EXTINF:-1 tvg-id="电影_周星星" tvg-name="电影_周星星" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_周星星
-https://live.188766.xyz/huya/11336587
+https://live.iill.top/huya/11336587
 #EXTINF:-1 tvg-id="电影_李连杰" tvg-name="电影_李连杰" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_李连杰
-https://live.188766.xyz/huya/11342390
+https://live.iill.top/huya/11342390
 #EXTINF:-1 tvg-id="电影_洪金宝" tvg-name="电影_洪金宝" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_洪金宝
-https://live.188766.xyz/huya/11279251
+https://live.iill.top/huya/11279251
 #EXTINF:-1 tvg-id="电影_梁家辉" tvg-name="电影_梁家辉" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_梁家辉
-https://live.188766.xyz/huya/11342429
+https://live.iill.top/huya/11342429
 #EXTINF:-1 tvg-id="电影_许冠英" tvg-name="电影_许冠英" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_许冠英
-https://live.188766.xyz/huya/11601972
+https://live.iill.top/huya/11601972
 #EXTINF:-1 tvg-id="电影_刘德华" tvg-name="电影_刘德华" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_刘德华
-https://live.188766.xyz/huya/11342424
+https://live.iill.top/huya/11342424
 #EXTINF:-1 tvg-id="电影_斯坦森" tvg-name="电影_斯坦森" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_斯坦森
-https://live.188766.xyz/huya/21059588
+https://live.iill.top/huya/21059588
 #EXTINF:-1 tvg-id="电影_蜘蛛侠" tvg-name="电影_蜘蛛侠" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_蜘蛛侠
-https://live.188766.xyz/huya/21059599
+https://live.iill.top/huya/21059599
 #EXTINF:-1 tvg-id="电影_贺岁片" tvg-name="电影_贺岁片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_贺岁片
-https://live.188766.xyz/huya/11601986
+https://live.iill.top/huya/11601986
 #EXTINF:-1 tvg-id="电影_功夫片" tvg-name="电影_功夫片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_功夫片
-https://live.188766.xyz/huya/11352941
+https://live.iill.top/huya/11352941
 #EXTINF:-1 tvg-id="电影_黑帮片" tvg-name="电影_黑帮片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_黑帮片
-https://live.188766.xyz/huya/11336719
+https://live.iill.top/huya/11336719
 #EXTINF:-1 tvg-id="电影_丧尸片" tvg-name="电影_丧尸片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_丧尸片
-https://live.188766.xyz/huya/21059578
+https://live.iill.top/huya/21059578
 #EXTINF:-1 tvg-id="电影_灾难片" tvg-name="电影_灾难片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_灾难片
-https://live.188766.xyz/huya/11602075
+https://live.iill.top/huya/11602075
 #EXTINF:-1 tvg-id="电影_谍战片" tvg-name="电影_谍战片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_谍战片
-https://live.188766.xyz/huya/21059587
+https://live.iill.top/huya/21059587
 #EXTINF:-1 tvg-id="电影_战争片" tvg-name="电影_战争片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_战争片
-https://live.188766.xyz/huya/21059574
+https://live.iill.top/huya/21059574
 #EXTINF:-1 tvg-id="电影_犯罪片" tvg-name="电影_犯罪片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_犯罪片
-https://live.188766.xyz/huya/11352974
+https://live.iill.top/huya/11352974
 #EXTINF:-1 tvg-id="电影_古装片" tvg-name="电影_古装片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_古装片
-https://live.188766.xyz/huya/11336590
+https://live.iill.top/huya/11336590
 #EXTINF:-1 tvg-id="电影_高分动作" tvg-name="电影_高分动作" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_高分动作
-https://live.188766.xyz/huya/11352884
+https://live.iill.top/huya/11352884
 #EXTINF:-1 tvg-id="电影_动作电影" tvg-name="电影_动作电影" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_动作电影
-https://live.188766.xyz/huya/11602077
+https://live.iill.top/huya/11602077
 #EXTINF:-1 tvg-id="电影_搞笑喜剧" tvg-name="电影_搞笑喜剧" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_搞笑喜剧
-https://live.188766.xyz/huya/11342423
+https://live.iill.top/huya/11342423
 #EXTINF:-1 tvg-id="电影_喜剧专场" tvg-name="电影_喜剧专场" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_喜剧专场
-https://live.188766.xyz/huya/11602044
+https://live.iill.top/huya/11602044
 #EXTINF:-1 tvg-id="电影_欢笑影院" tvg-name="电影_欢笑影院" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_欢笑影院
-https://live.188766.xyz/huya/11352894
+https://live.iill.top/huya/11352894
 #EXTINF:-1 tvg-id="电影_不挤影院" tvg-name="电影_不挤影院" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_不挤影院
-https://live.188766.xyz/huya/11352897
+https://live.iill.top/huya/11352897
 #EXTINF:-1 tvg-id="电影_国产悬疑" tvg-name="电影_国产悬疑" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_国产悬疑
-https://live.188766.xyz/huya/11342395
+https://live.iill.top/huya/11342395
 #EXTINF:-1 tvg-id="电影_快意江湖" tvg-name="电影_快意江湖" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_快意江湖
-https://live.188766.xyz/huya/11342435
+https://live.iill.top/huya/11342435
 #EXTINF:-1 tvg-id="电影_黑帮斗争" tvg-name="电影_黑帮斗争" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_黑帮斗争
-https://live.188766.xyz/huya/11342419
+https://live.iill.top/huya/11342419
 #EXTINF:-1 tvg-id="电影_古墓系列" tvg-name="电影_古墓系列" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_古墓系列
-https://live.188766.xyz/huya/11352913
+https://live.iill.top/huya/11352913
 #EXTINF:-1 tvg-id="电影_嫣然影厅" tvg-name="电影_嫣然影厅" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_嫣然影厅
-https://live.188766.xyz/huya/11601977
+https://live.iill.top/huya/11601977
 #EXTINF:-1 tvg-id="电影_女神系列" tvg-name="电影_女神系列" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_女神系列
-https://live.188766.xyz/huya/11336571
+https://live.iill.top/huya/11336571
 #EXTINF:-1 tvg-id="电影_经典女神" tvg-name="电影_经典女神" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_经典女神
-https://live.188766.xyz/huya/11352909
+https://live.iill.top/huya/11352909
 #EXTINF:-1 tvg-id="电影_经典港片" tvg-name="电影_经典港片" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_经典港片
-https://live.188766.xyz/huya/11352965
+https://live.iill.top/huya/11352965
 #EXTINF:-1 tvg-id="电影_喜乐影院" tvg-name="电影_喜乐影院" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_喜乐影院
-https://live.188766.xyz/huya/21059580
+https://live.iill.top/huya/21059580
 #EXTINF:-1 tvg-id="电影_蘑菇影厅" tvg-name="电影_蘑菇影厅" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_蘑菇影厅
-https://live.188766.xyz/huya/11601981
+https://live.iill.top/huya/11601981
 #EXTINF:-1 tvg-id="电影_搞笑恐怖" tvg-name="电影_搞笑恐怖" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_搞笑恐怖
-https://live.188766.xyz/huya/11601960
+https://live.iill.top/huya/11601960
 #EXTINF:-1 tvg-id="电影_死神来了" tvg-name="电影_死神来了" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_死神来了
-https://live.188766.xyz/huya/11352903
+https://live.iill.top/huya/11352903
 #EXTINF:-1 tvg-id="电影_变形金刚" tvg-name="电影_变形金刚" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_变形金刚
-https://live.188766.xyz/huya/21059596
+https://live.iill.top/huya/21059596
 #EXTINF:-1 tvg-id="电影_怪兽系列" tvg-name="电影_怪兽系列" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",电影_怪兽系列
-https://live.188766.xyz/huya/21059554
+https://live.iill.top/huya/21059554
 #EXTINF:-1 tvg-id="搞笑_陈翔六点半" tvg-name="搞笑_陈翔六点半" tvg-logo="https://fy.188766.xyz/logo/taksssss/tv/icon/虎牙直播.png" group-title="虎牙影视",搞笑_陈翔六点半
-https://live.188766.xyz/huya/11274154
+https://live.iill.top/huya/11274154
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]热门赛事
-https://live.188766.xyz/bilibili/10
+https://live.iill.top/bilibili/10
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]CS 2
-https://live.188766.xyz/bilibili/21622811
+https://live.iill.top/bilibili/21622811
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]CS 2
-https://live.188766.xyz/huya/483917
+https://live.iill.top/huya/483917
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]英雄联盟
-https://live.188766.xyz/bilibili/6
+https://live.iill.top/bilibili/6
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]英雄联盟 𝟙
-https://live.188766.xyz/huya/660000
+https://live.iill.top/huya/660000
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]英雄联盟 𝟚
-https://live.188766.xyz/huya/660001
+https://live.iill.top/huya/660001
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]英雄联盟 𝟙
-http://dxa.yiandrive.com:39319/douyu/288016
+https://live.iill.top/douyu/288016
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]英雄联盟 𝟚
-http://dxa.yiandrive.com:39319/douyu/424559
+https://live.iill.top/douyu/424559
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]英雄联盟手游
-https://live.188766.xyz/bilibili/23138275
+https://live.iill.top/bilibili/23138275
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]王者荣耀 𝟙
-https://live.188766.xyz/bilibili/55
+https://live.iill.top/bilibili/55
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]王者荣耀 𝟚
-https://live.188766.xyz/bilibili/21654762
+https://live.iill.top/bilibili/21654762
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]王者荣耀 𝟙
-https://live.188766.xyz/huya/660002
+https://live.iill.top/huya/660002
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]王者荣耀 𝟚
-https://live.188766.xyz/huya/660164
+https://live.iill.top/huya/660164
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]王者荣耀 𝟙
-http://dxa.yiandrive.com:39319/douyu/1863767
+https://live.iill.top/douyu/1863767
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]王者荣耀 𝟚
-http://dxa.yiandrive.com:39319/douyu/1984839
+https://live.iill.top/douyu/1984839
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]绝地求生
-https://live.188766.xyz/bilibili/98
+https://live.iill.top/bilibili/98
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]绝地求生 𝟙
-https://live.188766.xyz/huya/660004
+https://live.iill.top/huya/660004
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]绝地求生 𝟚
-https://live.188766.xyz/huya/660005
+https://live.iill.top/huya/660005
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]绝地求生
-http://dxa.yiandrive.com:39319/douyu/100
+https://live.iill.top/douyu/100
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]绝地地图
-http://dxa.yiandrive.com:39319/douyu/5818871
+https://live.iill.top/douyu/5818871
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]和平精英
-https://live.188766.xyz/huya/660006
+https://live.iill.top/huya/660006
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]和平精英
-http://dxa.yiandrive.com:39319/douyu/999
+https://live.iill.top/douyu/999
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]金铲铲之战
-https://live.188766.xyz/huya/660579
+https://live.iill.top/huya/660579
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]金铲铲之战
-http://dxa.yiandrive.com:39319/douyu/9715241
+https://live.iill.top/douyu/9715241
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]DOTA2
-https://live.188766.xyz/huya/660118
+https://live.iill.top/huya/660118
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]DOTA2
-http://dxa.yiandrive.com:39319/douyu/3811559
+https://live.iill.top/douyu/3811559
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]云顶之弈
-http://dxa.yiandrive.com:39319/douyu/522423
+https://live.iill.top/douyu/522423
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]永劫无间
-https://live.188766.xyz/huya/660115
+https://live.iill.top/huya/660115
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]永劫无间
-https://live.188766.xyz/huya/9662891
+https://live.iill.top/huya/9662891
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]使命召唤手游
-https://live.188766.xyz/bilibili/22741849
+https://live.iill.top/bilibili/22741849
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]使命召唤手游
-https://live.188766.xyz/huya/11718629
+https://live.iill.top/huya/11718629
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]使命召唤手游
-http://dxa.yiandrive.com:39319/douyu/9223245
+https://live.iill.top/douyu/9223245
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]穿越火线
-https://live.188766.xyz/huya/660101
+https://live.iill.top/huya/660101
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]穿越火线 𝟙
-http://dxa.yiandrive.com:39319/douyu/605964
+https://live.iill.top/douyu/605964
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]穿越火线 𝟚
-http://dxa.yiandrive.com:39319/douyu/5388537
+https://live.iill.top/douyu/5388537
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]穿越火线手游
-https://live.188766.xyz/huya/660102
+https://live.iill.top/huya/660102
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]第五人格
-https://live.188766.xyz/bilibili/5555
+https://live.iill.top/bilibili/5555
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]第五人格
-https://live.188766.xyz/huya/idvesports
+https://live.iill.top/huya/idvesports
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]第五人格
-http://dxa.yiandrive.com:39319/douyu/3226194
+https://live.iill.top/douyu/3226194
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]逆战
-https://live.188766.xyz/huya/nsl2021
+https://live.iill.top/huya/nsl2021
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]无畏契约
-https://live.188766.xyz/bilibili/22908869
+https://live.iill.top/bilibili/22908869
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="游戏赛事",[虎牙]无畏契约
-https://live.188766.xyz/huya/660679
+https://live.iill.top/huya/660679
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]无畏契约
-http://dxa.yiandrive.com:39319/douyu/4585645
+https://live.iill.top/douyu/4585645
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]原神
-http://dxa.yiandrive.com:39319/douyu/10853239
+https://live.iill.top/douyu/10853239
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]QQ飞车手游
-https://live.188766.xyz/bilibili/21743919
+https://live.iill.top/bilibili/21743919
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]QQ飞车手游
-http://dxa.yiandrive.com:39319/douyu/5040227
+https://live.iill.top/douyu/5040227
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]梦幻西游·手游
-https://live.188766.xyz/huya/9163712
+https://live.iill.top/huya/9163712
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]街霸
-https://live.188766.xyz/huya/11437
+https://live.iill.top/huya/11437
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/哔哩哔哩.png" group-title="游戏赛事",[B站]JJ斗地主
-https://live.188766.xyz/bilibili/22021983
+https://live.iill.top/bilibili/22021983
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]JJ斗地主
-http://dxa.yiandrive.com:39319/douyu/488743
+https://live.iill.top/douyu/488743
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]我的世界
-http://dxa.yiandrive.com:39319/douyu/738878
+https://live.iill.top/douyu/738878
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]FIFA
-http://dxa.yiandrive.com:39319/douyu/7692166
+https://live.iill.top/douyu/7692166
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]火影忍者
-http://dxa.yiandrive.com:39319/douyu/1997723
+https://live.iill.top/douyu/1997723
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]跑跑卡丁车
-http://dxa.yiandrive.com:39319/douyu/7722576
+https://live.iill.top/douyu/7722576
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="游戏赛事",[斗鱼]跑跑卡丁车手游
-http://dxa.yiandrive.com:39319/douyu/6672862
+https://live.iill.top/douyu/6672862
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26752884&bilibili&logo" group-title="其他影视",B站|恶搞之家
-https://live.188766.xyz/bilibili/26752884
+https://live.iill.top/bilibili/26752884
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/2064239&bilibili&logo" group-title="其他影视",B站|鹿野灸
-https://live.188766.xyz/bilibili/2064239
+https://live.iill.top/bilibili/2064239
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30041682&bilibili&logo" group-title="其他影视",B站|臣臣
-https://live.188766.xyz/bilibili/30041682
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/8178490&bilibili&logo" group-title="其他影视",B站|央视新闻直播
-https://live.188766.xyz/bilibili/8178490
+https://live.iill.top/bilibili/30041682
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22102223&bilibili&logo" group-title="其他影视",B站|新华社
-https://live.188766.xyz/bilibili/22102223
+https://live.iill.top/bilibili/22102223
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/B站.png" group-title="其他影视",B站|看纳豆的魔鬼天使
-https://live.188766.xyz/bilibili/uid:65989750
+https://live.iill.top/bilibili/uid:65989750
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1817728740&bilibili&logo" group-title="其他影视",B站|神人公园
-https://live.188766.xyz/bilibili/1817728740
+https://live.iill.top/bilibili/1817728740
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1758144805&bilibili&logo" group-title="其他影视",B站|基德不会飞
-https://live.188766.xyz/bilibili/1758144805
+https://live.iill.top/bilibili/1758144805
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/hunanjingshi&douyin&logo" group-title="其他影视",抖音|湖南经视
-https://live.188766.xyz/douyin/hunanjingshi
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/162340631&douyin&logo" group-title="其他影视",抖音|为之
-https://live.188766.xyz/douyin/162340631
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/cctv6media.&douyin&logo" group-title="其他影视",抖音|CCTV6
-https://live.188766.xyz/douyin/cctv6media.
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/nuanxinnengl&douyin&logo" group-title="其他影视",抖音|央视网财经
-https://live.188766.xyz/douyin/nuanxinnengl
+https://live.iill.top/douyin/uid/hunanjingshi
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/122402&douyu&logo" group-title="斗鱼影视",周星驰
-http://dxa.yiandrive.com:39319/douyu/122402
+https://live.iill.top/douyu/122402
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/20415&douyu&logo" group-title="斗鱼影视",斗鱼20415
-http://dxa.yiandrive.com:39319/douyu/20415
+https://live.iill.top/douyu/20415
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/4837387&douyu&logo" group-title="斗鱼影视",自然纪录片
-http://dxa.yiandrive.com:39319/douyu/4837387
+https://live.iill.top/douyu/4837387
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/斗鱼.png" group-title="斗鱼影视",世界人文
-http://dxa.yiandrive.com:39319/douyu/10617369
+https://live.iill.top/douyu/10617369
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/504368&yy&logo" group-title="其他影视",yy|小甜甜-悬疑电视剧
-https://live.188766.xyz/yy/504368
+https://live.iill.top/yy/504368
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/17091681&huya&logo" group-title="虎牙影视",音乐石榴[音乐]
-https://live.188766.xyz/huya/17091681
+https://live.iill.top/huya/17091681
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21241811&huya&logo" group-title="虎牙影视",治愈放松[音乐]
-https://live.188766.xyz/huya/21241811
+https://live.iill.top/huya/21241811
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21241813&huya&logo" group-title="虎牙影视",阅读学习[音乐]
-https://live.188766.xyz/huya/21241813
+https://live.iill.top/huya/21241813
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865080&huya&logo" group-title="虎牙影视",香港喜剧大全
-https://live.188766.xyz/huya/23865080
+https://live.iill.top/huya/23865080
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342412&huya&logo" group-title="虎牙影视",周星星
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26058097&huya&logo" group-title="虎牙影视",都爱看
-https://live.188766.xyz/huya/26058097
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342403&huya&logo" group-title="虎牙影视",不发威当我Kitty
-https://live.188766.xyz/huya/11342403
+https://live.iill.top/huya/11342403
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355850&huya&logo" group-title="虎牙影视",嶺外奇服兮
-https://live.188766.xyz/huya/26355850
+https://live.iill.top/huya/26355850
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/138531&huya&logo" group-title="虎牙影视",依依妹妹在等你
-https://live.188766.xyz/huya/138531
+https://live.iill.top/huya/138531
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342386&huya&logo" group-title="虎牙影视",偷心大盗ヽ龍宝
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342421&huya&logo" group-title="虎牙影视",7喜先生
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23796393&huya&logo" group-title="虎牙影视",赢城-江爽
-https://live.188766.xyz/huya/23796393
+https://live.iill.top/huya/23796393
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355802&huya&logo" group-title="虎牙影视",之而成冠毛
-https://live.188766.xyz/huya/26355802
+https://live.iill.top/huya/26355802
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26298751&huya&logo" group-title="虎牙影视",婧丶
-https://live.188766.xyz/huya/26298751
+https://live.iill.top/huya/26298751
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602068&huya&logo" group-title="虎牙影视",我爱黑科技
-https://live.188766.xyz/huya/11602068
+https://live.iill.top/huya/11602068
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342435&huya&logo" group-title="虎牙影视",可爱的小强
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355824&huya&logo" group-title="虎牙影视",尽是与君别
-https://live.188766.xyz/huya/26355824
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23863804&huya&logo" group-title="虎牙影视",iTVB大后宫
-https://live.188766.xyz/huya/23863804
+https://live.iill.top/huya/23863804
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23734169&huya&logo" group-title="虎牙影视",埋堆搞搞震
-https://live.188766.xyz/huya/23734169
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342390&huya&logo" group-title="虎牙影视",核桃姐姐
+https://live.iill.top/huya/23734169
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/20985776&huya&logo" group-title="虎牙影视",千里
-https://live.188766.xyz/huya/20985776
+https://live.iill.top/huya/20985776
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602044&huya&logo" group-title="虎牙影视",小怪兽、
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602082&huya&logo" group-title="虎牙影视",漓江塔景区售票阿姨
-https://live.188766.xyz/huya/11602082
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865171&huya&logo" group-title="虎牙影视",阿呀呀阿sir
-https://live.188766.xyz/huya/23865171
+https://live.iill.top/huya/23865171
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23903196&huya&logo" group-title="虎牙影视",冷门港片大全
-https://live.188766.xyz/huya/23903196
+https://live.iill.top/huya/23903196
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352909&huya&logo" group-title="虎牙影视",小军迷
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352944&huya&logo" group-title="虎牙影视",鯎爺
-https://live.188766.xyz/huya/11352944
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352919&huya&logo" group-title="虎牙影视",海绵宝宝
-https://live.188766.xyz/huya/11352919
+https://live.iill.top/huya/11352919
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602046&huya&logo" group-title="虎牙影视",杰克
-https://live.188766.xyz/huya/11602046
+https://live.iill.top/huya/11602046
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29580971&huya&logo" group-title="虎牙影视",农民
-https://live.188766.xyz/huya/29580971
+https://live.iill.top/huya/29580971
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355861&huya&logo" group-title="虎牙影视",西游记
-https://live.188766.xyz/huya/26355861
+https://live.iill.top/huya/26355861
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352958&huya&logo" group-title="虎牙影视",神探·
-https://live.188766.xyz/huya/11352958
+https://live.iill.top/huya/11352958
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601986&huya&logo" group-title="虎牙影视",贺岁
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355829&huya&logo" group-title="虎牙影视",超
-https://live.188766.xyz/huya/26355829
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352935&huya&logo" group-title="虎牙影视",丹
-https://live.188766.xyz/huya/11352935
+https://live.iill.top/huya/11352935
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601981&huya&logo" group-title="虎牙影视",成立
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059563&huya&logo" group-title="虎牙影视",宝莲灯
-https://live.188766.xyz/huya/21059563
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601958&huya&logo" group-title="虎牙影视",熊猫
-https://live.188766.xyz/huya/11601958
+https://live.iill.top/huya/11601958
+#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342429&huya&logo" group-title="虎牙影视",梁家辉
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352877&huya&logo" group-title="虎牙影视",王宝强
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352970&huya&logo" group-title="虎牙影视",野原的一家
-https://live.188766.xyz/huya/11352970
+https://live.iill.top/huya/11352970
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059567&huya&logo" group-title="虎牙影视",唯爱
-https://live.188766.xyz/huya/21059567
+https://live.iill.top/huya/21059567
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342425&huya&logo" group-title="虎牙影视",神探
-https://live.188766.xyz/huya/11342425
+https://live.iill.top/huya/11342425
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355781&huya&logo" group-title="虎牙影视",探索
-https://live.188766.xyz/huya/26355781
+https://live.iill.top/huya/26355781
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342424&huya&logo" group-title="虎牙影视",刘德华
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11274154&huya&logo" group-title="虎牙影视",陈翔六点半
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21136378&huya&logo" group-title="虎牙影视",周星驰吧
-https://live.188766.xyz/huya/21136378
+https://live.iill.top/huya/21136378
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601968&huya&logo" group-title="虎牙影视",电影_沈腾
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059581&huya&logo" group-title="虎牙影视",电影_强森
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602034&huya&logo" group-title="虎牙影视",电影_漫威
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059577&huya&logo" group-title="虎牙影视",电影_怪兽
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352886&huya&logo" group-title="虎牙影视",电影_警匪
-https://live.188766.xyz/huya/11352886
+https://live.iill.top/huya/11352886
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352962&huya&logo" group-title="虎牙影视",电影_罪犯
-https://live.188766.xyz/huya/11352962
+https://live.iill.top/huya/11352962
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11279247&huya&logo" group-title="虎牙影视",电影_赛车
-https://live.188766.xyz/huya/11279247
+https://live.iill.top/huya/11279247
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602041&huya&logo" group-title="虎牙影视",电影_推荐
-https://live.188766.xyz/huya/11602041
+https://live.iill.top/huya/11602041
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602081&huya&logo" group-title="虎牙影视",三国演义
-https://live.188766.xyz/huya/11602081
+https://live.iill.top/huya/11602081
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080255&huya&logo" group-title="虎牙影视",乡村爱情
-https://live.188766.xyz/huya/30080255
+https://live.iill.top/huya/30080255
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602071&huya&logo" group-title="虎牙影视",父母爱情
-https://live.188766.xyz/huya/11602071
+https://live.iill.top/huya/11602071
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",痞子帅叔叔
-https://live.188766.xyz/huya/11342433
+https://live.iill.top/huya/11342433
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",扁豆看电影
-https://live.188766.xyz/huya/16028551
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",止戈电影
-https://live.188766.xyz/huya/19863777
+https://live.iill.top/huya/16028551
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/1394565204&huya&logo" group-title="虎牙影视",木子先生，铁齿铜牙纪晓岚
-https://live.188766.xyz/huya/11342396
+https://live.iill.top/huya/11342396
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080238&huya&logo" group-title="虎牙影视",挨打
-https://live.188766.xyz/huya/30080238
+https://live.iill.top/huya/30080238
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29580970&huya&logo" group-title="虎牙影视",年年营
-https://live.188766.xyz/huya/29580970
+https://live.iill.top/huya/29580970
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342426&huya&logo" group-title="虎牙影视",情满四合院
-https://live.188766.xyz/huya/11342426
+https://live.iill.top/huya/11342426
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602085&huya&logo" group-title="虎牙影视",杨光
-https://live.188766.xyz/huya/11602085
+https://live.iill.top/huya/11602085
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982639&huya&logo" group-title="虎牙影视",庆余年
-https://live.188766.xyz/huya/29982639
+https://live.iill.top/huya/29982639
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352872&huya&logo" group-title="虎牙影视",家有儿女|种瓜得弟弟
-https://live.188766.xyz/huya/11352872
+https://live.iill.top/huya/11352872
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080236&huya&logo" group-title="虎牙影视",名侦探柯南|傍晚猴
-https://live.188766.xyz/huya/30080236
+https://live.iill.top/huya/30080236
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352966&huya&logo" group-title="虎牙影视",魔幻手机|如意菜头
-https://live.188766.xyz/huya/11352966
+https://live.iill.top/huya/11352966
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/22592516&huya&logo" group-title="虎牙影视",虹猫蓝兔系列|虹猫蓝兔官方
-https://live.188766.xyz/huya/22592516
+https://live.iill.top/huya/22592516
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11336726&huya&logo" group-title="虎牙影视",爱情公寓|武林萌主唐小姐
-https://live.188766.xyz/huya/11336726
+https://live.iill.top/huya/11336726
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352882&huya&logo" group-title="虎牙影视",网球王子|我们都爱笑
-https://live.188766.xyz/huya/11352882
+https://live.iill.top/huya/11352882
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601970&huya&logo" group-title="虎牙影视",征服
-https://live.188766.xyz/huya/11601970
+https://live.iill.top/huya/11601970
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23740156&huya&logo" group-title="虎牙影视",埋堆堆官方
-https://live.188766.xyz/huya/23740156
+https://live.iill.top/huya/23740156
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865142&huya&logo" group-title="虎牙影视",港剧慢品汇
-https://live.188766.xyz/huya/23865142
+https://live.iill.top/huya/23865142
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342393&huya&logo" group-title="虎牙影视",漫长的季节
-https://live.188766.xyz/huya/11342393
+https://live.iill.top/huya/11342393
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23865058&huya&logo" group-title="虎牙影视",笑看风云
-https://live.188766.xyz/huya/23865058
+https://live.iill.top/huya/23865058
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602072&huya&logo" group-title="虎牙影视",民兵葛二蛋
-https://live.188766.xyz/huya/11602072
+https://live.iill.top/huya/11602072
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/15152155&huya&logo" group-title="虎牙影视",科幻梦工场
-https://live.188766.xyz/huya/15152155
+https://live.iill.top/huya/15152155
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/13303478&huya&logo" group-title="虎牙影视",阿斗归来了
-https://live.188766.xyz/huya/13303478
+https://live.iill.top/huya/13303478
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23903183&huya&logo" group-title="虎牙影视",鉴证实录
-https://live.188766.xyz/huya/23903183
+https://live.iill.top/huya/23903183
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/14734068&huya&logo" group-title="虎牙影视",泛爱心说剧
-https://live.188766.xyz/huya/14734068
+https://live.iill.top/huya/14734068
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352871&huya&logo" group-title="虎牙影视",鬼吹灯之精绝古城
-https://live.188766.xyz/huya/11352871
+https://live.iill.top/huya/11352871
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352898&huya&logo" group-title="虎牙影视",鬼吹灯之云南虫谷
-https://live.188766.xyz/huya/11352898
+https://live.iill.top/huya/11352898
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601957&huya&logo" group-title="虎牙影视",鬼吹灯之昆仑神宫
-https://live.188766.xyz/huya/11601957
+https://live.iill.top/huya/11601957
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11601966&huya&logo" group-title="虎牙影视",七龙珠改-超级赛亚人孙悟空
-https://live.188766.xyz/huya/11601966
+https://live.iill.top/huya/11601966
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352913&huya&logo" group-title="虎牙影视",古墓系列-去冒险吧!
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11602069&huya&logo" group-title="虎牙影视",向阳花-神奇宝贝
-https://live.188766.xyz/huya/11602069
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342394&huya&logo" group-title="虎牙影视",樱桃小丸子
-https://live.188766.xyz/huya/11342394
+https://live.iill.top/huya/11342394
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30219264&huya&logo" group-title="虎牙影视",燕双鹰
-https://live.188766.xyz/huya/30219264
+https://live.iill.top/huya/30219264
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355767&huya&logo" group-title="虎牙影视",乌龙闯情关
-https://live.188766.xyz/huya/26355767
+https://live.iill.top/huya/26355767
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342430&huya&logo" group-title="虎牙影视",领带哥
-https://live.188766.xyz/huya/11342430
+https://live.iill.top/huya/11342430
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/28272846&huya&logo" group-title="虎牙影视",和珅
-https://live.188766.xyz/huya/28272846
+https://live.iill.top/huya/28272846
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352946&huya&logo" group-title="虎牙影视",成龙历险记|老司机
-https://live.188766.xyz/huya/11352946
+https://live.iill.top/huya/11352946
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30311494&huya&logo" group-title="虎牙影视",征服
-https://live.188766.xyz/huya/30311494
+https://live.iill.top/huya/30311494
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16144175&huya&logo" group-title="虎牙影视",亮哥讲电影
-https://live.188766.xyz/huya/16144175
+https://live.iill.top/huya/16144175
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11774959&huya&logo" group-title="虎牙影视",电影最top
-https://live.188766.xyz/huya/11774959
+https://live.iill.top/huya/11774959
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/20488841&huya&logo" group-title="虎牙影视",阿良说美剧
-https://live.188766.xyz/huya/20488841
+https://live.iill.top/huya/20488841
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352934&huya&logo" group-title="虎牙影视",热血
-https://live.188766.xyz/huya/11352934
+https://live.iill.top/huya/11352934
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352879&huya&logo" group-title="虎牙影视",猫和老鼠
-https://live.188766.xyz/huya/11352879
+https://live.iill.top/huya/11352879
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982668&huya&logo" group-title="虎牙影视",有翡
-https://live.188766.xyz/huya/29982668
+https://live.iill.top/huya/29982668
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/26355866&huya&logo" group-title="虎牙影视",与凤行
-https://live.188766.xyz/huya/26355866
+https://live.iill.top/huya/26355866
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982670&huya&logo" group-title="虎牙影视",陆贞传奇
-https://live.188766.xyz/huya/29982670
+https://live.iill.top/huya/29982670
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",搞笑一家人
-https://live.188766.xyz/huya/11342402
+https://live.iill.top/huya/11342402
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11342439&huya&logo" group-title="虎牙影视",我是詹密
-https://live.188766.xyz/huya/11342439
+https://live.iill.top/huya/11342439
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30590779&huya&logo" group-title="虎牙影视",新橙记
-https://live.188766.xyz/huya/30590779
+https://live.iill.top/huya/30590779
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29076690&huya&logo" group-title="虎牙影视",李连杰
-https://live.188766.xyz/huya/29076690
+https://live.iill.top/huya/29076690
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982636&huya&logo" group-title="虎牙影视",特种兵|火凤凰
-https://live.188766.xyz/huya/29982636
+https://live.iill.top/huya/29982636
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/23650804&huya&logo" group-title="虎牙影视",马大帅
-https://live.188766.xyz/huya/23650804
+https://live.iill.top/huya/23650804
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059588&huya&logo" group-title="虎牙影视",虎牙21059588
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30523326&huya&logo" group-title="虎牙影视",家有儿女
-https://live.188766.xyz/huya/30523326
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/30080148&huya&logo" group-title="虎牙影视",国语版柯南，点到哪集看哪集
-https://live.188766.xyz/huya/30080148
+https://live.iill.top/huya/30080148
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",跑男1到4
-https://live.188766.xyz/huya/29465875
+https://live.iill.top/huya/29465875
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/logo/虎牙.png" group-title="虎牙影视",延禧攻略
-https://live.188766.xyz/huya/26355864
+https://live.iill.top/huya/26355864
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11352960&huya&logo" group-title="虎牙影视",瞬间爆炸
-https://live.188766.xyz/huya/11352960
+https://live.iill.top/huya/11352960
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29835225&huya&logo" group-title="虎牙影视",沐希兔子
-https://live.188766.xyz/huya/29835225
+https://live.iill.top/huya/29835225
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/11336592&huya&logo" group-title="虎牙影视",红茶妹妹
-https://live.188766.xyz/huya/11336592
+https://live.iill.top/huya/11336592
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16857432&huya&logo" group-title="虎牙影视",小丑讲电影
-https://live.188766.xyz/huya/16857432
+https://live.iill.top/huya/16857432
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/15894162&huya&logo" group-title="虎牙影视",越哥说电影
-https://live.188766.xyz/huya/15894162
-#EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/15966357&huya&logo" group-title="虎牙影视",熊妹撩电影
-https://live.188766.xyz/huya/15966357
+https://live.iill.top/huya/15894162
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16424416&huya&logo" group-title="虎牙影视",吾聊电影
-https://live.188766.xyz/huya/16424416
+https://live.iill.top/huya/16424416
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/15870999&huya&logo" group-title="虎牙影视",小川侃电影
-https://live.188766.xyz/huya/15870999
+https://live.iill.top/huya/15870999
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16615910&huya&logo" group-title="虎牙影视",鱼丸说电影
-https://live.188766.xyz/huya/16615910
+https://live.iill.top/huya/16615910
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16507906&huya&logo" group-title="虎牙影视",楚门聊电影
-https://live.188766.xyz/huya/16507906
+https://live.iill.top/huya/16507906
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/18715610&huya&logo" group-title="虎牙影视",电影狂人
-https://live.188766.xyz/huya/18715610
+https://live.iill.top/huya/18715610
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059623&huya&logo" group-title="虎牙影视",扁豆看电影2
-https://live.188766.xyz/huya/21059623
+https://live.iill.top/huya/21059623
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/16865726&huya&logo" group-title="虎牙影视",涵哥评电影
-https://live.188766.xyz/huya/16865726
+https://live.iill.top/huya/16865726
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21388479&huya&logo" group-title="虎牙影视",青年电影馆
-https://live.188766.xyz/huya/21388479
+https://live.iill.top/huya/21388479
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/24396474&huya&logo" group-title="虎牙影视",酱婶儿电影
-https://live.188766.xyz/huya/24396474
+https://live.iill.top/huya/24396474
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/21059622&huya&logo" group-title="虎牙影视",亮哥讲电影2
-https://live.188766.xyz/huya/21059622
+https://live.iill.top/huya/21059622
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29458834&huya&logo" group-title="虎牙影视",大墨电影
-https://live.188766.xyz/huya/29458834
+https://live.iill.top/huya/29458834
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982680&huya&logo" group-title="虎牙影视",越哥说电影2
-https://live.188766.xyz/huya/29982680
+https://live.iill.top/huya/29982680
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29982678&huya&logo" group-title="虎牙影视",爆裂电影2
-https://live.188766.xyz/huya/29982678
+https://live.iill.top/huya/29982678
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/25105448&huya&logo" group-title="虎牙影视",泡菜电影
-https://live.188766.xyz/huya/25105448
+https://live.iill.top/huya/25105448
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29340502&huya&logo" group-title="虎牙影视",老巴电影
-https://live.188766.xyz/huya/29340502
+https://live.iill.top/huya/29340502
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29340612&huya&logo" group-title="虎牙影视",鹏友说电影
-https://live.188766.xyz/huya/29340612
+https://live.iill.top/huya/29340612
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/29869799&huya&logo" group-title="虎牙影视",小丑电影
-https://live.188766.xyz/huya/29869799
+https://live.iill.top/huya/29869799
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/25105643&huya&logo" group-title="虎牙影视",辣条电影
-https://live.188766.xyz/huya/25105643
+https://live.iill.top/huya/25105643
 #EXTINF:-1 tvg-logo="https://epg-1.iill.top/i/25105529&huya&logo" group-title="虎牙影视",莱德电影
-https://live.188766.xyz/huya/25105529
-https://188766.xyz/qiu
-https://188766.xyz/dong
-https://188766.xyz/yu
+https://live.iill.top/huya/25105529
