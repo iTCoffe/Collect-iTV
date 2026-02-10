@@ -26,7 +26,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://bc.188766.xyz/?url=https://live.188766.xyz -O Base1.m3u
+        wget -q https://bc.188766.xyz/?url= -O Base1.m3u
         
         # 合并并去重基础源，同时过滤掉原有EXTM3U行（核心修改）
         cat Base1.m3u | grep -v '^#EXTM3U' | awk '!seen[$0]++' > Base.m3u
