@@ -16,8 +16,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
 
     - name: GetTime
       id: date
@@ -25,84 +23,63 @@ jobs:
 
     - name: Update Files
       run: |
-        # 设置字符编码，避免中文乱码
-        export LC_ALL=C.UTF-8
+        # 下载基础源文件
+        wget -q https://iptv.gstory.cn/Cinetry -O Base1.m3u
         
-        # 下载基础源文件并清理换行符
-        wget -q https://bc.188766.xyz/?url=https://live.ottiptv.cc -O Base1.m3u
-        # 转换换行符为UNIX格式，过滤EXTM3U行，去重（使用独立的临时数组）
-        cat Base1.m3u | tr -d '\r' | grep -v '^#EXTM3U' | awk -v seen=0 '!a[$0]++' > Base.m3u
+        # 合并并去重基础源
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
-        # 处理央视源（修复grep逻辑，独立去重）
-        # 先提取所有包含央视的完整节目块（EXTINF+URL）
-        awk '
-          /^#EXTINF:/ { inf=$0; getline url; if (inf ~ /央视/ && inf !~ /冰茶体育|冰茶公告/) print inf "\n" url }
-        ' Base.m3u | awk '!a[$0]++' > CCTV.m3u
+        # 处理央视源
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
         
-        # 处理非央视源（修复grep逻辑，独立去重）
-        awk '
-          /^#EXTINF:/ { inf=$0; getline url; if (inf !~ /央视/ && inf !~ /冰茶体育|冰茶公告/) print inf "\n" url }
-        ' Base.m3u | awk '!b[$0]++' > CNTV.m3u
+        # 处理非央视源
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U（自定义EXTM3U头）
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiGu.m3u
+        # 生成最终M3U
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >MiGu.m3u
         
-        # 添加自定义提示（统一清理换行符）
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加自定义提示 (温馨提示)
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加新增提示 (谨防诈骗)
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> MiGu.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> MiGu.m3u
+        # 添加新增提示 (禁止蕉绿)
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>MiGu.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >>MiGu.m3u
         
-        # 合并源文件（确保无重复EXTM3U）
-        cat CCTV.m3u CNTV.m3u >> MiGu.m3u
+        # 合并源文件
+        cat CCTV.m3u CNTV.m3u >>MiGu.m3u
         
-        # 生成TXT播放列表（优化过滤逻辑）
-        awk -F ',' '
-          /^#EXTINF:/ {
-              sub(/^#EXTINF:-1 [^,]+,/, "", $0);
-              name=$0;
-              getline url;
-              gsub(/[ \r]/, "", name);
-              gsub(/\r/, "", url);
-              if (name !~ /冰茶体育|冰茶公告/ && name != "" && url != "") {
-                  print name "," url;
-              }
-          }
-        ' MiGu.m3u | awk '!c[$0]++' > MiGu.txt
+        # 生成TXT播放列表
+        awk '/^#EXTINF:/ {
+            split($0, a, ",");
+            name = a[2];
+            getline url;
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
+            sub(/^ /, "", name);
+            print name "," url;
+        }' MiGu.m3u | awk '!seen[$0]++' > MiGu.txt
         
-        # 清理所有临时文件（包含Base1.m3u）
-        rm -f Base1.m3u Base.m3u CCTV.m3u CNTV.m3u
+        # 清理临时文件
+        rm -f Base.m3u CCTV.m3u CNTV.m3u
         
-        # 更新README（修复Markdown格式）
+        # 更新README
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 安全拉取远程代码（添加冲突解决策略）
-        git pull --rebase --autostash origin main || git rebase --abort
-        
+
         # 添加文件
         git add MiGu.m3u MiGu.txt README.md
-        
-        # 检查是否有文件变更，无变更则跳过提交
-        if git diff --cached --quiet; then
-          echo "没有文件变更，跳过提交"
-          exit 0
-        fi
-        
-        # 提交更改（添加更清晰的提交信息）
-        git commit -m "IPTV更新: ${{ steps.date.outputs.date }}"
+
+        # 提交更改
+        git commit -m "${{ steps.date.outputs.date }}"
 
     - name: Push Update
-      # 失败时不终止工作流
-      continue-on-error: true
-      run: |
-        # 推送代码（处理首次推送的分支关联问题）
-        git push origin HEAD:main || git push --set-upstream origin main
+      run: git push
