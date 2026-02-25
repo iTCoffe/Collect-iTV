@@ -16,7 +16,7 @@ jobs:
       with:
         fetch-depth: 0  # 获取完整提交历史
 
-    - name: Update erw Files
+    - name: Update EPG Files
       id: update
       run: |
         # 使用临时文件避免部分下载
@@ -45,13 +45,19 @@ jobs:
           exit 1
         fi
 
+    # 新增步骤：当 erw.xml 有更新时，生成对应的 gzip 压缩包
+    - name: Compress EPG file
+      if: ${{ env.changed == 'true' }}
+      run: gzip -c erw.xml > erw.xml.gz
+
     - name: 提交更改
       if: ${{ env.changed == 'true' }}
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add erw.xml
-        git commit -m "erw更新: $(date +'%Y-%m-%d %H:%M:%S')"
+        # 同时添加 XML 和压缩文件
+        git add erw.xml erw.xml.gz
+        git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
 
     - name: Push changes
       if: ${{ env.changed == 'true' }}
@@ -59,11 +65,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: false
-
-
-
-
-
-
-
-
