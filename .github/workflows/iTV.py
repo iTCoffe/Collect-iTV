@@ -122,7 +122,7 @@ def fetch_and_generate_m3u(api_url, output_file='channels.m3u'):
 
 if __name__ == '__main__':
     api_url = "http://122.96.52.19:29010/tagNewestEpgList/JS_CUCC/1/100/0.json"
-    output_file = "channels.m3u"
+    output_file = "IPTV.m3u"
     if len(sys.argv) > 1:
         output_file = sys.argv[1]
     fetch_and_generate_m3u(api_url, output_file)
