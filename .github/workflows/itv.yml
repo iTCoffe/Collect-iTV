@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
       - name: Fetch and generate M3U
-        run: python fetch_channels.py
+        run: python .github/workflows/iTV.py
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
