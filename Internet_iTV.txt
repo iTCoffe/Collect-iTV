@@ -239,9 +239,9 @@ CCTV-9,http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/20200324/cctv9hd/51/in
  宁夏卫视,http://58.57.40.22:9901/tsfile/live/1054_1.m3u8
  安多卫视,https://liveout.xntv.tv/a65jur/96iln2.m3u8
  安徽卫视,http://58.57.40.22:9901/tsfile/live/1033_1.m3u8
- 山东卫视,http://120.76.248.139/live/bfgd/4200000099.m3u8
- 山西卫视,http://119.39.9.8:9901/tsfile/live/0118_1.m3u8
- 广东卫视,http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
+ 山东卫视,http://223.105.252.8/PLTV/4/224/3221227448/index.m3u8
+ 山西卫视,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8
+ 广东卫视,http://223.105.252.8/PLTV/4/224/3221227445/index.m3u8
  广西卫视,http://58.57.40.22:9901/tsfile/live/1049_1.m3u8
  延边卫视,http://120.76.248.139/live/bfgd/4200000117.m3u8
  延边卫视,https://srs.iyb983.cn:443/video/CYS/index.m3u8
@@ -406,7 +406,6 @@ CCTV-9,http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/20200324/cctv9hd/51/in
 山东卫视,https://hlsbkmgsplive.miguvideo.com/wd-shandonghd-1200/01.m3u8?&HlsSubType=&encrypt=
 山东卫视,https://t.freetv.fun/live/shan-dong-wei-shi-19.m3u8
 山东卫视4K,http://101.35.240.114:88/live.php?id=山东卫视4K
-山西卫视,http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8
 山西卫视,https://t.freetv.fun/live/shan-xi-wei-shi-3-2.m3u8
 广东卫视,https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
 广东卫视,http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
@@ -424,6 +423,7 @@ CCTV-9,http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/20200324/cctv9hd/51/in
 广东卫视,http://120.238.94.82:9901/tsfile/live/1009_1.m3u8
 广东卫视,http://120.238.94.10:9901/tsfile/live/1008_1.m3u8
 广东卫视,http://183.11.239.36:808/hls/80/index.m3u8
+广东卫视,http://58.57.40.22:9901/tsfile/live/1039_1.m3u8
 广东卫视,http://sun135790.x3322.net:9901/tsfile/live/16034_1.m3u8?key=txiptv&playlive=1&authid=0
 广东卫视4K,http://101.35.240.114:88/live.php?id=广东卫视4K
 广西卫视,http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub
@@ -1271,11 +1271,16 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 🚌广东频道,#genre#
  南国都市,https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de
  南国都市,http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4
+ 广东影视,http://119.32.12.17:2901/udp/224.1.100.11:11111
+ 广东新闻,http://119.32.12.17:2901/udp/224.1.100.5:11111
  广东民生,http://183.11.239.36:808/hls/18/index.m3u8
- 广东珠江,http://cdn2.132.us.kg/live/gdzj/stream.m3u8
+ 广东珠江,http://cdn2.163189.xyz/live/gdzj/stream.m3u8
+ 广东经济科教,http://119.32.12.17:2901/udp/224.1.100.6:11111
  广州新闻,http://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=d2c2db0b598c02ec1b5623728434d367&txTime=18d57929bd3
  广州竞赛,http://8.138.7.223/tv/gzjs.m3u8
  广州综合,http://tencentplay.gztv.com/live/zonghes.m3u8?txSecret=c8dbe86d6f86eb1a21999ab479fd5667&txTime=18d3c4690e8
+ 河源公共,http://tmpstream.hyrtv.cn/hygg/sd/live.m3u8
+ 河源综合,http://tmpstream.hyrtv.cn/xwzh/sd/live.m3u8
  番禺综合,http://video.epaper.pybtv.cn:8080/live/rtmp_live_demo.flv
  粤语电影丶,https://goodiptv.club/douyu/1226741
 佛山综合,https://t.freetv.fun/live/fo-shan-zong-he.m3u8
@@ -1301,9 +1306,9 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 广东民生,https://t.freetv.fun/live/yan-dong-min-sheng-7.m3u8
 广东民生,https://t.freetv.fun/live/yan-dong-min-sheng.m3u8
 广东珠江,https://hk.188766.xyz/?migutoken=75d82ac4fd56e5ed0c7ae444fb817bc4&id=gd_gdzj&type=sz
-广东珠江,http://cdn2.163189.xyz/live/gdzj/stream.m3u8
 广东珠江,http://r.jdshipin.com/sE5vO
 广东珠江,http://lu.wqwqwq.sbs/itv/2000000003000000033.m3u8?cdn=hnbblive
+广东珠江,http://cdn2.132.us.kg/live/gdzj/stream.m3u8
 广东珠江,https://smart.pendy.dpdns.org/Smart.php?id=zhujiang
 广东珠江,https://hk.188766.xyz/?migutoken=6e51efcf8252c5b3def22a7b84223aec&id=gd_gdzj&type=sz
 广东珠江,https://hk.188766.xyz/?migutoken=a7c952462b8762b31962c79a4247eeeb&id=gd_gdzj&type=sz
@@ -1334,7 +1339,6 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 深圳都市,https://t.freetv.fun/live/shen-zhen-du-shi.m3u8
 深圳都市,https://t.freetv.fun/live/shen-zhen-du-shi-1.m3u8
 🚎广西频道,#genre#
- 北海新闻综合,https://live.gxrb.com.cn/gx/beihai/index.m3u8
  南宁公共,http://hls.nntv.cn/nnlive/GGPD_24.m3u8
  南宁都市生活,http://615bbf179ba53515dccad7b1da5d1ad9.livehwc3.cn/hls.nntv.cn/nnlive/WLSH_24.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=2598844eaee8a4265e706fc14b3fc11d
  宾阳综合,http://pulls.myun.tv/live/0dkp33j5.m3u8
@@ -1342,6 +1346,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
  广西新闻,https://tv.gxtv.cn/channel/channelivePlay_9dfd8600075811e9ba67e41f13b60c62.html
  来宾综合,http://zb.gxlbamc.com:1935/live/lbzh.stream/playlist.m3u8
  灌阳新闻综合,https://ls.qingting.fm/live/5043/64k.m3u8
+北海新闻综合,https://live.gxrb.com.cn/gx/beihai/index.m3u8
 北海经济科教,https://play-a2.quklive.com:443/live/1727311690820146.m3u8
 南宁公共,https://hls.nntv.cn/nnlive/NNTV_PUB_A.m3u8
 南宁公共,http://hls.nntv.cn/nnlive/NNTV_PUB_A.m3u8?zguangxd
@@ -1360,10 +1365,8 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 广西新闻,https://t.freetv.fun/live/yan-xi-xin-wen.m3u8
 广西新闻,https://mobilelive.gxtv.cn/live/gx_live1007/playlist.m3u8
 🚐贵州频道,#genre#
- 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
  安顺新闻,http://hplayer1.juyun.tv/camera/154379194.m3u8
  贵州省兴义市万峰林,https://gcalic.v.myalicdn.com/gc/xywfl_1/index.m3u8
-新闻综合,http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 贵州移动电视,http://47.108.20.161:8866/guizhou/guizhou.php?id=gzyd
 贵州移动电视,http://58.144.154.93/9bwaz8y2.gzstv.com/live/CH13_lo.m3u8
 🚑海南频道,#genre#
@@ -1610,6 +1613,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 荆门新闻综合,https://t.freetv.fun/live/jing-men-xin-wen-zong-he-4.m3u8
 荆门新闻综合,https://t.freetv.fun/live/jing-men-xin-wen-zong-he.m3u8
 🚙湖南频道,#genre#
+ 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
  湖南国际,http://phonehw.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2RuZXhfaWQ9aHdfcGhvbmUmcz0zYTExOGIwNDMyM2Y3Y2EyYjAyZDFjOTE3Yjc4YmU1YSZ1aWQ9JnV1aWQ9OGE4MjU5MWIyOWJkZGMzYWJiNDIxMzFjMmRhNTlkYjMtNjcyN2UyNjQmdj0yJmFzPTAmZXM9MTc0MDQwODkzNA,,/HNGJMPP360.m3u8
  湖南电视剧,http://phonehw.qing.mgtv.com/nn_live/nn_x64/dWlwPTEwMy4zOS4yMjYuMTAwJnFpZD0mY2RuZXhfaWQ9aHdfcGhvbmUmcz0yODUxNGViMDMzMTQxNjdjYTNiMzYxNjlmNTRmOGYzMSZ1aWQ9JnV1aWQ9ZTRkODgyNGE1YzQ4ZjVkOGQ4MjRmMWRjYzdlOGRlMWUtNjcyN2UyNjQmdj0yJmFzPTAmZXM9MTc0MDQwMTU5Nw,,/HNDSJMPP360.m3u8
  衡阳新闻综合,https://liveplay-srs.voc.com.cn/hls/tv/183_554704.m3u8
@@ -1618,6 +1622,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 娄底综合,http://58.46.28.146:9999/tsfile/live/1088_1.m3u8
 娄底综合,http://58.46.29.253:9999/tsfile/live/1088_1.m3u8
 娄底综合,http://iptv.666230.xyz/iptv/hnyx.php/ldxw
+新闻综合,http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 湖南公共,http://119.39.9.8:9901/tsfile/live/1009_1.m3u8
 湖南国际,http://phonetx.qing.mgtv.com/nn_live/nn_x64/0.0&/HNGJMPP360.m3u8
 湖南国际,https://mirror.ghproxy.com/https://raw.githubusercontent.com/Meroser/mgtv/main/m3u8/hn06.m3u8
@@ -2059,6 +2064,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
  大宁综合,http://live.daningtv.com/aac_dngb/playlist.m3u8
  太谷新闻综合,https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;tpid=1516989100&amp;type=0
  定襄综合,http://lbyzztfe.live.sxmty.com/live/hls/645ff4c60e0a49f0a203abbd73dd8be9/0720e665f10f48e98c9639f4f492fb4a-1.m3u8?zshanxd
+ 平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
  怀仁综合,https://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc-1.m3u8
  武乡新闻综合,http://uzoiczhh.live.sxmty.com/live/hls/0d41f1480c4042d49927858f01fde707/53130407737b417b9a6259b57246bae3.m3u8?zshanxd
  祁县新闻综合,http://ggpagerl.live.sxmty.com/live/hls/b350dc1ac5da45c2b2233f6eb122ddf4/49d3766c7f204685a2a8f027b234c33d.m3u8?zshanxd
@@ -2083,7 +2089,6 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 山西经济,http://220.194.178.58:8888/newlive/live/hls/52/live.m3u8
 山西经济,https://live-cdn-v01.lalifeier.eu.org/sxrtv/sxjj.m3u8?t=1772574002&key=6382cf3af4dd08d5d7532dbbafc3837e
 山西经济,https://live-cdn-v01.lalifeier.eu.org/sxrtv/sxjj.m3u8?t=1772617854&key=8b1c51bd0339a7171de70b0137a77eb1
-平遥新闻综合,https://tntgjhjb.live.sxmty.com/live/hls/3a4585ac11ec4e1bb07b419101b370c3/baf63e2b313440c2a25d7859f9b73b05-1.m3u8?zshanxd
 怀仁综合,http://1yp7hc5p.live.sxmty.com/live/hls/bff8529922344209985b6e49baa9555a/efa2543628fc4a7ea93d3d6c975f77dc.m3u8?zshanxd
 汾西综合,https://qmmqvzoz.live.sxmty.com/live/hls/f24f8a390c084386a564074c9260100c/be3fdf07606145739ab2c4b80fe0136a.m3u8?zshanxd
 黄河电视台,http://liveflash.sxrtv.com/live/huanghe.m3u8?sub_m3u8=true&edge_slice=true
@@ -2173,8 +2178,8 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 魔都眼,http://dxa.yiandrive.com:39191/sh/mdy
 魔都眼,https://tv.iill.top/kdf/mdy
 🛴天津频道,#genre#
+ 武清综合,https://tvpull.smartwq.cn/wqlive/convergencemedia/playlist.m3u8?ztianjd
  津南一套,http://play.jinnantv.top/live/JNTV1.m3u8?ztianjd
-武清综合,https://tvpull.smartwq.cn/wqlive/convergencemedia/playlist.m3u8?ztianjd
 🛹新疆频道,#genre#
  伊犁哈萨克,http://110.153.180.106:55555/out_3/index.m3u8
  伊犁经济法制,http://110.153.180.106:55555/out_4/index.m3u8
@@ -2262,7 +2267,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
  衢江新闻综合,http://l.cztvcloud.com/channels/lantian/SXqujiang1/720p.m3u8?zzhed
  诸暨新闻综合,https://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8
  象山新闻综合,http://l.cztvcloud.com/channels/lantian/SXxiangshan1/720p.m3u8
- 象山综合,http://play-sh13.quklive.com/live/1702360350551252.m3u8?auth_key=2037107484-800189c57a5a44d3b823b60cf84f6756-0-a6f6828a62d5c167cff5e68735fa0d39
+ 象山综合,http://l.cztvcloud.com/channels/lantian/SXxiangshan1/720p.m3u8?zzhed
  遂昌综合,http://l.cztvcloud.com/channels/lantian/SXsuichang1/720p.m3u8?zzhed
  青田电视台,http://l.cztvcloud.com/channels/lantian/SXqingtian1/720p.m3u8
  龙泉新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongquan1/720p.m3u8
@@ -2387,6 +2392,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 衢江新闻综合,https://t.freetv.fun/live/qu-jiang-xin-wen-zong-he.m3u8
 诸暨新闻综合,http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8
 诸暨新闻综合,http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8?zzhed
+象山新闻综合,http://play-sh13.quklive.com/live/1702360350551252.m3u8?auth_key=2037107484-800189c57a5a44d3b823b60cf84f6756-0-a6f6828a62d5c167cff5e68735fa0d39
 鄞州一套,http://pili-publish.yzxw.newaircloud.com/newaircloud-yzxw/yzxw_20190925090843.m3u8?zzhed
 鄞州二套,http://pili-publish.yzxw.newaircloud.com/newaircloud-yzxw/yzxw_20190925090936.m3u8?zzhed
 龙游新闻综合,http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
@@ -2402,6 +2408,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
 北京新闻,http://iptv.huuc.edu.cn/hls/btv9hd.m3u8
 🏍️港澳台频道,#genre#
  凤凰电影,http://iot-mqqt.111yao.cn:8080/live/diyp_fhdy.m3u8
+ 天映经典,http://pull-vivek.speedws.com/live/aaatyjd.flv
  无线星河,https://cdn6.101.qzz.io/163189/tvbxh
  靖天戏剧,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv058
  靖天映画,http://breezy-audrie-zspace-7524863c.koyeb.app/vipsir?token=leifeng&id=4gtv-4gtv055
@@ -2528,7 +2535,7 @@ CETV4,http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/cetv4/51/20240709/index
  五星体育,https://other.ottiptv.cc/wxty.m3u8
  只关于篮球的只老师,https://goodiptv.club/douyu/9367541
  屿风体育,https://goodiptv.club/douyu/10329889
- 广东体育,http://cdn2.132.us.kg/live/gdty/stream.m3u8
+ 广东体育,http://cdn2.163189.xyz/live/gdty/stream.m3u8
  睛彩广场舞,http://zjzcf.synology.me:35455/itv/3000000020000011523.m3u8?cdn=FifastbLive
  篮球之家老李,https://goodiptv.club/douyu/9170147
  篮球人物,https://goodiptv.club/douyu/8434598
@@ -2552,9 +2559,9 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
 五星体育,https://t.freetv.fun/live/wu-xing-ti-yu-3.m3u8
 北京体育,http://114.242.62.109:888/hls/22/index.m3u8
 广东体育,http://r.jdshipin.com/LiYdg
-广东体育,http://cdn2.163189.xyz/live/gdty/stream.m3u8
 广东体育,https://hk.188766.xyz/?migutoken=65cc8f753926cdc29d0cc40d8a963f2a&id=gd_gdty&type=sz
 广东体育,https://hls-gateway.vpstv.net/streams/476954.m3u8
+广东体育,http://cdn2.132.us.kg/live/gdty/stream.m3u8
 广东体育,https://hk.188766.xyz/?migutoken=d257eca96f4efd5bc6aadc75899b126a&id=gd_gdty&type=sz
 广东体育,https://hk.188766.xyz/?migutoken=3cee4d79c1453104b21184f3cef91fed&id=gd_gdty&type=sz
 广东体育,https://hk.188766.xyz/?migutoken=522e47ff12319a175ae3aa85b3736ecf&id=gd_gdty&type=sz
@@ -2789,13 +2796,11 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  菇菇说过,https://goodiptv.club/douyu/8788687
  蛋黄讲动漫,https://goodiptv.club/douyu/9542834
  讲故事的角马,https://goodiptv.club/douyu/4400816
- 说笑武林,https://goodiptv.club/douyu/10329706
  调侃贫道XIN版,https://goodiptv.club/douyu/9463586
  豆客解说,https://goodiptv.club/douyu/8883122
  锋哥聊商机,https://goodiptv.club/douyu/9472141
  阎君说剧,https://goodiptv.club/douyu/10475459
  露爷说漫,https://goodiptv.club/douyu/9542830
- 飞行员欧文讲故事,https://goodiptv.club/douyu/9678790
  鬼兄奇谈,https://goodiptv.club/douyu/8722254
 漫画解说,http://alist.xicp.fun:35455/yy/1382735568
 漫画解说,https://www.goodiptv.club/douyu/5907076
@@ -2840,7 +2845,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  Angela小兔,https://goodiptv.club/douyu/9617766
  Bella贝拉酱,https://goodiptv.club/douyu/9663084
  BetterMan北北,https://goodiptv.club/douyu/8507023
- Biu餐厅主管,https://goodiptv.club/douyu/7921708
  BuriedAlien的号,https://goodiptv.club/douyu/9440728
  CF柒年,https://goodiptv.club/douyu/9087887
  CGTN,https://0472.org/hls/cgtn.m3u8
@@ -2851,7 +2855,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  CGTN阿语,https://0472.org/hls/cgtna.m3u8
  Cloud猪,https://goodiptv.club/douyu/527502
  CmoStar,https://goodiptv.club/douyu/10282256
- Co视文化,https://goodiptv.club/douyu/1060418
  C座802,https://goodiptv.club/douyu/8768943
  DS女老诗,https://goodiptv.club/douyu/563536
  Devil青酱,https://goodiptv.club/douyu/9510544
@@ -2881,7 +2884,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  PhantomStrider,https://goodiptv.club/douyu/9683911
  Poison丶冰冰,https://goodiptv.club/douyu/74374
  Psyman塞门,https://goodiptv.club/douyu/9753585
- QLIMES,https://goodiptv.club/douyu/1039732
  RNDxc,https://goodiptv.club/douyu/4585643
  Rabbit每日爆料,https://goodiptv.club/douyu/9685652
  Red袖袖,https://goodiptv.club/douyu/9645396
@@ -2906,15 +2908,13 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  epcdiy,https://goodiptv.club/douyu/8759268
  fans圈娱乐,https://goodiptv.club/douyu/9630581
  gslaini,https://goodiptv.club/douyu/6997954
- ljgdy,https://goodiptv.club/douyu/1600769
+ illit礼,https://goodiptv.club/douyu/12065549
  low君热剧,https://goodiptv.club/douyu/8461020
- mn静静nm,https://goodiptv.club/douyu/5668371
  mzx阿哲,https://goodiptv.club/douyu/9483965
  py86阿,https://goodiptv.club/douyu/8849954
  sekai的光子,https://goodiptv.club/douyu/9564766
  shhher,https://goodiptv.club/douyu/8733680
  sweet夏有甜,https://goodiptv.club/douyu/4808115
- xiaoxiao1004,https://goodiptv.club/douyu/2569874
  一个机智张张,https://goodiptv.club/douyu/9653063
  一只魔玩,https://goodiptv.club/douyu/9606281
  一把钢刀镇斗虞,https://goodiptv.club/douyu/7356023
@@ -2924,12 +2924,14 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  一目十影,https://goodiptv.club/douyu/3643605
  一颗咕咕星,https://goodiptv.club/douyu/9388557
  一颗糖糖canddy,https://goodiptv.club/douyu/9192852
+ 七龙珠,https://live.metshop.top/huya/11601966
  万合出品,https://goodiptv.club/douyu/9220456
  万合鲜肉老师,https://goodiptv.club/douyu/9815091
  三七电影V,https://goodiptv.club/douyu/9457792
  三个老爸实验室,https://goodiptv.club/douyu/9090487
  三代鹿人v,https://goodiptv.club/douyu/9629717
  三国颜老师,https://goodiptv.club/douyu/12253936
+ 三年辅助一场空,https://goodiptv.club/douyu/5251148
  三斤呦,https://goodiptv.club/douyu/9047933
  上来先丢大v,https://goodiptv.club/douyu/9566154
  不二真探,https://goodiptv.club/douyu/10319545
@@ -2940,7 +2942,7 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  丛林工程师,https://goodiptv.club/douyu/9804149
  中二大帝妮可姬,https://goodiptv.club/douyu/9612400
  中二的枫哲酱,https://goodiptv.club/douyu/9541849
- 中华小当家,https://live.iill.top/huya/11342413
+ 中华小当家,https://live.metshop.top/huya/11342413
  中国村庄,http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8
  丶最紧要好玩,https://goodiptv.club/douyu/6361974
  丶清风浊酒丶,https://goodiptv.club/douyu/5918434
@@ -2961,7 +2963,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  云襄白羽,https://goodiptv.club/douyu/10508677
  五分钟电影汇,https://goodiptv.club/douyu/8443438
  享看电影,https://goodiptv.club/douyu/8974130
- 京城笑工坊,https://goodiptv.club/douyu/10329324
  亮亮也是酿酿,https://goodiptv.club/douyu/4340136
  人与自然,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/1425e1d505654cb48ba82b807b221193/1200.m3u8
  人在囧途,https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8
@@ -2972,9 +2973,9 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  仓鼠大逃亡,https://goodiptv.club/douyu/10354920
  伊太刀刀,https://goodiptv.club/douyu/747764
  伊西wind,https://goodiptv.club/douyu/12641373
- 伦帝电影说,https://goodiptv.club/douyu/9368091
  伯乐说电影V,https://goodiptv.club/douyu/9386057
  你的瑜伽女孩,https://goodiptv.club/douyu/10205199
+ 你真像个小丑,https://goodiptv.club/douyu/10730187
  你顶亲亲的前女友,https://goodiptv.club/douyu/8896746
  俗哥看电影,https://goodiptv.club/douyu/2161818
  俩个麻瓜,https://goodiptv.club/douyu/10121755
@@ -2983,7 +2984,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  倩女幽魂妖魔道,http://jsmov2.a.yximgs.com/bs3/video-hls/5232901391302199073_hlsb.m3u8
  倩女幽魂道道道,http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8
  傲娇一喵喵,https://goodiptv.club/douyu/9392610
- 傲娇的超级赛亚人,https://goodiptv.club/douyu/4373285
  兔兔MC维辰软桃团,https://goodiptv.club/douyu/8266799
  八幡老师1,https://goodiptv.club/douyu/9272043
  八月看大片,https://goodiptv.club/douyu/8816671
@@ -3003,7 +3003,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  刘也变z,https://goodiptv.club/douyu/9489079
  刘哔电影,https://goodiptv.club/douyu/2632223
  刘少丶7012,https://goodiptv.club/douyu/131977
- 刘松毅,https://goodiptv.club/douyu/12128227
  刘老师说电影,https://goodiptv.club/douyu/8317926
  利利川,https://goodiptv.club/douyu/9329249
  别闹了美越,https://goodiptv.club/douyu/9548244
@@ -3012,7 +3011,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  前任电影,https://goodiptv.club/douyu/9329242
  剧燃有趣,https://goodiptv.club/douyu/10329702
  剧能下饭鹰,https://goodiptv.club/douyu/11931032
- 剧透大爆炸,https://goodiptv.club/douyu/1739752
  动漫推荐i,https://goodiptv.club/douyu/5187099
  动物启示录,https://goodiptv.club/douyu/9443129
  动画大师姐,https://goodiptv.club/douyu/9742136
@@ -3025,7 +3023,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  十七岁的道姑,https://goodiptv.club/douyu/3186217
  千代语默,https://goodiptv.club/douyu/9484187
  半打星冰乐,https://goodiptv.club/douyu/7481383
- 半藏同学,https://goodiptv.club/douyu/9372627
  华白雨,https://goodiptv.club/douyu/9495454
  单纯的顺才少爷,https://goodiptv.club/douyu/10084875
  卖女孩滴小姑凉,https://goodiptv.club/douyu/922564
@@ -3036,7 +3033,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  卡皮君本人,https://goodiptv.club/douyu/9050486
  卿离倾心,https://goodiptv.club/douyu/7286439
  历史经典烩,https://goodiptv.club/douyu/9487003
- 压力洋哥,https://goodiptv.club/douyu/5297259
  去种田的向凹凸,https://goodiptv.club/douyu/9570290
  双笙陈元汐,https://goodiptv.club/douyu/6476693
  发条张的电影最TOP,https://goodiptv.club/douyu/2164691
@@ -3051,9 +3047,7 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  同学请坐吧,https://goodiptv.club/douyu/3736649
  同行渔猎笔记,https://goodiptv.club/douyu/2718202
  名人物语DY,https://goodiptv.club/douyu/9539063
- 名曰老饕,https://goodiptv.club/douyu/1732550
  君笑坊,https://goodiptv.club/douyu/9444093
- 吟游诗人基德,https://goodiptv.club/douyu/9337049
  吟笑派,https://goodiptv.club/douyu/2987100
  吸奇侠,https://goodiptv.club/douyu/8986636
  吾恩5nn,https://goodiptv.club/douyu/9631914
@@ -3074,6 +3068,7 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  哲忆丶,https://goodiptv.club/douyu/8977251
  唐人探影,https://goodiptv.club/douyu/10371561
  唐司令说电影,https://goodiptv.club/douyu/8774345
+ 善逸丶,https://goodiptv.club/douyu/2067020
  喜人电影,https://goodiptv.club/douyu/10348735
  喜剧电影笑不停,https://goodiptv.club/douyu/10298856
  喝水少年孙十一,https://goodiptv.club/douyu/9619048
@@ -3081,13 +3076,13 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  喵妹说电影,https://goodiptv.club/douyu/9312432
  喵招诗雨,https://goodiptv.club/douyu/9651121
  喵来啦V,https://goodiptv.club/douyu/8657669
- 嘴巴鼻子没有沟,https://goodiptv.club/douyu/10217984
  噬元兽影视,https://goodiptv.club/douyu/8896723
  四叶草影视,https://goodiptv.club/douyu/9446117
  国士无双人物传奇,https://goodiptv.club/douyu/9544555
  国际吸猫协会,https://goodiptv.club/douyu/8657834
  圈踢动漫,https://goodiptv.club/douyu/1952680
  在下小苏Su,https://goodiptv.club/douyu/8658051
+ 在回忆中寻找,https://goodiptv.club/douyu/12065601
  地理中国,http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
  培根悖论唠唠嗑,https://goodiptv.club/douyu/5354713
  堇姑娘,https://goodiptv.club/douyu/297689
@@ -3131,7 +3126,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  奇兮兮悄陌,https://goodiptv.club/douyu/953193
  奇妙博物馆,https://goodiptv.club/douyu/9409723
  奇怪电影,https://goodiptv.club/douyu/9440966
- 奇趣研究,https://goodiptv.club/douyu/8661456
  奥雷卡尔克斯,https://goodiptv.club/douyu/1224356
  女团社颜老师,https://goodiptv.club/douyu/11327316
  女汉子说电影,https://goodiptv.club/douyu/9395966
@@ -3141,7 +3135,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  妈见打ovo,https://goodiptv.club/douyu/9413151
  娱乐扒叔,https://goodiptv.club/douyu/9624581
  娱乐新番,https://goodiptv.club/douyu/9564845
- 婧公子,https://goodiptv.club/douyu/9464182
  孙毛毛Suny,https://goodiptv.club/douyu/9424103
  学徒郭昱麟,https://goodiptv.club/douyu/8871095
  宇哥讲电影,https://goodiptv.club/douyu/2104744
@@ -3160,6 +3153,7 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  小乔讲电影,https://goodiptv.club/douyu/8413908
  小侠来了,https://goodiptv.club/douyu/9734042
  小儛电影嘚啵嘚,https://goodiptv.club/douyu/8362978
+ 小兰酱177,https://goodiptv.club/douyu/11490031
  小刚学长o,https://goodiptv.club/douyu/9701497
  小太V,https://goodiptv.club/douyu/9606954
  小姐姐Bie跑哦,https://goodiptv.club/douyu/8666258
@@ -3184,7 +3178,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  小红在农村,https://goodiptv.club/douyu/1492444
  小约翰可汗,https://goodiptv.club/douyu/9738854
  小羊放映室,https://goodiptv.club/douyu/9433806
- 小艾大叔,https://goodiptv.club/douyu/9314668
  小超讲电影,https://goodiptv.club/douyu/3432645
  小铁房乐队,https://goodiptv.club/douyu/9624976
  小青放映社,https://goodiptv.club/douyu/9314689
@@ -3208,7 +3201,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  崔然竣舞台天才,https://goodiptv.club/douyu/113158
  崽崽撩电影,https://goodiptv.club/douyu/8325511
  巅峰球迷会,https://goodiptv.club/douyu/10417360
- 工藤新医heart,https://goodiptv.club/douyu/8741860
  师落,https://goodiptv.club/douyu/6911044
  幕撩电影,https://goodiptv.club/douyu/9486015
  庄尼兔拟音实验室,https://goodiptv.club/douyu/9546169
@@ -3253,7 +3245,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  悉奇,https://goodiptv.club/douyu/9401473
  悬疑MOVIE,https://goodiptv.club/douyu/9601429
  情感测试小分队,https://goodiptv.club/douyu/9697688
- 情殇乱世佳,https://goodiptv.club/douyu/8368928
  懂懂1234,https://goodiptv.club/douyu/8729614
  懒猫是只喵,https://goodiptv.club/douyu/260322
  戏晶SHOW,https://goodiptv.club/douyu/9565130
@@ -3298,7 +3289,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  数据库saber,https://goodiptv.club/douyu/9720506
  文侠灬杨杨,https://goodiptv.club/douyu/10317257
  文曰小强,https://goodiptv.club/douyu/2680501
- 文西与阿漆,https://goodiptv.club/douyu/8737695
  斗鱼恐怖游戏合集,https://goodiptv.club/douyu/10401481
  方攵日央木几,https://goodiptv.club/douyu/9942574
  无才先生,https://goodiptv.club/douyu/8317571
@@ -3323,9 +3313,9 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  暮肆Mousse,https://goodiptv.club/douyu/9634199
  暴走兄弟v,https://goodiptv.club/douyu/9350960
  暴走漫画,https://goodiptv.club/douyu/1275878
- 暴躁少女零九,https://goodiptv.club/douyu/9065302
  曹小灵比比叨,https://goodiptv.club/douyu/10289400
  月影Yueing212,https://goodiptv.club/douyu/8885525
+ 有一辆立标奔驰,https://goodiptv.club/douyu/12442176
  有趣视频分享,https://goodiptv.club/douyu/1816353
  有部电影儿,https://goodiptv.club/douyu/9736479
  朔涵君,https://goodiptv.club/douyu/9354201
@@ -3340,7 +3330,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  来呀官人V,https://goodiptv.club/douyu/9986305
  杨山羊goat,https://goodiptv.club/douyu/6300365
  杰克大魔王V,https://goodiptv.club/douyu/9729740
- 松轩说电影,https://goodiptv.club/douyu/1524969
  林九影视,https://goodiptv.club/douyu/7212528
  林家渔妹,https://goodiptv.club/douyu/9348805
  果冻lui,https://goodiptv.club/douyu/9191790
@@ -3371,8 +3360,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  求求扣扣困困,https://goodiptv.club/douyu/8795274
  汪哥说电影,https://goodiptv.club/douyu/9312685
  沂沐啊,https://goodiptv.club/douyu/9481137
- 沉郁观影,https://goodiptv.club/douyu/9393577
- 没腿毛的哥哥,https://goodiptv.club/douyu/9720447
  沫子瞪片,https://goodiptv.club/douyu/8783035
  油兔不二字幕组,https://goodiptv.club/douyu/8850453
  泽静,https://goodiptv.club/douyu/9055742
@@ -3381,8 +3368,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  洛飕飕,https://goodiptv.club/douyu/9543361
  流小豆,https://goodiptv.club/douyu/2441228
  流心影者,https://goodiptv.club/douyu/9447717
- 流浪吧王温暖,https://goodiptv.club/douyu/655973
- 浅墨33941,https://goodiptv.club/douyu/12803428
  浩贤说电影,https://goodiptv.club/douyu/10535867
  海森堡事件录,https://goodiptv.club/douyu/9754849
  海王尼加拉,https://goodiptv.club/douyu/10039005
@@ -3390,19 +3375,16 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  海绵宝宝,https://live.metshop.top/douyu/3949681
  涛哥测评,https://goodiptv.club/douyu/613850
  涛浪浪电影,https://goodiptv.club/douyu/5424258
- 淮秀帮官方,https://goodiptv.club/douyu/2519745
  淼漫迷,https://goodiptv.club/douyu/9455567
  渔农泰叔,https://goodiptv.club/douyu/9348784
  渔戈兄弟赶海,https://goodiptv.club/douyu/9091847
  渔村小马,https://goodiptv.club/douyu/1447771
- 渔民老海,https://goodiptv.club/douyu/9272327
  渚岸汐潮233,https://goodiptv.club/douyu/9518082
  游钓中国李大毛,https://goodiptv.club/douyu/791411
  游钓黑坑一疯子,https://goodiptv.club/douyu/10103411
  湖南花戏,https://goodiptv.club/douyu/12091975
  滑稽中二梦V,https://goodiptv.club/douyu/8829706
  满汉女神Yangqi,https://goodiptv.club/douyu/9650246
- 漠漠fumiyo,https://goodiptv.club/douyu/8911070
  漫威君,https://goodiptv.club/douyu/1713615
  漫尼动画,https://goodiptv.club/douyu/10364790
  潇湘公子L,https://goodiptv.club/douyu/9535657
@@ -3420,34 +3402,30 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  爱唱跳Rap的胖虎,https://goodiptv.club/douyu/5895598
  爱好恐怖片的美男子,https://goodiptv.club/douyu/9280384
  爱星影视,https://goodiptv.club/douyu/9476806
- 爱爱小s,https://goodiptv.club/douyu/10308312
  爱玩客iVankr,https://goodiptv.club/douyu/317409
  爱黏人的圆子,https://goodiptv.club/douyu/9576933
  牛叔说电影,https://goodiptv.club/douyu/2758565
  牛叔说电影二台,https://goodiptv.club/douyu/10010651
  牛奶味的梦猪猪,https://goodiptv.club/douyu/5261342
  特辑电影院,https://goodiptv.club/douyu/3637778
- 犀利影评,https://goodiptv.club/douyu/9647845
  狂拽酷炫,https://goodiptv.club/douyu/4332
  狂野的种马小说家,https://goodiptv.club/douyu/8849703
  狂阿弥爷,https://goodiptv.club/douyu/8975282
  狄胖胖与李乖乖,https://goodiptv.club/douyu/12183882
  狗毛电影,https://goodiptv.club/douyu/9356637
- 独立鱼电影,https://goodiptv.club/douyu/2413555
  猎奇笔记本,https://goodiptv.club/douyu/9627172
  猛禽西伯利亚白猿,https://goodiptv.club/douyu/10074407
  猪弟驸马爷,https://goodiptv.club/douyu/8862501
  猪肉熟了,https://goodiptv.club/douyu/296836
  猫丶趴趴,https://goodiptv.club/douyu/1255068
  猫叔说电影,https://goodiptv.club/douyu/9820039
- 猫和老鼠,https://live.iill.top/huya/11352879
+ 猫和老鼠,https://live.metshop.top/huya/11352879
  猫总白一航,https://goodiptv.club/douyu/9517105
  猫猫村长,https://goodiptv.club/douyu/4716
  猫眼电影,https://goodiptv.club/douyu/8726221
  猫记丶,https://goodiptv.club/douyu/9242659
  王Li差点红,https://goodiptv.club/douyu/9348469
  王俊凯的资源组,https://goodiptv.club/douyu/8862216
- 王坑坑聊电影,https://goodiptv.club/douyu/9402110
  王大齐吖,https://goodiptv.club/douyu/3647278
  王子和史蒂文,https://goodiptv.club/douyu/9583975
  王德发的导演小阿伟,https://goodiptv.club/douyu/9430799
@@ -3464,24 +3442,25 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  田园小漠,https://goodiptv.club/douyu/8669435
  田浅浅w,https://goodiptv.club/douyu/9747144
  电影七十二变,https://goodiptv.club/douyu/9323164
- 电影丧尸片,http://live.metshop.top/huya/21059578?cdn=alicdn
  电影先锋V,https://goodiptv.club/douyu/8711212
  电影八点档,http://live.metshop.top/huya/880261?cdn=alicdn
  电影冷知识,https://goodiptv.club/douyu/9660835
+ 电影刘德华,http://live.metshop.top/huya/11342424?cdn=alicdn
  电影刘油果,https://goodiptv.club/douyu/3985805
- 电影功夫片,http://live.metshop.top/huya/11352941?cdn=alicdn
  电影吐槽汇,https://goodiptv.club/douyu/9447668
  电影周星星,http://live.metshop.top/huya/11336587?cdn=alicdn
+ 电影嫣然影厅,http://live.metshop.top/huya/11601977?cdn=alicdn
  电影小班长,https://goodiptv.club/douyu/549693
  电影幕后喵,https://goodiptv.club/douyu/8884074
+ 电影梁家辉,http://live.metshop.top/huya/11342429?cdn=alicdn
  电影漩涡,https://goodiptv.club/douyu/8706350
  电影笔记,https://goodiptv.club/douyu/9636034
- 电影贺岁,http://live.metshop.top/huya/11601971?cdn=alicdn
+ 电影蜘蛛侠,http://live.metshop.top/huya/21059599?cdn=alicdn
+ 电影谍战,http://live.metshop.top/huya/21059585?cdn=alicdn
+ 电影谍战片,http://live.metshop.top/huya/21059587?cdn=alicdn
  电影迷小雅,https://goodiptv.club/douyu/9639225
- 电影高分动作,http://live.metshop.top/huya/11352884?cdn=alicdn
  电影黑匣子,https://goodiptv.club/douyu/8706652
  电视这个圈儿,https://goodiptv.club/douyu/9425669
- 画渣花小烙,https://goodiptv.club/douyu/9072066
  疯狂小潴潴,https://goodiptv.club/douyu/5522351
  疯狂尛潴潴,https://goodiptv.club/douyu/4290711
  白了个痴,https://goodiptv.club/douyu/319576
@@ -3498,7 +3477,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  看电影了没V,https://goodiptv.club/douyu/9562616
  睡丝虫,https://goodiptv.club/douyu/10308234
  石头老纪,https://goodiptv.club/douyu/9047060
- 砍柴炖大鹅,https://goodiptv.club/douyu/12802759
  碎片记,https://goodiptv.club/douyu/9412981
  祝晓晗,https://goodiptv.club/douyu/9575293
  神奇的大智,https://goodiptv.club/douyu/9650047
@@ -3509,8 +3487,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  科学放映室,https://goodiptv.club/douyu/9439712
  科幻Fans布玛,https://goodiptv.club/douyu/3508304
  科幻战舰,https://goodiptv.club/douyu/8772060
- 科幻梦工场,https://goodiptv.club/douyu/9608874
- 科技PRO,https://goodiptv.club/douyu/9446511
  秦看番,https://goodiptv.club/douyu/9542832
  程情写意,https://goodiptv.club/douyu/9191358
  穆杉车话,https://goodiptv.club/douyu/9602107
@@ -3577,7 +3553,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  英大吉来了,https://goodiptv.club/douyu/9174097
  苹果Zei妖,https://goodiptv.club/douyu/2793084
  苹果Zei甜,https://goodiptv.club/douyu/1174353
- 草帽丶海贼团,https://goodiptv.club/douyu/997925
  草泥泥影院,https://goodiptv.club/douyu/9091049
  荒野万池王,https://goodiptv.club/douyu/9544576
  荒野伊甸园,https://goodiptv.club/douyu/9611578
@@ -3589,7 +3564,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  莫扎金,https://goodiptv.club/douyu/9272077
  莱纳电影,https://goodiptv.club/douyu/9356937
  菠萝屋的海绵宝宝,https://goodiptv.club/douyu/3949681
- 菠萝说电影,https://goodiptv.club/douyu/3714736
  萌宠妙妙屋,https://goodiptv.club/douyu/8653533
  萌小鬼,https://goodiptv.club/douyu/3928
  萨摩耶王小羊,https://goodiptv.club/douyu/9559063
@@ -3650,7 +3624,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  酋知鱼,https://goodiptv.club/douyu/5408225
  酒痴东梦a,https://goodiptv.club/douyu/9477805
  酷酷的滕,https://goodiptv.club/douyu/1286383
- 醉我天涯zwty,https://goodiptv.club/douyu/9479775
  野格影视,https://goodiptv.club/douyu/9931766
  野灿baka,https://goodiptv.club/douyu/8867233
  野生岛民,https://goodiptv.club/douyu/10217843
@@ -3682,6 +3655,7 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  阿松撩剧,https://goodiptv.club/douyu/8880843
  阿福ThomasV,https://goodiptv.club/douyu/9194089
  阿苏电影,https://goodiptv.club/douyu/9037784
+ 阿飞表哥,https://goodiptv.club/douyu/12794509
  阿魁方言配音,https://goodiptv.club/douyu/9442903
  陈瀚Siri,https://goodiptv.club/douyu/759805
  隐紫大人不会吐槽,https://goodiptv.club/douyu/9207457
@@ -3705,8 +3679,6 @@ JJ斗地主,http://tc-tct.douyucdn2.cn/dyliveflv1a/488743rAHScWyyII_2000.m3u8
  马老师是马也Sama,https://goodiptv.club/douyu/8821892
  驴哥说电影,https://goodiptv.club/douyu/5376478
  高攀了这人间1,https://goodiptv.club/douyu/9651506
- 高能恐怖片段君,https://goodiptv.club/douyu/10401475
- 魔术师丶西索,https://goodiptv.club/douyu/6610883
  鯋鱼辰辰,https://goodiptv.club/douyu/7623292
  鲁过一世,https://goodiptv.club/douyu/9716515
  鲤环姬Lee,https://goodiptv.club/douyu/9791703
@@ -3742,19 +3714,18 @@ CN卡通,https://hls-gateway.vpstv.net/streams/476247.m3u8
 七龙珠,http://182.40.120.195/test-txdwk.flv.huya.com/src/1524418081-1524418081-6547325803326078976-3048959618-10057-A-0-1.m3u8
 七龙珠,http://dns.yiandrive.com:15907/huya/11601966
 七龙珠,https://live.ottiptv.cc/huya/11601966
-七龙珠,https://live.metshop.top/huya/11601966
 七龙珠,http://cdn.jdshipin.com:8880/huya.php?id=11601966
 中华小当家,http://61.221.215.25:8800/hls/40/index.m3u8
 中华小当家,http://www.douzhicloud.site:35455/huya/11342413
 中华小当家,http://diyp.zxxoo.work/douyu/11868078
-中华小当家,https://live.metshop.top/huya/11342413
+中华小当家,https://live.iill.top/huya/11342413
 中华小当家,http://cdn.jdshipin.com:8880/huya.php?id=11342413
 中华小当家,https://live.ottiptv.cc/huya/11342413
 火影忍者,http://1.94.31.214:35455/huya/11342385
 火影忍者,http://cdn.jdshipin.com:8880/huya.php?id=29465866
 猫和老鼠,http://www.douzhicloud.site:35455/huya/11352879
+猫和老鼠,https://live.iill.top/huya/11352879
 猫和老鼠,http://live.iill.top/huya.php?id=11352879
-猫和老鼠,https://live.metshop.top/huya/11352879
 猫和老鼠,http://cdn.jdshipin.com:8880/huya.php?id=11352879
 猫和老鼠,https://live.ottiptv.cc/huya/11352879
 私人影院,http://171.108.239.79:8181/tsfile/live/1014_1.m3u8
