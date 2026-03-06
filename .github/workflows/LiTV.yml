@@ -26,7 +26,7 @@ jobs:
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
         
-        # 合并并去重基础源
+        # 合并并去重基础源（基于整行去重）
         cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
         
         # 处理央视源
@@ -35,28 +35,33 @@ jobs:
         # 处理非央视源
         grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
         
-        # 生成最终M3U
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        # 合并央视和非央视源，并基于URL去重
+        cat CCTV.m3u CNTV.m3u > temp_combined.m3u
+        awk '/^#EXTINF/ {info=$0; getline url; if (!seen[url]++) {print info; print url}}' temp_combined.m3u > temp_unique.m3u
+        
+        # 生成最终M3U，先写入头部和自定义提示
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
         
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
         
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
         
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
 
+        # 添加Cloudflare TV
         echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> LiTV.m3u
         
-        # 合并源文件
-        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
+        # 追加去重后的频道列表
+        cat temp_unique.m3u >> LiTV.m3u
         
-        # 生成TXT播放列表
+        # 生成TXT播放列表（基于最终M3U提取，已包含去重效果）
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -68,21 +73,15 @@ jobs:
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
         # 清理临时文件
-        rm -f Base.m3u CCTV.m3u CNTV.m3u
+        rm -f Base.m3u CCTV.m3u CNTV.m3u temp_combined.m3u temp_unique.m3u Base1.m3u
         
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-
-        # 添加文件
         git add LiTV.m3u LiTV.txt README.md
-
-        # 提交更改
         git commit -m "${{ steps.date.outputs.date }}"
-
-    - name: Push Update
-      run: git push
+        git push
