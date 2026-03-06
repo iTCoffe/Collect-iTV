@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/erw.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
+#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
 https://icloud.ifanr.pp.ua/温馨提示.mp4
 #EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
@@ -7,63 +7,6 @@ https://icloud.ifanr.pp.ua/温馨提示.mp4
 https://icloud.ifanr.pp.ua/温馨提示.mp4
 #EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV
 https://cloudflare.tv/hls/live.m3u8
-#EXTINF:-1 tvg-id="CCTV1综合" tvg-name="CCTV1综合" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/202204010054_1626677671392_H32_1080.webp" group-title="央视",CCTV1综合
-http://47.119.24.76:59093/608807420
-#EXTINF:-1 tvg-id="CCTV2财经" tvg-name="CCTV2财经" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/202205311432_1626678578843_H32_1080.webp" group-title="央视",CCTV2财经
-http://47.119.24.76:59093/631780532
-#EXTINF:-1 tvg-id="CCTV3综艺" tvg-name="CCTV3综艺" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/202204010055_1626679244629_H32_1080.webp" group-title="央视",CCTV3综艺
-http://47.119.24.76:59093/624878271
-#EXTINF:-1 tvg-id="CCTV4中文国际" tvg-name="CCTV4中文国际" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/202204010054_1626679413842_H32_1080.webp" group-title="央视",CCTV4中文国际
-http://47.119.24.76:59093/631780421
-#EXTINF:-1 tvg-id="CCTV5体育" tvg-name="CCTV5体育" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/202204010048_1626679603804_H32_1080.webp" group-title="央视",CCTV5体育
-http://47.119.24.76:59093/641886683
-#EXTINF:-1 tvg-id="CCTV5+体育赛事" tvg-name="CCTV5+体育赛事" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/202204010048_1626679712843_H32_1080.webp" group-title="央视",CCTV5+体育赛事
-http://47.119.24.76:59093/641886773
-#EXTINF:-1 tvg-id="CCTV6电影" tvg-name="CCTV6电影" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/202204010054_1626679914432_H32_1080.webp" group-title="央视",CCTV6电影
-http://47.119.24.76:59093/624878396
-#EXTINF:-1 tvg-id="CCTV7国防军事" tvg-name="CCTV7国防军事" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5501/083/622/202204010054_1626680119210_H32_1080.webp" group-title="央视",CCTV7国防军事
-http://47.119.24.76:59093/673168121
-#EXTINF:-1 tvg-id="CCTV8电视剧" tvg-name="CCTV8电视剧" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/202204010049_1626677150014_H32_1080.webp" group-title="央视",CCTV8电视剧
-http://47.119.24.76:59093/624878356
-#EXTINF:-1 tvg-id="CCTV9纪录" tvg-name="CCTV9纪录" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5501/083/624/202204010054_1626677545059_H32_1080.webp" group-title="央视",CCTV9纪录
-http://47.119.24.76:59093/673168140
-#EXTINF:-1 tvg-id="CCTV10科教" tvg-name="CCTV10科教" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/202204010054_1626677767922_H32_1080.webp" group-title="央视",CCTV10科教
-http://47.119.24.76:59093/624878405
-#EXTINF:-1 tvg-id="CCTV11戏曲" tvg-name="CCTV11戏曲" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/988/610/202204010054_1626677922732_H32_1080.webp" group-title="央视",CCTV11戏曲
-http://47.119.24.76:59093/667987558
-#EXTINF:-1 tvg-id="CCTV12社会与法" tvg-name="CCTV12社会与法" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5501/083/627/202204010053_1626678108629_H32_1080.webp" group-title="央视",CCTV12社会与法
-http://47.119.24.76:59093/673168185
-#EXTINF:-1 tvg-id="CCTV13新闻" tvg-name="CCTV13新闻" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/202204010051_2202208864_H32_1080.webp" group-title="央视",CCTV13新闻
-http://47.119.24.76:59093/608807423
-#EXTINF:-1 tvg-id="CCTV14少儿" tvg-name="CCTV14少儿" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/202204010054_1626678147073_H32_1080.webp" group-title="央视",CCTV14少儿
-http://47.119.24.76:59093/624878440
-#EXTINF:-1 tvg-id="CCTV15音乐" tvg-name="CCTV15音乐" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5501/083/628/202204010054_1626678245130_H32_1080.webp" group-title="央视",CCTV15音乐
-http://47.119.24.76:59093/673168223
-#EXTINF:-1 tvg-id="CCTV17农业农村" tvg-name="CCTV17农业农村" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5501/083/631/202204010052_1626678428060_H32_1080.webp" group-title="央视",CCTV17农业农村
-http://47.119.24.76:59093/673168256
-#EXTINF:-1 tvg-id="CCTV4欧洲" tvg-name="CCTV4欧洲" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/315/202204010055_1626831010992_H32_1080.webp" group-title="央视",CCTV4欧洲
-http://47.119.24.76:59093/608807419
-#EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/344/202204010055_1626830746239_H32_1080.webp" group-title="央视",CCTV4美洲
-http://47.119.24.76:59093/608807416
-#EXTINF:-1 tvg-id="CGTN外语纪录" tvg-name="CGTN外语纪录" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/202502251602_1740470541608_H32_1080.webp" group-title="央视",CGTN外语纪录
-http://47.119.24.76:59093/609006487
-#EXTINF:-1 tvg-id="CGTN阿拉伯语" tvg-name="CGTN阿拉伯语" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/202502251557_1740470230464_H32_1080.webp" group-title="央视",CGTN阿拉伯语
-http://47.119.24.76:59093/609154345
-#EXTINF:-1 tvg-id="CGTN西班牙语" tvg-name="CGTN西班牙语" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/202502251600_1740470437874_H32_1080.webp" group-title="央视",CGTN西班牙语
-http://47.119.24.76:59093/609006450
-#EXTINF:-1 tvg-id="CGTN法语" tvg-name="CGTN法语" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/202502251559_1740470371334_H32_1080.webp" group-title="央视",CGTN法语
-http://47.119.24.76:59093/609006476
-#EXTINF:-1 tvg-id="CGTN俄语" tvg-name="CGTN俄语" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/202502251558_1740470314603_H32_1080.webp" group-title="央视",CGTN俄语
-http://47.119.24.76:59093/609006446
-#EXTINF:-1 tvg-id="老故事" tvg-name="老故事" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5910/022/002/202405081702_1715158648861_H32_1080.webp" group-title="央视",老故事
-http://47.119.24.76:59093/884121956
-#EXTINF:-1 tvg-id="发现之旅" tvg-name="发现之旅" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/893/202405081702_1715158828498_H32_1080.webp" group-title="央视",发现之旅
-http://47.119.24.76:59093/624878970
-#EXTINF:-1 tvg-id="中学生" tvg-name="中学生" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5910/019/355/202405081702_1715158115119_H32_1080.webp" group-title="央视",中学生
-http://47.119.24.76:59093/708869532
-#EXTINF:-1 tvg-id="CGTN" tvg-name="CGTN" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/202204010052_1642124778350_H32_1080.webp" group-title="央视",CGTN
-http://47.119.24.76:59093/609017205
-#EXTM3U x-tvg-url="http://47.119.24.76:59093/playback.xml" catchup="append" catchup-source="?playbackbegin=${(b)yyyyMMddHHmmss}&playbackend=${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 tvg-id="CCTV1综合" tvg-name="CCTV1综合" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/202204010054_1626677671392_H32_1080.webp" group-title="央视",CCTV1综合
 http://47.119.24.76:59093/608807420
 #EXTINF:-1 tvg-id="CCTV2财经" tvg-name="CCTV2财经" tvg-logo="http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/202205311432_1626678578843_H32_1080.webp" group-title="央视",CCTV2财经
@@ -554,11 +497,13 @@ http://47.119.24.76:59093/963425049
 http://47.119.24.76:59093/963424830
 #EXTINF:-1 tvg-id="塞尔塔VS皇家马德里" tvg-name="西甲 塞尔塔VS皇家马德里 赛场原声 03:45" tvg-logo="https://img.cmvideo.cn/publish/noms_wc/nomsworldcup/2025/09/27/6UROS3QNB1F8.png" group-title="体育-明天",西甲 塞尔塔VS皇家马德里 赛场原声 03:45
 http://47.119.24.76:59093/963424815
+#EXTINF:-1 tvg-id="塞尔塔VS皇家马德里" tvg-name="西甲 塞尔塔VS皇家马德里 李霄 贺宇 03:45" tvg-logo="https://img.cmvideo.cn/publish/noms_wc/nomsworldcup/2025/09/27/6UROS3QNB1F8.png" group-title="体育-明天",西甲 塞尔塔VS皇家马德里 李霄 贺宇 03:45
 http://47.119.24.76:59093/963424850
 #EXTINF:-1 tvg-id="狼队VS利物浦" tvg-name="足总杯 狼队VS利物浦 吴桐 颜强 03:45" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/1/10/1000000004951064ccd7.png" group-title="体育-明天",足总杯 狼队VS利物浦 吴桐 颜强 03:45
 http://47.119.24.76:59093/963423912
 #EXTINF:-1 tvg-id="狼队VS利物浦" tvg-name="足总杯 狼队VS利物浦 赛场原声 03:45" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/1/10/1000000004951064ccd7.png" group-title="体育-明天",足总杯 狼队VS利物浦 赛场原声 03:45
 http://47.119.24.76:59093/963423943
+#EXTINF:-1 tvg-id="狼队VS利物浦" tvg-name="足总杯 狼队VS利物浦 吴桐 颜强 03:45" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/1/10/1000000004951064ccd7.png" group-title="体育-明天",足总杯 狼队VS利物浦 吴桐 颜强 03:45
 http://47.119.24.76:59093/963423965
 #EXTINF:-1 tvg-id="凯尔特人VS独行侠" tvg-name="NBA 凯尔特人VS独行侠 蔡凯臣 季孟年 07:55" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2020/1/10/7f7fd4d8-7213-412b-8a19-02521a6ef852.png" group-title="体育-明天",NBA 凯尔特人VS独行侠 蔡凯臣 季孟年 07:55
 http://47.119.24.76:59093/963349162
@@ -674,6 +619,7 @@ http://47.119.24.76:59093/963424102
 http://47.119.24.76:59093/963424064
 #EXTINF:-1 tvg-id="曼斯菲尔德VS阿森纳" tvg-name="足总杯 曼斯菲尔德VS阿森纳 赛场原声 20:00" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/1/10/1000000004951064ccd7.png" group-title="体育-明天",足总杯 曼斯菲尔德VS阿森纳 赛场原声 20:00
 http://47.119.24.76:59093/963424038
+#EXTINF:-1 tvg-id="曼斯菲尔德VS阿森纳" tvg-name="足总杯 曼斯菲尔德VS阿森纳 娄一晨 刘越 姚安妮 20:00" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2025/1/10/1000000004951064ccd7.png" group-title="体育-明天",足总杯 曼斯菲尔德VS阿森纳 娄一晨 刘越 姚安妮 20:00
 http://47.119.24.76:59093/963423989
 #EXTINF:-1 tvg-id="UFC激战前夜：苏木达尔基、肖龙特辑" tvg-name="UFC前瞻与回顾 UFC激战前夜：苏木达尔基、肖龙特辑 陈瑞阳 20:30" tvg-logo="https://img.cmvideo.cn/publish/noms_wc/nomsworldcup/2026/01/20/7711R3GE2V3R.png" group-title="体育-明天",UFC前瞻与回顾 UFC激战前夜：苏木达尔基、肖龙特辑 陈瑞阳 20:30
 http://47.119.24.76:59093/963423581
@@ -701,6 +647,7 @@ http://47.119.24.76:59093/963424897
 http://47.119.24.76:59093/963424859
 #EXTINF:-1 tvg-id="弗赖堡VS勒沃库森" tvg-name="德甲 弗赖堡VS勒沃库森 赛场原声 22:15" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2021/3/3/610655860.png" group-title="体育-明天",德甲 弗赖堡VS勒沃库森 赛场原声 22:15
 http://47.119.24.76:59093/963424874
+#EXTINF:-1 tvg-id="弗赖堡VS勒沃库森" tvg-name="德甲 弗赖堡VS勒沃库森 李霄 22:15" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2021/3/3/610655860.png" group-title="体育-明天",德甲 弗赖堡VS勒沃库森 李霄 22:15
 http://47.119.24.76:59093/963424881
 #EXTINF:-1 tvg-id="沃尔夫斯堡VS汉堡" tvg-name="德甲 沃尔夫斯堡VS汉堡 刘洋 22:15" tvg-logo="https://img.cmvideo.cn/sports/uploadImages/2021/3/3/610655860.png" group-title="体育-明天",德甲 沃尔夫斯堡VS汉堡 刘洋 22:15
 http://47.119.24.76:59093/963424967
