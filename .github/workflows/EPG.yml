@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '30 7,13,20 * * *'
+    - cron: '30 7,13,19 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -65,6 +65,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: false
+
 
 
 
