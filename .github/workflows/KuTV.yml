@@ -1,11 +1,9 @@
-name: KuTV Daily Update
-
 on:
   workflow_dispatch:
   watch:
     types: [started]
   schedule:
-    - cron: '30 0-23/2 * * *'
+    - cron: '30 0-23/3 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -63,7 +61,7 @@ jobs:
         # 合并源文件（确保无重复EXTM3U）
         cat CCTV.m3u CNTV.m3u >> KuTV.m3u
         
-        # 生成TXT播放列表（优化过滤逻辑）
+        # 生成TXT播放列表（优化过滤逻辑，已移除冰茶体育|冰茶公告的过滤）
         awk -F ',' '
           /^#EXTINF:/ {
               sub(/^#EXTINF:-1 [^,]+,/, "", $0);
@@ -71,7 +69,7 @@ jobs:
               getline url;
               gsub(/[ \r]/, "", name);
               gsub(/\r/, "", url);
-              if (name !~ /冰茶体育|冰茶公告/ && name != "" && url != "") {
+              if (name != "" && url != "") {  # 仅保留非空判断
                   print name "," url;
               }
           }
