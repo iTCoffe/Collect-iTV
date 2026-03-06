@@ -24,76 +24,54 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base.m3u
-
-        # 使用 awk 解析并去重（基于 URL），清洗 URL 并过滤无效地址
-        awk '
-          BEGIN { channels_count = 0 }
-          /^#EXTINF/ {
-            meta = $0
-            getline url
-            # 去除 URL 首尾空白字符（空格、制表符、回车）
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", url)
-            # 仅保留以 http:// 或 https:// 开头的有效 URL
-            if (url != "" && url ~ /^https?:\/\//) {
-              if (!(url in seen)) {
-                seen[url] = 1
-                channels[url] = meta
-              }
-            }
-          }
-          END {
-            for (url in channels) {
-              print channels[url] > "channels.m3u"
-              print url           > "channels.m3u"
-            }
-          }
-        ' Base.m3u
-
-        # 生成最终 LiTV.m3u（头部 + 自定义条目 + 所有频道）
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
-
+        wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
+        
+        # 合并并去重基础源
+        cat Base1.m3u | awk '!seen[$0]++' > Base.m3u
+        
+        # 处理央视源
+        grep -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CCTV.m3u
+        
+        # 处理非央视源
+        grep -v -A 1 '央视' Base.m3u | grep -v '^--$' | awk '!seen[$0]++' > CNTV.m3u
+        
+        # 生成最终M3U
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' >LiTV.m3u
+        
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
-
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >>LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
+        
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
-
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >>LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
+        
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >>LiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >>LiTV.m3u
 
-        # Cloudflare TV
         echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> LiTV.m3u
-
-        # 合并所有频道（从 channels.m3u 追加）
-        cat channels.m3u >> LiTV.m3u
-
-        # 生成 TXT 播放列表（格式：频道名,URL），基于清洗后的 URL 去重
-        awk -F ',' '
-          /^#EXTINF/ {
-            # 提取频道名（最后一个逗号之后的所有内容），去除首尾空白，保留内部空格
-            match($0, /,[[:space:]]*(.*)$/, arr)
-            name = arr[1]
-            getline url
-            # 清洗 URL
-            gsub(/^[[:space:]]+|[[:space:]]+$/, "", url)
-            gsub(/\r$/, "", url)
-            # 只保留有效 URL
-            if (name != "" && url != "" && url ~ /^https?:\/\//) {
-              print name "," url
-            }
-          }
-        ' LiTV.m3u | awk -F ',' '!seen[$2]++' > LiTV.txt
-
+        
+        # 合并源文件
+        cat CCTV.m3u CNTV.m3u >>LiTV.m3u
+        
+        # 生成TXT播放列表
+        awk '/^#EXTINF:/ {
+            split($0, a, ",");
+            name = a[2];
+            getline url;
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
+            sub(/^ /, "", name);
+            print name "," url;
+        }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
+        
         # 清理临时文件
-        rm -f Base.m3u channels.m3u
-
-        # 更新 README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        rm -f Base.m3u CCTV.m3u CNTV.m3u
+        
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
 
     - name: Commit Changes
       run: |
