@@ -26,16 +26,20 @@ jobs:
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base.m3u
 
-        # 使用 awk 按频道解析并去重（基于 URL），保留所有频道的完整元数据
+        # 使用 awk 解析并去重（基于 URL），清洗 URL 并过滤无效地址
         awk '
           BEGIN { channels_count = 0 }
           /^#EXTINF/ {
             meta = $0
             getline url
-            gsub(/\r/, "", url)
-            if (!(url in seen)) {
-              seen[url] = 1
-              channels[url] = meta
+            # 去除 URL 首尾空白字符（空格、制表符、回车）
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", url)
+            # 仅保留以 http:// 或 https:// 开头的有效 URL
+            if (url != "" && url ~ /^https?:\/\//) {
+              if (!(url in seen)) {
+                seen[url] = 1
+                channels[url] = meta
+              }
             }
           }
           END {
@@ -68,16 +72,18 @@ jobs:
         # 合并所有频道（从 channels.m3u 追加）
         cat channels.m3u >> LiTV.m3u
 
-        # 生成 TXT 播放列表（格式：频道名,URL）
+        # 生成 TXT 播放列表（格式：频道名,URL），基于清洗后的 URL 去重
         awk -F ',' '
           /^#EXTINF/ {
-            # 提取频道名（最后一个逗号之后的部分，并去除首尾空格）
-            sub(/^#EXTINF:-1 [^,]+, /, "", $0);
-            name = $0
+            # 提取频道名（最后一个逗号之后的所有内容），去除首尾空白，保留内部空格
+            match($0, /,[[:space:]]*(.*)$/, arr)
+            name = arr[1]
             getline url
-            gsub(/[ \r]/, "", name)
-            gsub(/\r/, "", url)
-            if (name != "" && url != "") {
+            # 清洗 URL
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "", url)
+            gsub(/\r$/, "", url)
+            # 只保留有效 URL
+            if (name != "" && url != "" && url ~ /^https?:\/\//) {
               print name "," url
             }
           }
