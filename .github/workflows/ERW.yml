@@ -1,4 +1,4 @@
-name: MIGU EPG Update
+name: ERW Update
 on:
   workflow_dispatch:
   push:
@@ -46,7 +46,7 @@ jobs:
         fi
 
     # 新增步骤：当 erw.xml 有更新时，生成对应的 gzip 压缩包
-    - name: Compress EPG file
+    - name: Compress ERW file
       if: ${{ env.changed == 'true' }}
       run: gzip -c erw.xml > erw.xml.gz
 
@@ -57,7 +57,7 @@ jobs:
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         # 同时添加 XML 和压缩文件
         git add erw.xml erw.xml.gz
-        git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
+        git commit -m "ERW更新: $(date +'%Y-%m-%d %H:%M:%S')"
 
     - name: Push changes
       if: ${{ env.changed == 'true' }}
