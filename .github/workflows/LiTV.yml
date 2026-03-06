@@ -64,10 +64,6 @@ jobs:
               getline url;
               gsub(/[ \r]/, "", name);
               gsub(/\r/, "", url);
-              if (name != "" && url != "") {  # 仅保留非空判断
-                  print name "," url;
-              }
-          }
         }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
         
         # 清理临时文件
