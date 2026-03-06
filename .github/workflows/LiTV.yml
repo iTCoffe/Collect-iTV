@@ -26,9 +26,8 @@ jobs:
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u -O Base1.m3u
 
-        # 生成最终M3U，保留原始源头部并添加自定义提示
-        # 读取Base1.m3u的第一行作为头部（通常为#EXTM3U ...）
-        head -n 1 Base1.m3u > LiTV.m3u
+        # 生成最终M3U：写入自定义头部（替换原头部）
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
 
         # 添加自定义提示 (温馨提示)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
@@ -46,7 +45,7 @@ jobs:
         echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> LiTV.m3u
 
-        # 追加原始源的剩余内容（跳过第一行头部，保留完整顺序）
+        # 追加原始源的剩余内容（跳过第一行，保留完整顺序）
         tail -n +2 Base1.m3u >> LiTV.m3u
 
         # 生成TXT播放列表（基于最终M3U提取）
