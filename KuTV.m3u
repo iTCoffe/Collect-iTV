@@ -7,6 +7,8 @@ https://icloud.ifanr.pp.ua/温馨提示.mp4
 https://icloud.ifanr.pp.ua/温馨提示.mp4
 #EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV
 https://cloudflare.tv/hls/live.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-央视文化精品" tvg-logo="https://epg.112114.xyz/logo/CCTV-央视文化精品.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-央视文化精品
+http://107.150.60.122/live/ysjp.m3u8
 #EXTINF:-1 group-title="🔥[联通]央卫视直播" tvg-name="CCTV-央视台球" tvg-logo="https://epg.112114.xyz/logo/CCTV-央视台球.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-央视台球
 http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
 #EXTINF:-1 group-title="🔥[三网]央卫视直播" tvg-name="CCTV1" tvg-logo="https://epg.112114.xyz/logo/CCTV1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV1
@@ -97,102 +99,90 @@ http://156.238.248.80:8880/play/22.m3u8
 http://156.238.248.80:8880/play/23.m3u8
 #EXTINF:-1 group-title="🔥[三网]央卫视直播" tvg-name="辽宁体育" tvg-logo="https://epg.112114.xyz/logo/辽宁体育.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",辽宁体育
 http://156.238.248.80:8880/play/24.m3u8
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV1" tvg-logo="https://epg.112114.xyz/logo/CCTV1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV1
-http://61.184.46.85:85/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV2" tvg-logo="https://epg.112114.xyz/logo/CCTV2.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV2
-http://61.184.46.85:85/tsfile/live/0002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV3" tvg-logo="https://epg.112114.xyz/logo/CCTV3.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV3
-http://61.184.46.85:85/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV4" tvg-logo="https://epg.112114.xyz/logo/CCTV4.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV4
-http://61.184.46.85:85/tsfile/live/0004_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV5" tvg-logo="https://epg.112114.xyz/logo/CCTV5.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV5
-http://61.184.46.85:85/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV5+" tvg-logo="https://epg.112114.xyz/logo/CCTV5+.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV5+
-http://61.184.46.85:85/tsfile/live/0015_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV6" tvg-logo="https://epg.112114.xyz/logo/CCTV6.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV6
-http://61.184.46.85:85/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV7" tvg-logo="https://epg.112114.xyz/logo/CCTV7.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV7
-http://61.184.46.85:85/tsfile/live/0007_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV8" tvg-logo="https://epg.112114.xyz/logo/CCTV8.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV8
-http://61.184.46.85:85/tsfile/live/0008_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV9" tvg-logo="https://epg.112114.xyz/logo/CCTV9.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV9
-http://61.184.46.85:85/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV10" tvg-logo="https://epg.112114.xyz/logo/CCTV10.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV10
-http://61.184.46.85:85/tsfile/live/0010_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV11" tvg-logo="https://epg.112114.xyz/logo/CCTV11.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV11
-http://61.184.46.85:85/tsfile/live/0011_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV12" tvg-logo="https://epg.112114.xyz/logo/CCTV12.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV12
-http://61.184.46.85:85/tsfile/live/0012_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV13" tvg-logo="https://epg.112114.xyz/logo/CCTV13.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV13
-http://61.184.46.85:85/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV14" tvg-logo="https://epg.112114.xyz/logo/CCTV14.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV14
-http://61.184.46.85:85/tsfile/live/0014_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="荆州新闻" tvg-logo="https://epg.112114.xyz/logo/荆州新闻.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",荆州新闻
-http://61.184.46.85:85/tsfile/live/0016_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="荆州垄上" tvg-logo="https://epg.112114.xyz/logo/荆州垄上.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",荆州垄上
-http://61.184.46.85:85/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖北卫视" tvg-logo="https://epg.112114.xyz/logo/湖北卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖北卫视
-http://61.184.46.85:85/tsfile/live/0018_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖北经视" tvg-logo="https://epg.112114.xyz/logo/湖北经视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖北经视
-http://61.184.46.85:85/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖北影视" tvg-logo="https://epg.112114.xyz/logo/湖北影视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖北影视
-http://61.184.46.85:85/tsfile/live/1000_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖北生活" tvg-logo="https://epg.112114.xyz/logo/湖北生活.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖北生活
-http://61.184.46.85:85/tsfile/live/1001_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖南卫视" tvg-logo="https://epg.112114.xyz/logo/湖南卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖南卫视
-http://61.184.46.85:85/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="广东卫视" tvg-logo="https://epg.112114.xyz/logo/广东卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",广东卫视
-http://61.184.46.85:85/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="深圳卫视" tvg-logo="https://epg.112114.xyz/logo/深圳卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",深圳卫视
-http://61.184.46.85:85/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="江苏卫视" tvg-logo="https://epg.112114.xyz/logo/江苏卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",江苏卫视
-http://61.184.46.85:85/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="安徽卫视" tvg-logo="https://epg.112114.xyz/logo/安徽卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",安徽卫视
-http://61.184.46.85:85/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="浙江卫视" tvg-logo="https://epg.112114.xyz/logo/浙江卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",浙江卫视
-http://61.184.46.85:85/tsfile/live/1007_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="上海卫视" tvg-logo="https://epg.112114.xyz/logo/上海卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",上海卫视
-http://61.184.46.85:85/tsfile/live/1008_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="山东卫视" tvg-logo="https://epg.112114.xyz/logo/山东卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",山东卫视
-http://61.184.46.85:85/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="北京卫视" tvg-logo="https://epg.112114.xyz/logo/北京卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",北京卫视
-http://61.184.46.85:85/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="天津卫视" tvg-logo="https://epg.112114.xyz/logo/天津卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",天津卫视
-http://61.184.46.85:85/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="河南卫视" tvg-logo="https://epg.112114.xyz/logo/河南卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",河南卫视
-http://61.184.46.85:85/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="河北卫视" tvg-logo="https://epg.112114.xyz/logo/河北卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",河北卫视
-http://61.184.46.85:85/tsfile/live/1013_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="黑龙江卫视" tvg-logo="https://epg.112114.xyz/logo/黑龙江卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",黑龙江卫视
-http://61.184.46.85:85/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="重庆卫视" tvg-logo="https://epg.112114.xyz/logo/重庆卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",重庆卫视
-http://61.184.46.85:85/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="四川卫视" tvg-logo="https://epg.112114.xyz/logo/四川卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",四川卫视
-http://61.184.46.85:85/tsfile/live/1016_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="辽宁卫视" tvg-logo="https://epg.112114.xyz/logo/辽宁卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",辽宁卫视
-http://61.184.46.85:85/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="海南卫视" tvg-logo="https://epg.112114.xyz/logo/海南卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",海南卫视
-http://61.184.46.85:85/tsfile/live/1018_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="福建东南卫视" tvg-logo="https://epg.112114.xyz/logo/福建东南卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",福建东南卫视
-http://61.184.46.85:85/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="风云足球" tvg-logo="https://epg.112114.xyz/logo/风云足球.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",风云足球
-http://61.184.46.85:85/tsfile/live/1020_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="第一剧场" tvg-logo="https://epg.112114.xyz/logo/第一剧场.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",第一剧场
-http://61.184.46.85:85/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="怀旧剧场" tvg-logo="https://epg.112114.xyz/logo/怀旧剧场.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",怀旧剧场
-http://61.184.46.85:85/tsfile/live/1022_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CHC家庭影院" tvg-logo="https://epg.112114.xyz/logo/CHC家庭影院.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CHC家庭影院
-http://61.184.46.85:85/tsfile/live/1023_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CHC动作电影" tvg-logo="https://epg.112114.xyz/logo/CHC动作电影.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CHC动作电影
-http://61.184.46.85:85/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="世界地理" tvg-logo="https://epg.112114.xyz/logo/世界地理.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",世界地理
-http://61.184.46.85:85/tsfile/live/1025_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="金鹰纪实" tvg-logo="https://epg.112114.xyz/logo/金鹰纪实.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",金鹰纪实
-http://61.184.46.85:85/tsfile/live/1026_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="卡酷少儿" tvg-logo="https://epg.112114.xyz/logo/卡酷少儿.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",卡酷少儿
-http://61.184.46.85:85/tsfile/live/1027_1.m3u8?key=txiptv&playlive=1&authid=0
-#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="金鹰卡通" tvg-logo="https://epg.112114.xyz/logo/金鹰卡通.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",金鹰卡通
-http://61.184.46.85:85/tsfile/live/1028_1.m3u8?key=txiptv&playlive=1&authid=0
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-1HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-1HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-1HD
+http://107.150.60.122/live/cctv1hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-2HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-2HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-2HD
+http://107.150.60.122/live/cctv2hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-3HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-3HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-3HD
+http://107.150.60.122/live/cctv3hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-4HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-4HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-4HD
+http://107.150.60.122/live/cctv4hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-5HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-5HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-5HD
+http://107.150.60.122/live/cctv5hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-6HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-6HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-6HD
+http://107.150.60.122/live/cctv6hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-7HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-7HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-7HD
+http://107.150.60.122/live/cctv7hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-8HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-8HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-8HD
+http://107.150.60.122/live/cctv8hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-9HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-9HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-9HD
+http://107.150.60.122/live/cctv9hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-10HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-10HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-10HD
+http://107.150.60.122/live/cctv10hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-11HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-11HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-11HD
+http://107.150.60.122/live/cctv11hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-12HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-12HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-12HD
+http://107.150.60.122/live/cctv12hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-13HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-13HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-13HD
+http://107.150.60.122/live/cctv13hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-14HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-14HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-14HD
+http://107.150.60.122/live/cctv14hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-15HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-15HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-15HD
+http://107.150.60.122/live/cctv15hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-16HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-16HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-16HD
+http://107.150.60.122/live/cctv16hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-17HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-17HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-17HD
+http://107.150.60.122/live/cctv17hd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-5+HD" tvg-logo="https://epg.112114.xyz/logo/CCTV-5+HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-5+HD
+http://107.150.60.122/live/cctv5p.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-4K超高清" tvg-logo="https://epg.112114.xyz/logo/CCTV-4K超高清.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-4K超高清
+http://107.150.60.122/live/cctv4k.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-8K超高清" tvg-logo="https://epg.112114.xyz/logo/CCTV-8K超高清.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-8K超高清
+http://107.150.60.122/live/cctv8k.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="CCTV-卫生健康" tvg-logo="https://epg.112114.xyz/logo/CCTV-卫生健康.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV-卫生健康
+http://107.150.60.122/live/wsjk.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="中央新影-发现之旅" tvg-logo="https://epg.112114.xyz/logo/中央新影-发现之旅.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",中央新影-发现之旅
+http://107.150.60.122/live/fxzl.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="中央新影-老故事" tvg-logo="https://epg.112114.xyz/logo/中央新影-老故事.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",中央新影-老故事
+http://107.150.60.122/live/lgs.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="中国教育3" tvg-logo="https://epg.112114.xyz/logo/中国教育3.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",中国教育3
+http://107.150.60.122/live/cetv3.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖南卫视HD" tvg-logo="https://epg.112114.xyz/logo/湖南卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖南卫视HD
+http://107.150.60.122/live/hnwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="东方卫视HD" tvg-logo="https://epg.112114.xyz/logo/东方卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",东方卫视HD
+http://107.150.60.122/live/dfwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="浙江卫视HD" tvg-logo="https://epg.112114.xyz/logo/浙江卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",浙江卫视HD
+http://107.150.60.122/live/zjwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="江苏卫视HD" tvg-logo="https://epg.112114.xyz/logo/江苏卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",江苏卫视HD
+http://107.150.60.122/live/jswshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="重庆卫视HD" tvg-logo="https://epg.112114.xyz/logo/重庆卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",重庆卫视HD
+http://107.150.60.122/live/cqwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="东南卫视HD" tvg-logo="https://epg.112114.xyz/logo/东南卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",东南卫视HD
+http://107.150.60.122/live/dnwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="广西卫视HD" tvg-logo="https://epg.112114.xyz/logo/广西卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",广西卫视HD
+http://107.150.60.122/live/gxwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="湖北卫视HD" tvg-logo="https://epg.112114.xyz/logo/湖北卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",湖北卫视HD
+http://107.150.60.122/live/hbwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="辽宁卫视HD" tvg-logo="https://epg.112114.xyz/logo/辽宁卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",辽宁卫视HD
+http://107.150.60.122/live/lnwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="山东卫视HD" tvg-logo="https://epg.112114.xyz/logo/山东卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",山东卫视HD
+http://107.150.60.122/live/sdwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="天津卫视HD" tvg-logo="https://epg.112114.xyz/logo/天津卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",天津卫视HD
+http://107.150.60.122/live/tjwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="陕西卫视HD" tvg-logo="https://epg.112114.xyz/logo/陕西卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",陕西卫视HD
+http://107.150.60.122/live/snwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="广东卫视HD" tvg-logo="https://epg.112114.xyz/logo/广东卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",广东卫视HD
+http://107.150.60.122/live/gdwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="深圳卫视HD" tvg-logo="https://epg.112114.xyz/logo/深圳卫视HD.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",深圳卫视HD
+http://107.150.60.122/live/szwshd.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="青海卫视" tvg-logo="https://epg.112114.xyz/logo/青海卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",青海卫视
+http://107.150.60.122/live/qhws.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="西藏卫视" tvg-logo="https://epg.112114.xyz/logo/西藏卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",西藏卫视
+http://107.150.60.122/live/xzws.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="大湾区卫视" tvg-logo="https://epg.112114.xyz/logo/大湾区卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",大湾区卫视
+http://107.150.60.122/live/nfws.m3u8
+#EXTINF:-1 group-title="🔥[电信]央卫视直播" tvg-name="广东体育" tvg-logo="https://epg.112114.xyz/logo/广东体育.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",广东体育
+http://107.150.60.122/live/gdty.m3u8
 #EXTINF:-1 group-title="🔥[移动]央卫视直播" tvg-name="CCTV1" tvg-logo="https://epg.112114.xyz/logo/CCTV1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV1
 http://gslbserv.itv.cmvideo.cn:80/1.m3u8?channel-id=bestzb&Contentid=5000000004000002226&livemode=1&stbId=yu&mode=1&$8M
 #EXTINF:-1 group-title="🔥[移动]央卫视直播" tvg-name="CCTV1" tvg-logo="https://epg.112114.xyz/logo/CCTV1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",CCTV1
@@ -1201,24 +1191,6 @@ https://ntd02.akamaized.net/HD-NY/tracks-v3a1/mono.m3u8
 https://stream1.freetv.fun/6130c4439e91813125415b749209467f8da4f3d09d09ac80d7848321fc5e709e.m3u8
 #EXTINF:-1 group-title="🔮[三网]港澳台直播" tvg-name="香港卫视" tvg-logo="https://epg.112114.xyz/logo/香港卫视.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",香港卫视
 http://webcast.hkstv.tv/livestream/mutfysrq/playlist.m3u8
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育" tvg-logo="https://epg.112114.xyz/logo/NOW体育.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382834&extension=ts&play_token=JBOlpsgTKU
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育1" tvg-logo="https://epg.112114.xyz/logo/NOW体育1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育1
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382843&extension=ts&play_token=KANAeecxcz
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育2" tvg-logo="https://epg.112114.xyz/logo/NOW体育2.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育2
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382842&extension=ts&play_token=MCoDoR8s9G
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育3" tvg-logo="https://epg.112114.xyz/logo/NOW体育3.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育3
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382841&extension=ts&play_token=5uiKCGTNCF
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育4" tvg-logo="https://epg.112114.xyz/logo/NOW体育4.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育4
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382840&extension=ts&play_token=eoeYdjrkUg
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育5" tvg-logo="https://epg.112114.xyz/logo/NOW体育5.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育5
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382839&extension=ts&play_token=lu0NOftGgg
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育6" tvg-logo="https://epg.112114.xyz/logo/NOW体育6.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育6
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382838&extension=ts&play_token=WQ4pi5DTy3
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育7" tvg-logo="https://epg.112114.xyz/logo/NOW体育7.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育7
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382837&extension=ts&play_token=rRmhe1TsX7
-#EXTINF:-1 group-title="🔮[联通]港澳台直播" tvg-name="NOW体育4K1" tvg-logo="https://epg.112114.xyz/logo/NOW体育4K1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",NOW体育4K1
-http://main.light-ott.net:80/play/live.php?mac=00:1A:79:3A:93:FD&stream=382836&extension=ts&play_token=jSAYXQsMoY
 #EXTINF:-1 group-title="🌏[三网]全球台直播" tvg-name="🇦🇹奥地利Moviesphere" tvg-logo="https://epg.112114.xyz/logo/🇦🇹奥地利Moviesphere.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",🇦🇹奥地利Moviesphere
 https://moviesphereuk-samsunguk.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="🌏[三网]全球台直播" tvg-name="🇳🇬尼日利亚Pulse" tvg-logo="https://epg.112114.xyz/logo/🇳🇬尼日利亚Pulse.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",🇳🇬尼日利亚Pulse
@@ -2781,12 +2753,6 @@ http://222.186.39.21:35466/douyu/11531165
 http://222.186.39.21:35466/douyu/10308312
 #EXTINF:-1 group-title="🎣钓鱼直播" tvg-name="钓鱼欧尼1" tvg-logo="https://epg.112114.xyz/logo/钓鱼欧尼1.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",钓鱼欧尼1
 http://222.186.39.21:35466/douyu/10616765
-#EXTINF:-1 group-title="🎣钓鱼直播" tvg-name="钓鱼欧尼2" tvg-logo="https://epg.112114.xyz/logo/钓鱼欧尼2.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",钓鱼欧尼2
-https://live.ottiptv.cc/huya/23153605
-#EXTINF:-1 group-title="🎣钓鱼直播" tvg-name="爱野钓的小范" tvg-logo="https://epg.112114.xyz/logo/爱野钓的小范.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",爱野钓的小范
-https://live.ottiptv.cc/huya/20946995
-#EXTINF:-1 group-title="🎣钓鱼直播" tvg-name="福建海钓阿邱" tvg-logo="https://epg.112114.xyz/logo/福建海钓阿邱.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",福建海钓阿邱
-https://live.ottiptv.cc/huya/24773206
 #EXTINF:-1 group-title="🌲乡野直播" tvg-name="李子柒" tvg-logo="https://epg.112114.xyz/logo/李子柒.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",李子柒
 https://live.ottiptv.cc/huya/21969336
 #EXTINF:-1 group-title="🗣️脱口秀直播" tvg-name="老高与小茉" tvg-logo="https://epg.112114.xyz/logo/老高与小茉.png" epg-url="https://gitee.com/gsls200808/xmltvepg/raw/master/e9.xml.gz",老高与小茉
