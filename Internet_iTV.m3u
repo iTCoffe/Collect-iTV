@@ -8,11 +8,9 @@ https://icloud.ifanr.pp.ua/温馨提示.mp4
 #EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV
 https://cloudflare.tv/hls/live.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
-http://107.150.60.122/live/cctv1hd.m3u8
-#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
-http://38.75.136.137:98/gslb/dsdqpub/cctv1hd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
 http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009
+#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
+http://107.150.60.122/live/cctv1hd.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
 https://hls-gateway.vpstv.net/streams/476879.m3u8
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
@@ -25,12 +23,14 @@ http://lu.wqwqwq.sbs/itv/1000000005000265001.m3u8?cdn=ystenlive
 https://smart.pendy.dpdns.org/Smart.php?id=cctv1
 #EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
 http://iptv.huuc.edu.cn/hls/cctv1hd.m3u8
+#EXTINF:-1 tvg-name="CCTV1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV1.png" group-title="📺央视频道",CCTV-1
+https://t.freetv.fun/live/cctv1-1.m3u8
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV10.png" group-title="📺央视频道",CCTV-10
-http://38.75.136.137:98/gslb/dsdqpub/cctv10hd.m3u8?auth=testpub
+http://107.150.60.122/live/cctv10hd.m3u8
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV10.png" group-title="📺央视频道",CCTV-10
 http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV10.png" group-title="📺央视频道",CCTV-10
-http://107.150.60.122/live/cctv10hd.m3u8
+http://38.75.136.137:98/gslb/dsdqpub/cctv10hd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV10.png" group-title="📺央视频道",CCTV-10
 http://iptv.huuc.edu.cn/hls/cctv10hd.m3u8
 #EXTINF:-1 tvg-name="CCTV10" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV10.png" group-title="📺央视频道",CCTV-10
@@ -66,8 +66,6 @@ http://mgsp-hs2.live.miguvideo.com:8088/migu/kailu/cctv11hd265/54/20200407/index
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
 http://107.150.60.122/live/cctv12hd.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
-http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
 http://iptv.huuc.edu.cn/hls/cctv12hd.m3u8
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
 http://3501776.xyz:35455/gaoma/cctv12.m3u8
@@ -81,12 +79,14 @@ https://smart.pendy.dpdns.org/Smart.php?id=cctv12
 http://mgsp-zy2.live.miguvideo.com:8088/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083627&pid=2028597139&timestamp=20260215040204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=218.28.233.106&SecurityKey=20260215040204&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=7036d9057086850e111a73e24a1fbf92&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
 http://mgsp-zy2.live.miguvideo.com:8088/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083627&pid=2028597139&timestamp=20260215080204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=218.28.233.106&SecurityKey=20260215080204&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=bac71bde9812ebf8a0a38f6626d1021b&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV12" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV12.png" group-title="📺央视频道",CCTV-12
+http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/20200324/cctv12hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083627&pid=2028597139&timestamp=20260216040217&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168185&ParentNodeID=-99&assertID=5501083627&client_ip=218.28.233.106&SecurityKey=20260216040217&promotionId=&mvid=5102910389&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=95d483d5c576f9244e573e8800a42e6e&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
 http://107.150.60.122/live/cctv13hd.m3u8
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
-http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009
-#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
 http://38.75.136.137:98/gslb/dsdqpub/cctv13hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
+http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
 http://pull-hs-f5.flive.douyincdn.com/media/stream-695180860228633260/index.m3u8?arch_hrchy=w1&exp_hrchy=w1&expire=1769679988&major_anchor_level=common&sign=71caa1f6b7f3159013b402e1b0400258&t_id=037-20260122174627710B9646E4C8968A739B-Pdey7N&volcSecret=71caa1f6b7f3159013b402e1b0400258&volcTime=1769679988
 #EXTINF:-1 tvg-name="CCTV13" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV13.png" group-title="📺央视频道",CCTV-13
@@ -158,11 +158,9 @@ http://58.57.40.22:9901/tsfile/live/1015_1.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
 http://107.150.60.122/live/cctv16hd.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
-http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
 http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
-http://39.152.103.17:8089/tsfile/live/1015_1.m3u8
+http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
 https://hls-gateway.vpstv.net/streams/709089.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
@@ -176,11 +174,9 @@ https://t.freetv.fun/live/cctv16-2.m3u8
 #EXTINF:-1 tvg-name="CCTV16" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV16.png" group-title="📺央视频道",CCTV-16
 https://t.freetv.fun/live/cctv16-5.php
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
-http://107.150.60.122/live/cctv17hd.m3u8
-#EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
 http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
-http://38.75.136.137:98/gslb/dsdqpub/cctv17hd.m3u8?auth=testpub
+http://107.150.60.122/live/cctv17hd.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
 http://lu.wqwqwq.sbs/itv/1000000005000265015.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
@@ -193,12 +189,12 @@ http://pull-hls-f11.douyincdn.com/media/stream-695298859153752748.m3u8?arch_hrch
 https://t.freetv.fun/live/cctv17-3.m3u8
 #EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
 http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/20200324/cctv17hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083631&pid=2028597139&timestamp=20260215040205&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168256&ParentNodeID=-99&assertID=5501083631&client_ip=218.28.233.106&SecurityKey=20260215040205&promotionId=&mvid=5102910396&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=de92d1add4bcf4e65daa1088ab24d059&sv=10004&ct=android
-#EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
-http://107.150.60.122/live/cctv2hd.m3u8
-#EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
-http://38.75.136.137:98/gslb/dsdqpub/cctv2hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV17" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV17.png" group-title="📺央视频道",CCTV-17
+http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/20200324/cctv17hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083631&pid=2028597139&timestamp=20260215080205&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168256&ParentNodeID=-99&assertID=5501083631&client_ip=218.28.233.106&SecurityKey=20260215080205&promotionId=&mvid=5102910396&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e2b175242321eef543bf92f4894f55f9&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
 http://38.75.136.137:98/gslb/dsdqbv/cctv2hd.m3u8?auth=test20251009
+#EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
+http://107.150.60.122/live/cctv2hd.m3u8
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
 http://pull-flv-f1.douyincdn.com/media/stream-695106910011261612.flv?arch_hrchy=w1&exp_hrchy=w1&keeptime=00093a80&major_anchor_level=common&t_id=037-202601211138448FA9B998510F771A8747-9PrRHC&unique_id=stream-695106910011261612_684_flv&wsSecret=258653137fb1ed334218de18f528adaa&wsTime=69704a44
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
@@ -211,14 +207,12 @@ http://lu.wqwqwq.sbs/itv/1000000001000023315.m3u8?cdn=ystenlive
 https://hls-gateway.vpstv.net/streams/476881.m3u8
 #EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
 https://smart.pendy.dpdns.org/Smart.php?id=cctv2
-#EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
-http://107.150.60.122/live/cctv3hd.m3u8
-#EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
-http://38.75.136.137:98/gslb/dsdqpub/cctv3hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="📺央视频道",CCTV-2
+http://iptv.huuc.edu.cn/hls/cctv2hd.m3u8
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
 http://38.75.136.137:98/gslb/dsdqbv/cctv3hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
-http://39.152.103.17:8089/tsfile/live/1002_1.m3u8
+http://107.150.60.122/live/cctv3hd.m3u8
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
 http://lu.wqwqwq.sbs/itv/1000000005000265003.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
@@ -231,34 +225,34 @@ http://iptv.huuc.edu.cn/hls/cctv3hd.m3u8
 http://mgsp-zy2.live.miguvideo.com:8088/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5500212864&pid=2028597139&timestamp=20260214151720&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.28.233.106&SecurityKey=20260214151720&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=8ccf7114589007ba40b711f8955aa80c&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
 http://mgsp-hs2.live.miguvideo.com:8088/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5500212864&pid=2028597139&timestamp=20260215040203&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.28.233.106&SecurityKey=20260215040203&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=fd59d5d57c98d49e6badd1be54cc97b0&sv=10004&ct=android
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
-http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
-http://107.150.60.122/live/cctv4k.m3u8
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
-http://38.75.136.137:98/gslb/dsdqpub/cctv4hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
+http://mgsp-tx2.live.miguvideo.com:8088/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5500212864&pid=2028597139&timestamp=20260215160204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.28.233.106&SecurityKey=20260215160204&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4b69ea8aa254038ec38e18f1f37a7f4a&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV3" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV3.png" group-title="📺央视频道",CCTV-3
+http://mgsp-zy2.live.miguvideo.com:8088/wd_r2/2018/ocn/cctv3hd/2000/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5500212864&pid=2028597139&timestamp=20260216080220&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878271&ParentNodeID=-99&assertID=5500212864&client_ip=218.28.233.106&SecurityKey=20260216080220&promotionId=&mvid=5100001683&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=8a8318f26cf888d5c563fc9674610049&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
 http://107.150.60.122/live/cctv4hd.m3u8
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
+http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
 http://38.75.136.137:98/gslb/dsdqbv/cctv4hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
+http://107.150.60.122/live/cctv4k.m3u8
+#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
 https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1773924300-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-e712479cb2d48b3fe4f8f2acbfd03f20&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
+https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4_mbd.m3u8?auth_key=1773968400-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-472724616ba58cd8af15947037f6fa3e&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
+#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
+https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1773968400-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-82eb2e4434e7eb1a03f6fdd37652f4f7&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
 https://live-play-hls.cctvnews.cctv.com/CCTVChannel/channel_cctv4k_mbd.m3u8?auth_key=1773924300-1-b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c-f315f3706280d17fe2c3b79fa87c3194&yid=b59134a2ead43d7f783f943c8f535e7bb80c5169575b2e8efcd5b3ddea21b41c
 #EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
 https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8
-#EXTINF:-1 tvg-name="CCTV4" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV4.png" group-title="📺央视频道",CCTV-4
-http://iptv.huuc.edu.cn/hls/cctv4hd.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
-http://38.75.136.137:98/gslb/dsdqpub/cctv5hd.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://107.150.60.122/live/cctv5hd.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009
-#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
-http://38.75.136.137:98/gslb/dsdqbv/cctv5hd.m3u8?auth=test20251009
-#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
-http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 https://hls-gateway.vpstv.net/streams/476885.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
@@ -270,11 +264,19 @@ https://smart.pendy.dpdns.org/Smart.php?id=cctv5
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 https://smart.pendy.dpdns.org/Smart.php?id=cctv5plus
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
+http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8
+#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
+https://ldcctvwbcdks.v.kcdnvip.com/ldcctvwbcd/cdrmldcctv5plus_1/index.m3u8?b=200-2100
+#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://112.27.235.94:8000/hls/5/index.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5hdnew/1200/index.m3u8?msisdn=20260127064721a4c07751e8e14ee4bf23e862ced158e8&mdspid=&spid=699004&netType=4&sid=5500516171&pid=2028597139&timestamp=20260127064721&Channel_ID=0116_2600001300-99000-201600010013359&ProgramID=641886683&ParentNodeID=-99&assertID=5500516171&client_ip=114.80.36.136&SecurityKey=20260127064721&promotionId=&mvid=5102048712&mcid=500020&playurlVersion=WX-A1-9.1.1.3-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=bf8a921ba01b433a4db937ac457e6b37
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
+http://38.75.136.137:98/gslb/dsdqpub/cctv5hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://23.237.228.134/live5/CCTV5p.m3u8
+#EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
+http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
 http://23.237.228.134/live5/CCTV5.m3u8
 #EXTINF:-1 tvg-name="CCTV5" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5
@@ -285,8 +287,6 @@ http://120.238.94.10:9901/tsfile/live/1022_1.m3u8
 http://58.57.40.22:9901/tsfile/live/1004_1.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
 http://107.150.60.122/live/cctv5p.m3u8
-#EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
-http://223.112.114.228:50080/newlive/live/hls/180/live.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
 https://hls-gateway.vpstv.net/streams/476888.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
@@ -303,6 +303,8 @@ http://mgsp-yx2.live.miguvideo.com:8088/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?
 http://mgsp-yx2.live.miguvideo.com:8088/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=699004&netType=0&sid=5500516288&pid=2028597139&timestamp=20260225080204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=218.28.233.106&SecurityKey=20260225080204&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=79c09b0be62466ce7b8f5f168e077b8e&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
 http://mgsp-zy2.live.miguvideo.com:8088/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=699004&netType=0&sid=5500516288&pid=2028597139&timestamp=20260225160203&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=218.28.233.106&SecurityKey=20260225160203&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=e6817aeb812a73bc1793e8357bdb1f98&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
+http://mgsp-zy2.live.miguvideo.com:8088/wd_r2/cctv/cctv5plusnew/1200/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=699004&netType=0&sid=5500516288&pid=2028597139&timestamp=20260226080220&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=641886773&ParentNodeID=-99&assertID=5500516288&client_ip=218.28.233.106&SecurityKey=20260226080220&promotionId=&mvid=5102048803&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=055b92380b2b36535491bd74cfda425b&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
 http://112.27.235.94:8000/hls/6/index.m3u8
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
@@ -324,11 +326,9 @@ http://hlsztemgsplive.miguvideo.com:8080/wd_r2/cctv/cctv5plusnew/600/index.m3u8?
 #EXTINF:-1 tvg-name="CCTV5+" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV5.png" group-title="📺央视频道",CCTV-5+
 http://61.136.172.236:9901/tsfile/live/0016_1.m3u8
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
-http://107.150.60.122/live/cctv6hd.m3u8
-#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
-http://38.75.136.137:98/gslb/dsdqpub/cctv6hd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
 http://38.75.136.137:98/gslb/dsdqbv/cctv6hd.m3u8?auth=test20251009
+#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
+http://107.150.60.122/live/cctv6hd.m3u8
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
 https://hls-gateway.vpstv.net/streams/476890.m3u8
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
@@ -343,14 +343,12 @@ http://mobilelive-timeshift.ysp.cctv.cn/timeshift/ysp/2013693901/timeshift.m3u8?
 http://mobilelive-ds.ysp.cctv.cn/ysp/2013693901.m3u8
 #EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
 http://lu.wqwqwq.sbs/itv/1000000005000265006.m3u8?cdn=ystenlive
-#EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
-http://38.75.136.137:98/gslb/dsdqpub/cctv7hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV6" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV6.png" group-title="📺央视频道",CCTV-6
+https://smart.pendy.dpdns.org/Smart.php?id=cctv6
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
 http://107.150.60.122/live/cctv7hd.m3u8
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
 http://38.75.136.137:98/gslb/dsdqbv/cctv7hd.m3u8?auth=test20251009
-#EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
-https://ldocctvwbcdtxy.liveplay.myqcloud.com/ldocctvwbcd/cdrmldcctv7_1_td.m3u8
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
 http://iptv.huuc.edu.cn/hls/cctv7hd.m3u8
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
@@ -361,14 +359,18 @@ https://hls-gateway.vpstv.net/streams/476891.m3u8
 https://smart.pendy.dpdns.org/Smart.php?id=cctv7
 #EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
 http://mgsp-tx2.live.miguvideo.com:8088/migu/kailu/20200324/cctv7hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083622&pid=2028597139&timestamp=20260214151731&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168121&ParentNodeID=-99&assertID=5501083622&client_ip=218.28.233.106&SecurityKey=20260214151731&promotionId=&mvid=5102910278&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=480547475692ec373885e69739f2aa38&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
+http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/20200324/cctv7hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083622&pid=2028597139&timestamp=20260215080204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168121&ParentNodeID=-99&assertID=5501083622&client_ip=218.28.233.106&SecurityKey=20260215080204&promotionId=&mvid=5102910278&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=5f6fb108e59a02c28586cae910c2c480&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="📺央视频道",CCTV-7
+http://mgsp-hs2.live.miguvideo.com:8088/migu/kailu/20200324/cctv7hd/51/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5501083622&pid=2028597139&timestamp=20260215160204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=673168121&ParentNodeID=-99&assertID=5501083622&client_ip=218.28.233.106&SecurityKey=20260215160204&promotionId=&mvid=5102910278&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=b8d1312a527bc716729338a0058c9084&sv=10004&ct=android
+#EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
+http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
 http://107.150.60.122/live/cctv8hd.m3u8
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
 http://107.150.60.122/live/cctv8k.m3u8
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
 http://38.75.136.137:98/gslb/dsdqpub/cctv8k.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
-http://38.75.136.137:98/gslb/dsdqbv/cctv8hd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
 https://hls-gateway.vpstv.net/streams/476892.m3u8
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
@@ -382,11 +384,11 @@ http://mgsp-ws2.live.miguvideo.com:8088/migu/kailu/cctv8hd265/54/20200407/index.
 #EXTINF:-1 tvg-name="CCTV8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV8.png" group-title="📺央视频道",CCTV-8
 http://mgsp-hs2.live.miguvideo.com:8088/migu/kailu/cctv8hd265/54/20200407/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=699004&netType=0&sid=5500212868&pid=2028597139&timestamp=20260215040204&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=624878356&ParentNodeID=-99&assertID=5500212868&client_ip=218.28.233.106&SecurityKey=20260215040204&promotionId=&mvid=5100001695&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d766b3b2f68039601bd119741e6e4d2d&sv=10004&ct=android
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
+http://38.75.136.137:98/gslb/dsdqpub/cctv9hd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
 http://107.150.60.122/live/cctv9hd.m3u8
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
 http://38.75.136.137:98/gslb/dsdqbv/cctv9hd.m3u8?auth=test20251009
-#EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
-http://38.75.136.137:98/gslb/dsdqpub/cctv9hd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
 https://hls-gateway.vpstv.net/streams/476893.m3u8
 #EXTINF:-1 tvg-name="CCTV9" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV9.png" group-title="📺央视频道",CCTV-9
@@ -416,7 +418,7 @@ http://120.76.248.139/live/bfgd/4200000110.m3u8
 #EXTINF:-1 tvg-name=" 农林卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/农林卫视.png" group-title="📡卫视频道", 农林卫视
 http://120.76.248.139/live/bfgd/4200000122.m3u8
 #EXTINF:-1 tvg-name=" 北京卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/北京卫视.png" group-title="📡卫视频道", 北京卫视
-http://23.237.228.134/live3/beijing.m3u8
+http://58.57.40.22:9901/tsfile/live/1032_1.m3u8
 #EXTINF:-1 tvg-name=" 北京卫视4K超" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/北京卫视4K超.png" group-title="📡卫视频道", 北京卫视4K超
 http://183.215.134.239:19901/tsfile/live/0122_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name=" 厦门卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/厦门卫视.png" group-title="📡卫视频道", 厦门卫视
@@ -464,7 +466,7 @@ http://58.57.40.22:9901/tsfile/live/1048_1.m3u8
 #EXTINF:-1 tvg-name=" 浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道", 浙江卫视
 http://58.57.40.22:9901/tsfile/live/1029_1.m3u8
 #EXTINF:-1 tvg-name=" 海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道", 海南卫视
-http://120.76.248.139/live/bfgd/4200000473.m3u8
+http://58.57.40.22:9901/tsfile/live/1000_1.m3u8
 #EXTINF:-1 tvg-name=" 海峡卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海峡卫视.png" group-title="📡卫视频道", 海峡卫视
 http://8.138.7.223/tv/hxws.m3u8
 #EXTINF:-1 tvg-name=" 深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道", 深圳卫视
@@ -506,9 +508,9 @@ http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/ssws/50/20251127/index.m3u8?m
 #EXTINF:-1 tvg-name="三沙卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三沙卫视.png" group-title="📡卫视频道",三沙卫视
 http://mgsp-zy2.live.miguvideo.com:8088/migu/kailu/ssws/50/20251127/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=600697&netType=0&sid=5910022307&pid=2028597139&timestamp=20260225040209&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=961023778&ParentNodeID=-99&assertID=5910022307&client_ip=218.28.233.106&SecurityKey=20260225040209&promotionId=&mvid=5900006777&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=4568a1ef9364ee30956b82ff5c0c368c&sv=10004&ct=android
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
-http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
 http://107.150.60.122/live/dnwshd.m3u8
+#EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
+http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
 http://iptv.huuc.edu.cn/hls/dnhd.m3u8
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
@@ -526,13 +528,13 @@ https://t.freetv.fun/live/dong-nan-wei-shi-1.php
 #EXTINF:-1 tvg-name="东南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东南卫视.png" group-title="📡卫视频道",东南卫视
 https://hlsbkmgsplive.miguvideo.com/migu/kailu/dongnanws/51/20230724/01.m3u8?&HlsSubType=&encrypt=
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
-http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub
+http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
-http://107.150.60.122/live/dfwshd.m3u8
+http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
 https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
-http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009
+http://107.150.60.122/live/dfwshd.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
 http://iptv.huuc.edu.cn/hls/dfhd.m3u8
 #EXTINF:-1 tvg-name="东方卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东方卫视.png" group-title="📡卫视频道",东方卫视
@@ -629,6 +631,8 @@ https://t.freetv.fun/live/si-chuan-wei-shi-10.php
 https://t.freetv.fun/live/si-chuan-wei-shi-5.m3u8
 #EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/四川卫视.png" group-title="📡卫视频道",四川卫视
 https://t.freetv.fun/live/si-chuan-wei-shi-7.m3u8
+#EXTINF:-1 tvg-name="四川卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/四川卫视.png" group-title="📡卫视频道",四川卫视
+https://t.freetv.fun/live/si-chuan-wei-shi-1.m3u8
 #EXTINF:-1 tvg-name="四川卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/四川卫视4K.png" group-title="📡卫视频道",四川卫视4K
 https://iptv.catvod.com/live.php?id=%E5%9B%9B%E5%B7%9D%E5%8D%AB%E8%A7%86
 #EXTINF:-1 tvg-name="四川卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/四川卫视4K.png" group-title="📡卫视频道",四川卫视4K
@@ -664,9 +668,9 @@ http://mgsp-yx2.live.miguvideo.com:8088/wd_r3/2018/nfmedia/nfws/1000/index.m3u8?
 #EXTINF:-1 tvg-name="大湾区卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大湾区卫视.png" group-title="📡卫视频道",大湾区卫视
 http://mgsp-yx2.live.miguvideo.com:8088/wd_r3/2018/nfmedia/nfws/1000/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=699054&netType=0&sid=2200322852&pid=2028597139&timestamp=20260228040220&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=608917627&ParentNodeID=-99&assertID=2200322852&client_ip=218.28.233.106&SecurityKey=20260228040220&promotionId=&mvid=2200322852&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=146f6483022768378d141a8604b768e0&sv=10004&ct=android
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天津卫视.png" group-title="📡卫视频道",天津卫视
-http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天津卫视.png" group-title="📡卫视频道",天津卫视
 http://107.150.60.122/live/tjwshd.m3u8
+#EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天津卫视.png" group-title="📡卫视频道",天津卫视
+http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天津卫视.png" group-title="📡卫视频道",天津卫视
 http://3501776.xyz:35455/itv/1000000005000265026.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="天津卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天津卫视.png" group-title="📡卫视频道",天津卫视
@@ -754,9 +758,9 @@ https://hls-gateway.vpstv.net/streams/708868.m3u8
 #EXTINF:-1 tvg-name="安徽卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/安徽卫视.png" group-title="📡卫视频道",安徽卫视
 https://t.freetv.fun/live/an-hui-wei-shi.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山东卫视.png" group-title="📡卫视频道",山东卫视
-http://107.150.60.122/live/sdwshd.m3u8
-#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山东卫视.png" group-title="📡卫视频道",山东卫视
 http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山东卫视.png" group-title="📡卫视频道",山东卫视
+http://107.150.60.122/live/sdwshd.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山东卫视.png" group-title="📡卫视频道",山东卫视
 http://iptv.huuc.edu.cn/hls/sdhd.m3u8
 #EXTINF:-1 tvg-name="山东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山东卫视.png" group-title="📡卫视频道",山东卫视
@@ -784,9 +788,9 @@ https://t.freetv.fun/live/shan-xi-wei-shi-1.php
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
 https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
-http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://107.150.60.122/live/gdwshd.m3u8
+#EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
+http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
 http://iptv.huuc.edu.cn/hls/gdhd.m3u8
 #EXTINF:-1 tvg-name="广东卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东卫视.png" group-title="📡卫视频道",广东卫视
@@ -856,6 +860,8 @@ http://118.122.2.29:9999/hls/39/index.m3u8
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/延边卫视.png" group-title="📡卫视频道",延边卫视
 https://srs.iyb983.cn:443/video/CYS/index.m3u8
 #EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/延边卫视.png" group-title="📡卫视频道",延边卫视
+http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#
+#EXTINF:-1 tvg-name="延边卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/延边卫视.png" group-title="📡卫视频道",延边卫视
 https://t.freetv.fun/live/yan-bian-wei-shi-3.m3u8
 #EXTINF:-1 tvg-name="新疆卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新疆卫视.png" group-title="📡卫视频道",新疆卫视
 https://iptv.catvod.com/live.php?id=%E6%96%B0%E7%96%86%E5%8D%AB%E8%A7%86
@@ -886,9 +892,9 @@ http://122.224.58.42:85/tsfile/live/1024_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="星空卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/星空卫视.png" group-title="📡卫视频道",星空卫视
 http://8.218.84.3:8885/live/LxWcScuQ6WphaELY4DhkKm8SIv7_ZgNIJtNvFurqphvyqxUIU84OjKVCwFxMq9iUtqn72bh5ByEeN1pGwfgL_0eCAgaEJFGBPspm-seoyRo7vNb6SdZ-q-JTbv5u4EKBU0W_xo7GSguujxhA00O-vPpCxMEWNUve3PFs8Xp7OldxjjM1_7zOh0YH-Kpa5qF5SEkniznfLh8Uhg4YvtJjIiQYyf7_plHuOfYMhgX5NFRK07U-gLPTMJm0jcnTHJbIzTk14kWTmc--Kp5qNJmNtg.m3u8?u=1756878715
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/江苏卫视.png" group-title="📡卫视频道",江苏卫视
-http://107.150.60.122/live/jswshd.m3u8
-#EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/江苏卫视.png" group-title="📡卫视频道",江苏卫视
+http://107.150.60.122/live/jswshd.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/江苏卫视.png" group-title="📡卫视频道",江苏卫视
 http://iptv.huuc.edu.cn/hls/jshd.m3u8
 #EXTINF:-1 tvg-name="江苏卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/江苏卫视.png" group-title="📡卫视频道",江苏卫视
@@ -958,11 +964,11 @@ https://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=1769638020&k=abb4ce3376b5ed3
 #EXTINF:-1 tvg-name="河北卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河北卫视.png" group-title="📡卫视频道",河北卫视
 https://tv.pull.hebtv.com/jishi/weishipindao.m3u8?t=1769684646&k=9d73c09228c581d45c2a2754abf4f41d
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
-http://1.94.31.214/php/hntv.php?id=hnws
-#EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
 http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
-https://live-cdn-v01.lalifeier.eu.org/hntv/hnws.m3u8?t=1773870085&key=4cb9fd59bf1f75c2566114c6668acdc1
+http://1.94.31.214/php/hntv.php?id=hnws
+#EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
+https://live-cdn-v01.lalifeier.eu.org/hntv/hnws.m3u8?t=1773914165&key=6bee89e2c3e43e23841738b88f2ed993
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
 http://tvpull.dxhmt.cn:9081/tv/11425-1.m3u8
 #EXTINF:-1 tvg-name="河南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南卫视.png" group-title="📡卫视频道",河南卫视
@@ -986,6 +992,8 @@ http://107.150.60.122/live/zjwshd.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 https://play-qukan.cztv.com/live/1746687519046362.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
+http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8
+#EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://3501776.xyz:35455/itv/1000000005000265031.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://lu.wqwqwq.sbs/itv/1000000005000265031.m3u8?cdn=ystenlive
@@ -993,14 +1001,10 @@ http://lu.wqwqwq.sbs/itv/1000000005000265031.m3u8?cdn=ystenlive
 https://hls-gateway.vpstv.net/streams/476909.m3u8
 #EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
 http://iptv.huuc.edu.cn/hls/zjhd.m3u8
-#EXTINF:-1 tvg-name="浙江卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视.png" group-title="📡卫视频道",浙江卫视
-https://t.freetv.fun/live/zhe-jiang-wei-shi-8.m3u8
 #EXTINF:-1 tvg-name="浙江卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视4K.png" group-title="📡卫视频道",浙江卫视4K
 https://ali-xwl.cztv.com/live/channel4k2160p.m3u8
 #EXTINF:-1 tvg-name="浙江卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江卫视4K.png" group-title="📡卫视频道",浙江卫视4K
 https://bd-xwl.cztv.com/live/channel4k2160p.m3u8
-#EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道",海南卫视
-http://39.152.103.17:8089/tsfile/live/1046_1.m3u8
 #EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道",海南卫视
 http://lu.wqwqwq.sbs/itv/5000000004000006211.m3u8?cdn=bestzb
 #EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道",海南卫视
@@ -1017,10 +1021,14 @@ http://mgsp-zy2.live.miguvideo.com:8088/envivo_x/SD/lvyou/711/index.m3u8?msisdn=
 http://mgsp-ws2.live.miguvideo.com:8088/envivo_x/SD/lvyou/711/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=600633&netType=0&sid=5910022165&pid=2028597139&timestamp=20260216080226&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=947472502&ParentNodeID=-99&assertID=5910022165&client_ip=218.28.233.106&SecurityKey=20260216080226&promotionId=&mvid=5900004359&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=cf9ef97bce870bd381cebe396eb02ff6&sv=10004&ct=android
 #EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道",海南卫视
 http://mgsp-zy2.live.miguvideo.com:8088/envivo_x/SD/lvyou/711/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=600633&netType=0&sid=5910022165&pid=2028597139&timestamp=20260225160208&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=947472502&ParentNodeID=-99&assertID=5910022165&client_ip=218.28.233.106&SecurityKey=20260225160208&promotionId=&mvid=5900004359&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=d5f0e7cf676505f7eed7efd227a4e3d4&sv=10004&ct=android
+#EXTINF:-1 tvg-name="海南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南卫视.png" group-title="📡卫视频道",海南卫视
+http://mgsp-zy2.live.miguvideo.com:8088/envivo_x/SD/lvyou/711/index.m3u8?msisdn=2be6b2ec9fcf10d2c2457e2c710e172c&mdspid=&spid=600633&netType=0&sid=5910022165&pid=2028597139&timestamp=20260226040220&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=947472502&ParentNodeID=-99&assertID=5910022165&client_ip=218.28.233.106&SecurityKey=20260226040220&promotionId=&mvid=5900004359&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h264&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=107f36ecbe1a2b00560bf531bd2c1797&sv=10004&ct=android
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://107.150.60.122/live/szwshd.m3u8
+#EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
+http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://3501776.xyz:35455/itv/1000000005000265028.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
@@ -1034,15 +1042,11 @@ http://iptv.huuc.edu.cn/hls/szhd.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 https://t.freetv.fun/live/shen-zhen-wei-shi-3.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
-https://t.freetv.fun/live/shen-zhen-wei-shi-7.m3u8
-#EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://112.27.235.94:8000/hls/33/index.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://23.237.228.134/live6/shenzhen.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 https://iptv.catvod.com/live.php?id=%E6%B7%B1%E5%9C%B3%E5%8D%AB%E8%A7%86
-#EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
-http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
 http://120.238.94.82:9901/tsfile/live/1065_1.m3u8
 #EXTINF:-1 tvg-name="深圳卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳卫视.png" group-title="📡卫视频道",深圳卫视
@@ -1076,29 +1080,31 @@ http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/hbwshd265/54/20200407/index.m
 #EXTINF:-1 tvg-name="湖北卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖北卫视.png" group-title="📡卫视频道",湖北卫视
 http://mgsp-zy2.live.miguvideo.com:8088/migu/kailu/hbwshd265/54/20200407/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=600633&netType=0&sid=5910022163&pid=2028597139&timestamp=20260215160208&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=947472496&ParentNodeID=-99&assertID=5910022163&client_ip=218.28.233.106&SecurityKey=20260215160208&promotionId=&mvid=5900004355&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=41bcde7513cde6da10ae475a597423e7&sv=10004&ct=android
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
-http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
+http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
+#EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
+http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://107.150.60.122/live/hnwshd.m3u8
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://38.75.136.137:98/gslb/dsdqbv/hnwshd.m3u8?auth=test20251009
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
-http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
-#EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
-http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
-#EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
-http://61.163.181.78:85/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0
+http://38.75.136.137:98/gslb/dsdqpub/hnwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://3501776.xyz:35455/itv/1000000005000265024.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 http://lu.wqwqwq.sbs/itv/1000000005000265024.m3u8?cdn=ystenlive
 #EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
 https://hls-gateway.vpstv.net/streams/476904.m3u8
+#EXTINF:-1 tvg-name="湖南卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视.png" group-title="📡卫视频道",湖南卫视
+http://iptv.huuc.edu.cn/hls/hunanhd.m3u8
 #EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
 http://23.237.228.134/live6/hunan.m3u8
 #EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
 https://iptv.catvod.com/live.php?id=%E6%B9%96%E5%8D%97%E5%8D%AB%E8%A7%86
 #EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
 http://69.30.246.194/live/hnws.m3u8
+#EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
+http://61.163.181.78:85/tsfile/live/1045_1.m3u8?key=txiptv&playlive=1&authid=0
 #EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
 http://43.251.226.89:8080/play/419.m3u8
 #EXTINF:-1 tvg-name="湖南卫视4K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南卫视4K.png" group-title="📡卫视频道",湖南卫视4K
@@ -1134,8 +1140,6 @@ http://107.150.60.122/live/lnwshd.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
-http://39.152.103.17:8089/tsfile/live/1024_1.m3u8
-#EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://iptv.huuc.edu.cn/hls/lnhd.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://3501776.xyz:35455/itv/1000000005000265022.m3u8?cdn=ystenlive
@@ -1149,6 +1153,8 @@ https://hlsbkmgsplive.miguvideo.com/migu/kailu/lnwshd265/54/20200407/01.m3u8?&Hl
 https://t.freetv.fun/live/liao-zhu-wei-shi-5.m3u8
 #EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
 http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/lnwshd265/54/20200407/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=600572&netType=0&sid=5910022198&pid=2028597139&timestamp=20260214160234&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=630291707&ParentNodeID=-99&assertID=5910022198&client_ip=218.28.233.106&SecurityKey=20260214160234&promotionId=&mvid=5101043014&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=b3afa83ee0dc56d85a8e01b819a47103&sv=10004&ct=android
+#EXTINF:-1 tvg-name="辽宁卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辽宁卫视.png" group-title="📡卫视频道",辽宁卫视
+http://mgsp-yx2.live.miguvideo.com:8088/migu/kailu/lnwshd265/54/20200407/index.m3u8?msisdn=e55e9ee71b42d2d7008a152c069625e3&mdspid=&spid=600572&netType=0&sid=5910022198&pid=2028597139&timestamp=20260215040208&Channel_ID=0116_2600034600-99000-201600010010028&ProgramID=630291707&ParentNodeID=-99&assertID=5910022198&client_ip=218.28.233.106&SecurityKey=20260215040208&promotionId=&mvid=5101043014&mcid=500020&playurlVersion=WX-A1-9.2.1-RELEASE&userid=&jmhm=&videocodec=h265&appCode=miguvideo_android&bean=mgspad&tid=android&conFee=0&encrypt=041446c614f2526e6be55d4a63ce4d34&sv=10004&ct=android
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/重庆卫视.png" group-title="📡卫视频道",重庆卫视
 http://38.75.136.137:98/gslb/dsdqpub/cqwshd.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="重庆卫视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/重庆卫视.png" group-title="📡卫视频道",重庆卫视
@@ -1241,6 +1247,8 @@ https://t.freetv.fun/live/hei-long-jiang-wei-shi-1.php
 http://38.75.136.137:98/gslb/dsdqpub/chcdz.m3u8?auth=testpub
 #EXTINF:-1 tvg-name=" CHC家庭影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CHC家庭影院.png" group-title="🍁数字频道", CHC家庭影院
 http://61.162.52.6:8088/newlive/live/hls/60/live.m3u8
+#EXTINF:-1 tvg-name=" 三新动漫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三新动漫.png" group-title="🍁数字频道", 三新动漫
+https://goodiptv.club/douyu/9548279
 #EXTINF:-1 tvg-name=" 上海第一财经" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/上海第一财经.png" group-title="🍁数字频道", 上海第一财经
 https://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
 #EXTINF:-1 tvg-name=" 中华特产" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华特产.png" group-title="🍁数字频道", 中华特产
@@ -1275,6 +1283,8 @@ http://120.76.248.139/live/bfgd/4200000149.m3u8
 http://satellitepull.cnr.cn/live/wx32dycjgb/playlist.m3u8
 #EXTINF:-1 tvg-name=" 纪实科教" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/纪实科教.png" group-title="🍁数字频道", 纪实科教
 http://120.76.248.139/live/bfgd/4200000113.m3u8
+#EXTINF:-1 tvg-name=" 茶啊二中官方" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/茶啊二中官方.png" group-title="🍁数字频道", 茶啊二中官方
+https://goodiptv.club/douyu/2925610
 #EXTINF:-1 tvg-name=" 茶频道" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/茶频道.png" group-title="🍁数字频道", 茶频道
 http://drive.mxmy.net:8888/udp/239.3.1.165:8001
 #EXTINF:-1 tvg-name=" 都市剧场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/都市剧场.png" group-title="🍁数字频道", 都市剧场
@@ -1954,6 +1964,8 @@ http://kkk.jjjj.jiduo.me/api.php?n=tttt&id=9901&tk=e640d0a1bf70
 #EXTINF:-1 tvg-name="东森超视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东森超视.png" group-title="🏍️港澳台频道",东森超视
 http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
 #EXTINF:-1 tvg-name="东森超视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东森超视.png" group-title="🏍️港澳台频道",东森超视
+http://38.64.72.148:80/hls/modn/list/2013/chunklist0.m3u8
+#EXTINF:-1 tvg-name="东森超视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东森超视.png" group-title="🏍️港澳台频道",东森超视
 https://smart.pendy.dpdns.org/Smart.php?id=ettvsuper
 #EXTINF:-1 tvg-name="东森超视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东森超视.png" group-title="🏍️港澳台频道",东森超视
 https://hls-gateway.vpstv.net/streams/476234.m3u8
@@ -2309,6 +2321,10 @@ https://goodiptv.club/douyu/10646699
 https://goodiptv.club/douyu/3506483
 #EXTINF:-1 tvg-name=" 熊猫直播" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/熊猫直播.png" group-title="🐼熊猫频道", 熊猫直播
 https://gcwbndali.v.myalicdn.com/gcwbnd/ipanda1000_2/index.m3u8
+#EXTINF:-1 tvg-name=" 竹叶的熊猫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/竹叶的熊猫.png" group-title="🐼熊猫频道", 竹叶的熊猫
+https://goodiptv.club/douyu/3870925
+#EXTINF:-1 tvg-name=" 老人家小熊猫君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/老人家小熊猫君.png" group-title="🐼熊猫频道", 老人家小熊猫君
+https://goodiptv.club/douyu/753342
 #EXTINF:-1 tvg-name=" CCTV2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV2.png" group-title="💰付费频道", CCTV2
 http://58.57.40.22:9901/tsfile/live/1001_1.m3u8
 #EXTINF:-1 tvg-name=" CCTV7" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CCTV7.png" group-title="💰付费频道", CCTV7
@@ -2349,8 +2365,6 @@ http://iptv.666230.xyz/iptv/jsyd.php/G_BINGQIKJ-CQ
 http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="央视台球" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/央视台球.png" group-title="💰付费频道",央视台球
 https://hls-gateway.vpstv.net/streams/708855.m3u8
-#EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/女性时尚.png" group-title="💰付费频道",女性时尚
-http://39.152.103.17:8089/tsfile/live/1068_1.m3u8?key=txiptv&playlive=1&down=1
 #EXTINF:-1 tvg-name="女性时尚" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/女性时尚.png" group-title="💰付费频道",女性时尚
 http://iptv.666230.xyz/iptv/jsyd.php/G_NVXINGSS-CQ
 #EXTINF:-1 tvg-name="怀旧剧场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/怀旧剧场.png" group-title="💰付费频道",怀旧剧场
@@ -3387,6 +3401,8 @@ http://live.ahcartv.dev.geek-zoo.cn/live/whpd.m3u8?txSecret=3e91d2caa6167710ed56
 https://gnhls.qingmei.tv/live/tlxw.m3u8?volcTime=1753081509&volcSecret=10999ac48fb965e95cd8ac9bbbf625ef
 #EXTINF:-1 tvg-name="黄山新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/黄山新闻综合.png" group-title="🚈安徽频道",黄山新闻综合
 http://hslive.hsnewsnet.com/lsdream/hve9Wjs/1000/live.m3u8?zanhd
+#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东莞新闻综合.png" group-title="🚋甘肃频道", 东莞新闻综合
+https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 临夏州综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/临夏州综合.png" group-title="🚋甘肃频道", 临夏州综合
 http://play.kankanlive.com/live/1714096320293954.m3u8
 #EXTINF:-1 tvg-name=" 临潭" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/临潭.png" group-title="🚋甘肃频道", 临潭
@@ -3431,6 +3447,8 @@ http://play.kankanlive.com/live/1692005762394912.m3u8
 https://play.kankanlive.com/live/1658978094528926.m3u8
 #EXTINF:-1 tvg-name="定西综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/定西综合.png" group-title="🚋甘肃频道",定西综合
 https://play.kankanlive.com/live/1675303871634928.m3u8
+#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚋甘肃频道",新闻综合
+http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="甘南综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/甘南综合.png" group-title="🚋甘肃频道",甘南综合
 https://play.kankanlive.com/live/1711955176432990.m3u8
 #EXTINF:-1 tvg-name="甘肃少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/甘肃少儿.png" group-title="🚋甘肃频道",甘肃少儿
@@ -3453,16 +3471,10 @@ http://stream4.liveyun.hoge.cn/ch02/sd/live.m3u8
 https://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=550af55c0ea34ce492748481415b6dfa&txTime=1903e7b17de
 #EXTINF:-1 tvg-name=" 南国都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南国都市.png" group-title="🚌广东频道", 南国都市
 http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4
-#EXTINF:-1 tvg-name=" 广东影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东影视.png" group-title="🚌广东频道", 广东影视
-http://119.32.12.17:2901/udp/224.1.100.11:11111
-#EXTINF:-1 tvg-name=" 广东新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东新闻.png" group-title="🚌广东频道", 广东新闻
-http://119.32.12.17:2901/udp/224.1.100.5:11111
 #EXTINF:-1 tvg-name=" 广东民生" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东民生.png" group-title="🚌广东频道", 广东民生
 http://183.11.239.36:808/hls/18/index.m3u8
 #EXTINF:-1 tvg-name=" 广东珠江" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东珠江.png" group-title="🚌广东频道", 广东珠江
 http://cdn2.132.us.kg/live/gdzj/stream.m3u8
-#EXTINF:-1 tvg-name=" 广东经济科教" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广东经济科教.png" group-title="🚌广东频道", 广东经济科教
-http://119.32.12.17:2901/udp/224.1.100.6:11111
 #EXTINF:-1 tvg-name=" 广州新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广州新闻.png" group-title="🚌广东频道", 广州新闻
 http://tencentplay.gztv.com/live/xinwen.m3u8?txSecret=d2c2db0b598c02ec1b5623728434d367&txTime=18d57929bd3
 #EXTINF:-1 tvg-name=" 广州竞赛" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/广州竞赛.png" group-title="🚌广东频道", 广州竞赛
@@ -3619,6 +3631,24 @@ https://live-cdn-v01.lalifeier.eu.org/sztv/szse.m3u8?t=1772832962&key=a921b6977b
 https://live-cdn-v01.lalifeier.eu.org/sztv/szse.m3u8?t=1772876173&key=36d0db4380afb52b7906520af479e2e3
 #EXTINF:-1 tvg-name="深圳少儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳少儿.png" group-title="🚌广东频道",深圳少儿
 https://live-cdn-v01.lalifeier.eu.org/sztv/szse.m3u8?t=1772918916&key=465c780d61dcadd7f9b39e4b4a7915b2
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+http://111.221.137.155:44330/tsfile/live/1015_1.m3u8?key=txiptv
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+http://163.177.122.122:9901/tsfile/live/1092_1.m3u8
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+http://163.177.122.71:9901/tsfile/live/1092_1.m3u8
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772574002&key=83f0a5d6cdb4fcc9027b682a809fbbc2
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772617854&key=6411d33590aa8cc621ee7797b5cba67c
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772660450&key=ecd0b33c271b4a44e01a0a01aceed796
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772704559&key=5c648484e859800271e0fd3457f91271
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772746968&key=7d42868fddb42409bad2b137b2c35697
+#EXTINF:-1 tvg-name="深圳电视剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳电视剧.png" group-title="🚌广东频道",深圳电视剧
+https://live-cdn-v01.lalifeier.eu.org/sztv/szdsj.m3u8?t=1772790592&key=44bc7d60001b41c66a4a805348aa189a
 #EXTINF:-1 tvg-name="深圳都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳都市.png" group-title="🚌广东频道",深圳都市
 https://hls-gateway.vpstv.net/streams/708846.m3u8
 #EXTINF:-1 tvg-name="深圳都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/深圳都市.png" group-title="🚌广东频道",深圳都市
@@ -3642,17 +3672,7 @@ https://ls.qingting.fm/live/5043/64k.m3u8
 #EXTINF:-1 tvg-name="北海经济科教" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/北海经济科教.png" group-title="🚎广西频道",北海经济科教
 https://play-a2.quklive.com:443/live/1727311690820146.m3u8
 #EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
-https://hls.nntv.cn/nnlive/NNTV_PUB_A.m3u8
-#EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
-http://hls.nntv.cn/nnlive/NNTV_PUB_A.m3u8?zguangxd
-#EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
 http://hls.nntv.cn/nnlive/GGPD_24.m3u8
-#EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
-http://13457610200.8866.org:2018/live/南宁公共/index.m3u8
-#EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
-https://hls.nntv.cn/nnlive/GGPD_24.m3u8
-#EXTINF:-1 tvg-name="南宁公共" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁公共.png" group-title="🚎广西频道",南宁公共
-http://171.108.239.79:8181/tsfile/live/1018_1.m3u8
 #EXTINF:-1 tvg-name="南宁影娱乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁影娱乐.png" group-title="🚎广西频道",南宁影娱乐
 http://hls.nntv.cn/nnlive/NNTV_VOD_A.m3u8?zguangxd
 #EXTINF:-1 tvg-name="南宁都市生活" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/南宁都市生活.png" group-title="🚎广西频道",南宁都市生活
@@ -3715,8 +3735,6 @@ http://150.255.149.33:9901/tsfile/live/1017_1.m3u8
 http://nn.7x9d.cn/地方台8563/海南.php?id=xwpd
 #EXTINF:-1 tvg-name="海南自贸" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海南自贸.png" group-title="🚑海南频道",海南自贸
 http://nn.7x9d.cn/地方台8563/海南.php?id=jjpd
-#EXTINF:-1 tvg-name=" 东莞新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/东莞新闻综合.png" group-title="🚒河北频道", 东莞新闻综合
-https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name=" 任丘综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/任丘综合.png" group-title="🚒河北频道", 任丘综合
 https://jwcdnqx.hebyun.com.cn/live/rqtv1/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name=" 兴隆综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/兴隆综合.png" group-title="🚒河北频道", 兴隆综合
@@ -3753,8 +3771,6 @@ https://jwcdnqx.hebyun.com.cn/zb/rqtv1/1500k/tzwj_video.m3u8
 https://jwcdnqx.hebyun.com.cn/zb/xlzh/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="平泉影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/平泉影视.png" group-title="🚒河北频道",平泉影视
 https://jwcdnqx.hebyun.com.cn/zb/pqys/1500k/tzwj_video.m3u8
-#EXTINF:-1 tvg-name="新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/新闻综合.png" group-title="🚒河北频道",新闻综合
-http://tvpull.dxhmt.cn:9081/tv/10326-1.m3u8
 #EXTINF:-1 tvg-name="昌黎综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/昌黎综合.png" group-title="🚒河北频道",昌黎综合
 https://jwcdnqx.hebyun.com.cn/zb/clzhpd/1500k/tzwj_video.m3u8
 #EXTINF:-1 tvg-name="河北农民" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河北农民.png" group-title="🚒河北频道",河北农民
@@ -3966,7 +3982,7 @@ http://live.dxhmt.cn:9081/tv/11330-1.m3u8
 #EXTINF:-1 tvg-name="桐柏新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/桐柏新闻综合.png" group-title="🚓河南频道",桐柏新闻综合
 http://tvpull.dxhmt.cn:9081/tv/11330-1.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南民生.png" group-title="🚓河南频道",河南民生
-https://live-cdn-v01.lalifeier.eu.org/hntv/hnms.m3u8?t=1773870085&key=0b3b8466286137283c01c9b0de313930
+https://live-cdn-v01.lalifeier.eu.org/hntv/hnms.m3u8?t=1773914165&key=1681d1b8c771e8300754d80964e8400e
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南民生.png" group-title="🚓河南频道",河南民生
 https://t.freetv.fun/live/he-nan-min-sheng-1.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南民生.png" group-title="🚓河南频道",河南民生
@@ -3982,9 +3998,9 @@ https://t.freetv.fun/live/he-nan-min-sheng-7.m3u8
 #EXTINF:-1 tvg-name="河南民生" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南民生.png" group-title="🚓河南频道",河南民生
 https://t.freetv.fun/live/he-nan-min-sheng.m3u8
 #EXTINF:-1 tvg-name="河南都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南都市.png" group-title="🚓河南频道",河南都市
-http://1.94.31.214/php/hntv.php?id=hnds
+https://live-cdn-v01.lalifeier.eu.org/hntv/hnds.m3u8?t=1773914165&key=e1b0ac49d906ed599ec384e44873e2c6
 #EXTINF:-1 tvg-name="河南都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南都市.png" group-title="🚓河南频道",河南都市
-https://live-cdn-v01.lalifeier.eu.org/hntv/hnds.m3u8?t=1773870085&key=99cef5da6916bffd397b568d63b50015
+http://1.94.31.214/php/hntv.php?id=hnds
 #EXTINF:-1 tvg-name="河南都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南都市.png" group-title="🚓河南频道",河南都市
 https://t.freetv.fun/live/he-nan-du-shi-1.m3u8
 #EXTINF:-1 tvg-name="河南都市" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/河南都市.png" group-title="🚓河南频道",河南都市
@@ -4730,9 +4746,9 @@ https://l.cztvcloud.com/channels/lantian/SXyuyao2/720p.m3u8
 #EXTINF:-1 tvg-name="余姚新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余姚新闻综合.png" group-title="🚞浙江频道",余姚新闻综合
 http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?cWlkPSZzPTg3OWMwYmMyZDMzYTFhZGY3NDQxMjgyYTg1MmUzNTY0JmVzPTE3MDY2Nzc4NzMmdXVpZD0yMjdiY2MzNGNiNGY0MThlYjRiY2IxYzcwNmZjODNkMS02NzQ3NDY2NyZ2PTImYXM9MCZjZG5leF9pZD10eF9waG9uZV9saXZl
 #EXTINF:-1 tvg-name="余姚综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余姚综合.png" group-title="🚞浙江频道",余姚综合
-http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?
-#EXTINF:-1 tvg-name="余姚综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余姚综合.png" group-title="🚞浙江频道",余姚综合
 http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?zzhed
+#EXTINF:-1 tvg-name="余姚综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余姚综合.png" group-title="🚞浙江频道",余姚综合
+http://l.cztvcloud.com/channels/lantian/SXyuyao1/720p.m3u8?
 #EXTINF:-1 tvg-name="余杭未来E" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余杭未来E.png" group-title="🚞浙江频道",余杭未来E
 http://l.cztvcloud.com/channels/lantian/SXyuhang3/720p.m3u8?zzhed
 #EXTINF:-1 tvg-name="余杭综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/余杭综合.png" group-title="🚞浙江频道",余杭综合
@@ -4786,6 +4802,8 @@ https://t.freetv.fun/live/zhe-jiang-gong-gong-xin-wen-1.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江国际.png" group-title="🚞浙江频道",浙江国际
 http://ali-xwl.cztv.com/live/channel101080Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江国际.png" group-title="🚞浙江频道",浙江国际
+http://ali-xwl.cztv.com/live/channel10720Plxw.m3u8
+#EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江国际.png" group-title="🚞浙江频道",浙江国际
 https://t.freetv.fun/live/zhe-jiang-guo-ji-1.m3u8
 #EXTINF:-1 tvg-name="浙江国际" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江国际.png" group-title="🚞浙江频道",浙江国际
 https://t.freetv.fun/live/zhe-jiang-guo-ji.m3u8
@@ -4797,6 +4815,8 @@ https://t.freetv.fun/live/zhe-jiang-guo-ji-3.m3u8
 https://t.freetv.fun/live/zhe-jiang-guo-ji-4.m3u8
 #EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江教科影视.png" group-title="🚞浙江频道",浙江教科影视
 http://ali-xwl.cztv.com/live/channel041080Plxw.m3u8
+#EXTINF:-1 tvg-name="浙江教科影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江教科影视.png" group-title="🚞浙江频道",浙江教科影视
+http://ali-xwl.cztv.com/live/channel04720Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江新闻.png" group-title="🚞浙江频道",浙江新闻
 http://ali-xwl.cztv.com/live/channel071080Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江新闻" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江新闻.png" group-title="🚞浙江频道",浙江新闻
@@ -4841,6 +4861,8 @@ http://ali-m-l.cztv.com/channels/lantian/channel003/720p.m3u8
 https://ali-m-l.cztv.com/channels/lantian/channel003/1080p.m3u8?
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江经济生活.png" group-title="🚞浙江频道",浙江经济生活
 http://ali-xwl.cztv.com/live/channel031080Plxw.m3u8
+#EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江经济生活.png" group-title="🚞浙江频道",浙江经济生活
+http://ali-xwl.cztv.com/live/channel03720Plxw.m3u8
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江经济生活.png" group-title="🚞浙江频道",浙江经济生活
 https://t.freetv.fun/live/zhe-jiang-jing-ji-sheng-huo-2.m3u8
 #EXTINF:-1 tvg-name="浙江经济生活" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/浙江经济生活.png" group-title="🚞浙江频道",浙江经济生活
@@ -4914,6 +4936,8 @@ https://t.freetv.fun/live/cang-nan-xin-wen-zong-he-2.m3u8
 #EXTINF:-1 tvg-name="苍南新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/苍南新闻综合.png" group-title="🚞浙江频道",苍南新闻综合
 https://t.freetv.fun/live/cang-nan-xin-wen-zong-he.m3u8
 #EXTINF:-1 tvg-name="萧山新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萧山新闻综合.png" group-title="🚞浙江频道",萧山新闻综合
+http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8?zzhed
+#EXTINF:-1 tvg-name="萧山新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萧山新闻综合.png" group-title="🚞浙江频道",萧山新闻综合
 http://l.cztvcloud.com/channels/lantian/SXxiaoshan1/720p.m3u8?cWlkPSZzPTg3OWMwYmMyZDMzYTFhZGY3NDQxMjgyYTg1MmUzNTY0JmVzPTE3MDY2Nzc4NzMmdXVpZD0yMjdiY2MzNGNiNGY0MThlYjRiY2IxYzcwNmZjODNkMS02NzQ3NDY2NyZ2PTImYXM9MCZjZG5leF9pZD10eF9waG9uZV9saXZl
 #EXTINF:-1 tvg-name="萧山新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萧山新闻综合.png" group-title="🚞浙江频道",萧山新闻综合
 https://t.freetv.fun/live/xiao-shan-xin-wen-zong-he-2.m3u8
@@ -4924,21 +4948,21 @@ http://l.cztvcloud.com/channels/lantian/SXxiaoshan2/720p.m3u8?zzhed
 #EXTINF:-1 tvg-name="衢江新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/衢江新闻综合.png" group-title="🚞浙江频道",衢江新闻综合
 https://t.freetv.fun/live/qu-jiang-xin-wen-zong-he.m3u8
 #EXTINF:-1 tvg-name="诸暨新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/诸暨新闻综合.png" group-title="🚞浙江频道",诸暨新闻综合
-http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8
-#EXTINF:-1 tvg-name="诸暨新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/诸暨新闻综合.png" group-title="🚞浙江频道",诸暨新闻综合
 http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8?zzhed
+#EXTINF:-1 tvg-name="诸暨新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/诸暨新闻综合.png" group-title="🚞浙江频道",诸暨新闻综合
+http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8
 #EXTINF:-1 tvg-name="鄞州一套" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鄞州一套.png" group-title="🚞浙江频道",鄞州一套
 http://pili-publish.yzxw.newaircloud.com/newaircloud-yzxw/yzxw_20190925090843.m3u8?zzhed
 #EXTINF:-1 tvg-name="鄞州二套" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鄞州二套.png" group-title="🚞浙江频道",鄞州二套
 http://pili-publish.yzxw.newaircloud.com/newaircloud-yzxw/yzxw_20190925090936.m3u8?zzhed
 #EXTINF:-1 tvg-name="龙游新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游新闻综合.png" group-title="🚞浙江频道",龙游新闻综合
-http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8?zzhed
-#EXTINF:-1 tvg-name="龙游新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游新闻综合.png" group-title="🚞浙江频道",龙游新闻综合
 http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8
-#EXTINF:-1 tvg-name="龙游生活娱乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游生活娱乐.png" group-title="🚞浙江频道",龙游生活娱乐
-http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8?zzhed
+#EXTINF:-1 tvg-name="龙游新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游新闻综合.png" group-title="🚞浙江频道",龙游新闻综合
+http://l.cztvcloud.com/channels/lantian/SXlongyou1/720p.m3u8?zzhed
 #EXTINF:-1 tvg-name="龙游生活娱乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游生活娱乐.png" group-title="🚞浙江频道",龙游生活娱乐
 http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8
+#EXTINF:-1 tvg-name="龙游生活娱乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/龙游生活娱乐.png" group-title="🚞浙江频道",龙游生活娱乐
+http://l.cztvcloud.com/channels/lantian/SXlongyou2/720p.m3u8?zzhed
 #EXTINF:-1 tvg-name=" 上海新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/上海新闻综合.png" group-title="🚲上海频道", 上海新闻综合
 https://mgtv.ottiptv.cc/migu/651632657.m3u8?migutoken=348c9164063c2b1df215dd2fa7cd92cb119d8a335ae0edfb5d615a6c714e71b669eee2f5ff1730afa92af7ca41d0aa96e3a280d7e5f2069eb8a3b852f3ebc270147489d7c8bfb08a7c4b9c4d80
 #EXTINF:-1 tvg-name="上海外语" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/上海外语.png" group-title="🚲上海频道",上海外语
@@ -5207,8 +5231,6 @@ http://218.84.12.186:8002/hls/main/playlist.m3u8?zxinjd
 http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd
 #EXTINF:-1 tvg-name=" 玛纳斯综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/玛纳斯综合.png" group-title="🛹新疆频道", 玛纳斯综合
 http://218.84.127.245:1026/hls/main1/playlist.m3u8?zxinjd,
-#EXTINF:-1 tvg-name="伊犁哈萨克" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/伊犁哈萨克.png" group-title="🛹新疆频道",伊犁哈萨克
-http://110.153.180.106:55555/out_3/index.m3u8?zxinjd
 #EXTINF:-1 tvg-name="伊犁汉语综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/伊犁汉语综合.png" group-title="🛹新疆频道",伊犁汉语综合
 http://110.153.180.106:55555/out_1/index.m3u8
 #EXTINF:-1 tvg-name="伊犁经济法制" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/伊犁经济法制.png" group-title="🛹新疆频道",伊犁经济法制
@@ -5311,6 +5333,8 @@ https://goodiptv.club/douyu/8841881
 https://goodiptv.club/douyu/8833450
 #EXTINF:-1 tvg-name=" yaoyao说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/yaoyao说.png" group-title="🦙解说频道", yaoyao说
 https://goodiptv.club/douyu/884073
+#EXTINF:-1 tvg-name=" 一朵老香菇解说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一朵老香菇解说.png" group-title="🦙解说频道", 一朵老香菇解说
+https://goodiptv.club/douyu/10050914
 #EXTINF:-1 tvg-name=" 代娱说美剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/代娱说美剧.png" group-title="🦙解说频道", 代娱说美剧
 https://goodiptv.club/douyu/9123570
 #EXTINF:-1 tvg-name=" 佛曰影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/佛曰影视.png" group-title="🦙解说频道", 佛曰影视
@@ -5327,8 +5351,6 @@ https://goodiptv.club/douyu/9666219
 https://goodiptv.club/douyu/9440530
 #EXTINF:-1 tvg-name=" 北大落说大片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/北大落说大片.png" group-title="🦙解说频道", 北大落说大片
 https://goodiptv.club/douyu/8828811
-#EXTINF:-1 tvg-name=" 十里说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/十里说.png" group-title="🦙解说频道", 十里说
-https://goodiptv.club/douyu/9064711
 #EXTINF:-1 tvg-name=" 史君说剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/史君说剧.png" group-title="🦙解说频道", 史君说剧
 https://goodiptv.club/douyu/9419771
 #EXTINF:-1 tvg-name=" 听wo姐说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/听wo姐说.png" group-title="🦙解说频道", 听wo姐说
@@ -5347,6 +5369,8 @@ https://goodiptv.club/douyu/10011547
 https://goodiptv.club/douyu/9527700
 #EXTINF:-1 tvg-name=" 已知艺术家漫画解说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/已知艺术家漫画解说.png" group-title="🦙解说频道", 已知艺术家漫画解说
 https://goodiptv.club/douyu/5907076
+#EXTINF:-1 tvg-name=" 微笑影视解说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/微笑影视解说.png" group-title="🦙解说频道", 微笑影视解说
+https://goodiptv.club/douyu/9476790
 #EXTINF:-1 tvg-name=" 快哥说老片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/快哥说老片.png" group-title="🦙解说频道", 快哥说老片
 https://goodiptv.club/douyu/10411518
 #EXTINF:-1 tvg-name=" 据说放映室" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/据说放映室.png" group-title="🦙解说频道", 据说放映室
@@ -5397,6 +5421,8 @@ https://goodiptv.club/douyu/9472141
 https://goodiptv.club/douyu/10475459
 #EXTINF:-1 tvg-name=" 飞行员欧文讲故事" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/飞行员欧文讲故事.png" group-title="🦙解说频道", 飞行员欧文讲故事
 https://goodiptv.club/douyu/9678790
+#EXTINF:-1 tvg-name=" 鬼兄奇谈" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鬼兄奇谈.png" group-title="🦙解说频道", 鬼兄奇谈
+https://goodiptv.club/douyu/8722254
 #EXTINF:-1 tvg-name="漫画解说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漫画解说.png" group-title="🦙解说频道",漫画解说
 http://alist.xicp.fun:35455/yy/1382735568
 #EXTINF:-1 tvg-name="漫画解说" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漫画解说.png" group-title="🦙解说频道",漫画解说
@@ -5631,6 +5657,8 @@ http://111.53.96.67:8081/live/1/index.m3u8
 https://568slnjf.live.sxmty.com/live/hls/90c8b2efeb164cc0a6c2409eed668d6b/f77cbb89ec57435b9ba4c47589c16e4f-1.m3u8
 #EXTINF:-1 tvg-name="太谷新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/太谷新闻综合.png" group-title="🦼山西频道",太谷新闻综合
 https://p2.vzan.com/slowlive/596867413819827251/live.m3u8?zbid=1725814272&amp;tpid=1516989100&amp;type=0
+#EXTINF:-1 tvg-name="太谷新闻综合" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/太谷新闻综合.png" group-title="🦼山西频道",太谷新闻综合
+http://p2.vzan.com/slowlive/596867413819827251/live.m3u8
 #EXTINF:-1 tvg-name="山西影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山西影视.png" group-title="🦼山西频道",山西影视
 http://liveflash.sxrtv.com/live/sxfilm.m3u8?sub_m3u8=true&edge_slice=true
 #EXTINF:-1 tvg-name="山西影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山西影视.png" group-title="🦼山西频道",山西影视
@@ -5787,12 +5815,16 @@ https://goodiptv.club/douyu/7796193
 https://goodiptv.club/douyu/8884164
 #EXTINF:-1 tvg-name=" 3030相声小品" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/3030相声小品.png" group-title="🧯樂玩公社", 3030相声小品
 https://goodiptv.club/douyu/9286868
+#EXTINF:-1 tvg-name=" 3秒爱上学习V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/3秒爱上学习V.png" group-title="🧯樂玩公社", 3秒爱上学习V
+https://goodiptv.club/douyu/9541736
 #EXTINF:-1 tvg-name=" 3说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/3说电影.png" group-title="🧯樂玩公社", 3说电影
 https://goodiptv.club/douyu/9643264
 #EXTINF:-1 tvg-name=" 5毒士" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/5毒士.png" group-title="🧯樂玩公社", 5毒士
 https://goodiptv.club/douyu/9406600
 #EXTINF:-1 tvg-name=" 77说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/77说电影.png" group-title="🧯樂玩公社", 77说电影
 https://goodiptv.club/douyu/9444320
+#EXTINF:-1 tvg-name=" 7师傅" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/7师傅.png" group-title="🧯樂玩公社", 7师傅
+https://goodiptv.club/douyu/17732
 #EXTINF:-1 tvg-name=" 9iota" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/9iota.png" group-title="🧯樂玩公社", 9iota
 https://goodiptv.club/douyu/8881729
 #EXTINF:-1 tvg-name=" AK萌虎" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/AK萌虎.png" group-title="🧯樂玩公社", AK萌虎
@@ -5801,8 +5833,6 @@ https://goodiptv.club/douyu/4049310
 https://goodiptv.club/douyu/10670244
 #EXTINF:-1 tvg-name=" Angela小兔" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Angela小兔.png" group-title="🧯樂玩公社", Angela小兔
 https://goodiptv.club/douyu/9617766
-#EXTINF:-1 tvg-name=" BetterMan北北" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/BetterMan北北.png" group-title="🧯樂玩公社", BetterMan北北
-https://goodiptv.club/douyu/8507023
 #EXTINF:-1 tvg-name=" Biu餐厅主管" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Biu餐厅主管.png" group-title="🧯樂玩公社", Biu餐厅主管
 https://goodiptv.club/douyu/7921708
 #EXTINF:-1 tvg-name=" BuriedAlien的号" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/BuriedAlien的号.png" group-title="🧯樂玩公社", BuriedAlien的号
@@ -5829,34 +5859,40 @@ https://goodiptv.club/douyu/10282256
 https://goodiptv.club/douyu/1060418
 #EXTINF:-1 tvg-name=" C座802" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/C座802.png" group-title="🧯樂玩公社", C座802
 https://goodiptv.club/douyu/8768943
+#EXTINF:-1 tvg-name=" DS女老诗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/DS女老诗.png" group-title="🧯樂玩公社", DS女老诗
+https://goodiptv.club/douyu/563536
 #EXTINF:-1 tvg-name=" Devil青酱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Devil青酱.png" group-title="🧯樂玩公社", Devil青酱
 https://goodiptv.club/douyu/9510544
+#EXTINF:-1 tvg-name=" EYStudio" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/EYStudio.png" group-title="🧯樂玩公社", EYStudio
+https://goodiptv.club/douyu/11951343
 #EXTINF:-1 tvg-name=" Ethan清醒思考" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Ethan清醒思考.png" group-title="🧯樂玩公社", Ethan清醒思考
 https://goodiptv.club/douyu/9481151
 #EXTINF:-1 tvg-name=" FGO丶Master1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/FGO丶Master1.png" group-title="🧯樂玩公社", FGO丶Master1
 https://goodiptv.club/douyu/9477851
+#EXTINF:-1 tvg-name=" Fatal飞雪" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Fatal飞雪.png" group-title="🧯樂玩公社", Fatal飞雪
+https://goodiptv.club/douyu/8813596
 #EXTINF:-1 tvg-name=" Hi欣欣" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Hi欣欣.png" group-title="🧯樂玩公社", Hi欣欣
 https://goodiptv.club/douyu/11996166
 #EXTINF:-1 tvg-name=" JhZj丶天明" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/JhZj丶天明.png" group-title="🧯樂玩公社", JhZj丶天明
 https://goodiptv.club/douyu/1006179
+#EXTINF:-1 tvg-name=" Jonas888" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Jonas888.png" group-title="🧯樂玩公社", Jonas888
+https://goodiptv.club/douyu/6054446
 #EXTINF:-1 tvg-name=" JustXiaIt嘻咦啊看" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/JustXiaIt嘻咦啊看.png" group-title="🧯樂玩公社", JustXiaIt嘻咦啊看
 https://goodiptv.club/douyu/2660125
 #EXTINF:-1 tvg-name=" KBShinya" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/KBShinya.png" group-title="🧯樂玩公社", KBShinya
 https://goodiptv.club/douyu/8970851
-#EXTINF:-1 tvg-name=" KUMA轻松熊博士" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/KUMA轻松熊博士.png" group-title="🧯樂玩公社", KUMA轻松熊博士
-https://goodiptv.club/douyu/2282604
 #EXTINF:-1 tvg-name=" King大葱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/King大葱.png" group-title="🧯樂玩公社", King大葱
 https://goodiptv.club/douyu/2255521
 #EXTINF:-1 tvg-name=" KyoKyo不是QQ" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/KyoKyo不是QQ.png" group-title="🧯樂玩公社", KyoKyo不是QQ
 https://goodiptv.club/douyu/4732337
-#EXTINF:-1 tvg-name=" LCPD拉登" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/LCPD拉登.png" group-title="🧯樂玩公社", LCPD拉登
-https://goodiptv.club/douyu/9503015
 #EXTINF:-1 tvg-name=" LOUIS樱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/LOUIS樱.png" group-title="🧯樂玩公社", LOUIS樱
 https://goodiptv.club/douyu/9235284
 #EXTINF:-1 tvg-name=" LR1245" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/LR1245.png" group-title="🧯樂玩公社", LR1245
 https://goodiptv.club/douyu/12534632
 #EXTINF:-1 tvg-name=" MJ小林大人嗷" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/MJ小林大人嗷.png" group-title="🧯樂玩公社", MJ小林大人嗷
 https://goodiptv.club/douyu/9204381
+#EXTINF:-1 tvg-name=" MK青凌" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/MK青凌.png" group-title="🧯樂玩公社", MK青凌
+https://goodiptv.club/douyu/9488836
 #EXTINF:-1 tvg-name=" Melo的健身课堂" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Melo的健身课堂.png" group-title="🧯樂玩公社", Melo的健身课堂
 https://goodiptv.club/douyu/9306609
 #EXTINF:-1 tvg-name=" MordonFreeman是谁" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/MordonFreeman是谁.png" group-title="🧯樂玩公社", MordonFreeman是谁
@@ -5865,16 +5901,18 @@ https://goodiptv.club/douyu/9524579
 https://goodiptv.club/douyu/9525473
 #EXTINF:-1 tvg-name=" OE档案" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/OE档案.png" group-title="🧯樂玩公社", OE档案
 https://goodiptv.club/douyu/6725858
+#EXTINF:-1 tvg-name=" OneGuy丶" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/OneGuy丶.png" group-title="🧯樂玩公社", OneGuy丶
+https://goodiptv.club/douyu/9734098
 #EXTINF:-1 tvg-name=" OooOlivia奥莉蕉" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/OooOlivia奥莉蕉.png" group-title="🧯樂玩公社", OooOlivia奥莉蕉
 https://goodiptv.club/douyu/9678862
 #EXTINF:-1 tvg-name=" PP看动漫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/PP看动漫.png" group-title="🧯樂玩公社", PP看动漫
 https://goodiptv.club/douyu/9837291
 #EXTINF:-1 tvg-name=" PhantomStrider" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/PhantomStrider.png" group-title="🧯樂玩公社", PhantomStrider
 https://goodiptv.club/douyu/9683911
+#EXTINF:-1 tvg-name=" Poison丶冰冰" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Poison丶冰冰.png" group-title="🧯樂玩公社", Poison丶冰冰
+https://goodiptv.club/douyu/74374
 #EXTINF:-1 tvg-name=" Psyman塞门" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Psyman塞门.png" group-title="🧯樂玩公社", Psyman塞门
 https://goodiptv.club/douyu/9753585
-#EXTINF:-1 tvg-name=" QLIMES" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/QLIMES.png" group-title="🧯樂玩公社", QLIMES
-https://goodiptv.club/douyu/1039732
 #EXTINF:-1 tvg-name=" RNDxc" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/RNDxc.png" group-title="🧯樂玩公社", RNDxc
 https://goodiptv.club/douyu/4585643
 #EXTINF:-1 tvg-name=" Rabbit每日爆料" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Rabbit每日爆料.png" group-title="🧯樂玩公社", Rabbit每日爆料
@@ -5883,10 +5921,10 @@ https://goodiptv.club/douyu/9685652
 https://goodiptv.club/douyu/9645396
 #EXTINF:-1 tvg-name=" SH11N" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/SH11N.png" group-title="🧯樂玩公社", SH11N
 https://goodiptv.club/douyu/9650451
-#EXTINF:-1 tvg-name=" SKYE魏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/SKYE魏.png" group-title="🧯樂玩公社", SKYE魏
-https://goodiptv.club/douyu/9460834
 #EXTINF:-1 tvg-name=" Starshine刹那" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Starshine刹那.png" group-title="🧯樂玩公社", Starshine刹那
 https://goodiptv.club/douyu/9191006
+#EXTINF:-1 tvg-name=" Svip丶YoYo" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/Svip丶YoYo.png" group-title="🧯樂玩公社", Svip丶YoYo
+https://goodiptv.club/douyu/3472959
 #EXTINF:-1 tvg-name=" TFBOYS饭团" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/TFBOYS饭团.png" group-title="🧯樂玩公社", TFBOYS饭团
 https://goodiptv.club/douyu/9565765
 #EXTINF:-1 tvg-name=" TSSS映画" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/TSSS映画.png" group-title="🧯樂玩公社", TSSS映画
@@ -5895,8 +5933,6 @@ https://goodiptv.club/douyu/9749339
 https://goodiptv.club/douyu/9392433
 #EXTINF:-1 tvg-name=" UP主DJC" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/UP主DJC.png" group-title="🧯樂玩公社", UP主DJC
 https://goodiptv.club/douyu/9429545
-#EXTINF:-1 tvg-name=" WANJINNY" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/WANJINNY.png" group-title="🧯樂玩公社", WANJINNY
-https://goodiptv.club/douyu/9567755
 #EXTINF:-1 tvg-name=" W总动员" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/W总动员.png" group-title="🧯樂玩公社", W总动员
 https://goodiptv.club/douyu/9480767
 #EXTINF:-1 tvg-name=" XCin888" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/XCin888.png" group-title="🧯樂玩公社", XCin888
@@ -5909,34 +5945,30 @@ https://goodiptv.club/douyu/1102973
 https://goodiptv.club/douyu/7552568
 #EXTINF:-1 tvg-name=" baby丶贝贝" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/baby丶贝贝.png" group-title="🧯樂玩公社", baby丶贝贝
 https://goodiptv.club/douyu/431460
+#EXTINF:-1 tvg-name=" bestthings丶放假" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/bestthings丶放假.png" group-title="🧯樂玩公社", bestthings丶放假
+https://goodiptv.club/douyu/11752532
 #EXTINF:-1 tvg-name=" dw151295068" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/dw151295068.png" group-title="🧯樂玩公社", dw151295068
 https://goodiptv.club/douyu/12655359
 #EXTINF:-1 tvg-name=" dy荒野建造" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/dy荒野建造.png" group-title="🧯樂玩公社", dy荒野建造
 https://goodiptv.club/douyu/10039437
 #EXTINF:-1 tvg-name=" epcdiy" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/epcdiy.png" group-title="🧯樂玩公社", epcdiy
 https://goodiptv.club/douyu/8759268
+#EXTINF:-1 tvg-name=" e尔袏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/e尔袏.png" group-title="🧯樂玩公社", e尔袏
+https://goodiptv.club/douyu/12015111
 #EXTINF:-1 tvg-name=" fans圈娱乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/fans圈娱乐.png" group-title="🧯樂玩公社", fans圈娱乐
 https://goodiptv.club/douyu/9630581
 #EXTINF:-1 tvg-name=" gslaini" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/gslaini.png" group-title="🧯樂玩公社", gslaini
 https://goodiptv.club/douyu/6997954
-#EXTINF:-1 tvg-name=" illit礼" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/illit礼.png" group-title="🧯樂玩公社", illit礼
-https://goodiptv.club/douyu/12065549
 #EXTINF:-1 tvg-name=" koanluowei" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/koanluowei.png" group-title="🧯樂玩公社", koanluowei
 https://goodiptv.club/douyu/10906963
-#EXTINF:-1 tvg-name=" low君热剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/low君热剧.png" group-title="🧯樂玩公社", low君热剧
-https://goodiptv.club/douyu/8461020
+#EXTINF:-1 tvg-name=" ljgdy" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/ljgdy.png" group-title="🧯樂玩公社", ljgdy
+https://goodiptv.club/douyu/1600769
 #EXTINF:-1 tvg-name=" mzx阿哲" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/mzx阿哲.png" group-title="🧯樂玩公社", mzx阿哲
 https://goodiptv.club/douyu/9483965
-#EXTINF:-1 tvg-name=" py86阿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/py86阿.png" group-title="🧯樂玩公社", py86阿
-https://goodiptv.club/douyu/8849954
 #EXTINF:-1 tvg-name=" sekai的光子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/sekai的光子.png" group-title="🧯樂玩公社", sekai的光子
 https://goodiptv.club/douyu/9564766
-#EXTINF:-1 tvg-name=" shhher" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/shhher.png" group-title="🧯樂玩公社", shhher
-https://goodiptv.club/douyu/8733680
 #EXTINF:-1 tvg-name=" sweet夏有甜" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/sweet夏有甜.png" group-title="🧯樂玩公社", sweet夏有甜
 https://goodiptv.club/douyu/4808115
-#EXTINF:-1 tvg-name=" xiaoxiao1004" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/xiaoxiao1004.png" group-title="🧯樂玩公社", xiaoxiao1004
-https://goodiptv.club/douyu/2569874
 #EXTINF:-1 tvg-name=" 一个机智张张" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一个机智张张.png" group-title="🧯樂玩公社", 一个机智张张
 https://goodiptv.club/douyu/9653063
 #EXTINF:-1 tvg-name=" 一只魔玩" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一只魔玩.png" group-title="🧯樂玩公社", 一只魔玩
@@ -5949,6 +5981,8 @@ https://goodiptv.club/douyu/8662684
 https://goodiptv.club/douyu/9497985
 #EXTINF:-1 tvg-name=" 一条闲木鱼" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一条闲木鱼.png" group-title="🧯樂玩公社", 一条闲木鱼
 https://goodiptv.club/douyu/10102281
+#EXTINF:-1 tvg-name=" 一生titus" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一生titus.png" group-title="🧯樂玩公社", 一生titus
+https://goodiptv.club/douyu/12065569
 #EXTINF:-1 tvg-name=" 一目十影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一目十影.png" group-title="🧯樂玩公社", 一目十影
 https://goodiptv.club/douyu/3643605
 #EXTINF:-1 tvg-name=" 一颗咕咕星" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一颗咕咕星.png" group-title="🧯樂玩公社", 一颗咕咕星
@@ -5957,8 +5991,6 @@ https://goodiptv.club/douyu/9388557
 https://goodiptv.club/douyu/3226419
 #EXTINF:-1 tvg-name=" 一颗糖糖canddy" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/一颗糖糖canddy.png" group-title="🧯樂玩公社", 一颗糖糖canddy
 https://goodiptv.club/douyu/9192852
-#EXTINF:-1 tvg-name=" 七龙珠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/七龙珠.png" group-title="🧯樂玩公社", 七龙珠
-https://live.metshop.top/huya/11601966
 #EXTINF:-1 tvg-name=" 万合出品" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/万合出品.png" group-title="🧯樂玩公社", 万合出品
 https://goodiptv.club/douyu/9220456
 #EXTINF:-1 tvg-name=" 万合鲜肉老师" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/万合鲜肉老师.png" group-title="🧯樂玩公社", 万合鲜肉老师
@@ -5967,12 +5999,12 @@ https://goodiptv.club/douyu/9815091
 https://goodiptv.club/douyu/9457792
 #EXTINF:-1 tvg-name=" 三个老爸实验室" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三个老爸实验室.png" group-title="🧯樂玩公社", 三个老爸实验室
 https://goodiptv.club/douyu/9090487
+#EXTINF:-1 tvg-name=" 三代鹿人v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三代鹿人v.png" group-title="🧯樂玩公社", 三代鹿人v
+https://goodiptv.club/douyu/9629717
 #EXTINF:-1 tvg-name=" 三国P陈建斌于和伟" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三国P陈建斌于和伟.png" group-title="🧯樂玩公社", 三国P陈建斌于和伟
 https://goodiptv.club/douyu/12811995
 #EXTINF:-1 tvg-name=" 三国颜老师" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三国颜老师.png" group-title="🧯樂玩公社", 三国颜老师
 https://goodiptv.club/douyu/12253936
-#EXTINF:-1 tvg-name=" 三年辅助一场空" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三年辅助一场空.png" group-title="🧯樂玩公社", 三年辅助一场空
-https://goodiptv.club/douyu/5251148
 #EXTINF:-1 tvg-name=" 三斤呦" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/三斤呦.png" group-title="🧯樂玩公社", 三斤呦
 https://goodiptv.club/douyu/9047933
 #EXTINF:-1 tvg-name=" 上来先丢大v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/上来先丢大v.png" group-title="🧯樂玩公社", 上来先丢大v
@@ -5991,8 +6023,10 @@ https://goodiptv.club/douyu/9406359
 https://goodiptv.club/douyu/9804149
 #EXTINF:-1 tvg-name=" 中二大帝妮可姬" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中二大帝妮可姬.png" group-title="🧯樂玩公社", 中二大帝妮可姬
 https://goodiptv.club/douyu/9612400
+#EXTINF:-1 tvg-name=" 中二的枫哲酱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中二的枫哲酱.png" group-title="🧯樂玩公社", 中二的枫哲酱
+https://goodiptv.club/douyu/9541849
 #EXTINF:-1 tvg-name=" 中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社", 中华小当家
-https://live.iill.top/huya/11342413
+https://live.metshop.top/huya/11342413
 #EXTINF:-1 tvg-name=" 中国村庄" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中国村庄.png" group-title="🧯樂玩公社", 中国村庄
 http://newcntv.qcloudcdn.com/asp/hls/4000/0303000a/3/default/93fc12dbf14241c18c23da104fbade23/4000.m3u8
 #EXTINF:-1 tvg-name=" 丶最紧要好玩" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/丶最紧要好玩.png" group-title="🧯樂玩公社", 丶最紧要好玩
@@ -6003,16 +6037,20 @@ https://goodiptv.club/douyu/5918434
 https://goodiptv.club/douyu/9387499
 #EXTINF:-1 tvg-name=" 丽姐说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/丽姐说电影.png" group-title="🧯樂玩公社", 丽姐说电影
 https://goodiptv.club/douyu/9437283
+#EXTINF:-1 tvg-name=" 久远丶酱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/久远丶酱.png" group-title="🧯樂玩公社", 久远丶酱
+https://goodiptv.club/douyu/9046649
 #EXTINF:-1 tvg-name=" 乌拉吖有剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/乌拉吖有剧.png" group-title="🧯樂玩公社", 乌拉吖有剧
 https://goodiptv.club/douyu/10075154
+#EXTINF:-1 tvg-name=" 乐儿丶Ler" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/乐儿丶Ler.png" group-title="🧯樂玩公社", 乐儿丶Ler
+https://goodiptv.club/douyu/8221699
 #EXTINF:-1 tvg-name=" 九仙人儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/九仙人儿.png" group-title="🧯樂玩公社", 九仙人儿
 https://goodiptv.club/douyu/8669085
 #EXTINF:-1 tvg-name=" 九冢嵬" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/九冢嵬.png" group-title="🧯樂玩公社", 九冢嵬
 https://goodiptv.club/douyu/9393501
 #EXTINF:-1 tvg-name=" 九叔说电影v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/九叔说电影v.png" group-title="🧯樂玩公社", 九叔说电影v
 https://goodiptv.club/douyu/9348282
-#EXTINF:-1 tvg-name=" 九颗鸭梨" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/九颗鸭梨.png" group-title="🧯樂玩公社", 九颗鸭梨
-https://goodiptv.club/douyu/12065801
+#EXTINF:-1 tvg-name=" 乡村水龙" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/乡村水龙.png" group-title="🧯樂玩公社", 乡村水龙
+https://goodiptv.club/douyu/9486905
 #EXTINF:-1 tvg-name=" 乡间大路上" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/乡间大路上.png" group-title="🧯樂玩公社", 乡间大路上
 https://goodiptv.club/douyu/9850661
 #EXTINF:-1 tvg-name=" 书岳钓鱼" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/书岳钓鱼.png" group-title="🧯樂玩公社", 书岳钓鱼
@@ -6021,6 +6059,8 @@ https://goodiptv.club/douyu/10100206
 https://goodiptv.club/douyu/8778280
 #EXTINF:-1 tvg-name=" 二次元fans鹿鹿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/二次元fans鹿鹿.png" group-title="🧯樂玩公社", 二次元fans鹿鹿
 https://goodiptv.club/douyu/8661526
+#EXTINF:-1 tvg-name=" 二胖影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/二胖影视.png" group-title="🧯樂玩公社", 二胖影视
+https://goodiptv.club/douyu/10064260
 #EXTINF:-1 tvg-name=" 云襄白羽" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/云襄白羽.png" group-title="🧯樂玩公社", 云襄白羽
 https://goodiptv.club/douyu/10508677
 #EXTINF:-1 tvg-name=" 五分钟电影汇" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/五分钟电影汇.png" group-title="🧯樂玩公社", 五分钟电影汇
@@ -6039,8 +6079,6 @@ https://vip.ffzy-play.com/20221018/1953_2d6ba500/index.m3u8
 https://vip.ffzy-play.com/20221018/1951_47e1adc8/index.m3u8
 #EXTINF:-1 tvg-name=" 人在囧途之港囧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/人在囧途之港囧.png" group-title="🧯樂玩公社", 人在囧途之港囧
 https://vip.ffzy-play7.com/20230112/11082_fde1a94d/index.m3u8
-#EXTINF:-1 tvg-name=" 人生回答机本机" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/人生回答机本机.png" group-title="🧯樂玩公社", 人生回答机本机
-https://goodiptv.club/douyu/9409722
 #EXTINF:-1 tvg-name=" 人类早期驯服" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/人类早期驯服.png" group-title="🧯樂玩公社", 人类早期驯服
 https://goodiptv.club/douyu/8892864
 #EXTINF:-1 tvg-name=" 仓鼠大逃亡" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/仓鼠大逃亡.png" group-title="🧯樂玩公社", 仓鼠大逃亡
@@ -6075,6 +6113,8 @@ http://jsmov2.a.yximgs.com/bs3/video-hls/5216294367991385255_hlsb.m3u8
 https://goodiptv.club/douyu/9392610
 #EXTINF:-1 tvg-name=" 傲娇的超级赛亚人" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/傲娇的超级赛亚人.png" group-title="🧯樂玩公社", 傲娇的超级赛亚人
 https://goodiptv.club/douyu/4373285
+#EXTINF:-1 tvg-name=" 光之镇魂曲" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/光之镇魂曲.png" group-title="🧯樂玩公社", 光之镇魂曲
+https://goodiptv.club/douyu/12684513
 #EXTINF:-1 tvg-name=" 兔兔MC维辰软桃团" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/兔兔MC维辰软桃团.png" group-title="🧯樂玩公社", 兔兔MC维辰软桃团
 https://goodiptv.club/douyu/8266799
 #EXTINF:-1 tvg-name=" 八幡老师1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/八幡老师1.png" group-title="🧯樂玩公社", 八幡老师1
@@ -6099,18 +6139,20 @@ https://goodiptv.club/douyu/296575
 https://goodiptv.club/douyu/10586105
 #EXTINF:-1 tvg-name=" 冰冰影剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/冰冰影剧.png" group-title="🧯樂玩公社", 冰冰影剧
 http://www.goodiptv.club/douyu/74374
+#EXTINF:-1 tvg-name=" 冰糖葫芦没放盐V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/冰糖葫芦没放盐V.png" group-title="🧯樂玩公社", 冰糖葫芦没放盐V
+https://goodiptv.club/douyu/3505453
 #EXTINF:-1 tvg-name=" 冷孝洪" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/冷孝洪.png" group-title="🧯樂玩公社", 冷孝洪
 https://goodiptv.club/douyu/9527761
 #EXTINF:-1 tvg-name=" 几号房间" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/几号房间.png" group-title="🧯樂玩公社", 几号房间
 https://goodiptv.club/douyu/8829425
 #EXTINF:-1 tvg-name=" 凤起青云" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/凤起青云.png" group-title="🧯樂玩公社", 凤起青云
 https://goodiptv.club/douyu/749124
-#EXTINF:-1 tvg-name=" 刀刀de食堂" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刀刀de食堂.png" group-title="🧯樂玩公社", 刀刀de食堂
-https://goodiptv.club/douyu/6733133
 #EXTINF:-1 tvg-name=" 刀刀影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刀刀影院.png" group-title="🧯樂玩公社", 刀刀影院
 http://www.goodiptv.club/douyu/747764
 #EXTINF:-1 tvg-name=" 分享备用" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/分享备用.png" group-title="🧯樂玩公社", 分享备用
 https://goodiptv.club/douyu/5804577
+#EXTINF:-1 tvg-name=" 刘也变z" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刘也变z.png" group-title="🧯樂玩公社", 刘也变z
+https://goodiptv.club/douyu/9489079
 #EXTINF:-1 tvg-name=" 刘哔电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刘哔电影.png" group-title="🧯樂玩公社", 刘哔电影
 https://goodiptv.club/douyu/2632223
 #EXTINF:-1 tvg-name=" 刘少丶7012" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刘少丶7012.png" group-title="🧯樂玩公社", 刘少丶7012
@@ -6119,6 +6161,8 @@ https://goodiptv.club/douyu/131977
 https://goodiptv.club/douyu/12128227
 #EXTINF:-1 tvg-name=" 刘老师说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/刘老师说电影.png" group-title="🧯樂玩公社", 刘老师说电影
 https://goodiptv.club/douyu/8317926
+#EXTINF:-1 tvg-name=" 创艺微视觉" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/创艺微视觉.png" group-title="🧯樂玩公社", 创艺微视觉
+https://goodiptv.club/douyu/12619211
 #EXTINF:-1 tvg-name=" 利利川" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/利利川.png" group-title="🧯樂玩公社", 利利川
 https://goodiptv.club/douyu/9329249
 #EXTINF:-1 tvg-name=" 别闹了美越" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/别闹了美越.png" group-title="🧯樂玩公社", 别闹了美越
@@ -6133,8 +6177,6 @@ https://goodiptv.club/douyu/9329242
 https://goodiptv.club/douyu/10329702
 #EXTINF:-1 tvg-name=" 剧能下饭鹰" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/剧能下饭鹰.png" group-title="🧯樂玩公社", 剧能下饭鹰
 https://goodiptv.club/douyu/11931032
-#EXTINF:-1 tvg-name=" 剧透大爆炸" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/剧透大爆炸.png" group-title="🧯樂玩公社", 剧透大爆炸
-https://goodiptv.club/douyu/1739752
 #EXTINF:-1 tvg-name=" 动漫推荐i" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/动漫推荐i.png" group-title="🧯樂玩公社", 动漫推荐i
 https://goodiptv.club/douyu/5187099
 #EXTINF:-1 tvg-name=" 动物启示录" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/动物启示录.png" group-title="🧯樂玩公社", 动物启示录
@@ -6155,10 +6197,12 @@ https://goodiptv.club/douyu/8790357
 https://goodiptv.club/douyu/9805480
 #EXTINF:-1 tvg-name=" 十七岁的道姑" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/十七岁的道姑.png" group-title="🧯樂玩公社", 十七岁的道姑
 https://goodiptv.club/douyu/3186217
+#EXTINF:-1 tvg-name=" 千代语默" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/千代语默.png" group-title="🧯樂玩公社", 千代语默
+https://goodiptv.club/douyu/9484187
 #EXTINF:-1 tvg-name=" 半打星冰乐" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/半打星冰乐.png" group-title="🧯樂玩公社", 半打星冰乐
 https://goodiptv.club/douyu/7481383
-#EXTINF:-1 tvg-name=" 半藏同学" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/半藏同学.png" group-title="🧯樂玩公社", 半藏同学
-https://goodiptv.club/douyu/9372627
+#EXTINF:-1 tvg-name=" 华白雨" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/华白雨.png" group-title="🧯樂玩公社", 华白雨
+https://goodiptv.club/douyu/9495454
 #EXTINF:-1 tvg-name=" 华语影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/华语影视.png" group-title="🧯樂玩公社", 华语影视
 http://www.goodiptv.club/douyu/3928
 #EXTINF:-1 tvg-name=" 单纯的顺才少爷" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/单纯的顺才少爷.png" group-title="🧯樂玩公社", 单纯的顺才少爷
@@ -6189,6 +6233,8 @@ https://goodiptv.club/douyu/6476693
 https://goodiptv.club/douyu/2164691
 #EXTINF:-1 tvg-name=" 古装武侠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/古装武侠.png" group-title="🧯樂玩公社", 古装武侠
 http://www.goodiptv.club/douyu/2793084
+#EXTINF:-1 tvg-name=" 可乐家的老骑士" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/可乐家的老骑士.png" group-title="🧯樂玩公社", 可乐家的老骑士
+https://goodiptv.club/douyu/9958943
 #EXTINF:-1 tvg-name=" 可乐撩电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/可乐撩电影.png" group-title="🧯樂玩公社", 可乐撩电影
 https://goodiptv.club/douyu/9371552
 #EXTINF:-1 tvg-name=" 台球帝" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/台球帝.png" group-title="🧯樂玩公社", 台球帝
@@ -6233,12 +6279,16 @@ https://goodiptv.club/douyu/8257039
 https://goodiptv.club/douyu/7537296
 #EXTINF:-1 tvg-name=" 周队长captain" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/周队长captain.png" group-title="🧯樂玩公社", 周队长captain
 https://goodiptv.club/douyu/9023539
+#EXTINF:-1 tvg-name=" 咆哮丶土拨鼠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/咆哮丶土拨鼠.png" group-title="🧯樂玩公社", 咆哮丶土拨鼠
+https://goodiptv.club/douyu/9564230
 #EXTINF:-1 tvg-name=" 和猫住丶" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/和猫住丶.png" group-title="🧯樂玩公社", 和猫住丶
 https://goodiptv.club/douyu/850030
 #EXTINF:-1 tvg-name=" 咕噜咕噜剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/咕噜咕噜剧.png" group-title="🧯樂玩公社", 咕噜咕噜剧
 https://goodiptv.club/douyu/10082307
 #EXTINF:-1 tvg-name=" 咸车" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/咸车.png" group-title="🧯樂玩公社", 咸车
 https://goodiptv.club/douyu/9498554
+#EXTINF:-1 tvg-name=" 咸鱼翻身是另一面咸鱼" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/咸鱼翻身是另一面咸鱼.png" group-title="🧯樂玩公社", 咸鱼翻身是另一面咸鱼
+https://goodiptv.club/douyu/527076
 #EXTINF:-1 tvg-name=" 哇萨比抓马WD" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/哇萨比抓马WD.png" group-title="🧯樂玩公社", 哇萨比抓马WD
 https://goodiptv.club/douyu/8808506
 #EXTINF:-1 tvg-name=" 哈利影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/哈利影视.png" group-title="🧯樂玩公社", 哈利影视
@@ -6261,6 +6311,10 @@ https://goodiptv.club/douyu/9619048
 https://goodiptv.club/douyu/11179077
 #EXTINF:-1 tvg-name=" 喵妹说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/喵妹说电影.png" group-title="🧯樂玩公社", 喵妹说电影
 https://goodiptv.club/douyu/9312432
+#EXTINF:-1 tvg-name=" 喵招诗雨" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/喵招诗雨.png" group-title="🧯樂玩公社", 喵招诗雨
+https://goodiptv.club/douyu/9651121
+#EXTINF:-1 tvg-name=" 喵来啦V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/喵来啦V.png" group-title="🧯樂玩公社", 喵来啦V
+https://goodiptv.club/douyu/8657669
 #EXTINF:-1 tvg-name=" 嘴巴鼻子没有沟" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/嘴巴鼻子没有沟.png" group-title="🧯樂玩公社", 嘴巴鼻子没有沟
 https://goodiptv.club/douyu/10217984
 #EXTINF:-1 tvg-name=" 噬元兽影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/噬元兽影视.png" group-title="🧯樂玩公社", 噬元兽影视
@@ -6275,14 +6329,10 @@ https://goodiptv.club/douyu/8657834
 https://goodiptv.club/douyu/1952680
 #EXTINF:-1 tvg-name=" 在下小苏Su" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/在下小苏Su.png" group-title="🧯樂玩公社", 在下小苏Su
 https://goodiptv.club/douyu/8658051
-#EXTINF:-1 tvg-name=" 在回忆中寻找" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/在回忆中寻找.png" group-title="🧯樂玩公社", 在回忆中寻找
-https://goodiptv.club/douyu/12065601
 #EXTINF:-1 tvg-name=" 地理中国" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/地理中国.png" group-title="🧯樂玩公社", 地理中国
 http://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/c6baf6f74bb944aeacee1065ea72c798/1200.m3u8
 #EXTINF:-1 tvg-name=" 培根悖论唠唠嗑" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/培根悖论唠唠嗑.png" group-title="🧯樂玩公社", 培根悖论唠唠嗑
 https://goodiptv.club/douyu/5354713
-#EXTINF:-1 tvg-name=" 堇姑娘" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/堇姑娘.png" group-title="🧯樂玩公社", 堇姑娘
-https://goodiptv.club/douyu/297689
 #EXTINF:-1 tvg-name=" 墨逗电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/墨逗电影.png" group-title="🧯樂玩公社", 墨逗电影
 https://goodiptv.club/douyu/9614847
 #EXTINF:-1 tvg-name=" 壹丨哥" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/壹丨哥.png" group-title="🧯樂玩公社", 壹丨哥
@@ -6295,8 +6345,8 @@ https://goodiptv.club/douyu/9606419
 https://goodiptv.club/douyu/9546437
 #EXTINF:-1 tvg-name=" 外卖仙人成天" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/外卖仙人成天.png" group-title="🧯樂玩公社", 外卖仙人成天
 https://goodiptv.club/douyu/9498506
-#EXTINF:-1 tvg-name=" 夙瑶瑾" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/夙瑶瑾.png" group-title="🧯樂玩公社", 夙瑶瑾
-https://goodiptv.club/douyu/9450568
+#EXTINF:-1 tvg-name=" 多发几个思雨" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/多发几个思雨.png" group-title="🧯樂玩公社", 多发几个思雨
+https://goodiptv.club/douyu/7256376
 #EXTINF:-1 tvg-name=" 多多其木格" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/多多其木格.png" group-title="🧯樂玩公社", 多多其木格
 https://goodiptv.club/douyu/9075374
 #EXTINF:-1 tvg-name=" 多多看车" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/多多看车.png" group-title="🧯樂玩公社", 多多看车
@@ -6311,6 +6361,8 @@ https://goodiptv.club/douyu/8784719
 https://goodiptv.club/douyu/9440339
 #EXTINF:-1 tvg-name=" 大壮撞电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大壮撞电影.png" group-title="🧯樂玩公社", 大壮撞电影
 https://goodiptv.club/douyu/9437349
+#EXTINF:-1 tvg-name=" 大帅比陈雅楠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大帅比陈雅楠.png" group-title="🧯樂玩公社", 大帅比陈雅楠
+https://goodiptv.club/douyu/9718700
 #EXTINF:-1 tvg-name=" 大庆在农村" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大庆在农村.png" group-title="🧯樂玩公社", 大庆在农村
 https://goodiptv.club/douyu/9477316
 #EXTINF:-1 tvg-name=" 大汁猪" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大汁猪.png" group-title="🧯樂玩公社", 大汁猪
@@ -6319,6 +6371,8 @@ https://goodiptv.club/douyu/9191071
 https://goodiptv.club/douyu/9501548
 #EXTINF:-1 tvg-name=" 大漠叔叔Dm" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大漠叔叔Dm.png" group-title="🧯樂玩公社", 大漠叔叔Dm
 https://goodiptv.club/douyu/1109218
+#EXTINF:-1 tvg-name=" 大熊观影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大熊观影.png" group-title="🧯樂玩公社", 大熊观影
+https://goodiptv.club/douyu/8851140
 #EXTINF:-1 tvg-name=" 大狼狗刨祖坟" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大狼狗刨祖坟.png" group-title="🧯樂玩公社", 大狼狗刨祖坟
 https://goodiptv.club/douyu/10217975
 #EXTINF:-1 tvg-name=" 大笑影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/大笑影院.png" group-title="🧯樂玩公社", 大笑影院
@@ -6337,8 +6391,8 @@ https://goodiptv.club/douyu/8747638
 https://goodiptv.club/douyu/9455480
 #EXTINF:-1 tvg-name=" 天堂电影1895" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天堂电影1895.png" group-title="🧯樂玩公社", 天堂电影1895
 https://goodiptv.club/douyu/9573592
-#EXTINF:-1 tvg-name=" 天才霸总的狐崽崽" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天才霸总的狐崽崽.png" group-title="🧯樂玩公社", 天才霸总的狐崽崽
-https://goodiptv.club/douyu/10394922
+#EXTINF:-1 tvg-name=" 天才简史" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/天才简史.png" group-title="🧯樂玩公社", 天才简史
+https://goodiptv.club/douyu/8662915
 #EXTINF:-1 tvg-name=" 奇光主播" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇光主播.png" group-title="🧯樂玩公社", 奇光主播
 https://goodiptv.club/douyu/8009547
 #EXTINF:-1 tvg-name=" 奇光主播R" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇光主播R.png" group-title="🧯樂玩公社", 奇光主播R
@@ -6347,6 +6401,8 @@ https://goodiptv.club/douyu/12080172
 https://goodiptv.club/douyu/11849873
 #EXTINF:-1 tvg-name=" 奇光主播q" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇光主播q.png" group-title="🧯樂玩公社", 奇光主播q
 https://goodiptv.club/douyu/12560807
+#EXTINF:-1 tvg-name=" 奇兮兮悄陌" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇兮兮悄陌.png" group-title="🧯樂玩公社", 奇兮兮悄陌
+https://goodiptv.club/douyu/953193
 #EXTINF:-1 tvg-name=" 奇妙博物馆" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇妙博物馆.png" group-title="🧯樂玩公社", 奇妙博物馆
 https://goodiptv.club/douyu/9409723
 #EXTINF:-1 tvg-name=" 奇怪电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/奇怪电影.png" group-title="🧯樂玩公社", 奇怪电影
@@ -6359,8 +6415,12 @@ https://goodiptv.club/douyu/1224356
 https://goodiptv.club/douyu/11327316
 #EXTINF:-1 tvg-name=" 女汉子说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/女汉子说电影.png" group-title="🧯樂玩公社", 女汉子说电影
 https://goodiptv.club/douyu/9395966
+#EXTINF:-1 tvg-name=" 女王泡面V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/女王泡面V.png" group-title="🧯樂玩公社", 女王泡面V
+https://goodiptv.club/douyu/9369937
 #EXTINF:-1 tvg-name=" 女神撩电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/女神撩电影.png" group-title="🧯樂玩公社", 女神撩电影
 https://goodiptv.club/douyu/9439594
+#EXTINF:-1 tvg-name=" 好剧看不停" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/好剧看不停.png" group-title="🧯樂玩公社", 好剧看不停
+https://goodiptv.club/douyu/9388938
 #EXTINF:-1 tvg-name=" 妈见打ovo" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/妈见打ovo.png" group-title="🧯樂玩公社", 妈见打ovo
 https://goodiptv.club/douyu/9413151
 #EXTINF:-1 tvg-name=" 娱乐扒叔" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/娱乐扒叔.png" group-title="🧯樂玩公社", 娱乐扒叔
@@ -6429,6 +6489,8 @@ https://goodiptv.club/douyu/117854
 https://goodiptv.club/douyu/11199147
 #EXTINF:-1 tvg-name=" 小林家的旗女仆" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小林家的旗女仆.png" group-title="🧯樂玩公社", 小林家的旗女仆
 https://goodiptv.club/douyu/9211287
+#EXTINF:-1 tvg-name=" 小毅主播A" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小毅主播A.png" group-title="🧯樂玩公社", 小毅主播A
+https://goodiptv.club/douyu/12780285
 #EXTINF:-1 tvg-name=" 小毅主播G" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小毅主播G.png" group-title="🧯樂玩公社", 小毅主播G
 https://goodiptv.club/douyu/12811933
 #EXTINF:-1 tvg-name=" 小毅主播e" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小毅主播e.png" group-title="🧯樂玩公社", 小毅主播e
@@ -6447,6 +6509,8 @@ https://goodiptv.club/douyu/10297898
 https://goodiptv.club/douyu/10329752
 #EXTINF:-1 tvg-name=" 小红在农村" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小红在农村.png" group-title="🧯樂玩公社", 小红在农村
 https://goodiptv.club/douyu/1492444
+#EXTINF:-1 tvg-name=" 小约翰可汗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小约翰可汗.png" group-title="🧯樂玩公社", 小约翰可汗
+https://goodiptv.club/douyu/9738854
 #EXTINF:-1 tvg-name=" 小羊放映室" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小羊放映室.png" group-title="🧯樂玩公社", 小羊放映室
 https://goodiptv.club/douyu/9433806
 #EXTINF:-1 tvg-name=" 小艾大叔" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小艾大叔.png" group-title="🧯樂玩公社", 小艾大叔
@@ -6467,10 +6531,10 @@ https://goodiptv.club/douyu/9627625
 https://goodiptv.club/douyu/9476810
 #EXTINF:-1 tvg-name=" 小黑豹子啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/小黑豹子啊.png" group-title="🧯樂玩公社", 小黑豹子啊
 https://goodiptv.club/douyu/9458184
-#EXTINF:-1 tvg-name=" 少女娜娜酱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/少女娜娜酱.png" group-title="🧯樂玩公社", 少女娜娜酱
-https://goodiptv.club/douyu/9445557
 #EXTINF:-1 tvg-name=" 少年看电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/少年看电影.png" group-title="🧯樂玩公社", 少年看电影
 https://goodiptv.club/douyu/8762120
+#EXTINF:-1 tvg-name=" 少年阿虎233" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/少年阿虎233.png" group-title="🧯樂玩公社", 少年阿虎233
+https://goodiptv.club/douyu/9396762
 #EXTINF:-1 tvg-name=" 少打白骨精" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/少打白骨精.png" group-title="🧯樂玩公社", 少打白骨精
 https://goodiptv.club/douyu/11531165
 #EXTINF:-1 tvg-name=" 尚大人OwO" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/尚大人OwO.png" group-title="🧯樂玩公社", 尚大人OwO
@@ -6485,6 +6549,8 @@ https://goodiptv.club/douyu/9461930
 https://goodiptv.club/douyu/9186596
 #EXTINF:-1 tvg-name=" 山里记" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/山里记.png" group-title="🧯樂玩公社", 山里记
 https://goodiptv.club/douyu/9410236
+#EXTINF:-1 tvg-name=" 岚FLL" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/岚FLL.png" group-title="🧯樂玩公社", 岚FLL
+https://goodiptv.club/douyu/9409703
 #EXTINF:-1 tvg-name=" 崔杋圭五颜一" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/崔杋圭五颜一.png" group-title="🧯樂玩公社", 崔杋圭五颜一
 https://goodiptv.club/douyu/8189873
 #EXTINF:-1 tvg-name=" 崔然竣舞台天才" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/崔然竣舞台天才.png" group-title="🧯樂玩公社", 崔然竣舞台天才
@@ -6497,6 +6563,8 @@ https://goodiptv.club/douyu/10417360
 https://goodiptv.club/douyu/8741860
 #EXTINF:-1 tvg-name=" 巫妖王丶怀旧电视游戏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/巫妖王丶怀旧电视游戏.png" group-title="🧯樂玩公社", 巫妖王丶怀旧电视游戏
 https://goodiptv.club/douyu/1023277
+#EXTINF:-1 tvg-name=" 师落" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/师落.png" group-title="🧯樂玩公社", 师落
+https://goodiptv.club/douyu/6911044
 #EXTINF:-1 tvg-name=" 幕撩电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/幕撩电影.png" group-title="🧯樂玩公社", 幕撩电影
 https://goodiptv.club/douyu/9486015
 #EXTINF:-1 tvg-name=" 庄尼兔拟音实验室" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/庄尼兔拟音实验室.png" group-title="🧯樂玩公社", 庄尼兔拟音实验室
@@ -6505,6 +6573,10 @@ https://goodiptv.club/douyu/9546169
 https://goodiptv.club/douyu/9524210
 #EXTINF:-1 tvg-name=" 开心嘴炮" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/开心嘴炮.png" group-title="🧯樂玩公社", 开心嘴炮
 https://goodiptv.club/douyu/9026377
+#EXTINF:-1 tvg-name=" 开心逛剧场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/开心逛剧场.png" group-title="🧯樂玩公社", 开心逛剧场
+https://goodiptv.club/douyu/10329310
+#EXTINF:-1 tvg-name=" 开心锤锤动漫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/开心锤锤动漫.png" group-title="🧯樂玩公社", 开心锤锤动漫
+https://goodiptv.club/douyu/9018297
 #EXTINF:-1 tvg-name=" 开心麻花经典小品" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/开心麻花经典小品.png" group-title="🧯樂玩公社", 开心麻花经典小品
 https://goodiptv.club/douyu/10153463
 #EXTINF:-1 tvg-name=" 开箱嘤嘤怪" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/开箱嘤嘤怪.png" group-title="🧯樂玩公社", 开箱嘤嘤怪
@@ -6555,6 +6627,8 @@ https://goodiptv.club/douyu/9184833
 https://goodiptv.club/douyu/9488056
 #EXTINF:-1 tvg-name=" 忆暄Ethan" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/忆暄Ethan.png" group-title="🧯樂玩公社", 忆暄Ethan
 https://goodiptv.club/douyu/9570042
+#EXTINF:-1 tvg-name=" 快乐的小波子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/快乐的小波子.png" group-title="🧯樂玩公社", 快乐的小波子
+https://goodiptv.club/douyu/9039399
 #EXTINF:-1 tvg-name=" 快看张不止" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/快看张不止.png" group-title="🧯樂玩公社", 快看张不止
 https://goodiptv.club/douyu/8413226
 #EXTINF:-1 tvg-name=" 怠惰守夜" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/怠惰守夜.png" group-title="🧯樂玩公社", 怠惰守夜
@@ -6589,8 +6663,12 @@ https://goodiptv.club/douyu/2287949
 https://vip.ffzy-play1.com/20221018/478_c3afed66/index.m3u8
 #EXTINF:-1 tvg-name=" 我为奥迪上黄金" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我为奥迪上黄金.png" group-title="🧯樂玩公社", 我为奥迪上黄金
 https://goodiptv.club/douyu/9336286
+#EXTINF:-1 tvg-name=" 我们可爱的程程" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我们可爱的程程.png" group-title="🧯樂玩公社", 我们可爱的程程
+https://goodiptv.club/douyu/329667
 #EXTINF:-1 tvg-name=" 我叫孙火旺" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我叫孙火旺.png" group-title="🧯樂玩公社", 我叫孙火旺
 https://goodiptv.club/douyu/9770949
+#EXTINF:-1 tvg-name=" 我叫萌迪迪V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我叫萌迪迪V.png" group-title="🧯樂玩公社", 我叫萌迪迪V
+https://goodiptv.club/douyu/5354705
 #EXTINF:-1 tvg-name=" 我是YOLO啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我是YOLO啊.png" group-title="🧯樂玩公社", 我是YOLO啊
 https://goodiptv.club/douyu/5077166
 #EXTINF:-1 tvg-name=" 我是一只粽子啊啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/我是一只粽子啊啊.png" group-title="🧯樂玩公社", 我是一只粽子啊啊
@@ -6643,6 +6721,8 @@ https://goodiptv.club/douyu/9330485
 https://goodiptv.club/douyu/9650181
 #EXTINF:-1 tvg-name=" 搞笑天堂岛" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/搞笑天堂岛.png" group-title="🧯樂玩公社", 搞笑天堂岛
 https://goodiptv.club/douyu/6916081
+#EXTINF:-1 tvg-name=" 搞笑孟文明" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/搞笑孟文明.png" group-title="🧯樂玩公社", 搞笑孟文明
+https://goodiptv.club/douyu/9766337
 #EXTINF:-1 tvg-name=" 搞笑院长" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/搞笑院长.png" group-title="🧯樂玩公社", 搞笑院长
 https://goodiptv.club/douyu/8829915
 #EXTINF:-1 tvg-name=" 撩电影8" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/撩电影8.png" group-title="🧯樂玩公社", 撩电影8
@@ -6683,6 +6763,8 @@ https://goodiptv.club/douyu/1753007
 https://goodiptv.club/douyu/7919720
 #EXTINF:-1 tvg-name=" 星君说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/星君说电影.png" group-title="🧯樂玩公社", 星君说电影
 https://goodiptv.club/douyu/8014467
+#EXTINF:-1 tvg-name=" 是chshh" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是chshh.png" group-title="🧯樂玩公社", 是chshh
+https://goodiptv.club/douyu/9570579
 #EXTINF:-1 tvg-name=" 是不是Pro" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是不是Pro.png" group-title="🧯樂玩公社", 是不是Pro
 https://goodiptv.club/douyu/9475113
 #EXTINF:-1 tvg-name=" 是个小可爱iiii" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是个小可爱iiii.png" group-title="🧯樂玩公社", 是个小可爱iiii
@@ -6695,8 +6777,12 @@ https://goodiptv.club/douyu/9415020
 https://goodiptv.club/douyu/9455518
 #EXTINF:-1 tvg-name=" 是真的林虎LinHu" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是真的林虎LinHu.png" group-title="🧯樂玩公社", 是真的林虎LinHu
 https://goodiptv.club/douyu/9540113
+#EXTINF:-1 tvg-name=" 是纯洁上校" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是纯洁上校.png" group-title="🧯樂玩公社", 是纯洁上校
+https://goodiptv.club/douyu/9666042
 #EXTINF:-1 tvg-name=" 是脑洞君君君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/是脑洞君君君.png" group-title="🧯樂玩公社", 是脑洞君君君
 https://goodiptv.club/douyu/9360149
+#EXTINF:-1 tvg-name=" 晓晓666666" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/晓晓666666.png" group-title="🧯樂玩公社", 晓晓666666
+https://goodiptv.club/douyu/426517
 #EXTINF:-1 tvg-name=" 晓晓说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/晓晓说电影.png" group-title="🧯樂玩公社", 晓晓说电影
 https://goodiptv.club/douyu/9430717
 #EXTINF:-1 tvg-name=" 晓麦讲电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/晓麦讲电影.png" group-title="🧯樂玩公社", 晓麦讲电影
@@ -6705,8 +6791,6 @@ https://goodiptv.club/douyu/453963
 https://goodiptv.club/douyu/5635000
 #EXTINF:-1 tvg-name=" 暮肆Mousse" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/暮肆Mousse.png" group-title="🧯樂玩公社", 暮肆Mousse
 https://goodiptv.club/douyu/9634199
-#EXTINF:-1 tvg-name=" 暴走兄弟v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/暴走兄弟v.png" group-title="🧯樂玩公社", 暴走兄弟v
-https://goodiptv.club/douyu/9350960
 #EXTINF:-1 tvg-name=" 暴走漫画" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/暴走漫画.png" group-title="🧯樂玩公社", 暴走漫画
 https://goodiptv.club/douyu/1275878
 #EXTINF:-1 tvg-name=" 暴躁少女零九" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/暴躁少女零九.png" group-title="🧯樂玩公社", 暴躁少女零九
@@ -6715,6 +6799,8 @@ https://goodiptv.club/douyu/9065302
 https://goodiptv.club/douyu/10289400
 #EXTINF:-1 tvg-name=" 月影Yueing212" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/月影Yueing212.png" group-title="🧯樂玩公社", 月影Yueing212
 https://goodiptv.club/douyu/8885525
+#EXTINF:-1 tvg-name=" 有一辆立标奔驰" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/有一辆立标奔驰.png" group-title="🧯樂玩公社", 有一辆立标奔驰
+https://goodiptv.club/douyu/12442176
 #EXTINF:-1 tvg-name=" 有趣视频分享" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/有趣视频分享.png" group-title="🧯樂玩公社", 有趣视频分享
 https://goodiptv.club/douyu/1816353
 #EXTINF:-1 tvg-name=" 有部电影儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/有部电影儿.png" group-title="🧯樂玩公社", 有部电影儿
@@ -6737,6 +6823,8 @@ https://goodiptv.club/douyu/9038894
 https://goodiptv.club/douyu/4786399
 #EXTINF:-1 tvg-name=" 村野趣事荟" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/村野趣事荟.png" group-title="🧯樂玩公社", 村野趣事荟
 https://goodiptv.club/douyu/5794474
+#EXTINF:-1 tvg-name=" 来呀官人V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/来呀官人V.png" group-title="🧯樂玩公社", 来呀官人V
+https://goodiptv.club/douyu/9986305
 #EXTINF:-1 tvg-name=" 杨山羊goat" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/杨山羊goat.png" group-title="🧯樂玩公社", 杨山羊goat
 https://goodiptv.club/douyu/6300365
 #EXTINF:-1 tvg-name=" 杰克大魔王V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/杰克大魔王V.png" group-title="🧯樂玩公社", 杰克大魔王V
@@ -6765,16 +6853,14 @@ https://goodiptv.club/douyu/2281324
 https://goodiptv.club/douyu/1833459
 #EXTINF:-1 tvg-name=" 桀骜不驯认识" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/桀骜不驯认识.png" group-title="🧯樂玩公社", 桀骜不驯认识
 https://goodiptv.club/douyu/2041014
-#EXTINF:-1 tvg-name=" 桃红梨白专栏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/桃红梨白专栏.png" group-title="🧯樂玩公社", 桃红梨白专栏
-https://goodiptv.club/douyu/9568196
 #EXTINF:-1 tvg-name=" 梓帆说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/梓帆说电影.png" group-title="🧯樂玩公社", 梓帆说电影
 https://goodiptv.club/douyu/9769563
 #EXTINF:-1 tvg-name=" 梦夫人啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/梦夫人啊.png" group-title="🧯樂玩公社", 梦夫人啊
 https://goodiptv.club/douyu/9384527
 #EXTINF:-1 tvg-name=" 梦觉教游泳" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/梦觉教游泳.png" group-title="🧯樂玩公社", 梦觉教游泳
 https://goodiptv.club/douyu/4531679
-#EXTINF:-1 tvg-name=" 楚哥说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/楚哥说电影.png" group-title="🧯樂玩公社", 楚哥说电影
-https://goodiptv.club/douyu/9375743
+#EXTINF:-1 tvg-name=" 植物椿de房间" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/植物椿de房间.png" group-title="🧯樂玩公社", 植物椿de房间
+https://goodiptv.club/douyu/9771247
 #EXTINF:-1 tvg-name=" 楚汉炒果条丶" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/楚汉炒果条丶.png" group-title="🧯樂玩公社", 楚汉炒果条丶
 https://goodiptv.club/douyu/6785471
 #EXTINF:-1 tvg-name=" 橘癫疯Oswald" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/橘癫疯Oswald.png" group-title="🧯樂玩公社", 橘癫疯Oswald
@@ -6787,10 +6873,14 @@ http://www.goodiptv.club/douyu/4549169
 https://goodiptv.club/douyu/10217953
 #EXTINF:-1 tvg-name=" 正直的陈易" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/正直的陈易.png" group-title="🧯樂玩公社", 正直的陈易
 https://goodiptv.club/douyu/9365118
+#EXTINF:-1 tvg-name=" 武侠剧场" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/武侠剧场.png" group-title="🧯樂玩公社", 武侠剧场
+https://goodiptv.club/douyu/9285904
 #EXTINF:-1 tvg-name=" 每日好电影V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/每日好电影V.png" group-title="🧯樂玩公社", 每日好电影V
 https://goodiptv.club/douyu/9533302
 #EXTINF:-1 tvg-name=" 民工小代" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/民工小代.png" group-title="🧯樂玩公社", 民工小代
 https://goodiptv.club/douyu/9616619
+#EXTINF:-1 tvg-name=" 民间高手show" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/民间高手show.png" group-title="🧯樂玩公社", 民间高手show
+https://goodiptv.club/douyu/10372765
 #EXTINF:-1 tvg-name=" 永无叙V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/永无叙V.png" group-title="🧯樂玩公社", 永无叙V
 https://goodiptv.club/douyu/9442980
 #EXTINF:-1 tvg-name=" 永远快乐的小美女" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/永远快乐的小美女.png" group-title="🧯樂玩公社", 永远快乐的小美女
@@ -6799,10 +6889,6 @@ https://goodiptv.club/douyu/6091425
 https://goodiptv.club/douyu/8795274
 #EXTINF:-1 tvg-name=" 汪哥说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/汪哥说电影.png" group-title="🧯樂玩公社", 汪哥说电影
 https://goodiptv.club/douyu/9312685
-#EXTINF:-1 tvg-name=" 沂沐啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/沂沐啊.png" group-title="🧯樂玩公社", 沂沐啊
-https://goodiptv.club/douyu/9481137
-#EXTINF:-1 tvg-name=" 沉郁观影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/沉郁观影.png" group-title="🧯樂玩公社", 沉郁观影
-https://goodiptv.club/douyu/9393577
 #EXTINF:-1 tvg-name=" 没腿毛的哥哥" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/没腿毛的哥哥.png" group-title="🧯樂玩公社", 没腿毛的哥哥
 https://goodiptv.club/douyu/9720447
 #EXTINF:-1 tvg-name=" 沫子瞪片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/沫子瞪片.png" group-title="🧯樂玩公社", 沫子瞪片
@@ -6815,8 +6901,6 @@ https://goodiptv.club/douyu/9055742
 https://goodiptv.club/douyu/9172774
 #EXTINF:-1 tvg-name=" 洛克电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/洛克电影.png" group-title="🧯樂玩公社", 洛克电影
 https://goodiptv.club/douyu/9414884
-#EXTINF:-1 tvg-name=" 洛飕飕" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/洛飕飕.png" group-title="🧯樂玩公社", 洛飕飕
-https://goodiptv.club/douyu/9543361
 #EXTINF:-1 tvg-name=" 流小豆" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/流小豆.png" group-title="🧯樂玩公社", 流小豆
 https://goodiptv.club/douyu/2441228
 #EXTINF:-1 tvg-name=" 流心影者" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/流心影者.png" group-title="🧯樂玩公社", 流心影者
@@ -6833,6 +6917,8 @@ https://goodiptv.club/douyu/10039005
 https://goodiptv.club/douyu/9626732
 #EXTINF:-1 tvg-name=" 海绵宝宝" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/海绵宝宝.png" group-title="🧯樂玩公社", 海绵宝宝
 https://live.metshop.top/douyu/3949681
+#EXTINF:-1 tvg-name=" 涛哥测评" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/涛哥测评.png" group-title="🧯樂玩公社", 涛哥测评
+https://goodiptv.club/douyu/613850
 #EXTINF:-1 tvg-name=" 涛浪浪电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/涛浪浪电影.png" group-title="🧯樂玩公社", 涛浪浪电影
 https://goodiptv.club/douyu/5424258
 #EXTINF:-1 tvg-name=" 淮秀帮官方" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/淮秀帮官方.png" group-title="🧯樂玩公社", 淮秀帮官方
@@ -6853,18 +6939,30 @@ https://goodiptv.club/douyu/9518082
 https://goodiptv.club/douyu/791411
 #EXTINF:-1 tvg-name=" 游钓黑坑一疯子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/游钓黑坑一疯子.png" group-title="🧯樂玩公社", 游钓黑坑一疯子
 https://goodiptv.club/douyu/10103411
+#EXTINF:-1 tvg-name=" 湖南花戏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/湖南花戏.png" group-title="🧯樂玩公社", 湖南花戏
+https://goodiptv.club/douyu/12091975
 #EXTINF:-1 tvg-name=" 滑稽中二梦V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/滑稽中二梦V.png" group-title="🧯樂玩公社", 滑稽中二梦V
 https://goodiptv.club/douyu/8829706
 #EXTINF:-1 tvg-name=" 满汉女神Yangqi" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/满汉女神Yangqi.png" group-title="🧯樂玩公社", 满汉女神Yangqi
 https://goodiptv.club/douyu/9650246
+#EXTINF:-1 tvg-name=" 漠漠fumiyo" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漠漠fumiyo.png" group-title="🧯樂玩公社", 漠漠fumiyo
+https://goodiptv.club/douyu/8911070
 #EXTINF:-1 tvg-name=" 漫威君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漫威君.png" group-title="🧯樂玩公社", 漫威君
 https://goodiptv.club/douyu/1713615
+#EXTINF:-1 tvg-name=" 漫尼动画" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/漫尼动画.png" group-title="🧯樂玩公社", 漫尼动画
+https://goodiptv.club/douyu/10364790
 #EXTINF:-1 tvg-name=" 潇湘公子L" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/潇湘公子L.png" group-title="🧯樂玩公社", 潇湘公子L
 https://goodiptv.club/douyu/9535657
+#EXTINF:-1 tvg-name=" 潜伏sc" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/潜伏sc.png" group-title="🧯樂玩公社", 潜伏sc
+https://goodiptv.club/douyu/9458345
 #EXTINF:-1 tvg-name=" 火宗君丶" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/火宗君丶.png" group-title="🧯樂玩公社", 火宗君丶
 https://goodiptv.club/douyu/9580477
+#EXTINF:-1 tvg-name=" 火柴人HyunsDojo" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/火柴人HyunsDojo.png" group-title="🧯樂玩公社", 火柴人HyunsDojo
+https://goodiptv.club/douyu/9430394
 #EXTINF:-1 tvg-name=" 火龙果讲电影本人" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/火龙果讲电影本人.png" group-title="🧯樂玩公社", 火龙果讲电影本人
 https://goodiptv.club/douyu/2039501
+#EXTINF:-1 tvg-name=" 火龙果说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/火龙果说电影.png" group-title="🧯樂玩公社", 火龙果说电影
+https://goodiptv.club/douyu/9559158
 #EXTINF:-1 tvg-name=" 灯泡兄弟影游谈" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/灯泡兄弟影游谈.png" group-title="🧯樂玩公社", 灯泡兄弟影游谈
 https://goodiptv.club/douyu/1690081
 #EXTINF:-1 tvg-name=" 热影连连看" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/热影连连看.png" group-title="🧯樂玩公社", 热影连连看
@@ -6879,10 +6977,18 @@ https://goodiptv.club/douyu/9609171
 https://goodiptv.club/douyu/10329767
 #EXTINF:-1 tvg-name=" 爪子drumdoll" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爪子drumdoll.png" group-title="🧯樂玩公社", 爪子drumdoll
 https://goodiptv.club/douyu/6428730
+#EXTINF:-1 tvg-name=" 爱唱跳Rap的胖虎" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱唱跳Rap的胖虎.png" group-title="🧯樂玩公社", 爱唱跳Rap的胖虎
+https://goodiptv.club/douyu/5895598
+#EXTINF:-1 tvg-name=" 爱好恐怖片的美男子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱好恐怖片的美男子.png" group-title="🧯樂玩公社", 爱好恐怖片的美男子
+https://goodiptv.club/douyu/9280384
 #EXTINF:-1 tvg-name=" 爱星影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱星影视.png" group-title="🧯樂玩公社", 爱星影视
 https://goodiptv.club/douyu/9476806
 #EXTINF:-1 tvg-name=" 爱爱小s" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱爱小s.png" group-title="🧯樂玩公社", 爱爱小s
 https://goodiptv.club/douyu/10308312
+#EXTINF:-1 tvg-name=" 爱玩客iVankr" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱玩客iVankr.png" group-title="🧯樂玩公社", 爱玩客iVankr
+https://goodiptv.club/douyu/317409
+#EXTINF:-1 tvg-name=" 爱看剧的家Fat喵" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱看剧的家Fat喵.png" group-title="🧯樂玩公社", 爱看剧的家Fat喵
+https://goodiptv.club/douyu/65943
 #EXTINF:-1 tvg-name=" 爱黏人的圆子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/爱黏人的圆子.png" group-title="🧯樂玩公社", 爱黏人的圆子
 https://goodiptv.club/douyu/9576933
 #EXTINF:-1 tvg-name=" 牛叔说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/牛叔说电影.png" group-title="🧯樂玩公社", 牛叔说电影
@@ -6893,6 +6999,8 @@ https://goodiptv.club/douyu/10010651
 https://goodiptv.club/douyu/5261342
 #EXTINF:-1 tvg-name=" 特辑电影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/特辑电影院.png" group-title="🧯樂玩公社", 特辑电影院
 https://goodiptv.club/douyu/3637778
+#EXTINF:-1 tvg-name=" 犀利影评" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/犀利影评.png" group-title="🧯樂玩公社", 犀利影评
+https://goodiptv.club/douyu/9647845
 #EXTINF:-1 tvg-name=" 狂拽酷炫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/狂拽酷炫.png" group-title="🧯樂玩公社", 狂拽酷炫
 https://goodiptv.club/douyu/4332
 #EXTINF:-1 tvg-name=" 狂野的种马小说家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/狂野的种马小说家.png" group-title="🧯樂玩公社", 狂野的种马小说家
@@ -6913,8 +7021,6 @@ https://goodiptv.club/douyu/10074407
 https://goodiptv.club/douyu/8862501
 #EXTINF:-1 tvg-name=" 猪肉熟了" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/猪肉熟了.png" group-title="🧯樂玩公社", 猪肉熟了
 https://goodiptv.club/douyu/296836
-#EXTINF:-1 tvg-name=" 猫丶趴趴" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/猫丶趴趴.png" group-title="🧯樂玩公社", 猫丶趴趴
-https://goodiptv.club/douyu/1255068
 #EXTINF:-1 tvg-name=" 猫叔说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/猫叔说电影.png" group-title="🧯樂玩公社", 猫叔说电影
 https://goodiptv.club/douyu/9820039
 #EXTINF:-1 tvg-name=" 猫和老鼠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/猫和老鼠.png" group-title="🧯樂玩公社", 猫和老鼠
@@ -6929,14 +7035,14 @@ https://goodiptv.club/douyu/8726221
 https://goodiptv.club/douyu/9242659
 #EXTINF:-1 tvg-name=" 王Li差点红" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王Li差点红.png" group-title="🧯樂玩公社", 王Li差点红
 https://goodiptv.club/douyu/9348469
+#EXTINF:-1 tvg-name=" 王俊凯的资源组" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王俊凯的资源组.png" group-title="🧯樂玩公社", 王俊凯的资源组
+https://goodiptv.club/douyu/8862216
 #EXTINF:-1 tvg-name=" 王坑坑聊电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王坑坑聊电影.png" group-title="🧯樂玩公社", 王坑坑聊电影
 https://goodiptv.club/douyu/9402110
 #EXTINF:-1 tvg-name=" 王大齐吖" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王大齐吖.png" group-title="🧯樂玩公社", 王大齐吖
 https://goodiptv.club/douyu/3647278
 #EXTINF:-1 tvg-name=" 王子和史蒂文" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王子和史蒂文.png" group-title="🧯樂玩公社", 王子和史蒂文
 https://goodiptv.club/douyu/9583975
-#EXTINF:-1 tvg-name=" 王德发的导演小阿伟" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/王德发的导演小阿伟.png" group-title="🧯樂玩公社", 王德发的导演小阿伟
-https://goodiptv.club/douyu/9430799
 #EXTINF:-1 tvg-name=" 玖月影视" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/玖月影视.png" group-title="🧯樂玩公社", 玖月影视
 https://goodiptv.club/douyu/9339251
 #EXTINF:-1 tvg-name=" 珞珞说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/珞珞说电影.png" group-title="🧯樂玩公社", 珞珞说电影
@@ -6959,58 +7065,56 @@ https://goodiptv.club/douyu/9273031
 https://goodiptv.club/douyu/9629423
 #EXTINF:-1 tvg-name=" 田园小漠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/田园小漠.png" group-title="🧯樂玩公社", 田园小漠
 https://goodiptv.club/douyu/8669435
+#EXTINF:-1 tvg-name=" 田浅浅w" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/田浅浅w.png" group-title="🧯樂玩公社", 田浅浅w
+https://goodiptv.club/douyu/9747144
+#EXTINF:-1 tvg-name=" 电影七十二变" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影七十二变.png" group-title="🧯樂玩公社", 电影七十二变
+https://goodiptv.club/douyu/9323164
 #EXTINF:-1 tvg-name=" 电影丧尸片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影丧尸片.png" group-title="🧯樂玩公社", 电影丧尸片
 http://live.metshop.top/huya/21059578?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影先锋V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影先锋V.png" group-title="🧯樂玩公社", 电影先锋V
 https://goodiptv.club/douyu/8711212
-#EXTINF:-1 tvg-name=" 电影冷知识" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影冷知识.png" group-title="🧯樂玩公社", 电影冷知识
-https://goodiptv.club/douyu/9660835
+#EXTINF:-1 tvg-name=" 电影刘德华" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影刘德华.png" group-title="🧯樂玩公社", 电影刘德华
+http://live.metshop.top/huya/11342424?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影刘油果" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影刘油果.png" group-title="🧯樂玩公社", 电影刘油果
 https://goodiptv.club/douyu/3985805
-#EXTINF:-1 tvg-name=" 电影功夫片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影功夫片.png" group-title="🧯樂玩公社", 电影功夫片
-http://live.metshop.top/huya/11352941?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影吐槽汇" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影吐槽汇.png" group-title="🧯樂玩公社", 电影吐槽汇
 https://goodiptv.club/douyu/9447668
-#EXTINF:-1 tvg-name=" 电影周星星" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影周星星.png" group-title="🧯樂玩公社", 电影周星星
-http://live.metshop.top/huya/11336587?cdn=alicdn
+#EXTINF:-1 tvg-name=" 电影嫣然影厅" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影嫣然影厅.png" group-title="🧯樂玩公社", 电影嫣然影厅
+http://live.metshop.top/huya/11601977?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影小班长" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影小班长.png" group-title="🧯樂玩公社", 电影小班长
 https://goodiptv.club/douyu/549693
 #EXTINF:-1 tvg-name=" 电影幕后喵" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影幕后喵.png" group-title="🧯樂玩公社", 电影幕后喵
 https://goodiptv.club/douyu/8884074
-#EXTINF:-1 tvg-name=" 电影战争片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影战争片.png" group-title="🧯樂玩公社", 电影战争片
-http://live.metshop.top/huya/21059574?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影搞笑喜剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影搞笑喜剧.png" group-title="🧯樂玩公社", 电影搞笑喜剧
 http://live.metshop.top/huya/11342423?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影梁家辉" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影梁家辉.png" group-title="🧯樂玩公社", 电影梁家辉
 http://live.metshop.top/huya/11342429?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影漩涡" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影漩涡.png" group-title="🧯樂玩公社", 电影漩涡
 https://goodiptv.club/douyu/8706350
-#EXTINF:-1 tvg-name=" 电影犯罪片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影犯罪片.png" group-title="🧯樂玩公社", 电影犯罪片
-http://live.metshop.top/huya/11352974?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影笔记" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影笔记.png" group-title="🧯樂玩公社", 电影笔记
 https://goodiptv.club/douyu/9636034
+#EXTINF:-1 tvg-name=" 电影蜘蛛侠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影蜘蛛侠.png" group-title="🧯樂玩公社", 电影蜘蛛侠
+http://live.metshop.top/huya/21059599?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影谍战" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影谍战.png" group-title="🧯樂玩公社", 电影谍战
 http://live.metshop.top/huya/21059585?cdn=alicdn
 #EXTINF:-1 tvg-name=" 电影谍战片" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影谍战片.png" group-title="🧯樂玩公社", 电影谍战片
 http://live.metshop.top/huya/21059587?cdn=alicdn
-#EXTINF:-1 tvg-name=" 电影迷小雅" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影迷小雅.png" group-title="🧯樂玩公社", 电影迷小雅
-https://goodiptv.club/douyu/9639225
 #EXTINF:-1 tvg-name=" 电影黑匣子" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电影黑匣子.png" group-title="🧯樂玩公社", 电影黑匣子
 https://goodiptv.club/douyu/8706652
 #EXTINF:-1 tvg-name=" 电视这个圈儿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/电视这个圈儿.png" group-title="🧯樂玩公社", 电视这个圈儿
 https://goodiptv.club/douyu/9425669
 #EXTINF:-1 tvg-name=" 画渣花小烙" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/画渣花小烙.png" group-title="🧯樂玩公社", 画渣花小烙
 https://goodiptv.club/douyu/9072066
+#EXTINF:-1 tvg-name=" 疯狂小潴潴" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/疯狂小潴潴.png" group-title="🧯樂玩公社", 疯狂小潴潴
+https://goodiptv.club/douyu/5522351
 #EXTINF:-1 tvg-name=" 疯狂尛潴潴" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/疯狂尛潴潴.png" group-title="🧯樂玩公社", 疯狂尛潴潴
 https://goodiptv.club/douyu/4290711
-#EXTINF:-1 tvg-name=" 白燥No1" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/白燥No1.png" group-title="🧯樂玩公社", 白燥No1
-https://goodiptv.club/douyu/280064
+#EXTINF:-1 tvg-name=" 白了个痴" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/白了个痴.png" group-title="🧯樂玩公社", 白了个痴
+https://goodiptv.club/douyu/319576
 #EXTINF:-1 tvg-name=" 白鱼Sakana" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/白鱼Sakana.png" group-title="🧯樂玩公社", 白鱼Sakana
 https://goodiptv.club/douyu/9611771
 #EXTINF:-1 tvg-name=" 百万巨星麒麟君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/百万巨星麒麟君.png" group-title="🧯樂玩公社", 百万巨星麒麟君
 https://goodiptv.club/douyu/3431701
-#EXTINF:-1 tvg-name=" 百态人间大赏" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/百态人间大赏.png" group-title="🧯樂玩公社", 百态人间大赏
-https://goodiptv.club/douyu/8724904
 #EXTINF:-1 tvg-name=" 百晓生说剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/百晓生说剧.png" group-title="🧯樂玩公社", 百晓生说剧
 https://goodiptv.club/douyu/9649681
 #EXTINF:-1 tvg-name=" 皮皮动漫星球" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/皮皮动漫星球.png" group-title="🧯樂玩公社", 皮皮动漫星球
@@ -7019,12 +7123,18 @@ https://goodiptv.club/douyu/8841920
 https://goodiptv.club/douyu/7553744
 #EXTINF:-1 tvg-name=" 目及WATCHER" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/目及WATCHER.png" group-title="🧯樂玩公社", 目及WATCHER
 https://goodiptv.club/douyu/8712204
+#EXTINF:-1 tvg-name=" 看不见的罗杰" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/看不见的罗杰.png" group-title="🧯樂玩公社", 看不见的罗杰
+https://goodiptv.club/douyu/8821917
 #EXTINF:-1 tvg-name=" 看个M啊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/看个M啊.png" group-title="🧯樂玩公社", 看个M啊
 https://goodiptv.club/douyu/9720919
 #EXTINF:-1 tvg-name=" 看电影了没V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/看电影了没V.png" group-title="🧯樂玩公社", 看电影了没V
 https://goodiptv.club/douyu/9562616
+#EXTINF:-1 tvg-name=" 睡丝虫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/睡丝虫.png" group-title="🧯樂玩公社", 睡丝虫
+https://goodiptv.club/douyu/10308234
 #EXTINF:-1 tvg-name=" 石头老纪" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/石头老纪.png" group-title="🧯樂玩公社", 石头老纪
 https://goodiptv.club/douyu/9047060
+#EXTINF:-1 tvg-name=" 碎片记" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/碎片记.png" group-title="🧯樂玩公社", 碎片记
+https://goodiptv.club/douyu/9412981
 #EXTINF:-1 tvg-name=" 祝晓晗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/祝晓晗.png" group-title="🧯樂玩公社", 祝晓晗
 https://goodiptv.club/douyu/9575293
 #EXTINF:-1 tvg-name=" 神奇的大智" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/神奇的大智.png" group-title="🧯樂玩公社", 神奇的大智
@@ -7033,8 +7143,14 @@ https://goodiptv.club/douyu/9650047
 https://goodiptv.club/douyu/8891285
 #EXTINF:-1 tvg-name=" 神烦xp" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/神烦xp.png" group-title="🧯樂玩公社", 神烦xp
 https://goodiptv.club/douyu/8286679
+#EXTINF:-1 tvg-name=" 神经蛙832341" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/神经蛙832341.png" group-title="🧯樂玩公社", 神经蛙832341
+https://goodiptv.club/douyu/11559278
 #EXTINF:-1 tvg-name=" 神羊说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/神羊说电影.png" group-title="🧯樂玩公社", 神羊说电影
 https://goodiptv.club/douyu/9443552
+#EXTINF:-1 tvg-name=" 神迹小霸霸" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/神迹小霸霸.png" group-title="🧯樂玩公社", 神迹小霸霸
+https://goodiptv.club/douyu/8837963
+#EXTINF:-1 tvg-name=" 秋月剪水" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/秋月剪水.png" group-title="🧯樂玩公社", 秋月剪水
+https://goodiptv.club/douyu/9588891
 #EXTINF:-1 tvg-name=" 科学放映室" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/科学放映室.png" group-title="🧯樂玩公社", 科学放映室
 https://goodiptv.club/douyu/9439712
 #EXTINF:-1 tvg-name=" 科幻Fans布玛" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/科幻Fans布玛.png" group-title="🧯樂玩公社", 科幻Fans布玛
@@ -7047,6 +7163,8 @@ https://goodiptv.club/douyu/9608874
 https://goodiptv.club/douyu/9446511
 #EXTINF:-1 tvg-name=" 秦看番" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/秦看番.png" group-title="🧯樂玩公社", 秦看番
 https://goodiptv.club/douyu/9542832
+#EXTINF:-1 tvg-name=" 程情写意" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/程情写意.png" group-title="🧯樂玩公社", 程情写意
+https://goodiptv.club/douyu/9191358
 #EXTINF:-1 tvg-name=" 穆杉车话" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/穆杉车话.png" group-title="🧯樂玩公社", 穆杉车话
 https://goodiptv.club/douyu/9602107
 #EXTINF:-1 tvg-name=" 立秋动画" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/立秋动画.png" group-title="🧯樂玩公社", 立秋动画
@@ -7055,12 +7173,14 @@ https://goodiptv.club/douyu/10351891
 https://goodiptv.club/douyu/9660704
 #EXTINF:-1 tvg-name=" 竹儿公公" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/竹儿公公.png" group-title="🧯樂玩公社", 竹儿公公
 https://goodiptv.club/douyu/8807568
-#EXTINF:-1 tvg-name=" 竹公子有礼了" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/竹公子有礼了.png" group-title="🧯樂玩公社", 竹公子有礼了
-https://goodiptv.club/douyu/8887432
+#EXTINF:-1 tvg-name=" 竹内亮导演" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/竹内亮导演.png" group-title="🧯樂玩公社", 竹内亮导演
+https://goodiptv.club/douyu/8933612
 #EXTINF:-1 tvg-name=" 笑点组长" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/笑点组长.png" group-title="🧯樂玩公社", 笑点组长
 https://goodiptv.club/douyu/9535757
 #EXTINF:-1 tvg-name=" 笑笑笑团长" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/笑笑笑团长.png" group-title="🧯樂玩公社", 笑笑笑团长
 https://goodiptv.club/douyu/10329368
+#EXTINF:-1 tvg-name=" 管哥视频" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/管哥视频.png" group-title="🧯樂玩公社", 管哥视频
+https://goodiptv.club/douyu/10181584
 #EXTINF:-1 tvg-name=" 箩卜君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/箩卜君.png" group-title="🧯樂玩公社", 箩卜君
 https://goodiptv.club/douyu/7495810
 #EXTINF:-1 tvg-name=" 米尼影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/米尼影院.png" group-title="🧯樂玩公社", 米尼影院
@@ -7073,6 +7193,8 @@ https://goodiptv.club/douyu/8764282
 https://goodiptv.club/douyu/2940299
 #EXTINF:-1 tvg-name=" 粽子酱v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/粽子酱v.png" group-title="🧯樂玩公社", 粽子酱v
 https://goodiptv.club/douyu/9390685
+#EXTINF:-1 tvg-name=" 精彩短剧看不停" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/精彩短剧看不停.png" group-title="🧯樂玩公社", 精彩短剧看不停
+https://goodiptv.club/douyu/11824307
 #EXTINF:-1 tvg-name=" 繁星之所在" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/繁星之所在.png" group-title="🧯樂玩公社", 繁星之所在
 https://goodiptv.club/douyu/6033135
 #EXTINF:-1 tvg-name=" 纪录片之家字幕组" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/纪录片之家字幕组.png" group-title="🧯樂玩公社", 纪录片之家字幕组
@@ -7087,14 +7209,18 @@ http://www.goodiptv.club/douyu/6863367
 https://goodiptv.club/douyu/9412138
 #EXTINF:-1 tvg-name=" 维塔利在野外" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/维塔利在野外.png" group-title="🧯樂玩公社", 维塔利在野外
 https://goodiptv.club/douyu/9804068
-#EXTINF:-1 tvg-name=" 维立方电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/维立方电影.png" group-title="🧯樂玩公社", 维立方电影
-https://goodiptv.club/douyu/8706393
 #EXTINF:-1 tvg-name=" 绿阿掌" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/绿阿掌.png" group-title="🧯樂玩公社", 绿阿掌
 https://goodiptv.club/douyu/2365
 #EXTINF:-1 tvg-name=" 罐装老K" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/罐装老K.png" group-title="🧯樂玩公社", 罐装老K
 https://goodiptv.club/douyu/9566210
 #EXTINF:-1 tvg-name=" 网友咸几几" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/网友咸几几.png" group-title="🧯樂玩公社", 网友咸几几
 https://goodiptv.club/douyu/2174405
+#EXTINF:-1 tvg-name=" 网神影厅" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/网神影厅.png" group-title="🧯樂玩公社", 网神影厅
+https://goodiptv.club/douyu/508118
+#EXTINF:-1 tvg-name=" 罗休休休" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/罗休休休.png" group-title="🧯樂玩公社", 罗休休休
+https://goodiptv.club/douyu/9403178
+#EXTINF:-1 tvg-name=" 罗先生699" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/罗先生699.png" group-title="🧯樂玩公社", 罗先生699
+https://goodiptv.club/douyu/12065805
 #EXTINF:-1 tvg-name=" 羊小川" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/羊小川.png" group-title="🧯樂玩公社", 羊小川
 https://goodiptv.club/douyu/11081842
 #EXTINF:-1 tvg-name=" 美人而已" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/美人而已.png" group-title="🧯樂玩公社", 美人而已
@@ -7123,10 +7249,10 @@ https://goodiptv.club/douyu/9222870
 https://goodiptv.club/douyu/236461
 #EXTINF:-1 tvg-name=" 耗子像个战神" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/耗子像个战神.png" group-title="🧯樂玩公社", 耗子像个战神
 https://goodiptv.club/douyu/1557288
+#EXTINF:-1 tvg-name=" 聚聚聚一个月" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/聚聚聚一个月.png" group-title="🧯樂玩公社", 聚聚聚一个月
+https://goodiptv.club/douyu/4105989
 #EXTINF:-1 tvg-name=" 肥宅小草" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/肥宅小草.png" group-title="🧯樂玩公社", 肥宅小草
 https://goodiptv.club/douyu/8887438
-#EXTINF:-1 tvg-name=" 育碧先生v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/育碧先生v.png" group-title="🧯樂玩公社", 育碧先生v
-https://goodiptv.club/douyu/9505962
 #EXTINF:-1 tvg-name=" 胆子不小的郑吉祥" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/胆子不小的郑吉祥.png" group-title="🧯樂玩公社", 胆子不小的郑吉祥
 https://goodiptv.club/douyu/9171887
 #EXTINF:-1 tvg-name=" 胖段段fre" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/胖段段fre.png" group-title="🧯樂玩公社", 胖段段fre
@@ -7137,6 +7263,8 @@ https://goodiptv.club/douyu/5448413
 https://goodiptv.club/douyu/2040822
 #EXTINF:-1 tvg-name=" 胶片看电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/胶片看电影.png" group-title="🧯樂玩公社", 胶片看电影
 https://goodiptv.club/douyu/3715426
+#EXTINF:-1 tvg-name=" 脑袋大1937" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/脑袋大1937.png" group-title="🧯樂玩公社", 脑袋大1937
+https://goodiptv.club/douyu/7655471
 #EXTINF:-1 tvg-name=" 腹黑电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/腹黑电影.png" group-title="🧯樂玩公社", 腹黑电影
 https://goodiptv.club/douyu/8867878
 #EXTINF:-1 tvg-name=" 自然传奇" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/自然传奇.png" group-title="🧯樂玩公社", 自然传奇
@@ -7157,6 +7285,8 @@ https://goodiptv.club/douyu/7348194
 https://goodiptv.club/douyu/97643
 #EXTINF:-1 tvg-name=" 若轻云之蔽月兮" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/若轻云之蔽月兮.png" group-title="🧯樂玩公社", 若轻云之蔽月兮
 https://goodiptv.club/douyu/9262563
+#EXTINF:-1 tvg-name=" 英大吉来了" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/英大吉来了.png" group-title="🧯樂玩公社", 英大吉来了
+https://goodiptv.club/douyu/9174097
 #EXTINF:-1 tvg-name=" 苹果Zei妖" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/苹果Zei妖.png" group-title="🧯樂玩公社", 苹果Zei妖
 https://goodiptv.club/douyu/2793084
 #EXTINF:-1 tvg-name=" 苹果Zei甜" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/苹果Zei甜.png" group-title="🧯樂玩公社", 苹果Zei甜
@@ -7177,8 +7307,6 @@ https://goodiptv.club/douyu/10226974
 https://goodiptv.club/douyu/10650322
 #EXTINF:-1 tvg-name=" 荒野视界" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/荒野视界.png" group-title="🧯樂玩公社", 荒野视界
 https://goodiptv.club/douyu/10675329
-#EXTINF:-1 tvg-name=" 荒野避难所" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/荒野避难所.png" group-title="🧯樂玩公社", 荒野避难所
-https://goodiptv.club/douyu/10234334
 #EXTINF:-1 tvg-name=" 莫扎金" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/莫扎金.png" group-title="🧯樂玩公社", 莫扎金
 https://goodiptv.club/douyu/9272077
 #EXTINF:-1 tvg-name=" 莱纳电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/莱纳电影.png" group-title="🧯樂玩公社", 莱纳电影
@@ -7193,20 +7321,24 @@ https://goodiptv.club/douyu/3714736
 https://goodiptv.club/douyu/8653533
 #EXTINF:-1 tvg-name=" 萌小鬼" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萌小鬼.png" group-title="🧯樂玩公社", 萌小鬼
 https://goodiptv.club/douyu/3928
+#EXTINF:-1 tvg-name=" 萨摩耶王小羊" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萨摩耶王小羊.png" group-title="🧯樂玩公社", 萨摩耶王小羊
+https://goodiptv.club/douyu/9559063
 #EXTINF:-1 tvg-name=" 萱草丶daylily" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/萱草丶daylily.png" group-title="🧯樂玩公社", 萱草丶daylily
 https://goodiptv.club/douyu/9685770
 #EXTINF:-1 tvg-name=" 董王老登" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/董王老登.png" group-title="🧯樂玩公社", 董王老登
 https://goodiptv.club/douyu/9412287
 #EXTINF:-1 tvg-name=" 蓝光乐队" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蓝光乐队.png" group-title="🧯樂玩公社", 蓝光乐队
 https://goodiptv.club/douyu/9572351
-#EXTINF:-1 tvg-name=" 蓝格雷" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蓝格雷.png" group-title="🧯樂玩公社", 蓝格雷
-https://goodiptv.club/douyu/5124602
+#EXTINF:-1 tvg-name=" 蓝星人一ET" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蓝星人一ET.png" group-title="🧯樂玩公社", 蓝星人一ET
+https://goodiptv.club/douyu/9431727
 #EXTINF:-1 tvg-name=" 蓝翔老三国" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蓝翔老三国.png" group-title="🧯樂玩公社", 蓝翔老三国
 https://goodiptv.club/douyu/7459925
 #EXTINF:-1 tvg-name=" 蔡恩雨Priscilla" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蔡恩雨Priscilla.png" group-title="🧯樂玩公社", 蔡恩雨Priscilla
 https://goodiptv.club/douyu/9662853
 #EXTINF:-1 tvg-name=" 蔡老板家的长工丶" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蔡老板家的长工丶.png" group-title="🧯樂玩公社", 蔡老板家的长工丶
 https://goodiptv.club/douyu/8869614
+#EXTINF:-1 tvg-name=" 蕃薯粥粥煮好了" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/蕃薯粥粥煮好了.png" group-title="🧯樂玩公社", 蕃薯粥粥煮好了
+https://goodiptv.club/douyu/11878141
 #EXTINF:-1 tvg-name=" 虫哥说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/虫哥说电影.png" group-title="🧯樂玩公社", 虫哥说电影
 https://goodiptv.club/douyu/8915074
 #EXTINF:-1 tvg-name=" 虾米大模王" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/虾米大模王.png" group-title="🧯樂玩公社", 虾米大模王
@@ -7215,10 +7347,12 @@ https://goodiptv.club/douyu/102114
 https://goodiptv.club/douyu/4285043
 #EXTINF:-1 tvg-name=" 血腥丶妖瞳" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/血腥丶妖瞳.png" group-title="🧯樂玩公社", 血腥丶妖瞳
 https://goodiptv.club/douyu/4231787
+#EXTINF:-1 tvg-name=" 西施撩电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/西施撩电影.png" group-title="🧯樂玩公社", 西施撩电影
+https://goodiptv.club/douyu/7532080
+#EXTINF:-1 tvg-name=" 要不要请你吃元宝蜡烛" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/要不要请你吃元宝蜡烛.png" group-title="🧯樂玩公社", 要不要请你吃元宝蜡烛
+https://goodiptv.club/douyu/4168287
 #EXTINF:-1 tvg-name=" 见世君V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/见世君V.png" group-title="🧯樂玩公社", 见世君V
 https://goodiptv.club/douyu/10220896
-#EXTINF:-1 tvg-name=" 言官有本" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/言官有本.png" group-title="🧯樂玩公社", 言官有本
-https://goodiptv.club/douyu/9660124
 #EXTINF:-1 tvg-name=" 让子弹飞" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/让子弹飞.png" group-title="🧯樂玩公社", 让子弹飞
 https://vip.ffzy-play7.com/20230116/11563_b9f44814/index.m3u8
 #EXTINF:-1 tvg-name=" 训练师十六" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/训练师十六.png" group-title="🧯樂玩公社", 训练师十六
@@ -7267,6 +7401,8 @@ https://goodiptv.club/douyu/9412454
 https://goodiptv.club/douyu/9445489
 #EXTINF:-1 tvg-name=" 辰哥说电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/辰哥说电影.png" group-title="🧯樂玩公社", 辰哥说电影
 https://goodiptv.club/douyu/9371407
+#EXTINF:-1 tvg-name=" 迷剧阿菁" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/迷剧阿菁.png" group-title="🧯樂玩公社", 迷剧阿菁
+https://goodiptv.club/douyu/9486024
 #EXTINF:-1 tvg-name=" 迷影至下Filmlast" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/迷影至下Filmlast.png" group-title="🧯樂玩公社", 迷影至下Filmlast
 https://goodiptv.club/douyu/9187596
 #EXTINF:-1 tvg-name=" 追寻那解不开的问题" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/追寻那解不开的问题.png" group-title="🧯樂玩公社", 追寻那解不开的问题
@@ -7303,8 +7439,12 @@ https://goodiptv.club/douyu/9479775
 https://goodiptv.club/douyu/9931766
 #EXTINF:-1 tvg-name=" 野灿baka" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/野灿baka.png" group-title="🧯樂玩公社", 野灿baka
 https://goodiptv.club/douyu/8867233
+#EXTINF:-1 tvg-name=" 野生岛民" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/野生岛民.png" group-title="🧯樂玩公社", 野生岛民
+https://goodiptv.club/douyu/10217843
 #EXTINF:-1 tvg-name=" 野行涛哥V" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/野行涛哥V.png" group-title="🧯樂玩公社", 野行涛哥V
 https://goodiptv.club/douyu/9329608
+#EXTINF:-1 tvg-name=" 金枪娱" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/金枪娱.png" group-title="🧯樂玩公社", 金枪娱
+https://goodiptv.club/douyu/2798717
 #EXTINF:-1 tvg-name=" 金渐层沈同学" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/金渐层沈同学.png" group-title="🧯樂玩公社", 金渐层沈同学
 https://goodiptv.club/douyu/9516467
 #EXTINF:-1 tvg-name=" 鎏酸v" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鎏酸v.png" group-title="🧯樂玩公社", 鎏酸v
@@ -7323,8 +7463,6 @@ https://goodiptv.club/douyu/9368265
 https://goodiptv.club/douyu/9450942
 #EXTINF:-1 tvg-name=" 铁头钢脚" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/铁头钢脚.png" group-title="🧯樂玩公社", 铁头钢脚
 https://goodiptv.club/douyu/9322081
-#EXTINF:-1 tvg-name=" 铁牛杰哥" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/铁牛杰哥.png" group-title="🧯樂玩公社", 铁牛杰哥
-https://goodiptv.club/douyu/8815425
 #EXTINF:-1 tvg-name=" 铁甲影院" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/铁甲影院.png" group-title="🧯樂玩公社", 铁甲影院
 https://goodiptv.club/douyu/1274132
 #EXTINF:-1 tvg-name=" 铁血影视汇" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/铁血影视汇.png" group-title="🧯樂玩公社", 铁血影视汇
@@ -7351,14 +7489,14 @@ https://goodiptv.club/douyu/9348876
 https://goodiptv.club/douyu/8799435
 #EXTINF:-1 tvg-name=" 阿木讲电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/阿木讲电影.png" group-title="🧯樂玩公社", 阿木讲电影
 https://goodiptv.club/douyu/532050
-#EXTINF:-1 tvg-name=" 阿松撩剧" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/阿松撩剧.png" group-title="🧯樂玩公社", 阿松撩剧
-https://goodiptv.club/douyu/8880843
 #EXTINF:-1 tvg-name=" 阿福ThomasV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/阿福ThomasV.png" group-title="🧯樂玩公社", 阿福ThomasV
 https://goodiptv.club/douyu/9194089
 #EXTINF:-1 tvg-name=" 阿苏电影" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/阿苏电影.png" group-title="🧯樂玩公社", 阿苏电影
 https://goodiptv.club/douyu/9037784
 #EXTINF:-1 tvg-name=" 阿魁方言配音" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/阿魁方言配音.png" group-title="🧯樂玩公社", 阿魁方言配音
 https://goodiptv.club/douyu/9442903
+#EXTINF:-1 tvg-name=" 陈瀚Siri" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/陈瀚Siri.png" group-title="🧯樂玩公社", 陈瀚Siri
+https://goodiptv.club/douyu/759805
 #EXTINF:-1 tvg-name=" 隐紫大人不会吐槽" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/隐紫大人不会吐槽.png" group-title="🧯樂玩公社", 隐紫大人不会吐槽
 https://goodiptv.club/douyu/9207457
 #EXTINF:-1 tvg-name=" 雨忆动漫" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/雨忆动漫.png" group-title="🧯樂玩公社", 雨忆动漫
@@ -7367,6 +7505,8 @@ https://goodiptv.club/douyu/9568700
 https://goodiptv.club/douyu/8936207
 #EXTINF:-1 tvg-name=" 霹雳舞大叔" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/霹雳舞大叔.png" group-title="🧯樂玩公社", 霹雳舞大叔
 https://goodiptv.club/douyu/1528853
+#EXTINF:-1 tvg-name=" 静静给你糖" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/静静给你糖.png" group-title="🧯樂玩公社", 静静给你糖
+https://goodiptv.club/douyu/11752454
 #EXTINF:-1 tvg-name=" 鞋荐JMJ" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鞋荐JMJ.png" group-title="🧯樂玩公社", 鞋荐JMJ
 https://goodiptv.club/douyu/865331
 #EXTINF:-1 tvg-name=" 韩国电影2" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/韩国电影2.png" group-title="🧯樂玩公社", 韩国电影2
@@ -7375,10 +7515,6 @@ https://stream.ads.ottera.tv/playlist.m3u8?network_id=743
 https://goodiptv.club/douyu/9629943
 #EXTINF:-1 tvg-name=" 顾止最爱的小胖宝贝" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/顾止最爱的小胖宝贝.png" group-title="🧯樂玩公社", 顾止最爱的小胖宝贝
 https://goodiptv.club/douyu/238643
-#EXTINF:-1 tvg-name=" 预言家Alice" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/预言家Alice.png" group-title="🧯樂玩公社", 预言家Alice
-https://goodiptv.club/douyu/9483772
-#EXTINF:-1 tvg-name=" 颜雪落落落" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/颜雪落落落.png" group-title="🧯樂玩公社", 颜雪落落落
-https://goodiptv.club/douyu/8864291
 #EXTINF:-1 tvg-name=" 风云I人物志" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/风云I人物志.png" group-title="🧯樂玩公社", 风云I人物志
 https://goodiptv.club/douyu/9970047
 #EXTINF:-1 tvg-name=" 飞碟之谜01" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/飞碟之谜01.png" group-title="🧯樂玩公社", 飞碟之谜01
@@ -7401,6 +7537,8 @@ https://goodiptv.club/douyu/5376478
 https://goodiptv.club/douyu/9651506
 #EXTINF:-1 tvg-name=" 高能恐怖片段君" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/高能恐怖片段君.png" group-title="🧯樂玩公社", 高能恐怖片段君
 https://goodiptv.club/douyu/10401475
+#EXTINF:-1 tvg-name=" 魔术师丶西索" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/魔术师丶西索.png" group-title="🧯樂玩公社", 魔术师丶西索
+https://goodiptv.club/douyu/6610883
 #EXTINF:-1 tvg-name=" 鯋鱼辰辰" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鯋鱼辰辰.png" group-title="🧯樂玩公社", 鯋鱼辰辰
 https://goodiptv.club/douyu/7623292
 #EXTINF:-1 tvg-name=" 鲁过一世" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/鲁过一世.png" group-title="🧯樂玩公社", 鲁过一世
@@ -7472,6 +7610,8 @@ http://dns.yiandrive.com:15907/huya/11601966
 #EXTINF:-1 tvg-name="七龙珠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/七龙珠.png" group-title="🧯樂玩公社",七龙珠
 https://live.ottiptv.cc/huya/11601966
 #EXTINF:-1 tvg-name="七龙珠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/七龙珠.png" group-title="🧯樂玩公社",七龙珠
+https://live.metshop.top/huya/11601966
+#EXTINF:-1 tvg-name="七龙珠" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/七龙珠.png" group-title="🧯樂玩公社",七龙珠
 http://cdn.jdshipin.com:8880/huya.php?id=11601966
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社",中华小当家
 http://61.221.215.25:8800/hls/40/index.m3u8
@@ -7480,7 +7620,7 @@ http://www.douzhicloud.site:35455/huya/11342413
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社",中华小当家
 http://diyp.zxxoo.work/douyu/11868078
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社",中华小当家
-https://live.metshop.top/huya/11342413
+https://live.iill.top/huya/11342413
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社",中华小当家
 http://cdn.jdshipin.com:8880/huya.php?id=11342413
 #EXTINF:-1 tvg-name="中华小当家" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/中华小当家.png" group-title="🧯樂玩公社",中华小当家
