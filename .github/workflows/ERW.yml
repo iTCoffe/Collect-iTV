@@ -3,7 +3,10 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '0 */4 * * *'
+  # 每3小时执行一次（0:00, 3:00, 6:00, 9:00...）
+  - cron: '0 */3 * * *'
+  # 每3小时偏移30分钟（3:30, 6:30, 9:30, 12:30...）
+  - cron: '30 */3 * * *'
 
 env:
   TZ: Asia/Shanghai
