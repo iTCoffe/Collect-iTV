@@ -23,13 +23,13 @@ jobs:
         temp_file=$(mktemp)
         
         # 下载源文件
-        wget -nv -O "$temp_file" http://47.119.24.76:59093/playback.xml
+        wget -nv -O "$temp_file" https://raw.githubusercontent.com/develop202/migu_video/main/playback.xml
         
         # 检查文件是否有效（非空且包含XML声明）
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           # 替换 URL
           sed -i 's|Tak|精準導航·咪視盡享|g' "$temp_file"
-          sed -i 's|http://192.168.1.40:59093|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
+          sed -i 's|https://github.com/develop202/migu_video|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
           
           # 只在内容变更时更新
           if ! cmp -s "$temp_file" erw.xml; then
