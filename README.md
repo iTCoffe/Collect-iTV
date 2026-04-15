@@ -1,7 +1,7 @@
-# BiTV 自动更新
+# IPTV 自动更新
 
-### 更新于 
+### 更新于 2026-04-15 18:42:29 CST
 
 ### 包含格式:
-- [M3U播放列表](BiTV.m3u)（BiTV.M3U）
-- [TXT播放列表](BiTV.txt)（BiTV.TXT）
+- [M3U播放列表](KuTV.m3u)（KuTV.M3U）
+- [TXT播放列表](KuTV.txt)（KuTV.TXT）
