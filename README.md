@@ -1,7 +1,7 @@
 # IPTV 自动更新
 
-### 更新于 2026-04-15 16:28:05 CST
+### 更新于 2026-04-15 18:13:54 CST
 
 ### 包含格式:
-- [M3U播放列表](KeTV.m3u)（KeTV.M3U）
-- [TXT播放列表](KeTV.txt)（KeTV.TXT）
+- [M3U播放列表](BoTV.m3u)
+- [TXT播放列表](BoTV.txt)
