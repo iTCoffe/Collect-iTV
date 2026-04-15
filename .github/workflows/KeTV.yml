@@ -24,7 +24,7 @@ jobs:
     - name: Update Files
       run: |
         # 下载基础源文件
-        wget -q https://worker-m3u.5iclub.workers.dev -O Base1.m3u
+        wget -q https://mitv-m3u.ugreen.workers.dev -O Base1.m3u
 
         # 生成最终M3U：写入自定义头部（替换原头部）
         echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KeTV.m3u
