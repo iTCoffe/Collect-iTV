@@ -2,26 +2,21 @@ name: BiTV Daily Update
 
 on:
   schedule:
-    - cron: '0 16,22,4,10 * * *'  # 每6小时运行
-  workflow_dispatch:  # 支持手动触发
-  
+    - cron: '0 16,22,4,10 * * *'  # 北京时间 00:00, 06:00, 12:00, 18:00
+  workflow_dispatch:
+
 env:
   TZ: Asia/Shanghai
 
 jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-      pull-requests: write
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        ref: main
-        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -37,39 +32,28 @@ jobs:
     - name: Verify file generation
       run: |
         if [ ! -f "BiTV.m3u" ]; then
-          echo "##[error]BiTV.m3u 文件未生成！"
-          exit 1
-        fi
-        if [ ! -f "BiTV.txt" ]; then
-          echo "##[error]BiTV.txt 文件未生成！"
+          echo "Error: BiTV.m3u not found!"
           exit 1
         fi
 
     - name: GetTime
-      run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
+      id: date
+      run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Update README.md with run time and file links
+    - name: Update README.md
       run: |
-        echo -e "# BiTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](BiTV.m3u)（BiTV.M3U）\\n- [TXT播放列表](BiTV.txt)（BiTV.TXT）" > README.md
+        echo -e "# BiTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.GET_TIME }}\n\n### 包含格式:\n- [M3U播放列表](BiTV.m3u)\n- [TXT播放列表](BiTV.txt)" > README.md
 
     - name: Commit changes
-      env:
-        REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git remote set-url origin $REPO_URL
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add BiTV.m3u BiTV.txt README.md
         
-        git pull origin main
-        
-        # 确保文件存在再添加
-        [ -f "README.md" ] && git add README.md
-        [ -f "BiTV.m3u" ] && git add BiTV.m3u
-        [ -f "BiTV.txt" ] && git add BiTV.txt
-        
-        if git diff-index --quiet HEAD --; then
-          echo "没有变更需要提交"
+        # 只有在有变化时才提交
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
         else
-          git commit -am "自动更新：${GET_TIME}"
-          git push origin HEAD:main
+          git commit -m "Update: ${{ steps.date.outputs.GET_TIME }}"
+          git push
         fi
