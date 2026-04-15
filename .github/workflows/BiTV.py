@@ -30,8 +30,8 @@ def contains_date(text):
 CONFIG = {
     "timeout": 10,  # Timeout in seconds
     "max_parallel": 30,  # Max concurrent requests
-    "output_m3u": "Internet_iTV.m3u",  # 修复：使用正确的输出文件名
-    "output_txt": "Internet_iTV.txt",  # 修复：使用正确的输出文件名
+    "output_m3u": "BiTV.m3u",  # 修复：使用正确的输出文件名
+    "output_txt": "BiTV.txt",  # 修复：使用正确的输出文件名
     "iptv_directory": "IPTV",  # Directory containing IPTV files
     "logo_base_url": "https://logo.jsdelivr.dpdns.org/tv"  # Base URL for logos
 }
