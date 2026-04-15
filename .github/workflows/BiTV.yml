@@ -2,7 +2,7 @@ name: BiTV Daily Update
 
 on:
   schedule:
-    - cron: '0 16,22,4,10 * * *'  # 北京时间 00:00, 06:00, 12:00, 18:00
+    - cron: '0 16,22,4,10 * * *'
   workflow_dispatch:
 
 env:
@@ -29,13 +29,6 @@ jobs:
     - name: Run scraping script
       run: python .github/workflows/BiTV.py
 
-    - name: Verify file generation
-      run: |
-        if [ ! -f "BiTV.m3u" ]; then
-          echo "Error: BiTV.m3u not found!"
-          exit 1
-        fi
-
     - name: GetTime
       id: date
       run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
@@ -50,10 +43,9 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add BiTV.m3u BiTV.txt README.md
         
-        # 只有在有变化时才提交
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Update: ${{ steps.date.outputs.GET_TIME }}"
-          git push
+          git commit -m "自动更新：${{ steps.date.outputs.GET_TIME }}"
+          git push origin HEAD:main
         fi
