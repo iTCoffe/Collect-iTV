@@ -50,7 +50,7 @@ jobs:
 
     - name: Update README.md with run time and file links
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](BiTV.m3u)（BiTV.M3U）\\n- [TXT播放列表](BiTV.txt)（BiTV.TXT）" > README.md
+        echo -e "# BiTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\\n- [M3U播放列表](BiTV.m3u)（BiTV.M3U）\\n- [TXT播放列表](BiTV.txt)（BiTV.TXT）" > README.md
 
     - name: Commit changes
       env:
