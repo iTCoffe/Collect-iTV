@@ -32,7 +32,7 @@ jobs:
       run: pip install aiohttp
 
     - name: Run scraping script
-      run: python .github/workflows/iptv.py
+      run: python .github/workflows/BiTV.py
 
     - name: Verify file generation
       run: |
