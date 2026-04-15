@@ -1,0 +1,103 @@
+name: KuTV Daily Update
+
+on:
+  workflow_dispatch:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '30 0-23/3 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+
+    - name: Update Files
+      run: |
+        # 设置字符编码，避免中文乱码
+        export LC_ALL=C.UTF-8
+
+        # 下载基础源文件并清理换行符（保留所有行，不做去重）
+        wget -q https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u -O Base1.m3u
+        tr -d '\r' < Base1.m3u > Base_clean.m3u
+
+        # 生成央视源（过滤包含“央视”且不包含TG频道的条目，保留原始顺序，不去重）
+        tail -n +2 Base_clean.m3u | awk '
+          /^#EXTINF:/ { inf=$0; getline url; if (inf ~ /央视/ && inf !~ /✈️TG频道@stymei1/) print inf "\n" url }
+        ' > CCTV.m3u
+
+        # 生成非央视源（过滤不包含“央视”且不包含TG频道的条目，保留原始顺序，不去重）
+        tail -n +2 Base_clean.m3u | awk '
+          /^#EXTINF:/ { inf=$0; getline url; if (inf !~ /央视/ && inf !~ /✈️TG频道@stymei1/) print inf "\n" url }
+        ' > CNTV.m3u
+
+        # 生成最终M3U：写入自定义头部
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
+
+        # 添加自定义提示（与之前一致）
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KuTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> KuTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> KuTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> KuTV.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >> KuTV.m3u
+
+        # 合并央视和非央视源（保持先央视后非央视的顺序）
+        cat CCTV.m3u CNTV.m3u >> KuTV.m3u
+
+        # 生成TXT播放列表（沿用原提取逻辑，仅过滤空行）
+        awk -F ',' '
+          /^#EXTINF:/ {
+              sub(/^#EXTINF:-1 [^,]+,/, "", $0);
+              name=$0;
+              getline url;
+              gsub(/[ \r]/, "", name);
+              gsub(/\r/, "", url);
+              if (name != "" && url != "") {
+                  print name "," url;
+              }
+          }
+        ' KuTV.m3u | awk '!c[$0]++' > KuTV.txt
+
+        # 清理临时文件
+        rm -f Base1.m3u Base_clean.m3u CCTV.m3u CNTV.m3u
+
+        # 更新README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KuTV.m3u)（KuTV.M3U）\n- [TXT播放列表](KuTV.txt)（KuTV.TXT）" > README.md
+
+    - name: Commit Changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        git pull --rebase --autostash origin main || git rebase --abort
+
+        git add KuTV.m3u KuTV.txt README.md
+
+        if git diff --cached --quiet; then
+          echo "没有文件变更，跳过提交"
+          exit 0
+        fi
+
+        git commit -m "IPTV更新: ${{ steps.date.outputs.date }}"
+
+    - name: Push Update
+      continue-on-error: true
+      run: |
+        git push origin HEAD:main || git push --set-upstream origin main
