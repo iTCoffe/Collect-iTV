@@ -1,51 +1,75 @@
-name: BiTV Daily Update
+name: KeTV Daily Update
 
 on:
+  workflow_dispatch:
+  watch:
+    types: [started]
   schedule:
     - cron: '0 16,22,4,10 * * *'
-  workflow_dispatch:
 
 env:
   TZ: Asia/Shanghai
 
 jobs:
-  scrape-and-update:
+  Update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-    - name: Checkout repository
+    - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Install dependencies
-      run: pip install aiohttp
-
-    - name: Run scraping script
-      run: python .github/workflows/BiTV.py
 
     - name: GetTime
       id: date
-      run: echo "GET_TIME=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Update README.md
+    - name: Update Files
       run: |
-        echo -e "# BiTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.GET_TIME }}\n\n### 包含格式:\n- [M3U播放列表](BiTV.m3u)\n- [TXT播放列表](BiTV.txt)" > README.md
+        # 1. 下载原始 TXT 源文件
+        wget -q https://zubotv.ugreen.workers.dev -O Raw.txt
 
-    - name: Commit changes
+        # 2. 初始化 M3U 文件并写入自定义头部
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KeTV.m3u
+
+        # 3. 添加自定义提示频道 (温馨提示系列)
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KeTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KeTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> KeTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KeTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> KeTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KeTV.m3u
+
+        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> KeTV.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >> KeTV.m3u
+
+        # 4. 将 TXT 转换为 M3U 并追加到文件
+        # 逻辑：排除空行和包含 #genre# 的分类行，处理 频道名,链接 格式
+        grep -vE '^$|#genre#' Raw.txt | awk -F ',' '{
+            print "#EXTINF:-1 tvg-name=\""$1"\" group-title=\"自动更新\","$1;
+            print $2;
+        }' >> KeTV.m3u
+
+        # 5. 生成一份同步的 TXT 备份（基于最终生成的 M3U）
+        awk '/^#EXTINF:/ {
+            split($0, a, ",");
+            name = a[2];
+            getline url;
+            gsub(/\r/, "", name);
+            gsub(/\r/, "", url);
+            sub(/^ /, "", name);
+            print name "," url;
+        }' KeTV.m3u > KeTV.txt
+
+        # 清理
+        rm -f Raw.txt
+
+        # 更新 README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KeTV.m3u)\n- [TXT播放列表](KeTV.txt)" > README.md
+
+    - name: Commit Changes
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add BiTV.m3u BiTV.txt README.md
-        
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "自动更新：${{ steps.date.outputs.GET_TIME }}"
-          git push origin HEAD:main
-        fi
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add KeTV.m3u KeTV.txt README.md
+        git commit -m "Update: ${{ steps.date.outputs.date }}" || exit 0
+        git push
