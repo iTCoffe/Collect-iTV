@@ -5,7 +5,8 @@ on:
   watch:
     types: [started]
   schedule:
-    - cron: '0 */6 * * *'
+    # 对应北京时间 00:00, 06:00, 12:00, 18:00
+    - cron: '0 14,20,2,8 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: GetTime
       id: date
@@ -23,32 +24,42 @@ jobs:
 
     - name: Update Files
       run: |
-        # 下载基础源文件
-        wget -q http://mitv.ugreen.workers.dev -O Base1.m3u
+        # 1. 下载原始 TXT 源文件
+        wget -q https://mitv.ugreen.workers.dev -O Raw.txt
 
-        # 生成最终M3U：写入自定义头部（替换原头部）
+        # 2. 初始化 M3U 头部
         echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > MiTV.m3u
 
-        # 添加自定义提示 (温馨提示)
+        # 3. 添加固定提示频道 (手动设定分组)
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> MiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> MiTV.m3u
 
-        # 添加新增提示 (谨防诈骗)
         echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> MiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> MiTV.m3u
 
-        # 添加新增提示 (禁止蕉绿)
         echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> MiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> MiTV.m3u
 
-        # 添加Cloudflare TV
         echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> MiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> MiTV.m3u
 
-        # 追加原始源的剩余内容（跳过第一行，保留完整顺序）
-        tail -n +2 Base1.m3u >> MiTV.m3u
+        # 4. 转换 TXT 并自动提取分组与匹配 Logo
+        # 逻辑：遇到 #genre# 则更新当前分组名，否则输出频道信息
+        awk -F ',' 'BEGIN {current_group="未分类"} 
+        {
+            gsub(/\r/, "", $1); 
+            gsub(/\r/, "", $2);
+            if ($2 == "#genre#") {
+                current_group = $1;
+            } else if ($1 != "" && $2 != "") {
+                name = $1;
+                url = $2;
+                printf "#EXTINF:-1 tvg-id=\"%s\" tvg-name=\"%s\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/%s.png\" group-title=\"%s\",%s\n", name, name, name, current_group, name;
+                print url;
+            }
+        }' Raw.txt >> MiTV.m3u
 
-        # 生成TXT播放列表（基于最终M3U提取）
+        # 5. 生成备份文本 (维持原有格式)
         awk '/^#EXTINF:/ {
             split($0, a, ",");
             name = a[2];
@@ -59,16 +70,12 @@ jobs:
             print name "," url;
         }' MiTV.m3u | awk '!seen[$0]++' > MiTV.txt
 
-        # 清理临时文件
-        rm -f Base1.m3u
-
-        # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiTV.m3u)（MiTV.M3U）\n- [TXT播放列表](MiTV.txt)（MiTV.TXT）" > README.md
+        rm -f Raw.txt
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add MiTV.m3u MiTV.txt README.md
-        git commit -m "${{ steps.date.outputs.date }}"
+        git commit -m "${{ steps.date.outputs.date }}" || exit 0
         git push
