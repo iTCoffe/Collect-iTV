@@ -25,7 +25,7 @@ jobs:
     - name: Update Files
       run: |
         # 1. 下载原始 TXT 源文件
-        wget -q https://zubotv.ugreen.workers.dev -O Raw.txt
+        wget -q https://zubo-tv.ugreen.workers.dev -O Raw.txt
 
         # 2. 初始化 M3U 头部
         echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > BiTV.m3u
