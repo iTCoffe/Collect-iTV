@@ -1,7 +1,11 @@
 # IPTV 自动更新
 
-### 更新于 2026-04-17 06:45:17 CST
+### 更新于 2026-04-17 08:30:02 CST
 
-### 包含格式:
-- [M3U播放列表](KeTV.m3u)（KeTV.M3U）
-- [TXT播放列表](KeTV.txt)（KeTV.TXT）
+#### KuTV 源 (Jsnzkpg)
+- [M3U播放列表](KuTV.m3u)
+- [TXT播放列表](KuTV.txt)
+
+#### LiTV 源 (suxuang)
+- [M3U播放列表](LiTV.m3u)
+- [TXT播放列表](LiTV.txt)
