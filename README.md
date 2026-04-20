@@ -1,7 +1,12 @@
 # IPTV 自动更新
 
-### 更新于 2026-04-21 00:37:05 CST
+### 更新于 2026-04-21 01:03:54 CST
 
-### 包含格式:
-- [M3U播放列表](MiGu.m3u)（MiGu.M3U）
-- [TXT播放列表](MiGu.txt)（MiGu.TXT）
+#### BiTV (Zubo)
+- [M3U](BiTV.m3u) | [TXT](BiTV.txt)
+
+#### KeTV (Worker)
+- [M3U](KeTV.m3u) | [TXT](KeTV.txt)
+
+#### MiTV (Migu)
+- [M3U](MiTV.m3u) | [TXT](MiTV.txt)
