@@ -1,12 +1,11 @@
 # IPTV 自动更新
 
-### 更新于 2026-04-24 06:43:22 CST
+### 更新于 2026-04-24 09:13:09 CST
 
-#### BiTV (Zubo)
-- [M3U](BiTV.m3u) | [TXT](BiTV.txt)
+#### KuTV 直播源
+- [M3U](KuTV.m3u)
+- [TXT](KuTV.txt)
 
-#### KeTV (Worker)
-- [M3U](KeTV.m3u) | [TXT](KeTV.txt)
-
-#### MiTV (Migu)
-- [M3U](MiTV.m3u) | [TXT](MiTV.txt)
+#### LiTV 直播源
+- [M3U](LiTV.m3u)
+- [TXT](LiTV.txt)
