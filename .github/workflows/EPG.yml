@@ -39,7 +39,6 @@ jobs:
           exit 1
         fi
 
-    # 新增：生成 gz 压缩包（仅在内容变更时执行）
     - name: Generate gz archive
       if: ${{ env.changed == 'true' }}
       run: |
