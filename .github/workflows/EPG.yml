@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
@@ -28,10 +28,12 @@ jobs:
 
           if ! cmp -s "$temp_file" epg.xml; then
             mv "$temp_file" epg.xml
-            echo "changed=true" >> $GITHUB_ENV
+            echo "changed=true" >> $GITHUB_OUTPUT   # 推荐使用 GITHUB_OUTPUT
+            echo "changed=true" >> $GITHUB_ENV      # 同时保留兼容旧方式
           else
             echo "内容未变化，跳过更新"
             rm -f "$temp_file"
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
         else
           echo "::error::下载的文件无效或为空"
@@ -39,22 +41,26 @@ jobs:
           exit 1
         fi
 
+    # 生成 gz（只要 epg.xml 存在且内容有变更）
     - name: Generate gz archive
-      if: ${{ env.changed == 'true' }}
+      if: steps.update.outputs.changed == 'true'
       run: |
+        echo "开始生成 epg.xml.gz"
         gzip -c epg.xml > epg.xml.gz
-        echo "已生成 epg.xml.gz"
+        ls -lh epg.xml.gz
+        echo "生成完成"
 
     - name: 提交更改
-      if: ${{ env.changed == 'true' }}
+      if: steps.update.outputs.changed == 'true'
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add epg.xml epg.xml.gz
+        git status   # 打印状态，便于调试
         git commit -m "EPG更新: $(date +'%Y-%m-%d %H:%M:%S')"
 
     - name: Push changes
-      if: ${{ env.changed == 'true' }}
+      if: steps.update.outputs.changed == 'true'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
