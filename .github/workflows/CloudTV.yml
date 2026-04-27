@@ -90,6 +90,6 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add BiTV.m3u BiTV.txt KeTV.m3u KeTV.txt MiTV.m3u MiTV.txt README.md
+        git add BiTV.m3u BiTV.txt KeTV.m3u KeTV.txt README.md
         git commit -m "Multi-Source Update: ${{ steps.date.outputs.date }}" || exit 0
         git push origin HEAD:main
