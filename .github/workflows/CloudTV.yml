@@ -35,61 +35,72 @@ jobs:
           local txt_file="${name_prefix}.txt"
 
           # 1. 下载原始源
-          wget -q "$url" -O "$raw_file"
+          wget -q --timeout=30 --tries=3 "$url" -O "$raw_file" || { echo "Download $name_prefix failed"; return 1; }
 
           # 2. 初始化 M3U 头部
           echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > "$m3u_file"
 
           # 3. 添加固定温馨提示频道
-          echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> "$m3u_file"
-          echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> "$m3u_file"
-          echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> "$m3u_file"
-          echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> "$m3u_file"
-          echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> "$m3u_file"
-          echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> "$m3u_file"
-          echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> "$m3u_file"
-          echo 'https://cloudflare.tv/hls/live.m3u8' >> "$m3u_file"
+          cat >> "$m3u_file" <<EOF
+          #EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示
+          https://icloud.ifanr.pp.ua/温馨提示.mp4
+          #EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗
+          https://icloud.ifanr.pp.ua/温馨提示.mp4
+          #EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿
+          https://icloud.ifanr.pp.ua/温馨提示.mp4
+          #EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV
+          https://cloudflare.tv/hls/live.m3u8
+          EOF
 
           # 4. 转换 TXT (识别分组与 Logo)
           awk -F ',' 'BEGIN {current_group="未分类"} 
           {
-              gsub(/\r/, "", $1); 
-              gsub(/\r/, "", $2);
+              gsub(/\r/, "", $0); 
               if ($2 == "#genre#") {
                   current_group = $1;
               } else if ($1 != "" && $2 != "") {
-                  name = $1;
-                  url = $2;
+                  name = $1; url = $2;
                   printf "#EXTINF:-1 tvg-id=\"%s\" tvg-name=\"%s\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/%s.png\" group-title=\"%s\",%s\n", name, name, name, current_group, name;
                   print url;
               }
           }' "$raw_file" >> "$m3u_file"
 
           # 5. 生成对应的 TXT 播放列表
-          awk '/^#EXTINF:/ {
+          grep -E "^#EXTINF:|^http" "$m3u_file" | awk '/^#EXTINF:/ {
               split($0, a, ",");
               name = a[2];
               getline url;
               gsub(/\r/, "", name);
               gsub(/\r/, "", url);
-              sub(/^ /, "", name);
-              print name "," url;
-          }' "$m3u_file" | awk '!seen[$0]++' > "$txt_file"
+              if (name != "" && url != "") print name "," url;
+          }' | awk '!seen[$0]++' > "$txt_file"
 
           rm -f "$raw_file"
         }
 
-        # --- 执行三个源的处理 ---
+        # --- 仅执行两个源的处理 ---
         process_iptv "https://zubo-tv.yuwell.workers.dev" "BiTV"
         process_iptv "https://worker-tv.yuwell.workers.dev" "KeTV"
 
-        # --- 更新 README ---
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n#### BiTV (Zubo)\n- [M3U](BiTV.m3u) | [TXT](BiTV.txt)\n\n#### KeTV (Worker)\n- [M3U](KeTV.m3u) | [TXT](KeTV.txt)" > README.md
+        # --- 更新 README (已去除 MiTV) ---
+        cat > README.md <<EOF
+        # IPTV 自动更新
+
+        ### 更新于 ${{ steps.date.outputs.date }}
+
+        #### 📺 订阅列表
+        * **BiTV (Zubo)**
+        * [M3U 格式](BiTV.m3u) | [TXT 格式](BiTV.txt)
+        * **KeTV (Worker)**
+        * [M3U 格式](KeTV.m3u) | [TXT 格式](KeTV.txt)
+
+        EOF
 
     - name: Commit Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        # 仅 add 实际产生的文件，避免 MiTV 导致的找不到文件错误
         git add BiTV.m3u BiTV.txt KeTV.m3u KeTV.txt README.md
-        git commit -m "Multi-Source Update: ${{ steps.date.outputs.date }}" || exit 0
+        git commit -m "Update IPTV: ${{ steps.date.outputs.date }}" || exit 0
         git push origin HEAD:main
