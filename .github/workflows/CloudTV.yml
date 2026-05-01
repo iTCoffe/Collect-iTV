@@ -81,7 +81,7 @@ jobs:
 
         # --- 执行两个源的处理 ---
         process_iptv "https://zubo-tv.yuwell.workers.dev" "BiTV"
-        process_iptv "https://worker-tv.yuwell.workers.dev" "KeTV"
+        process_iptv "https://worker-tv.yuwell.workers.dev/123456" "KeTV"
 
         # --- 更新 README ---
         echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n#### BiTV (Zubo)\n- [M3U](BiTV.m3u) | [TXT](BiTV.txt)\n\n#### KeTV (Worker)\n- [M3U](KeTV.m3u) | [TXT](KeTV.txt)" > README.md
