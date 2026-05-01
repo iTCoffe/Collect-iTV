@@ -79,7 +79,7 @@ jobs:
           rm -f "$raw_file"
         }
 
-        # --- 执行三个源的处理 ---
+        # --- 执行两个源的处理 ---
         process_iptv "https://zubo-tv.yuwell.workers.dev" "BiTV"
         process_iptv "https://worker-tv.yuwell.workers.dev" "KeTV"
 
