@@ -1,4 +1,4 @@
-name: BiTV Daily Update（废弃）
+name: GiTV Daily Update
 
 on:
   workflow_dispatch:
@@ -25,23 +25,23 @@ jobs:
     - name: Update Files
       run: |
         # 1. 下载原始 TXT 源文件
-        wget -q https://zubo-tv.yuwell.workers.dev -O Raw.txt
+        wget -q https://zubo-itv.yuwell.workers.dev -O Raw.txt
 
         # 2. 初始化 M3U 头部
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > BiTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > GiTV.m3u
 
         # 3. 添加固定提示频道 (手动设定分组)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> BiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> BiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> GiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> GiTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> BiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> BiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> GiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> GiTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> BiTV.m3u
-        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> BiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> GiTV.m3u
+        echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> GiTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> BiTV.m3u
-        echo 'https://cloudflare.tv/hls/live.m3u8' >> BiTV.m3u
+        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> GiTV.m3u
+        echo 'https://cloudflare.tv/hls/live.m3u8' >> GiTV.m3u
 
         # 4. 转换 TXT 并自动提取分组与匹配 Logo
         # 逻辑：遇到 #genre# 则更新当前分组名，否则输出频道信息
@@ -57,7 +57,7 @@ jobs:
                 printf "#EXTINF:-1 tvg-id=\"%s\" tvg-name=\"%s\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/%s.png\" group-title=\"%s\",%s\n", name, name, name, current_group, name;
                 print url;
             }
-        }' Raw.txt >> BiTV.m3u
+        }' Raw.txt >> GiTV.m3u
 
         # 5. 生成备份文本 (维持原有格式)
         awk '/^#EXTINF:/ {
@@ -68,7 +68,7 @@ jobs:
             gsub(/\r/, "", url);
             sub(/^ /, "", name);
             print name "," url;
-        }' BiTV.m3u | awk '!seen[$0]++' > BiTV.txt
+        }' GiTV.m3u | awk '!seen[$0]++' > GiTV.txt
 
         rm -f Raw.txt
 
@@ -76,6 +76,6 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add BiTV.m3u BiTV.txt README.md
+        git add GiTV.m3u GiTV.txt README.md
         git commit -m "${{ steps.date.outputs.date }}" || exit 0
         git push
