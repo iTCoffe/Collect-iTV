@@ -20,7 +20,7 @@ jobs:
       id: update
       run: |
         temp_file=$(mktemp)
-        wget -nv -O "$temp_file" http://anfeind1.kmdns.net:19999/playback.xml
+        wget -nv -O "$temp_file" https://raw.githubusercontent.com/develop202/migu_video/main/playback.xml
 
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           sed -i 's|Tak|精準導航·咪咕盡享|g' "$temp_file"
