@@ -20,11 +20,11 @@ jobs:
       id: update
       run: |
         temp_file=$(mktemp)
-        wget -nv -O "$temp_file" http://47.119.24.76:59093/playback.xml
+        wget -nv -O "$temp_file" https://raw.githubusercontent.com/develop202/migu_video/main/playback.xml
 
         if [ -s "$temp_file" ] && grep -q '<?xml' "$temp_file"; then
           sed -i 's|Tak|精準導航·咪咕盡享|g' "$temp_file"
-          sed -i 's|http://192.168.1.40:59093|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
+          sed -i 's|https://github.com/develop202/migu_video|https://i叚娤.倖鍢.net.cn|g' "$temp_file"
 
           if ! cmp -s "$temp_file" erw.xml; then
             mv "$temp_file" erw.xml
