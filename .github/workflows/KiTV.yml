@@ -35,7 +35,7 @@ jobs:
         tail -n +2 Base_clean.m3u | awk '/^#EXTINF:/ { inf=$0; getline url; if (inf !~ /央视/ && inf !~ /✈️TG频道@stymei1/) print inf "\n" url }' > CNTV.m3u
 
         # 写入 KuTV 头部和温馨提示
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KuTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
         echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> KuTV.m3u
@@ -55,7 +55,7 @@ jobs:
         tr -d '\r' < LiTV_Base.m3u > LiTV_clean.m3u
 
         # 写入 LiTV 头部和温馨提示（与 KuTV 保持一致）
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
         echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
