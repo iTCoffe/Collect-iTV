@@ -277,25 +277,25 @@ def main():
     m3u_content += (
         '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4\n'
     )
     # 写入 谨防诈骗
     m3u_content += (
         '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4\n'
     )
     # 写入 禁止蕉绿
     m3u_content += (
         '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4\n'
     )
     # 写入 Cloudflare TV
     m3u_content += (
         '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV\n'
-        'https://cloudflare.tv/hls/live.m3u8'
+        'https://cloudflare.tv/hls/live.m3u8\n'
     )
 
     # ==================== 2. 开始抓取咪咕直播源 ====================
