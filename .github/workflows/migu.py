@@ -236,7 +236,13 @@ def append_All_Live(live, flag, data):
                 if z <= 6:
                     time.sleep(0.15)
                 z += 1
-        content = f'#EXTINF:-1 tvg-id="{data["name"]}" tvg-name="{data["name"]}" tvg-logo="{data["pics"]["highResolutionH"]}" group-title="{live}",{data["name"]}\n{playurl}\n'
+                
+        # 确保咪咕抓取出的频道带有规范换行 \n
+        content = (
+            f'#EXTINF:-1 tvg-id="{data["name"]}" tvg-name="{data["name"]}" '
+            f'tvg-logo="{data["pics"]["highResolutionH"]}" group-title="{live}",{data["name"]}\n'
+            f'{playurl}\n'
+        )
         if z == 7:
             print(f'频道 [{data["name"]}] 更新失败！')
         else:
@@ -260,7 +266,8 @@ def update(live, url):
     FLAG += len(dataList)
 
 def main():
-    # 1. 写入你自定义的头部信息以及提示、扩展频道
+    # ==================== 1. 构建标准的 M3U 格式内容 ====================
+    # 彻底检查：全部去除末尾误写的英文字母 n，统一采用系统的 \n 硬换行
     m3u_content = (
         '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/erw.xml.gz" catchup="append" '
         'catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
@@ -270,42 +277,85 @@ def main():
     m3u_content += (
         '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
     )
     # 写入 谨防诈骗
     m3u_content += (
         '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
     )
     # 写入 禁止蕉绿
     m3u_content += (
         '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
+        'https://icloud.ifanr.pp.ua/温馨提示.mp4'
     )
     # 写入 Cloudflare TV
     m3u_content += (
         '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" '
         'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV\n'
-        'https://cloudflare.tv/hls/live.m3u8n'
+        'https://cloudflare.tv/hls/live.m3u8'
     )
 
-    # 2. 多线程开始爬取各大央视、卫视数据
+    # ==================== 2. 开始抓取咪咕直播源 ====================
     for live in lives:
         print(f"分类 ----- [{live}] ----- 开始更新. . .")
         url = f'https://program-sc.miguvideo.com/live/v2/tv-data/{LIVE[live]}'
         update(live, url)
 
-    # 3. 将所有成功生成的直播链接拼接到最终字符串
+    # 拼接爬回来的咪咕源数据
     for content in All_Live:
-        if content:  # 过滤可能因为接口请求失败导致的空条目
+        if content:  
             m3u_content += content
 
-    # 4. 同步生成并保存两份一模一样文件：MiGu.m3u 和 MiGu.txt
+    # 写入最终的 MiGu.m3u 列表文件
     writefile("MiGu.m3u", m3u_content)
-    writefile("MiGu.txt", m3u_content)
-    print("✨ 自动化成功：MiGu.m3u 和 MiGu.txt 已全部成功生成并同步更新！")
+    print("✨ MiGu.m3u 生成完毕（结构已彻底规整）！")
+
+
+    # ==================== 3. 规整并转换生成标准的 TXT 列表格式 ====================
+    txt_lines = []
+    
+    # 写入 TXT 的温馨提示专属分类
+    txt_lines.append("🦧温馨提示,#genre#")
+    txt_lines.append("温馨提示,https://icloud.ifanr.pp.ua/温馨提示.mp4")
+    txt_lines.append("谨防诈骗,https://icloud.ifanr.pp.ua/温馨提示.mp4")
+    txt_lines.append("禁止蕉绿,https://icloud.ifanr.pp.ua/温馨提示.mp4")
+    txt_lines.append("Cloudflare TV,https://cloudflare.tv/hls/live.m3u8")
+    
+    # 过滤解析 All_Live 并将其实时格式化输出
+    current_group = ""
+    for content in All_Live:
+        if not content:
+            continue
+        
+        # 将每一组的 #EXTINF 与 URL 解离出来
+        lines = [line.strip() for line in content.strip().split('\n') if line.strip()]
+        for i in range(0, len(lines), 2):
+            if i+1 < len(lines):
+                inf_line = lines[i]
+                url_line = lines[i+1]
+                
+                try:
+                    # 动态清洗捕获 group-title 与 频道名字
+                    group = inf_line.split('group-title="')[1].split('"')[0]
+                    name = inf_line.split(',')[-1].strip()
+                    
+                    # 切换分类时，优雅地增加 TXT 的分类标签
+                    if group != current_group:
+                        current_group = group
+                        txt_lines.append(f"{current_group},#genre#")
+                    
+                    # 严密录入: 名字,链接
+                    txt_lines.append(f"{name},{url_line}")
+                except Exception:
+                    continue
+
+    # 封包写入 MiGu.txt 格式
+    txt_content = "\n".join(txt_lines) + "\n"
+    writefile("MiGu.txt", txt_content)
+    print("✨ MiGu.txt 标准分类列表转换并生成完毕！")
 
 if __name__ == "__main__":
     main()
