@@ -250,7 +250,9 @@ def getddCalcu720p(url, pID):
             if i == 2:
                 ddCalcu.append(keys[int(format_date_ymd()[2])])
             if i == 3:
-                ddCalcu.append(keys[int(pID[6])])
+                # 防止 pID 长度不足导致索引越界
+                idx = int(pID[6]) if len(pID) > 6 else 0
+                ddCalcu.append(keys[idx % len(keys)])
             if i == 4:
                 ddCalcu.append("a")
         return f"{url}&ddCalcu={''.join(ddCalcu)}&sv=10004&ct=android"
@@ -260,7 +262,7 @@ def getddCalcu720p(url, pID):
 
 
 def append_All_Live(live, flag, data):
-    """单个频道的处理线程函数（修复 z 未定义问题）"""
+    """单个频道的处理线程函数（修复重定向循环和 urlInfo 空值）"""
     global All_Live
     channel_name = data.get("name", "未知频道")
     # 初始化状态变量
@@ -270,33 +272,44 @@ def append_All_Live(live, flag, data):
     try:
         # 1. 通过代理获取播放地址
         respData = get_content(data["pID"])
-        if "body" not in respData or "urlInfo" not in respData["body"]:
-            raise ValueError("响应缺少 urlInfo")
-        playurl = respData["body"]["urlInfo"].get("url", "")
+        if "body" not in respData:
+            raise ValueError("响应缺少 body 字段")
+        url_info = respData["body"].get("urlInfo")
+        if not url_info:
+            raise ValueError("响应缺少 urlInfo 或值为空")
+        playurl = url_info.get("url", "")
         if not playurl:
             raise ValueError("播放链接为空")
 
         # 2. 添加 ddCalcu 参数
         playurl = getddCalcu720p(playurl, data["pID"])
 
-        # 3. 重定向获取真实 hlsz 地址（最多6次）
-        z = 1
-        while z <= 6:
+        # 3. 重定向获取真实 hlsz 地址（修复：正确更新 playurl 以跟随重定向）
+        max_redirects = 6
+        for attempt in range(max_redirects):
             try:
                 obj = requests.get(playurl, allow_redirects=False, timeout=10)
                 location = obj.headers.get("Location", "")
-                if location and location.startswith("http://hlsz"):
-                    playurl = location
-                    success = True
-                    break
-            except Exception:
-                pass
-            # 无论是否有 location，都要递增并等待
+                if location:
+                    playurl = location  # 更新为重定向地址
+                    if location.startswith("http://hlsz"):
+                        success = True
+                        break
+                else:
+                    # 没有 Location 头，检查状态码
+                    if obj.status_code == 200:
+                        success = True
+                        break
+                    else:
+                        # 非重定向状态码且无 Location，视为失败
+                        raise Exception(f"HTTP {obj.status_code}")
+            except requests.RequestException as e:
+                if attempt == max_redirects - 1:
+                    raise Exception(f"重定向请求异常: {e}")
             time.sleep(0.15)
-            z += 1
 
         if not success:
-            raise Exception("未能获取到 hlsz 真实地址")
+            raise Exception("未能获取到有效的 hlsz 地址或最终可播放地址")
 
         # 4. 组装 M3U 行
         logo = data.get("pics", {}).get("highResolutionH", "")
@@ -306,8 +319,6 @@ def append_All_Live(live, flag, data):
         print(f'✅ 频道 [{channel_name}] 更新成功')
     except Exception as e:
         print(f'❌ 频道 [{channel_name}] 更新失败: {type(e).__name__}: {e}')
-        # 可选：打印详细堆栈（调试用）
-        # import traceback; traceback.print_exc()
         # 失败时留空，不写入内容
 
 
@@ -334,9 +345,8 @@ def update(live, url):
         futures = []
         for idx, data in enumerate(dataList):
             futures.append(executor.submit(append_All_Live, live, start_idx + idx, data))
-        # 等待所有任务完成（若有异常也会等待结束）
+        # 等待所有任务完成
         for future in as_completed(futures):
-            # 可选：获取异常状态
             try:
                 future.result()
             except Exception as e:
