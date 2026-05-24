@@ -7,27 +7,30 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
 # 配置参数
-thread_num = 10  # 线程数
+thread_num = 10
 appVersion = "2600034600"
 appVersionID = appVersion + "-99000-201600010010028"
 
-# 统一使用标准的咪咕客户端伪装请求头
 headers = {
     "Accept": "application/json, text/plain, */*",
-    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
     "Cache-Control": "no-cache",
     "Connection": "keep-alive",
     "Origin": "https://m.miguvideo.com",
     "Pragma": "no-cache",
     "Referer": "https://m.miguvideo.com/",
-    "User-Agent": "Mozilla/5.0 (Linux; Android 10; SM-G973N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-site",
+    "Support-Pendant": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0",
     "appCode": "miguvideo_default_h5",
     "appId": "miguvideo",
     "channel": "H5",
-    "terminalId": "h5",
-    "AppVersion": appVersion,
-    "TerminalId": "android",
-    "X-UP-CLIENT-CHANNEL-ID": appVersionID
+    "sec-ch-ua": '"Chromium";v="136", "Microsoft Edge";v="136", "Not.A/Brand";v="99"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"Windows"',
+    "terminalId": "h5"
 }
 
 lives = ['热门', '央视', '卫视', '地方', '体育', '影视', '综艺', '少儿', '新闻', '教育', '熊猫', '纪实']
@@ -69,51 +72,35 @@ def getSaltAndSign(pid):
         "timestamp": timestamp
     }
 
+# 修复：直接请求咪咕播放接口，移除 Apipost 代理
 def get_content(pid):
-    """
-    智能双通道获取流：优先直接请求官方，若被海外 CI 环境风控拦截，则自动切换至公共网关间接请求
-    """
     result = getSaltAndSign(pid)
     rateType = "3"
+    url = f"https://play.miguvideo.com/playurl/v1/play/playurl?sign={result['sign']}&rateType={rateType}&contId={pid}&timestamp={result['timestamp']}&salt={result['salt']}"
     
-    params = {
-        "sign": result["sign"],
-        "rateType": rateType,
-        "contId": pid,
-        "timestamp": result["timestamp"],
-        "salt": result["salt"]
+    # 必须携带的请求头（从原 headers 中提取必要字段）
+    req_headers = {
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "AppVersion": appVersion,
+        "TerminalId": "android",
+        "X-UP-CLIENT-CHANNEL-ID": appVersionID,
+        "User-Agent": headers["User-Agent"],
+        "Origin": "https://m.miguvideo.com",
+        "Referer": "https://m.miguvideo.com/",
+        "appCode": "miguvideo_default_h5",
+        "appId": "miguvideo",
+        "channel": "H5"
     }
     
-    target_url = "https://play.miguvideo.com/playurl/v1/play/playurl"
-    
-    # --- 1. 尝试直接请求官方接口 ---
-    try:
-        resp = requests.get(target_url, headers=headers, params=params, timeout=6)
-        if resp.status_code == 200:
-            return resp.json()
-    except Exception:
-        pass  # 发生超时或连接拒绝，自动下沉到备用代理逻辑
+    resp = requests.get(url, headers=req_headers, timeout=10)
+    resp.raise_for_status()
+    return resp.json()
 
-    # --- 2. 备用逻辑：利用 allorigins 公共反代网关绕过海外地域审查 ---
-    try:
-        encoded_url = requests.utils.quote(f"{target_url}?sign={params['sign']}&rateType={params['rateType']}&contId={params['contId']}&timestamp={params['timestamp']}&salt={params['salt']}")
-        proxy_url = f"https://api.allorigins.win/get?url={encoded_url}"
-        
-        proxy_resp = requests.get(proxy_url, timeout=8)
-        if proxy_resp.status_code == 200:
-            wrapper_data = proxy_resp.json()
-            # 从公共网关包装的数据结构中提取真正的咪咕返回 JSON 字符串
-            contents_str = wrapper_data.get("contents", "")
-            if contents_str:
-                return json.loads(contents_str)
-    except Exception as e:
-        print(f" 频道 [PID:{pid}] 双通道抓取请求均告失败，原因: {e}")
-        
-    return None
-
+# 修复：增加 puData 缺失的容错
 def getddCalcu720p(url, pID):
     if "&puData=" not in url:
-        return ""
+        return url  # 无法计算 ddCalcu 时返回原链接
     puData = url.split("&puData=")[1]
     keys = "cdabyzwxkl"
     ddCalcu = []
@@ -131,145 +118,129 @@ def getddCalcu720p(url, pID):
     return f'{url}&ddCalcu={"".join(ddCalcu)}&sv=10004&ct=android'
 
 def append_All_Live(live, flag, data):
+    global All_Live
     try:
-        channel_name = data.get("name", "未知频道")
-        pid = data.get("pID", "")
-        if not pid:
-            return
-
-        respData = get_content(pid)
+        respData = get_content(data["pID"])
+        if "body" not in respData or "urlInfo" not in respData["body"] or "url" not in respData["body"]["urlInfo"]:
+            raise ValueError("响应中未找到播放链接")
+        playurl = respData["body"]["urlInfo"]["url"]
+        playurl = getddCalcu720p(playurl, data["pID"])
         
-        # 安全防御：校验提取出的官方返回 json 结构是否完整
-        if not respData or "body" not in respData or "urlInfo" not in respData["body"]:
-            print(f' 频道 [{channel_name}] 更新失败：接口未返回有效播放流地址。')
-            return
-            
-        raw_url = respData["body"]["urlInfo"].get("url", "")
-        if not raw_url:
-            print(f' 频道 [{channel_name}] 播放 URL 为空。')
-            return
-
-        playurl = getddCalcu720p(raw_url, pid)
-        if not playurl:
-            return
-
-        # 跟踪 302 重定向以获取最终 HLS 链接
+        # 初始化重定向计数
         z = 1
-        while z <= 6:
-            try:
-                obj = requests.get(playurl, headers=headers, allow_redirects=False, timeout=4)
-                location = obj.headers.get("Location", "")
-                if not location:
-                    break
-                if location.startswith("http://hlsz") or "m3u8" in location:
-                    playurl = location
-                    break
+        success = False
+        if playurl:
+            while z <= 6:
+                try:
+                    obj = requests.get(playurl, allow_redirects=False, timeout=10)
+                    location = obj.headers.get("Location", "")
+                    if location and location.startswith("http://hlsz"):
+                        playurl = location
+                        success = True
+                        break
+                except Exception:
+                    pass
                 time.sleep(0.15)
                 z += 1
-            except Exception:
-                break
-                
-        logo = data.get("pics", {}).get("highResolutionH", "")
-        content = (
-            f'#EXTINF:-1 tvg-id="{channel_name}" tvg-name="{channel_name}" '
-            f'tvg-logo="{logo}" group-title="{live}",{channel_name}\n'
-            f'{playurl}\n'
-        )
+        else:
+            print(f'频道 [{data["name"]}] 播放链接为空，跳过')
+            return
         
-        All_Live[flag] = content
-        print(f' 频道 [{channel_name}] 更新成功！')
+        # 只有成功获取有效链接才写入
+        if success:
+            content = (
+                f'#EXTINF:-1 tvg-id="{data["name"]}" tvg-name="{data["name"]}" '
+                f'tvg-logo="{data["pics"]["highResolutionH"]}" group-title="{live}",{data["name"]}\n'
+                f'{playurl}\n'
+            )
+            All_Live[flag] = content
+            print(f'频道 [{data["name"]}] 更新成功！')
+        else:
+            print(f'频道 [{data["name"]}] 更新失败！')
     except Exception as e:
-        print(f' 频道 [{data.get("name", "未知")}] 异步解析发生非致命异常: {type(e).__name__} -> {e}')
+        print(f'频道 [{data["name"]}] 更新失败：{e}')
 
 def update(live, url):
-    global FLAG
-    global All_Live
-    global headers
+    global FLAG, All_Live
     pool = ThreadPoolExecutor(thread_num)
     try:
-        response = requests.get(url, headers=headers, timeout=12).json()
-        dataList = response.get("body", {}).get("dataList", [])
-        for flag, data in enumerate(dataList):
-            All_Live.append("")
-            pool.submit(append_All_Live, live, FLAG + flag, data)
+        response = requests.get(url, headers=headers, timeout=10).json()
+        dataList = response["body"]["dataList"]
     except Exception as e:
-        print(f"⚠️ 分类 [{live}] 列表主入口获取失败（可能整组接口抽风）: {e}")
-    finally:
-        pool.shutdown(wait=True)
-        if 'dataList' in locals():
-            FLAG += len(dataList)
+        print(f"分类 [{live}] 获取列表失败：{e}")
+        return
+    # 预先扩展列表长度
+    for _ in range(len(dataList)):
+        All_Live.append("")
+    futures = []
+    for idx, data in enumerate(dataList):
+        futures.append(pool.submit(append_All_Live, live, FLAG + idx, data))
+    # 等待所有任务完成
+    for f in futures:
+        f.result()
+    pool.shutdown()
+    FLAG += len(dataList)
 
 def main():
-    # ==================== 1. 构建标准的 M3U 格式内容 ====================
+    # 构建 M3U 头部
     m3u_content = (
         '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/erw.xml.gz" catchup="append" '
         'catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"\n'
     )
+    # 添加提示频道
+    tip_channels = [
+        ("温馨提示", "https://icloud.ifanr.pp.ua/温馨提示.mp4"),
+        ("谨防诈骗", "https://icloud.ifanr.pp.ua/温馨提示.mp4"),
+        ("禁止蕉绿", "https://icloud.ifanr.pp.ua/温馨提示.mp4"),
+        ("Cloudflare TV", "https://cloudflare.tv/hls/live.m3u8")
+    ]
+    for name, url in tip_channels:
+        m3u_content += (
+            f'#EXTINF:-1 tvg-id="{name}" tvg-name="{name}" '
+            f'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/{name}.png" group-title="🦧温馨提示",{name}\n'
+            f'{url}\n'
+        )
     
-    m3u_content += (
-        '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" '
-        'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
-        '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" '
-        'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
-        '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" '
-        'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿\n'
-        'https://icloud.ifanr.pp.ua/温馨提示.mp4n'
-        '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" '
-        'tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV\n'
-        'https://cloudflare.tv/hls/live.m3u8n'
-    )
-
-    # ==================== 2. 开始抓取咪咕直播源 ====================
+    # 抓取咪咕直播
     for live in lives:
-        print(f"分类 ----- [{live}] ----- 开始更新. . .")
+        print(f"分类 ----- [{live}] ----- 开始更新...")
         url = f'https://program-sc.miguvideo.com/live/v2/tv-data/{LIVE[live]}'
         update(live, url)
-
-    # 拼接数据
+    
+    # 拼接 M3U
     for content in All_Live:
-        if content:  
+        if content:
             m3u_content += content
-
     writefile("MiGu.m3u", m3u_content)
-    print("✨ MiGu.m3u 生成完毕！")
-
-    # ==================== 3. 规整并转换生成标准的 TXT 列表格式 ====================
-    txt_lines = [
-        "🦧温馨提示,#genre#",
-        "温馨提示,https://icloud.ifanr.pp.ua/温馨提示.mp4",
-        "谨防诈骗,https://icloud.ifanr.pp.ua/温馨提示.mp4",
-        "禁止蕉绿,https://icloud.ifanr.pp.ua/温馨提示.mp4",
-        "Cloudflare TV,https://cloudflare.tv/hls/live.m3u8"
-    ]
+    print("✨ MiGu.m3u 生成完毕")
+    
+    # 生成 TXT 格式
+    txt_lines = []
+    # 温馨提示分类
+    txt_lines.append("🦧温馨提示,#genre#")
+    for name, url in tip_channels:
+        txt_lines.append(f"{name},{url}")
     
     current_group = ""
     for content in All_Live:
         if not content:
             continue
-        
         lines = [line.strip() for line in content.strip().split('\n') if line.strip()]
         for i in range(0, len(lines), 2):
             if i+1 < len(lines):
                 inf_line = lines[i]
                 url_line = lines[i+1]
-                
                 try:
                     group = inf_line.split('group-title="')[1].split('"')[0]
                     name = inf_line.split(',')[-1].strip()
-                    
                     if group != current_group:
                         current_group = group
                         txt_lines.append(f"{current_group},#genre#")
-                    
                     txt_lines.append(f"{name},{url_line}")
                 except Exception:
                     continue
-
-    txt_content = "\n".join(txt_lines) + "\n"
-    writefile("MiGu.txt", txt_content)
-    print("✨ MiGu.txt 标准分类列表转换并生成完毕！")
+    writefile("MiGu.txt", "\n".join(txt_lines) + "\n")
+    print("✨ MiGu.txt 生成完毕")
 
 if __name__ == "__main__":
     main()
