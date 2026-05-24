@@ -11,7 +11,7 @@ thread_num = 10  # 线程数
 appVersion = "2600034600"
 appVersionID = appVersion + "-99000-201600010010028"
 
-# 统一使用标准的咪咕客户端 H5/Android 伪装请求头
+# 统一使用标准的咪咕客户端伪装请求头
 headers = {
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
@@ -71,12 +71,11 @@ def getSaltAndSign(pid):
 
 def get_content(pid):
     """
-    精简重构：彻底抛弃 ApiPost 网页代理，直接向官方 playurl 接口发起请求
+    智能双通道获取流：优先直接请求官方，若被海外 CI 环境风控拦截，则自动切换至公共网关间接请求
     """
     result = getSaltAndSign(pid)
     rateType = "3"
     
-    # 构造请求参数
     params = {
         "sign": result["sign"],
         "rateType": rateType,
@@ -85,11 +84,32 @@ def get_content(pid):
         "salt": result["salt"]
     }
     
-    url = "https://play.miguvideo.com/playurl/v1/play/playurl"
+    target_url = "https://play.miguvideo.com/playurl/v1/play/playurl"
     
-    # 直接请求官方接口，超时设为 10 秒防卡死
-    resp = requests.get(url, headers=headers, params=params, timeout=10)
-    return resp.json()
+    # --- 1. 尝试直接请求官方接口 ---
+    try:
+        resp = requests.get(target_url, headers=headers, params=params, timeout=6)
+        if resp.status_code == 200:
+            return resp.json()
+    except Exception:
+        pass  # 发生超时或连接拒绝，自动下沉到备用代理逻辑
+
+    # --- 2. 备用逻辑：利用 allorigins 公共反代网关绕过海外地域审查 ---
+    try:
+        encoded_url = requests.utils.quote(f"{target_url}?sign={params['sign']}&rateType={params['rateType']}&contId={params['contId']}&timestamp={params['timestamp']}&salt={params['salt']}")
+        proxy_url = f"https://api.allorigins.win/get?url={encoded_url}"
+        
+        proxy_resp = requests.get(proxy_url, timeout=8)
+        if proxy_resp.status_code == 200:
+            wrapper_data = proxy_resp.json()
+            # 从公共网关包装的数据结构中提取真正的咪咕返回 JSON 字符串
+            contents_str = wrapper_data.get("contents", "")
+            if contents_str:
+                return json.loads(contents_str)
+    except Exception as e:
+        print(f" 频道 [PID:{pid}] 双通道抓取请求均告失败，原因: {e}")
+        
+    return None
 
 def getddCalcu720p(url, pID):
     if "&puData=" not in url:
@@ -112,27 +132,32 @@ def getddCalcu720p(url, pID):
 
 def append_All_Live(live, flag, data):
     try:
-        respData = get_content(data["pID"])
+        channel_name = data.get("name", "未知频道")
+        pid = data.get("pID", "")
+        if not pid:
+            return
+
+        respData = get_content(pid)
         
-        # 增加安全防御：校验官方返回的 json 结构是否完整
+        # 安全防御：校验提取出的官方返回 json 结构是否完整
         if not respData or "body" not in respData or "urlInfo" not in respData["body"]:
-            print(f'频道 [{data["name"]}] 官方接口未返回有效播放流地址。')
+            print(f' 频道 [{channel_name}] 更新失败：接口未返回有效播放流地址。')
             return
             
         raw_url = respData["body"]["urlInfo"].get("url", "")
         if not raw_url:
-            print(f'频道 [{data["name"]}] URL 为空。')
+            print(f' 频道 [{channel_name}] 播放 URL 为空。')
             return
 
-        playurl = getddCalcu720p(raw_url, data["pID"])
+        playurl = getddCalcu720p(raw_url, pid)
         if not playurl:
             return
 
-        # 跟踪 302 重定向获取最终 HLS 链接
+        # 跟踪 302 重定向以获取最终 HLS 链接
         z = 1
         while z <= 6:
             try:
-                obj = requests.get(playurl, headers=headers, allow_redirects=False, timeout=5)
+                obj = requests.get(playurl, headers=headers, allow_redirects=False, timeout=4)
                 location = obj.headers.get("Location", "")
                 if not location:
                     break
@@ -144,16 +169,17 @@ def append_All_Live(live, flag, data):
             except Exception:
                 break
                 
+        logo = data.get("pics", {}).get("highResolutionH", "")
         content = (
-            f'#EXTINF:-1 tvg-id="{data["name"]}" tvg-name="{data["name"]}" '
-            f'tvg-logo="{data["pics"]["highResolutionH"]}" group-title="{live}",{data["name"]}\n'
+            f'#EXTINF:-1 tvg-id="{channel_name}" tvg-name="{channel_name}" '
+            f'tvg-logo="{logo}" group-title="{live}",{channel_name}\n'
             f'{playurl}\n'
         )
         
         All_Live[flag] = content
-        print(f'频道 [{data["name"]}] 更新成功！')
+        print(f' 频道 [{channel_name}] 更新成功！')
     except Exception as e:
-        print(f'频道 [{data["name"]}] 异步解析发生致命异常: {e}')
+        print(f' 频道 [{data.get("name", "未知")}] 异步解析发生非致命异常: {type(e).__name__} -> {e}')
 
 def update(live, url):
     global FLAG
@@ -161,13 +187,13 @@ def update(live, url):
     global headers
     pool = ThreadPoolExecutor(thread_num)
     try:
-        response = requests.get(url, headers=headers, timeout=15).json()
+        response = requests.get(url, headers=headers, timeout=12).json()
         dataList = response.get("body", {}).get("dataList", [])
         for flag, data in enumerate(dataList):
             All_Live.append("")
             pool.submit(append_All_Live, live, FLAG + flag, data)
     except Exception as e:
-        print(f"分类 [{live}] 列表获取失败: {e}")
+        print(f"⚠️ 分类 [{live}] 列表主入口获取失败（可能整组接口抽风）: {e}")
     finally:
         pool.shutdown(wait=True)
         if 'dataList' in locals():
