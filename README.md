@@ -1,7 +1,11 @@
 # IPTV 自动更新
 
-### 更新于 2026-05-25 17:10:24
+### 更新于 2026-05-25 17:40:40 CST
 
-### 包含格式:
-- [M3U播放列表](MiGu.m3u)（MiGu.M3U）
-- [TXT播放列表](MiGu.txt)（MiGu.TXT）
+#### KuTV 直播源
+- [M3U](KuTV.m3u)
+- [TXT](KuTV.txt)
+
+#### LiTV 直播源
+- [M3U](LiTV.m3u)
+- [TXT](LiTV.txt)
