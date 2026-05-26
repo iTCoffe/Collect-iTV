@@ -702,7 +702,7 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
 if __name__ == "__main__":
     file_urls = [
         "https://raw.githubusercontent.com/mytv-android/iptv-api/master/output/result.m3u",
-        "https://raw.githubusercontent.com/vbskycn/iptv/refs/tv/iptv4.m3u"
+        "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u"
     ]
     cctv_channel_file = ".github/workflows/iTV/CCTV.txt"
     province_channel_files = [
