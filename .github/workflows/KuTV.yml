@@ -1,11 +1,11 @@
-name: KuTV Daily Update（废弃）
+name: KuTV Daily Update
 
 on:
   workflow_dispatch:
   watch:
     types: [started]
   schedule:
-    - cron: '30 0-23/3 * * *'
+    - cron: '43 17,23,5,11 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -43,7 +43,7 @@ jobs:
         ' > CNTV.m3u
 
         # 生成最终M3U：写入自定义头部
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.indevs.in/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
 
         # 添加自定义提示（与之前一致）
         echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KuTV.m3u
