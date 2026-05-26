@@ -19,7 +19,7 @@ def contains_date(text):
     date_pattern = r"\d{4}-\d{2}-\d{2}"
     return re.search(date_pattern, text) is not None
 
-# ==================== 从新代码中引入的增强归一化 & 匹配 ====================
+# ==================== 增强的归一化与匹配（不删除源，仅清洗） ====================
 CHAR_NORMALIZATION_MAP = str.maketrans({
     "頻": "频", "視": "视", "臺": "台", "綜": "综", "聞": "闻", "體": "体",
     "藝": "艺", "經": "经", "濟": "济", "娛": "娱", "樂": "乐", "電": "电",
@@ -283,7 +283,7 @@ def match_province(normalized_channel: str, province_matchers: Dict[str, List[st
                 break
     return best_match
 
-# ==================== 频道名清洗 & 去重选优 ====================
+# ==================== 频道名清洗 & 公告过滤（不删除源，仅清洗） ====================
 def looks_like_notice_entry(channel: str, source_group_title: Optional[str] = None) -> bool:
     haystacks = [channel]
     if source_group_title:
@@ -397,49 +397,35 @@ def extract_urls_from_m3u(content):
             urls.append({"channel": channel.strip(), "url": line.strip(), "source_group_title": source_group_title})
     return urls
 
-async def test_stream(session: aiohttp.ClientSession, semaphore: asyncio.Semaphore, url: str):
-    async with semaphore:
-        start = time.time()
-        try:
-            async with session.get(url, timeout=10) as resp:
-                if resp.status == 200:
-                    return True, time.time() - start
-                return False, None
-        except:
-            return False, None
-
-async def test_multiple_streams(session, semaphore, entries):
-    tasks = [test_stream(session, semaphore, str(entry["url"]).strip()) for entry in entries]
-    return await asyncio.gather(*tasks)
-
+# ==================== 读取文件（不测试连通性，直接返回所有条目） ====================
 async def read_and_test_file(session, semaphore, file_path, is_m3u=False):
+    """读取文件并提取所有 URL（不做连通性测试）"""
     try:
         async with session.get(file_path, timeout=15) as resp:
             if resp.status != 200:
                 return []
             content = await resp.text(errors="ignore")
-        if is_m3u:
-            entries = extract_urls_from_m3u(content)
-        else:
-            entries = extract_urls_from_txt(content)
-        # 初步去重（相同频道+URL）
-        seen = set()
-        unique_entries = []
-        for e in entries:
-            key = (normalize_text_for_match(e["channel"]), e["url"])
-            if key not in seen:
-                seen.add(key)
-                unique_entries.append(e)
-        results = await test_multiple_streams(session, semaphore, unique_entries)
-        valid = []
-        for (ok, lat), ent in zip(results, unique_entries):
-            if ok:
-                valid.append({"channel": ent["channel"], "url": ent["url"], "source_group_title": ent.get("source_group_title"), "latency": lat})
-        return valid
-    except:
+    except Exception:
         return []
 
+    if is_m3u:
+        entries = extract_urls_from_m3u(content)
+    else:
+        entries = extract_urls_from_txt(content)
+
+    # 简单去重：相同频道名+相同URL只保留一个
+    seen = set()
+    unique_entries = []
+    for e in entries:
+        key = (normalize_text_for_match(e["channel"]), e["url"])
+        if key not in seen:
+            seen.add(key)
+            unique_entries.append(e)
+
+    return unique_entries
+
 def deduplicate_candidate_entries(entries):
+    """基于频道名+URL的去重，不做延迟选优"""
     dedup = []
     seen = set()
     for e in entries:
@@ -458,30 +444,7 @@ def deduplicate_candidate_entries(entries):
         dedup.append(e)
     return dedup
 
-def choose_better(current, candidate):
-    cur_lat = current.get("latency")
-    cand_lat = candidate.get("latency")
-    cur_score = (cur_lat if isinstance(cur_lat, (int, float)) else float("inf"), 0 if str(current["url"]).startswith("https") else 1, len(str(current["url"])))
-    cand_score = (cand_lat if isinstance(cand_lat, (int, float)) else float("inf"), 0 if str(candidate["url"]).startswith("https") else 1, len(str(candidate["url"])))
-    return candidate if cand_score < cur_score else current
-
-def select_best_streams(valid_entries):
-    best = {}
-    for e in valid_entries:
-        ch = sanitize_channel_name(str(e.get("channel", "")).strip())
-        url = str(e.get("url", "")).strip()
-        if not ch or not url:
-            continue
-        key = normalize_text_for_match(ch)
-        if key not in best:
-            best[key] = e
-        else:
-            best[key] = choose_better(best[key], e)
-    selected = list(best.values())
-    selected.sort(key=lambda x: x.get("channel", ""))
-    return selected
-
-# ==================== 原代码中保留的配置与辅助函数 ====================
+# ==================== 原代码的配置与输出函数 ====================
 CONFIG = {
     "timeout": 10,
     "max_parallel": 30,
@@ -529,7 +492,6 @@ def normalize_logo_name(channel_name):
 def normalize_cctv_name(channel_name):
     return re.sub(r'CCTV[-]?(\d+)', r'CCTV\1', channel_name)
 
-# ==================== 原代码的 generate_output_files（完全保留） ====================
 def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_filename, txt_filename):
     """生成排序后的 M3U 文件和 TXT 文件（TXT 按照分组结构输出）"""
     cctv_channels_list = []
@@ -545,9 +507,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     # 遍历所有省份的所有频道，构建四连字索引
     for province, channels in province_channels.items():
         for channel_name in channels:
-            # 添加原始词序的四连字
             if len(channel_name) >= 4:
-                # 为频道名创建所有可能的四连字组合
                 for i in range(len(channel_name) - 3):
                     quadgram = channel_name[i:i+4]
                     quadgram_to_province[quadgram].add(province)
@@ -556,21 +516,14 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     for channel, url, orig_logo in valid_urls:
         # 过滤包含日期或关键词的源
         if contains_date(channel) or any(keyword in channel for keyword in filter_keywords):
-            continue  # 跳过含时间名字的源
+            continue
         
-        # 正规化频道名称，作为Logo文件名
         logo_name = normalize_logo_name(channel)
-        
-        # 生成Logo URL
         logo_url = f"{CONFIG['logo_base_url']}/{logo_name}.png"
-        
-        # 正规化 CCTV 频道名
         normalized_channel = normalize_cctv_name(channel)
 
-        # 根据频道名判断属于哪个分组
         found_province = None
         
-        # 1. 首先检查是否是CCTV频道
         if normalized_channel in cctv_channels:
             cctv_channels_list.append({
                 "channel": channel,
@@ -578,20 +531,15 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 "logo": logo_url,
                 "group_title": "📺央视频道"
             })
-        # 2. 检查是否是卫视频道
-        elif "卫视" in channel:  # 卫视频道
+        elif "卫视" in channel:
             satellite_channels.append({
                 "channel": channel,
                 "url": url,
                 "logo": logo_url,
                 "group_title": "📡卫视频道"
             })
-        # 3. 处理地方台频道
         else:
-            # 优化中文四连字匹配
             province_scores = defaultdict(int)
-            
-            # 1. 精确匹配：检查频道名称是否完整包含在频道字符串中
             for province, channels in province_channels.items():
                 for channel_name in channels:
                     if channel_name in channel:
@@ -600,25 +548,18 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                 if found_province:
                     break
             
-            # 2. 四连字匹配（使用更长的特征词提高准确性）
             if not found_province and len(channel) >= 4:
-                # 为频道创建所有可能的四连字组合
                 for i in range(len(channel) - 3):
                     quadgram = channel[i:i+4]
-                    # 查找匹配的省份
                     if quadgram in quadgram_to_province:
                         for province in quadgram_to_province[quadgram]:
-                            # 四连字匹配加更多权重
                             province_scores[province] += 2
             
-            # 找到分数最高的省份
             if province_scores:
                 max_score = max(province_scores.values())
                 best_provinces = [p for p, s in province_scores.items() if s == max_score]
-                # 如果有多个分数相同的省份，选择名称最短的（更具体）
                 found_province = min(best_provinces, key=len) if best_provinces else None
             
-            # 根据匹配结果分类频道
             if found_province:
                 province_channels_list[found_province].append({
                     "channel": channel,
@@ -627,7 +568,6 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": f"{found_province}"
                 })
             else:
-                # 归入默认分组
                 province_channels_list["🧯樂玩公社"].append({
                     "channel": channel,
                     "url": url,
@@ -635,26 +575,19 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": "🧯樂玩公社"
                 })
 
-    # --- URL去重逻辑开始 ---
-    # 按分组优先级排序 (CCTV -> 卫视 -> 省份 -> 樂玩公社)
+    # URL去重（完全相同的URL只保留一次）
     all_groups = [
         ("📺央视频道", cctv_channels_list),
         ("📡卫视频道", satellite_channels)
     ]
-    
-    # 添加省份频道（按省份名称排序）
     for province in sorted(province_channels_list.keys()):
         if province == "🧯樂玩公社":
             continue
         all_groups.append((province, province_channels_list[province]))
-    
-    # 添加樂玩公社分组
     all_groups.append(("🧯樂玩公社", province_channels_list.get("🧯樂玩公社", [])))
 
-    # 使用字典根据URL去重（保留每个URL第一次出现的频道）
     seen_urls = set()
     deduped_channels = []
-    
     for group_title, channels in all_groups:
         if not channels: continue
         channels.sort(key=lambda x: x["channel"])
@@ -669,11 +602,10 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": group_title
                 })
 
-    # 确保输出目录存在
     os.makedirs(os.path.dirname(m3u_filename) or '.', exist_ok=True)
     os.makedirs(os.path.dirname(txt_filename) or '.', exist_ok=True)
 
-    # 写入 M3U 文件
+    # 写入 M3U
     with open(m3u_filename, 'w', encoding='utf-8') as f:
         f.write("#EXTM3U x-tvg-url=\"https://itv.sspai.pp.ua/epg.xml.gz\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         f.write("#EXTINF:-1 tvg-id=\"温馨提示\" tvg-name=\"温馨提示\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/温馨提示.png\" group-title=\"🦧温馨提示\",温馨提示\n")
@@ -694,7 +626,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     print(f"文件位置: {os.path.abspath(m3u_filename)}")
     print(f"文件大小: {os.path.getsize(m3u_filename)} 字节")
     
-    # 写入结构化的 TXT 文件 (按分组结构输出)
+    # 写入 TXT
     with open(txt_filename, 'w', encoding='utf-8') as f:
         grouped_channels = defaultdict(list)
         for channel_info in deduped_channels:
@@ -732,13 +664,11 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
     print(f"文件位置: {os.path.abspath(txt_filename)}")
     print(f"文件大小: {os.path.getsize(txt_filename)} 字节")
 
-# ==================== 主函数（融合增强功能） ====================
+# ==================== 主函数 ====================
 async def main(file_urls, cctv_channel_file, province_channel_files):
-    # 加载 CCTV 和省份频道列表（原样）
     cctv_channels = load_cctv_channels(cctv_channel_file)
     province_channels = load_province_channels(province_channel_files)
 
-    # 在线地理数据增强省份匹配词（可选）
     connector = aiohttp.TCPConnector(limit=CONFIG["max_parallel"]*2)
     timeout = aiohttp.ClientTimeout(total=CONFIG["timeout"])
     async with aiohttp.ClientSession(cookie_jar=None, timeout=timeout, connector=connector) as session:
@@ -763,21 +693,16 @@ async def main(file_urls, cctv_channel_file, province_channel_files):
     for res in results:
         all_entries.extend(res)
     
-    # 去重 & 选优
     deduped = deduplicate_candidate_entries(all_entries)
-    best_entries = select_best_streams(deduped)
-    print(f"Total valid streams: {len(all_entries)}, deduplicated: {len(deduped)}, best-per-channel: {len(best_entries)}")
-    
-    # 转换成 generate_output_files 需要的格式：列表 of (channel, url, orig_logo)
-    valid_urls = [(entry["channel"], entry["url"], None) for entry in best_entries]
-    
-    # 调用原代码的输出函数（完全保留原有分组逻辑）
+    print(f"Total entries after dedup: {len(deduped)}")
+
+    valid_urls = [(entry["channel"], entry["url"], None) for entry in deduped]
     generate_output_files(valid_urls, cctv_channels, province_channels, CONFIG["output_m3u"], CONFIG["output_txt"])
 
 if __name__ == "__main__":
     file_urls = [
         "https://raw.githubusercontent.com/mytv-android/iptv-api/master/output/result.m3u",
-        "https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u"
+        "https://raw.githubusercontent.com/vbskycn/iptv/refs/tv/iptv4.m3u"
     ]
     cctv_channel_file = ".github/workflows/iTV/CCTV.txt"
     province_channel_files = [
