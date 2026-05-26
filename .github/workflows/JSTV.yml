@@ -1,0 +1,95 @@
+name: JSTV Daily Update
+
+on:
+  workflow_dispatch:
+  watch:
+    types: [started]
+  schedule:
+    - cron: '0 */7 * * *'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Update:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: GetTime
+      id: date
+      run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
+
+    - name: Update Files
+      run: |
+        # 设置字符编码，避免中文乱码
+        export LC_ALL=C.UTF-8
+
+        # 定义三个基础源 URL
+        BASE_URLS=(
+          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cmcc.m3u"
+          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-ctcc.m3u"
+          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cucc.m3u"
+        )
+
+        # 下载并清理每个源，去除可能的 #EXTM3U 头部和回车符，合并到临时文件
+        tmp_merged="merged_temp.m3u"
+        > "$tmp_merged"
+
+        for url in "${BASE_URLS[@]}"; do
+          filename=$(basename "$url")
+          wget -q "$url" -O "$filename"
+          # 删除文件中的 #EXTM3U 行（保留其他所有行），并清理 \r
+          sed -i '/^#EXTM3U/d' "$filename"
+          tr -d '\r' < "$filename" >> "$tmp_merged"
+          echo "" >> "$tmp_merged"
+          rm -f "$filename"
+        done
+
+        # 生成最终 M3U：写入自定义头部
+        echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > JSTV.m3u
+
+        # 将合并后的内容追加到 JSTV.m3u
+        cat "$tmp_merged" >> JSTV.m3u
+        rm -f "$tmp_merged"
+
+        # 生成 TXT 播放列表（沿用原提取逻辑，保留频道名和 URL，去重）
+        awk -F ',' '
+          /^#EXTINF:/ {
+              sub(/^#EXTINF:-1 [^,]+,/, "", $0);
+              name=$0;
+              getline url;
+              gsub(/[ \r]/, "", name);
+              gsub(/\r/, "", url);
+              if (name != "" && url != "") {
+                  print name "," url;
+              }
+          }
+        ' JSTV.m3u | awk '!c[$0]++' > JSTV.txt
+
+        # 更新 README
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](JSTV.m3u)（JSTV.M3U）\n- [TXT播放列表](JSTV.txt)（JSTV.TXT）" > README.md
+
+    - name: Commit Changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        git pull --rebase --autostash origin main || git rebase --abort
+
+        git add JSTV.m3u JSTV.txt README.md
+
+        if git diff --cached --quiet; then
+          echo "没有文件变更，跳过提交"
+          exit 0
+        fi
+
+        git commit -m "IPTV更新: ${{ steps.date.outputs.date }}"
+
+    - name: Push Update
+      continue-on-error: true
+      run: |
+        git push origin HEAD:main || git push --set-upstream origin main
