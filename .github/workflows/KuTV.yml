@@ -64,25 +64,57 @@ jobs:
         # 合并央视和非央视源（保持先央视后非央视的顺序）
         cat CCTV.m3u CNTV.m3u >> KuTV.m3u
 
-        # 生成TXT播放列表（沿用原提取逻辑，仅过滤空行）
-        awk -F ',' '
+        # 生成按 group-title 分组的 TXT 播放列表
+        awk '
+          BEGIN { OFS=","; group=""; current_group="" }
           /^#EXTINF:/ {
-              sub(/^#EXTINF:-1 [^,]+,/, "", $0);
-              name=$0;
-              getline url;
-              gsub(/[ \r]/, "", name);
-              gsub(/\r/, "", url);
+              # 提取 group-title（如果有）
+              gtitle = "";
+              if (match($0, /group-title="([^"]+)"/)) {
+                  gtitle = substr($0, RSTART+13, RLENGTH-14);
+              }
+              # 提取频道名（最后一个逗号后面）
+              last_comma = index($0, ",")
+              while (index(substr($0, last_comma+1), ",") > 0) {
+                  last_comma = last_comma + index(substr($0, last_comma+1), ",")
+              }
+              name = substr($0, last_comma+1)
+              gsub(/^[ \t]+|[ \t]+$/, "", name)
+              getline url
+              gsub(/\r/, "", url)
               if (name != "" && url != "") {
-                  print name "," url;
+                  if (gtitle == "") gtitle = "其他"
+                  # 用 group|name|url 组合作为 key 去重
+                  key = gtitle "\x1F" name "\x1F" url
+                  if (!seen[key]) {
+                      seen[key] = 1
+                      groups[gtitle] = 1
+                      data[gtitle][name] = url
+                  }
               }
           }
-        ' KuTV.m3u | awk '!c[$0]++' > KuTV.txt
+          END {
+              # 对分组名排序
+              n = asorti(groups, sorted_groups)
+              for (i = 1; i <= n; i++) {
+                  g = sorted_groups[i]
+                  print "# " g > "KuTV.txt"
+                  # 对组内频道名排序
+                  m = asorti(data[g], sorted_names)
+                  for (j = 1; j <= m; j++) {
+                      name = sorted_names[j]
+                      print name "," data[g][name] >> "KuTV.txt"
+                  }
+                  print "" >> "KuTV.txt"  # 分组间空行
+              }
+          }
+        ' KuTV.m3u
 
         # 清理临时文件
         rm -f Base1.m3u Base_clean.m3u CCTV.m3u CNTV.m3u
 
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KuTV.m3u)（KuTV.M3U）\n- [TXT播放列表](KuTV.txt)（KuTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KuTV.m3u)（KuTV.M3U）\n- [分组TXT播放列表](KuTV.txt)（按频道分组）" > README.md
 
     - name: Commit Changes
       run: |
