@@ -23,26 +23,33 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-      - name: Download and convert each ISP source
+      - name: Download, add custom header and convert to txt
         run: |
           set -e
           export LC_ALL=C.UTF-8
 
-          # 定义三个运营商的前缀名称
+          # 自定义 M3U 头部
+          HEADER='#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+
+          # 三个运营商前缀
           for prefix in js-cmcc js-ctcc js-cucc; do
-            # 源文件 URL（使用相同前缀）
             url="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/${prefix}.m3u"
             m3u_file="${prefix}.m3u"
             txt_file="${prefix}.txt"
 
             echo "Processing $prefix ..."
-            # 下载（同时兼容 wget 和 curl）
-            wget -q -O "$m3u_file" "$url" || curl -s -o "$m3u_file" "$url"
+            # 下载原始文件
+            wget -q -O "${prefix}.orig" "$url" || curl -s -o "${prefix}.orig" "$url"
 
-            # 清理 Windows 换行符（CRLF -> LF）
-            sed -i 's/\r$//' "$m3u_file"
+            # 清理 Windows 换行符
+            sed -i 's/\r$//' "${prefix}.orig"
 
-            # 从 m3u 生成 txt（格式：频道名,URL）
+            # 生成最终 m3u：先写入头部，再追加原始内容（跳过原 #EXTM3U 行）
+            echo "$HEADER" > "$m3u_file"
+            # 去掉原始文件中的 #EXTM3U 行（可能有，也可能没有）
+            sed -n '/^#EXTM3U/d; p' "${prefix}.orig" >> "$m3u_file"
+
+            # 从最终 m3u 生成 txt（频道名,URL）
             awk '
               /^#EXTINF:/ {
                 # 提取最后一个逗号之后的部分作为频道名
@@ -60,7 +67,10 @@ jobs:
               }
             ' "$m3u_file" | sort -u > "$txt_file"
 
-            echo "Generated $m3u_file and $txt_file"
+            # 清理临时文件
+            rm -f "${prefix}.orig"
+
+            echo "Generated $m3u_file (with custom header) and $txt_file"
           done
 
       - name: Update README
@@ -76,7 +86,7 @@ jobs:
           | 江苏电信 | [js-ctcc.m3u](js-ctcc.m3u) | [js-ctcc.txt](js-ctcc.txt) |
           | 江苏联通 | [js-cucc.m3u](js-cucc.m3u) | [js-cucc.txt](js-cucc.txt) |
 
-          > 文件由 GitHub Actions 每5小时自动更新一次，如需手动更新请前往 Actions 页面触发。
+          > 文件由 GitHub Actions 每5小时自动更新一次。M3U 文件已添加 EPG 和回看支持。
           EOF
 
       - name: Commit changes
@@ -93,7 +103,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "自动更新江苏运营商源: ${{ steps.date.outputs.date }}"
+          git commit -m "自动更新江苏运营商源 (含EPG头部): ${{ steps.date.outputs.date }}"
 
       - name: Push changes
         continue-on-error: true
