@@ -5,7 +5,7 @@ on:
   watch:
     types: [started]
   schedule:
-    - cron: '0 */7 * * *'
+    - cron: '12 */5 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -23,55 +23,59 @@ jobs:
       id: date
       run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-    - name: Update Files
+    - name: Download and Generate m3u & txt
       run: |
-        # 设置字符编码，避免中文乱码
         export LC_ALL=C.UTF-8
 
-        # 定义三个基础源 URL
-        BASE_URLS=(
-          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cmcc.m3u"
-          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-ctcc.m3u"
-          "https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cucc.m3u"
+        # 定义三个源（移动、电信、联通）
+        declare -A sources=(
+          ["js-cmcc"]="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cmcc.m3u"
+          ["js-ctcc"]="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-ctcc.m3u"
+          ["js-cucc"]="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/js-cucc.m3u"
         )
 
-        # 下载并清理每个源，去除可能的 #EXTM3U 头部和回车符，合并到临时文件
-        tmp_merged="merged_temp.m3u"
-        > "$tmp_merged"
+        for prefix in "${!sources[@]}"; do
+          url="${sources[$prefix]}"
+          m3u_file="${prefix}.m3u"
+          txt_file="${prefix}.txt"
 
-        for url in "${BASE_URLS[@]}"; do
-          filename=$(basename "$url")
-          wget -q "$url" -O "$filename"
-          # 删除文件中的 #EXTM3U 行（保留其他所有行），并清理 \r
-          sed -i '/^#EXTM3U/d' "$filename"
-          tr -d '\r' < "$filename" >> "$tmp_merged"
-          echo "" >> "$tmp_merged"
-          rm -f "$filename"
+          echo "下载 $m3u_file"
+          wget -q "$url" -O "$m3u_file.tmp"
+          tr -d '\r' < "$m3u_file.tmp" > "$m3u_file"
+          rm "$m3u_file.tmp"
+
+          echo "生成 $txt_file"
+          awk -F ',' '
+            /^#EXTINF:/ {
+                sub(/^#EXTINF:-1 [^,]+,/, "", $0);
+                name=$0;
+                getline url;
+                gsub(/[ \r]/, "", name);
+                gsub(/\r/, "", url);
+                if (name != "" && url != "") {
+                    print name "," url;
+                }
+            }
+          ' "$m3u_file" | awk '!c[$0]++' > "$txt_file"
         done
 
-        # 生成最终 M3U：写入自定义头部
-        echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > JSTV.m3u
+    - name: Generate README
+      run: |
+        cat > README.md << EOF
+# 江苏IPTV 各运营商直播源
 
-        # 将合并后的内容追加到 JSTV.m3u
-        cat "$tmp_merged" >> JSTV.m3u
-        rm -f "$tmp_merged"
+### 更新于 ${{ steps.date.outputs.date }}
 
-        # 生成 TXT 播放列表（沿用原提取逻辑，保留频道名和 URL，去重）
-        awk -F ',' '
-          /^#EXTINF:/ {
-              sub(/^#EXTINF:-1 [^,]+,/, "", $0);
-              name=$0;
-              getline url;
-              gsub(/[ \r]/, "", name);
-              gsub(/\r/, "", url);
-              if (name != "" && url != "") {
-                  print name "," url;
-              }
-          }
-        ' JSTV.m3u | awk '!c[$0]++' > JSTV.txt
+#### 文件说明
 
-        # 更新 README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](JSTV.m3u)（JSTV.M3U）\n- [TXT播放列表](JSTV.txt)（JSTV.TXT）" > README.md
+| 运营商 | M3U 播放列表 | TXT 播放列表 |
+|--------|--------------|--------------|
+| 江苏移动 | [js-cmcc.m3u](js-cmcc.m3u) | [js-cmcc.txt](js-cmcc.txt) |
+| 江苏电信 | [js-ctcc.m3u](js-ctcc.m3u) | [js-ctcc.txt](js-ctcc.txt) |
+| 江苏联通 | [js-cucc.m3u](js-cucc.m3u) | [js-cucc.txt](js-cucc.txt) |
+
+> 文件由 GitHub Actions 自动更新，每5小时检查一次。
+EOF
 
     - name: Commit Changes
       run: |
@@ -80,14 +84,14 @@ jobs:
 
         git pull --rebase --autostash origin main || git rebase --abort
 
-        git add JSTV.m3u JSTV.txt README.md
+        git add js-cmcc.m3u js-cmcc.txt js-ctcc.m3u js-ctcc.txt js-cucc.m3u js-cucc.txt README.md
 
         if git diff --cached --quiet; then
           echo "没有文件变更，跳过提交"
           exit 0
         fi
 
-        git commit -m "IPTV更新: ${{ steps.date.outputs.date }}"
+        git commit -m "更新江苏运营商源 (m3u+txt): ${{ steps.date.outputs.date }}"
 
     - name: Push Update
       continue-on-error: true
