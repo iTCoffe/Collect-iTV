@@ -26,6 +26,9 @@ jobs:
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u -O Base1.m3u
 
+        # 将基础源中的 tvg-logo 域名替换为新域名
+        sed -i 's|https://live.fanmingming.cn/tv/|https://logo.jsdelivr.dpdns.org/tv/|g' Base1.m3u
+
         # 生成最终M3U：写入自定义头部（替换原头部）
         echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
 
@@ -45,7 +48,7 @@ jobs:
         echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> LiTV.m3u
 
-        # 追加原始源的剩余内容（跳过第一行，保留完整顺序）
+        # 追加处理过的原始源的剩余内容（跳过第一行，保留完整顺序）
         tail -n +2 Base1.m3u >> LiTV.m3u
 
         # 生成TXT播放列表（基于最终M3U提取）
