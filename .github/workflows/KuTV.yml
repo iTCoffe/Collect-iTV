@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
@@ -64,9 +64,9 @@ jobs:
         # 合并央视和非央视源（保持先央视后非央视的顺序）
         cat CCTV.m3u CNTV.m3u >> KuTV.m3u
 
-        # 生成按 group-title 分组的 TXT 播放列表
+        # 生成按 M3U 分组顺序的 TXT 播放列表（组内频道按名称排序，去重）
         awk '
-          BEGIN { OFS=","; group=""; current_group="" }
+          BEGIN { OFS=","; order_idx=0 }
           /^#EXTINF:/ {
               # 提取 group-title（如果有）
               gtitle = "";
@@ -84,28 +84,31 @@ jobs:
               gsub(/\r/, "", url)
               if (name != "" && url != "") {
                   if (gtitle == "") gtitle = "其他"
-                  # 用 group|name|url 组合作为 key 去重
+                  # 记录分组首次出现的顺序
+                  if (!(gtitle in groups)) {
+                      groups[gtitle] = 1
+                      order[++order_idx] = gtitle
+                  }
+                  # 去重 key
                   key = gtitle "\x1F" name "\x1F" url
                   if (!seen[key]) {
                       seen[key] = 1
-                      groups[gtitle] = 1
                       data[gtitle][name] = url
                   }
               }
           }
           END {
-              # 对分组名排序
-              n = asorti(groups, sorted_groups)
-              for (i = 1; i <= n; i++) {
-                  g = sorted_groups[i]
+              # 按照 M3U 中出现的顺序输出分组
+              for (i = 1; i <= order_idx; i++) {
+                  g = order[i]
                   print "# " g > "KuTV.txt"
-                  # 对组内频道名排序
+                  # 组内频道按名称排序
                   m = asorti(data[g], sorted_names)
                   for (j = 1; j <= m; j++) {
                       name = sorted_names[j]
                       print name "," data[g][name] >> "KuTV.txt"
                   }
-                  print "" >> "KuTV.txt"  # 分组间空行
+                  print "" >> "KuTV.txt"
               }
           }
         ' KuTV.m3u
@@ -114,7 +117,7 @@ jobs:
         rm -f Base1.m3u Base_clean.m3u CCTV.m3u CNTV.m3u
 
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KuTV.m3u)（KuTV.M3U）\n- [分组TXT播放列表](KuTV.txt)（按频道分组）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](KuTV.m3u)（KuTV.M3U）\n- [分组TXT播放列表](KuTV.txt)（按M3U分组顺序）" > README.md
 
     - name: Commit Changes
       run: |
