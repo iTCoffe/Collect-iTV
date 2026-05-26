@@ -2,7 +2,7 @@ name: Migu IPTV Update
 
 on:
   schedule:
-    - cron: '23 */1 * * *'
+    - cron: '11 */1 * * *'
   workflow_dispatch: # 允许随时在网页端手动执行
 
 jobs:
