@@ -2,8 +2,13 @@ name: Migu IPTV Update
 
 on:
   schedule:
-    - cron: '11 */1 * * *'
-  workflow_dispatch: # 允许随时在网页端手动执行
+    - cron: '11 */1 * * *'   # 每小时第11分钟运行
+  workflow_dispatch:          # 允许手动触发
+
+# 防止多个并发运行导致冲突
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-links:
@@ -12,6 +17,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v5
+      with:
+        fetch-depth: 0       # 获取完整历史，便于 rebase
 
     - name: Set up Python
       uses: actions/setup-python@v6
@@ -26,29 +33,43 @@ jobs:
     - name: Run Update Script
       run: python .github/workflows/migu.py
 
-    # 新增步骤：获取当前的北京时间 (CST) 供 README 使用
-    - name: Get Current Date
+    - name: Get Current Date (Beijing Time)
       id: date
       run: |
         echo "date=$(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
 
-    # 更新 README.md 文件内容
-    - name: Update README
+    - name: Update README (Only Time Stamp)
       run: |
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+        # 如果 README.md 不存在，创建一个模板
+        if [ ! -f README.md ]; then
+          echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+        else
+          # 用 sed 替换“更新于”所在行，保留其他内容
+          sed -i "s/### 更新于 .*/### 更新于 ${{ steps.date.outputs.date }}/" README.md
+          # 如果找不到该行（比如首次运行），则在文件头部插入
+          if ! grep -q "### 更新于" README.md; then
+            sed -i "1i### 更新于 ${{ steps.date.outputs.date }}\n" README.md
+          fi
+        fi
 
-    # 自动提交修改后的三个文件
     - name: Commit and Push Changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # 将生成的两个列表以及修改后的 README 一并加入暂存区
+        # 添加生成的文件和更新的 README
         git add MiGu.m3u MiGu.txt README.md
         
-        if git diff-index --quiet HEAD; then
-          echo "本次数据和时间没有变化，跳过提交。"
-        else
-          git commit -m "自动更新：MiGu 列表 & README 时间戳 ($(date +'%Y-%m-%d %H:%M:%S'))"
-          git push
+        # 检查是否有变更（已暂存）
+        if git diff --cached --quiet; then
+          echo "没有文件变更，跳过提交"
+          exit 0
         fi
+        
+        git commit -m "自动更新：MiGu 列表 & README 时间戳 (${{ steps.date.outputs.date }})"
+        
+        # 拉取远程最新更改（rebase 避免合并提交）
+        git pull --rebase origin main
+        
+        # 推送
+        git push origin main
