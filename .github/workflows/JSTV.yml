@@ -23,54 +23,70 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_OUTPUT
 
-      - name: Download, add custom header and convert to txt
+      - name: Download, add custom header and generate grouped txt
         run: |
           set -e
           export LC_ALL=C.UTF-8
 
-          # 自定义 M3U 头部
           HEADER='#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
 
-          # 三个运营商前缀
           for prefix in js-cmcc js-ctcc js-cucc; do
             url="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/${prefix}.m3u"
             m3u_file="${prefix}.m3u"
             txt_file="${prefix}.txt"
 
             echo "Processing $prefix ..."
-            # 下载原始文件
             wget -q -O "${prefix}.orig" "$url" || curl -s -o "${prefix}.orig" "$url"
-
-            # 清理 Windows 换行符
             sed -i 's/\r$//' "${prefix}.orig"
 
-            # 生成最终 m3u：先写入头部，再追加原始内容（跳过原 #EXTM3U 行）
+            # 生成带自定义头部的 m3u
             echo "$HEADER" > "$m3u_file"
-            # 去掉原始文件中的 #EXTM3U 行（可能有，也可能没有）
             sed -n '/^#EXTM3U/d; p' "${prefix}.orig" >> "$m3u_file"
 
-            # 从最终 m3u 生成 txt（频道名,URL）
+            # 生成按 group-title 分组的 txt
             awk '
+              BEGIN { group = ""; current_group = ""; OFS = "," }
               /^#EXTINF:/ {
-                # 提取最后一个逗号之后的部分作为频道名
-                last_comma = index($0, ",")
-                while (index(substr($0, last_comma+1), ",") > 0) {
-                  last_comma = last_comma + index(substr($0, last_comma+1), ",")
-                }
-                name = substr($0, last_comma+1)
-                gsub(/^[ \t]+|[ \t]+$/, "", name)
-                getline url
-                gsub(/\r/, "", url)
-                if (name != "" && url != "") {
-                  print name "," url
-                }
+                  # 提取 group-title（如果有）
+                  gtitle = "";
+                  if (match($0, /group-title="([^"]+)"/)) {
+                      gtitle = substr($0, RSTART+13, RLENGTH-14);
+                  }
+                  # 提取频道名（最后一个逗号后面）
+                  last_comma = index($0, ",")
+                  while (index(substr($0, last_comma+1), ",") > 0) {
+                      last_comma = last_comma + index(substr($0, last_comma+1), ",")
+                  }
+                  name = substr($0, last_comma+1)
+                  gsub(/^[ \t]+|[ \t]+$/, "", name)
+                  getline url
+                  gsub(/\r/, "", url)
+                  if (name != "" && url != "") {
+                      # 存储数据：group|name,url
+                      if (gtitle == "") gtitle = "其他"
+                      groups[gtitle] = 1
+                      data[gtitle][name] = url
+                  }
               }
-            ' "$m3u_file" | sort -u > "$txt_file"
+              END {
+                  # 按分组名排序后输出
+                  n = asorti(groups, sorted_groups)
+                  for (i = 1; i <= n; i++) {
+                      g = sorted_groups[i]
+                      print "# " g > "'$txt_file'"
+                      # 组内按频道名排序
+                      m = asorti(data[g], sorted_names)
+                      for (j = 1; j <= m; j++) {
+                          name = sorted_names[j]
+                          print name "," data[g][name] >> "'$txt_file'"
+                      }
+                      print "" >> "'$txt_file'"  # 分组间空行
+                  }
+              }
+            ' "$m3u_file"
 
-            # 清理临时文件
             rm -f "${prefix}.orig"
-
-            echo "Generated $m3u_file (with custom header) and $txt_file"
+            echo "Generated $m3u_file and grouped $txt_file"
           done
 
       - name: Update README
@@ -80,30 +96,26 @@ jobs:
 
           **更新于：${{ steps.date.outputs.date }}**
 
-          | 运营商 | M3U播放列表 | TXT播放列表 |
-          |--------|-------------|-------------|
+          | 运营商 | M3U播放列表 | TXT播放列表（按分组） |
+          |--------|-------------|----------------------|
           | 江苏移动 | [js-cmcc.m3u](js-cmcc.m3u) | [js-cmcc.txt](js-cmcc.txt) |
           | 江苏电信 | [js-ctcc.m3u](js-ctcc.m3u) | [js-ctcc.txt](js-ctcc.txt) |
           | 江苏联通 | [js-cucc.m3u](js-cucc.m3u) | [js-cucc.txt](js-cucc.txt) |
 
-          > 文件由 GitHub Actions 每5小时自动更新一次。M3U 文件已添加 EPG 和回看支持。
+          > 文件由 GitHub Actions 每5小时自动更新。TXT 文件已按频道分组（group-title）排序。
           EOF
 
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-
           git pull --rebase --autostash origin main || git rebase --abort
-
           git add js-cmcc.m3u js-cmcc.txt js-ctcc.m3u js-ctcc.txt js-cucc.m3u js-cucc.txt README.md
-
           if git diff --cached --quiet; then
             echo "没有检测到变更，跳过提交"
             exit 0
           fi
-
-          git commit -m "自动更新江苏运营商源 (含EPG头部): ${{ steps.date.outputs.date }}"
+          git commit -m "自动更新江苏运营商源 (分组txt): ${{ steps.date.outputs.date }}"
 
       - name: Push changes
         continue-on-error: true
