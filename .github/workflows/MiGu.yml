@@ -1,0 +1,56 @@
+name: Migu IPTV Update
+
+on:
+  schedule:
+    - cron: '30 */1 * * *'
+  workflow_dispatch: # 允许随时在网页端手动执行
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v5
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run Update Script
+      run: python .github/workflows/migu.py
+
+    # 获取当前的北京时间 (CST) 供 README 使用
+    - name: Get Current Date
+      id: date
+      run: |
+        echo "date=$(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
+
+    # 更新 README.md 文件内容
+    - name: Update README
+      run: |
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](MiGu.m3u)（MiGu.M3U）\n- [TXT播放列表](MiGu.txt)（MiGu.TXT）" > README.md
+
+    # 自动提交修改后的三个文件（修复推送冲突）
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        # 先拉取远程最新代码（使用 rebase 避免产生 merge 提交）
+        git pull origin main --rebase --autostash
+        
+        git add MiGu.m3u MiGu.txt README.md
+        
+        if git diff-index --quiet HEAD; then
+          echo "本次数据和时间没有变化，跳过提交。"
+        else
+          git commit -m "自动更新：MiGu 列表 & README 时间戳 ($(date +'%Y-%m-%d %H:%M:%S'))"
+          git push origin main
+        fi
