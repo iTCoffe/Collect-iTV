@@ -23,13 +23,16 @@ jobs:
 
     - name: Update Files
       run: |
+        # 设置字符编码
+        export LC_ALL=C.UTF-8
+
         # 下载基础源文件
         wget -q https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u -O Base1.m3u
 
         # 将基础源中的 tvg-logo 域名替换为新域名
         sed -i 's|https://live.fanmingming.cn/tv/|https://logo.jsdelivr.dpdns.org/tv/|g' Base1.m3u
 
-        # 生成最终M3U：写入自定义头部（替换原头部）
+        # 生成最终M3U：写入自定义头部
         echo '#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
 
         # 添加自定义提示 (温馨提示)
@@ -51,22 +54,57 @@ jobs:
         # 追加处理过的原始源的剩余内容（跳过第一行，保留完整顺序）
         tail -n +2 Base1.m3u >> LiTV.m3u
 
-        # 生成TXT播放列表（基于最终M3U提取）
-        awk '/^#EXTINF:/ {
-            split($0, a, ",");
-            name = a[2];
-            getline url;
-            gsub(/\r/, "", name);
-            gsub(/\r/, "", url);
-            sub(/^ /, "", name);
-            print name "," url;
-        }' LiTV.m3u | awk '!seen[$0]++' > LiTV.txt
+        # 生成按 group-title 分组的 TXT 播放列表
+        awk '
+          BEGIN { OFS="," }
+          /^#EXTINF:/ {
+              # 提取 group-title
+              gtitle = "";
+              if (match($0, /group-title="([^"]+)"/)) {
+                  gtitle = substr($0, RSTART+13, RLENGTH-14);
+              }
+              # 提取频道名（最后一个逗号后面）
+              last_comma = index($0, ",")
+              while (index(substr($0, last_comma+1), ",") > 0) {
+                  last_comma = last_comma + index(substr($0, last_comma+1), ",")
+              }
+              name = substr($0, last_comma+1)
+              gsub(/^[ \t]+|[ \t]+$/, "", name)
+              getline url
+              gsub(/\r/, "", url)
+              if (name != "" && url != "") {
+                  if (gtitle == "") gtitle = "其他"
+                  # 去重 key
+                  key = gtitle "\x1F" name "\x1F" url
+                  if (!seen[key]) {
+                      seen[key] = 1
+                      groups[gtitle] = 1
+                      data[gtitle][name] = url
+                  }
+              }
+          }
+          END {
+              # 按分组名排序
+              n = asorti(groups, sorted_groups)
+              for (i = 1; i <= n; i++) {
+                  g = sorted_groups[i]
+                  print "# " g > "LiTV.txt"
+                  # 组内按频道名排序
+                  m = asorti(data[g], sorted_names)
+                  for (j = 1; j <= m; j++) {
+                      name = sorted_names[j]
+                      print name "," data[g][name] >> "LiTV.txt"
+                  }
+                  print "" >> "LiTV.txt"
+              }
+          }
+        ' LiTV.m3u
 
         # 清理临时文件
         rm -f Base1.m3u
 
         # 更新README
-        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\n- [TXT播放列表](LiTV.txt)（LiTV.TXT）" > README.md
+        echo -e "# IPTV 自动更新\n\n### 更新于 ${{ steps.date.outputs.date }}\n\n### 包含格式:\n- [M3U播放列表](LiTV.m3u)（LiTV.M3U）\n- [分组TXT播放列表](LiTV.txt)（按频道分组）" > README.md
 
     - name: Commit Changes
       run: |
