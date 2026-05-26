@@ -32,6 +32,9 @@ jobs:
         wget -q https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u -O Base1.m3u
         tr -d '\r' < Base1.m3u > Base_clean.m3u
 
+        # 将基础源中的 tvg-logo 域名从 epg.112114.xyz/logo/ 替换为新域名
+        sed -i 's|https://epg.112114.xyz/logo/|https://logo.jsdelivr.dpdns.org/tv/|g' Base_clean.m3u
+
         # 生成央视源（过滤包含“央视”且不包含TG频道的条目，保留原始顺序，不去重）
         tail -n +2 Base_clean.m3u | awk '
           /^#EXTINF:/ { inf=$0; getline url; if (inf ~ /央视/ && inf !~ /✈️TG频道@stymei1/) print inf "\n" url }
