@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV-1" tvg-id="G_CCTV-1-CQ" tvg-logo="http://live.pic.gitv.tv/images/20190911/f4/_new_f4e60db8ef18feda9b8f54030565799b.png",CCTV-1
 http://122.96.52.98:8006/JS_CUCC/G_CCTV-1-CQ.m3u8?Authinfo=EczAhUIyX55ul%2FRaGW1qSM88teIkV5Euu1bMfjFF5zHAHU4MkbDG0kE7WfBdz5eI&p=GITV&area=JS_CUCC
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV-2" tvg-id="G_CCTV-2-CQ" tvg-logo="http://live.pic.gitv.tv/images/20190910/d6/_new_d6bc1cd57e16fe9cdeeeb3bcd98db70d.png",CCTV-2
