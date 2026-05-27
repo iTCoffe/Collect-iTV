@@ -5,6 +5,9 @@ on:
     - cron: '0 */2 * * *'
   workflow_dispatch: # 允许随时在网页端手动执行
 
+env:
+  TZ: Asia/Shanghai
+  
 jobs:
   update-links:
     runs-on: ubuntu-latest
