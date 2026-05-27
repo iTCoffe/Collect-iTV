@@ -1,5 +1,6 @@
 # 江苏IPTV 各运营商直播源
 
+<<<<<<< Updated upstream
 **更新于：2026-05-28 00:57:42 CST**
 
 | 运营商 | M3U播放列表 | TXT播放列表（按分组） |
@@ -9,3 +10,10 @@
 | 江苏联通 | [js-cucc.m3u](js-cucc.m3u) | [js-cucc.txt](js-cucc.txt) |
 
 > 文件由 GitHub Actions 每5小时自动更新。TXT 文件已按频道分组（group-title）排序。
+=======
+### 更新于 2026-05-28 00:59:08
+
+### 包含格式:
+- [M3U播放列表](MiGu.m3u)（MiGu.M3U）
+- [TXT播放列表](MiGu.txt)（MiGu.TXT）
+>>>>>>> Stashed changes
