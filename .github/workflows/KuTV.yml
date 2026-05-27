@@ -5,7 +5,7 @@ on:
   watch:
     types: [started]
   schedule:
-    - cron: '12 */5 * * *'
+    - cron: '0 */5 * * *'
 
 env:
   TZ: Asia/Shanghai
