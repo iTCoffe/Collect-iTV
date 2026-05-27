@@ -2,7 +2,7 @@ name: IPTV Daily Update
 
 on:
   schedule:
-    - cron: '48 */6 * * *'
+    - cron: '0 */6 * * *'
   workflow_dispatch:  # 支持手动触发
   
 env:
