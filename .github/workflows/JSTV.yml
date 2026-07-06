@@ -28,7 +28,7 @@ jobs:
           set -e
           export LC_ALL=C.UTF-8
 
-          HEADER='#EXTM3U x-tvg-url="https://itv.sspai.pp.ua/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
+          HEADER='#EXTM3U x-tvg-url="https://itv.sspai.net.cn/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"'
 
           for prefix in js-cmcc js-ctcc js-cucc; do
             url="https://raw.githubusercontent.com/chen-yixin/jiangsu-iptv/main/${prefix}.m3u"
