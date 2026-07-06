@@ -607,7 +607,7 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
 
     # 写入 M3U
     with open(m3u_filename, 'w', encoding='utf-8') as f:
-        f.write("#EXTM3U x-tvg-url=\"https://itv.sspai.pp.ua/epg.xml.gz\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
+        f.write("#EXTM3U x-tvg-url=\"https://itv.sspai.net.cn/epg.xml.gz\" catchup=\"append\" catchup-source=\"?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}\"\n")
         f.write("#EXTINF:-1 tvg-id=\"温馨提示\" tvg-name=\"温馨提示\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/温馨提示.png\" group-title=\"🦧温馨提示\",温馨提示\n")
         f.write("https://icloud.ifanr.pp.ua/温馨提示.mp4\n")
         f.write("#EXTINF:-1 tvg-id=\"谨防诈骗\" tvg-name=\"谨防诈骗\" tvg-logo=\"https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png\" group-title=\"🦧温馨提示\",谨防诈骗\n")
