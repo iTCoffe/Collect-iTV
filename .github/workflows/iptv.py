@@ -568,11 +568,11 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
                     "group_title": f"{found_province}"
                 })
             else:
-                province_channels_list["🧯樂玩公社"].append({
+                province_channels_list["🐙鯉躍龍門"].append({
                     "channel": channel,
                     "url": url,
                     "logo": logo_url,
-                    "group_title": "🧯樂玩公社"
+                    "group_title": "🐙鯉躍龍門"
                 })
 
     # URL去重（完全相同的URL只保留一次）
@@ -581,10 +581,10 @@ def generate_output_files(valid_urls, cctv_channels, province_channels, m3u_file
         ("📡卫视频道", satellite_channels)
     ]
     for province in sorted(province_channels_list.keys()):
-        if province == "🧯樂玩公社":
+        if province == "🐙鯉躍龍門":
             continue
         all_groups.append((province, province_channels_list[province]))
-    all_groups.append(("🧯樂玩公社", province_channels_list.get("🧯樂玩公社", [])))
+    all_groups.append(("🐙鯉躍龍門", province_channels_list.get("🐙鯉躍龍門", [])))
 
     seen_urls = set()
     deduped_channels = []
