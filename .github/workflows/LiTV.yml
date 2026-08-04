@@ -30,25 +30,25 @@ jobs:
         wget -q https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u -O Base1.m3u
 
         # 将基础源中的 tvg-logo 域名替换为新域名
-        sed -i 's|https://live.fanmingming.cn/tv/|https://logo.jsdelivr.dpdns.org/tv/|g' Base1.m3u
+        sed -i 's|https://live.fanmingming.cn/tv/|https://logo.ifanr.dedyn.io/tv/|g' Base1.m3u
 
         # 生成最终M3U：写入自定义头部
         echo '#EXTM3U x-tvg-url="https://itv.sspai.net.cn/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > LiTV.m3u
 
         # 添加自定义提示 (温馨提示)
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.ifanr.dedyn.io/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> LiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
 
         # 添加新增提示 (谨防诈骗)
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.ifanr.dedyn.io/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> LiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
 
         # 添加新增提示 (禁止蕉绿)
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.ifanr.dedyn.io/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> LiTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> LiTV.m3u
 
         # 添加Cloudflare TV
-        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
+        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.ifanr.dedyn.io/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> LiTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> LiTV.m3u
 
         # 追加处理过的原始源的剩余内容（跳过第一行，保留完整顺序）
