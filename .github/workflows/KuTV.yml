@@ -33,7 +33,7 @@ jobs:
         tr -d '\r' < Base1.m3u > Base_clean.m3u
 
         # 将基础源中的 tvg-logo 域名从 epg.112114.xyz/logo/ 替换为新域名
-        sed -i 's|https://epg.112114.xyz/logo/|https://logo.jsdelivr.dpdns.org/tv/|g' Base_clean.m3u
+        sed -i 's|https://epg.112114.xyz/logo/|https://logo.ifanr.dedyn.io/tv/|g' Base_clean.m3u
 
         # 生成央视源（过滤包含“央视”且不包含TG频道的条目，保留原始顺序，不去重）
         tail -n +2 Base_clean.m3u | awk '
@@ -49,16 +49,16 @@ jobs:
         echo '#EXTM3U x-tvg-url="https://itv.sspai.net.cn/epg.xml.gz" catchup="append" catchup-source="?playseek=${(b)yyyyMMddHHmmss}-${(e)yyyyMMddHHmmss}"' > KuTV.m3u
 
         # 添加自定义提示（与之前一致）
-        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KuTV.m3u
+        echo '#EXTINF:-1 tvg-id="温馨提示" tvg-name="温馨提示" tvg-logo="https://logo.ifanr.dedyn.io/tv/温馨提示.png" group-title="🦧温馨提示",温馨提示' >> KuTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> KuTV.m3u
+        echo '#EXTINF:-1 tvg-id="谨防诈骗" tvg-name="谨防诈骗" tvg-logo="https://logo.ifanr.dedyn.io/tv/谨防诈骗.png" group-title="🦧温馨提示",谨防诈骗' >> KuTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> KuTV.m3u
+        echo '#EXTINF:-1 tvg-id="禁止蕉绿" tvg-name="禁止蕉绿" tvg-logo="https://logo.ifanr.dedyn.io/tv/禁止蕉绿.png" group-title="🦧温馨提示",禁止蕉绿' >> KuTV.m3u
         echo 'https://icloud.ifanr.pp.ua/温馨提示.mp4' >> KuTV.m3u
 
-        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.jsdelivr.dpdns.org/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> KuTV.m3u
+        echo '#EXTINF:-1 tvg-id="Cloudflare TV" tvg-name="Cloudflare TV" tvg-logo="https://logo.ifanr.dedyn.io/tv/CloudflareTV.png" group-title="🦧温馨提示",Cloudflare TV' >> KuTV.m3u
         echo 'https://cloudflare.tv/hls/live.m3u8' >> KuTV.m3u
 
         # 合并央视和非央视源（保持先央视后非央视的顺序）
